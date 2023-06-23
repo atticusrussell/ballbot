@@ -1,4 +1,4 @@
-# Lidarbot
+# Catbot
 
 ![ROS2 CI](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros.yaml/badge.svg)
 
