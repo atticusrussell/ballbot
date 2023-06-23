@@ -1,145 +1,67 @@
-# VSCode ROS2 Workspace Template
+# Lidarbot
 
-This template will get you set up using ROS2 with VSCode as your IDE.
+![ROS2 CI](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros.yaml/badge.svg)
 
-See [how I develop with vscode and ros2](https://www.allisonthackston.com/articles/vscode_docker_ros2.html) for a more in-depth look on how to use this workspace.
+A 4WD differential drive robot is controlled using ROS2 Humble running on a Raspberry Pi 4 (running Ubuntu server 22.04). The vehicle will be equipped with a camera for visual feedback and an RPLIDAR A1 sensor used for Simultaneous Localization and Mapping (SLAM), autonomous navigation and obstacle avoidance. The intent of the project is to learn about robotics, and to eventually recognize my cat's face and chase him to alleviate some boredom.
 
-## Features
-
-### Style
-
-ROS2-approved formatters are included in the IDE.  
-
-* **c++** uncrustify; config from `ament_uncrustify`
-* **python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/)
-
-### Tasks
-
-There are many pre-defined tasks, see [`.vscode/tasks.json`](.vscode/tasks.json) for a complete listing.  Feel free to adjust them to suit your needs.  
-
-Take a look at [how I develop using tasks](https://www.allisonthackston.com/articles/vscode_tasks.html) for an idea on how I use tasks in my development.
-
-### Debugging
-
-This template sets up debugging for python files, gdb for cpp programs and ROS launch files.  See [`.vscode/launch.json`](.vscode/launch.json) for configuration details.
-
-### Continuous Integration
-
-The template also comes with basic continuous integration set up. See [`.github/workflows/ros.yaml`](/.github/workflows/ros.yaml).
-
-To remove a linter just delete it's name from this line:
-
-```yaml
-      matrix:
-          linter: [cppcheck, cpplint, uncrustify, lint_cmake, xmllint, flake8, pep257]
-```
-
-## How to use this template
-
-### Prerequisites
-
-You should already have Docker and VSCode with the remote containers plugin installed on your system.
-
-* [docker](https://docs.docker.com/engine/install/)
-* [vscode](https://code.visualstudio.com/)
-* [vscode remote containers plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-
-### Get the template
-
-Click on "use this template"
-
-![template_use](https://user-images.githubusercontent.com/6098197/91331899-43f23b80-e780-11ea-92c8-b4665ce126f1.png)
-
-### Create your repository
-
-On the next dialog, name the repository you would like to start and decide if you want all of the branches, or just the latest LTS: humble.
-
-![template_new](https://user-images.githubusercontent.com/6098197/91332035-713ee980-e780-11ea-81d3-13b170f568b0.png)
-
-Github will then create a new repository with the contents of this one in your account.  It grabs the latest changes as "initial commit".
-
-### Clone your repo
-
-Now you can clone your repo as normal
-
-![template_download](https://user-images.githubusercontent.com/6098197/91332342-e4e0f680-e780-11ea-9525-49b0afa0e4bb.png)
-
-### Open it in vscode
-
-Now that you've cloned your repo onto your computer, you can open it in VSCode (File->Open Folder). 
-
-When you open it for the first time, you should see a little popup that asks you if you would like to open it in a container.  Say yes!
-
-![template_vscode](https://user-images.githubusercontent.com/6098197/91332551-36898100-e781-11ea-9080-729964373719.png)
-
-If you don't see the pop-up, click on the little green square in the bottom left corner, which should bring up the container dialog
-
-![template_vscode_bottom](https://user-images.githubusercontent.com/6098197/91332638-5d47b780-e781-11ea-9fb6-4d134dbfc464.png)
-
-In the dialog, select "Remote Containers: Reopen in container"
-
-VSCode will build the dockerfile inside of `.devcontainer` for you.  If you open a terminal inside VSCode (Terminal->New Terminal), you should see that your username has been changed to `ros`, and the bottom left green corner should say "Dev Container"
-
-![template_container](https://user-images.githubusercontent.com/6098197/91332895-adbf1500-e781-11ea-8afc-7a22a5340d4a.png)
-
-### Update the template with your code
-
-1. Specify the repositories you want to include in your workspace in `src/ros2.repos` or delete `src/ros2.repos` and develop directly within the workspace.
-2. If you are using a `ros2.repos` file, import the contents `Terminal->Run Task..->import from workspace file`
-3. Install dependencies `Terminal->Run Task..->install dependencies`
-4. (optional) Adjust scripts to your liking.  These scripts are used both within tasks and CI.
-   * `setup.sh` The setup commands for your code.  Default to import workspace and install dependencies.
-   * `build.sh` The build commands for your code.  Default to `--merge-install` and `--symlink-install`
-   * `test.sh` The test commands for your code.
-5. Develop!
+See [the workspace template](/template.md) for usage instructions.
 
 
-## FAQ
+***(Work in Progress)***
 
-### WSL2
+## Tasks 
+(non-exhasustive)
+- [ ] Convert CAD to URDF
+- [ ] Simulate in Gazebo
+- [ ] Finish Chassis Construction
+- [ ] Interface with motors [through arduino](https://github.com/joshnewans/ros_arduino_bridge) and [integrate with ros2_control](https://github.com/joshnewans/diffdrive_arduino/tree/humble)
+- [ ] Integrate LIDAR
+- [ ] Purchase + integrate camera
+- [ ] Chase cat
 
-#### The gui doesn't show up
+## Hardware
+#### Robot Under Construction
+<p align='center'>
+    <img src=docs/images/wip_catbot.jpg width="1000">
+</p>
 
-This is likely because the DISPLAY environment variable is not getting set properly.
+### Part list
+The following components were used in this project:
 
-1. Find out what your DISPLAY variable should be
+| | Part |
+| --| --|
+|1| [Raspberry Pi 4 (4 GB)](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)|
+|2| [AmazonBasics 128 GB SD Card](https://www.amazon.com/dp/B08TJRVWV1?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|3| [Yahboom Aluminum Alloy ROS Robot Car Chassis (4wd chassis)](https://category.yahboom.net/collections/a-chassis-bracket/products/ros-chassis)|
+|4| [L298N Motor Drivers](https://www.amazon.com/dp/B07BK1QL5T?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|5| [DFRobot DC-DC Power Module 25W DFR0205](https://www.digikey.com/en/products/detail/dfrobot/DFR0205/6588491)|
+|6| [Screw-down Terminal Block Strips Dual Row 10A 380V](https://www.amazon.com/dp/B08V4W637Q?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|7| [RPLIDAR A1](https://www.slamtec.com/en/Lidar/A1)|
+|8| [GeeekPi Fan Hat with OLED for RPi 4/3/2/B/+](https://www.amazon.com/dp/B09MVL8BWQ?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|9| [GeeekPi M2.5 Standoffs](https://www.amazon.com/dp/B07PHBTTGV?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|10| [Dupont Wires](https://www.amazon.com/dp/B01EV70C78?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|11| Arduino Uno|
+|12| Spare wires|
 
-      In your WSL2 Ubuntu instance
+Some other tools or parts used in the project are as follows:
 
-      ```
-      echo $DISPLAY
-      ```
+| | Tool/Part |
+| --| --|
+|1| [Soldering iron](https://www.amazon.com/gp/product/B00ANZRT4M/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)|
+|2| [SOMELINE Ferrule Crimping Tool Kit](https://www.amazon.com/dp/B09FSWKRH5?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|3| Screwdriver set|
+|4| [Hot Glue Gun](https://www.amazon.com/dp/B00FI6QWBM?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|5| [Hot Glue](https://www.amazon.com/dp/B06X1CZWC5?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|6| [iCrimp IWS-3220M Micro Connector Pin Crimping Tool](https://www.amazon.com/dp/B078WPT5M1?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|7| [Connector Crimp Pin Cable Kit JST SYP Futaba](https://www.amazon.com/dp/B09MYWTHDZ?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|8| Zip ties |
 
-2. Copy that value into the `.devcontainer/devcontainer.json` file
+## Acknowledgments
+- [Allison Thackston](https://github.com/athackst/vscode_ros2_workspace)
+- [Articulated Robotics](https://articulatedrobotics.xyz/)
+- [Lidarbot](https://github.com/TheNoobInventor/lidarbot)
 
-      ```jsonc
-      	"containerEnv": {
-		      "DISPLAY": ":0",
-         }
-      ```
-
-#### I want to use vGPU
-
-If you want to access the vGPU through WSL2, you'll need to add additional components to the `.devcontainer/devcontainer.json` file in accordance to [these directions](https://github.com/microsoft/wslg/blob/main/samples/container/Containers.md)
-
-```jsonc
-	"runArgs": [
-		"--network=host",
-		"--cap-add=SYS_PTRACE",
-		"--security-opt=seccomp:unconfined",
-		"--security-opt=apparmor:unconfined",
-		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-		"--volume=/mnt/wslg:/mnt/wslg",
-		"--volume=/usr/lib/wsl:/usr/lib/wsl",
-		"--device=/dev/dxg",
-      		"--gpus=all"
-	],
-	"containerEnv": {
-		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
-		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
-		"XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
-		"PULSE_SERVER": "${localEnv:PULSE_SERVER}",
-		"LD_LIBRARY_PATH": "/usr/lib/wsl/lib",
-		"LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
-	},
-```
+#### Cricket
+<p align='center'>
+    <img src=docs/images/cricket.jpg width="1000">
+</p>
