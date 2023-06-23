@@ -14,6 +14,8 @@
 		"--security-opt=apparmor:unconfined",
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
 		"--volume=/mnt/wslg:/mnt/wslg",
+		"--volume=${localEnv:SSH_AUTH_SOCK}:/ssh-agent",
+		"-e SSH_AUTH_SOCK=/ssh-agent",
 		"--ipc=host"
 		// uncomment to use intel iGPU
 		// "--device=/dev/dri"
