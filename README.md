@@ -1,6 +1,8 @@
 # Catbot
 
-![ROS2 CI](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros.yaml/badge.svg)
+![CI Testing](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-test.yaml/badge.svg)
+![CI Linting](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-lint.yaml/badge.svg)
+
 
 A 4WD differential drive robot is controlled using ROS2 Humble running on a Raspberry Pi 4 (running Ubuntu server 22.04). The vehicle will be equipped with a camera for visual feedback and an RPLIDAR A1 sensor used for Simultaneous Localization and Mapping (SLAM), autonomous navigation and obstacle avoidance. The intent of the project is to learn about robotics, and to eventually recognize my cat's face and chase him to alleviate some boredom.
 
