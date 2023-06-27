@@ -1,0 +1,20 @@
+{
+    "recommendations": [
+        "mtsmfm.vscode-stl-viewer",
+        "ms-iot.vscode-ros",
+        "zachflower.uncrustify",
+        "redhat.vscode-xml",
+        "ms-vscode.cpptools",
+        "smilerobotics.urdf",
+        "althack.ament-task-provider",
+        "betwo.b2-catkin-tools",
+        "dotjoshjohnson.xml",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "twxs.cmake",
+        "yzhang.markdown-all-in-one",
+        "tomoki1207.pdf"
+    ]
+}

@@ -1,10 +1,6 @@
-# List of repositories to use within your workspace
-# See https://github.com/dirk-thomas/vcstool
-############ 
-# Example:
-############
 repositories:
-  examples:
-    type: git
-    url: https://github.com/ros2/examples.git
-    version: humble
+  ## EXAMPLE DEPENDENCY
+#   <some_ros_package>:
+#     type: git
+#     url: git@github.com:<some_github_namespace>/<some_ros_package>.git
+#     version: master

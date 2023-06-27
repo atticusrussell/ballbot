@@ -42,7 +42,9 @@
 				"streetsidesoftware.code-spell-checker",
 				"twxs.cmake",
 				"yzhang.markdown-all-in-one",
-				"zachflower.uncrustify"
+				"zachflower.uncrustify",
+				"mtsmfm.vscode-stl-viewer",
+				"tomoki1207.pdf"
 			]
 		}
 	}

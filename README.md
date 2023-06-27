@@ -10,8 +10,8 @@ See [the workspace template](/template.md) for usage instructions.
 ***(Work in Progress)***
 
 ## Tasks 
-(non-exhasustive)
-- [ ] Convert CAD to URDF
+(non-exhaustive)
+- [x] Convert CAD to URDF
 - [ ] Simulate in Gazebo
 - [ ] Finish Chassis Construction
 - [ ] Interface with motors [through arduino](https://github.com/joshnewans/ros_arduino_bridge) and [integrate with ros2_control](https://github.com/joshnewans/diffdrive_arduino/tree/humble)
