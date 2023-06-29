@@ -1,6 +1,6 @@
 {
         "documentId": "495ae85c292c3ab6d645bdf9",
-        "versionID": "20b8fe2a4f579da534b85bd8",
+        "versionID": "dbc41dc96b1adb2ff43c4047",
         "outputFormat": "urdf",
         "addDummyBaseLink": "true",
         "packageName": "catbot_description/meshes",

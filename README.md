@@ -14,7 +14,8 @@ See [the workspace template](/template.md) for usage instructions.
 ## Tasks 
 (non-exhaustive)
 - [x] Convert CAD to URDF
-- [ ] Simulate in Gazebo
+- [x] Simulate in Gazebo
+- [ ] Simulate with ros2_control
 - [ ] Finish Chassis Construction
 - [ ] Interface with motors [through arduino](https://github.com/joshnewans/ros_arduino_bridge) and [integrate with ros2_control](https://github.com/joshnewans/diffdrive_arduino/tree/humble)
 - [ ] Integrate LIDAR
@@ -62,6 +63,7 @@ Some other tools or parts used in the project are as follows:
 - [Allison Thackston](https://github.com/athackst/vscode_ros2_workspace)
 - [Articulated Robotics](https://articulatedrobotics.xyz/)
 - [Lidarbot](https://github.com/TheNoobInventor/lidarbot)
+- [ros2_rover](https://github.com/mgonzs13/ros2_rover/)
 
 #### Cricket
 <p align='center'>

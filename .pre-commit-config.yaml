@@ -49,7 +49,7 @@ repos:
     rev: 6.0.0
     hooks:
     - id: flake8
-      args: ["--extend-ignore=E501"]
+      args: ["--extend-ignore=E501,E128"]
 
   # CPP hooks
   - repo: local
