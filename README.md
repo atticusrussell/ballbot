@@ -15,12 +15,28 @@ See [the workspace template](/template.md) for usage instructions.
 (non-exhaustive)
 - [x] Convert CAD to URDF
 - [x] Simulate in Gazebo
-- [ ] Simulate with ros2_control
-- [ ] Finish Chassis Construction
+- [x] Simulate front wheels with ros2_control
 - [ ] Interface with motors [through arduino](https://github.com/joshnewans/ros_arduino_bridge) and [integrate with ros2_control](https://github.com/joshnewans/diffdrive_arduino/tree/humble)
+- [ ] Simulate 4wd differential drive steering
+- [ ] Interface ros2_control with all 4 motors
+- [ ] Finish Chassis Wiring
 - [ ] Integrate LIDAR
 - [ ] Purchase + integrate camera
 - [ ] Chase cat
+
+## Simulation
+<p align='center'>
+    <img src=docs/images/cricket_gazebo.jpg width="200">
+</p>
+
+To simulate in Gazebo:
+```bash
+ros2 launch catbot_simulation gazebo.launch.py
+```
+See options with 
+```
+ros2 launch catbot_simulation gazebo.launch.py --show-arguments
+```
 
 ## Hardware
 #### Robot Under Construction
@@ -64,8 +80,8 @@ Some other tools or parts used in the project are as follows:
 - [Articulated Robotics](https://articulatedrobotics.xyz/)
 - [Lidarbot](https://github.com/TheNoobInventor/lidarbot)
 - [ros2_rover](https://github.com/mgonzs13/ros2_rover/)
-
-#### Cricket
+- Cricket
 <p align='center'>
     <img src=docs/images/cricket.jpg width="1000">
 </p>
+

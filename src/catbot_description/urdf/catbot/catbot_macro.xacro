@@ -3,13 +3,15 @@
 
   <xacro:include filename="inertial_macros.xacro"/>
 
+  <xacro:property name="sphere_wheel_offset" value="0.006"/>
 
   <link name="base_link"></link>
 
   <joint name="chassis_joint" type="fixed">
     <parent link="base_link" />
     <child link="still_chassis_assm" />
-    <origin rpy="0.0 0 0" xyz="0 0 0" />
+    <!-- rotate 90deg to orient correctly -->
+    <origin rpy="0.0 0 1.5708" xyz="0 0 0" />
   </joint>
 
   <link name="still_chassis_assm">
@@ -52,9 +54,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <origin xyz="0 0 -${sphere_wheel_offset}" rpy="0 -0 0" />
       <geometry>
-        <mesh filename="package://catbot_description/meshes/collision/wheel_assm_collision.stl" />
+        <!-- <mesh filename="package://catbot_description/meshes/collision/wheel_assm_collision.stl" /> -->
+        <sphere radius="${wheel_radius}"/>
       </geometry>
     </collision>
     <inertial>
@@ -91,9 +94,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <origin xyz="0 0 -${sphere_wheel_offset}" rpy="0 -0 0" />
       <geometry>
-        <mesh filename="package://catbot_description/meshes/collision/wheel_assm_2_collision.stl" />
+        <!-- <mesh filename="package://catbot_description/meshes/collision/wheel_assm_2_collision.stl" /> -->
+        <sphere radius="${wheel_radius}"/>
       </geometry>
     </collision>
     <inertial>
@@ -130,9 +134,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <origin xyz="0 0 -${sphere_wheel_offset}" rpy="0 -0 0" />
       <geometry>
-        <mesh filename="package://catbot_description/meshes/collision/wheel_assm_3_collision.stl" />
+        <!-- <mesh filename="package://catbot_description/meshes/collision/wheel_assm_3_collision.stl" /> -->
+        <sphere radius="${wheel_radius}"/>
       </geometry>
     </collision>
     <inertial>
@@ -160,7 +165,7 @@
 
   <link name="wheel_assm_4">
     <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <origin xyz="0 0 ${sphere_wheel_offset}" rpy="0 -0 0" />
       <geometry>
         <mesh filename="package://catbot_description/meshes/visual/wheel_assm_4_visual.stl" />
       </geometry>
@@ -171,7 +176,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0" />
       <geometry>
-        <mesh filename="package://catbot_description/meshes/collision/wheel_assm_4_collision.stl" />
+        <!-- <mesh filename="package://catbot_description/meshes/collision/wheel_assm_4_collision.stl" /> -->
+        <sphere radius="${wheel_radius}"/>
       </geometry>
     </collision>
     <inertial>

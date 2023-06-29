@@ -1,0 +1,23 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30 # Has to be an integer otherwise errors are encountered
+
+    diff_cont:
+      type: diff_drive_controller/DiffDriveController
+
+    joint_broad:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+diff_cont:
+  ros__parameters:
+
+    publish_rate: 30.0 # Has to be a double otherwise errors are encountered
+
+    base_frame_id: base_link
+
+    left_wheel_names: ['fl_wheel']
+    right_wheel_names: ['rf_wheel']
+    wheel_separation: 0.156
+    wheel_radius: 0.033
+
+    use_stamped_vel: false

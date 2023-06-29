@@ -3,13 +3,8 @@
 
   <!-- Use this if parameters are set from the launch file, otherwise delete -->
   <xacro:arg name="prefix" default="" />
-  <xacro:arg name="use_ros2_control" default="false"/>
-
-  <xacro:arg name="use_mock_hardware" default="false" />
-  <xacro:arg name="mock_sensor_commands" default="false" />
-  <xacro:arg name="sim_gazebo_classic" default="false" />
-  <xacro:arg name="sim_gazebo" default="false" />
-  <xacro:arg name="simulation_controllers" default="" />
+  <xacro:arg name="use_ros2_control" default="true"/>
+  <xacro:arg name="sim_mode" default="false"/>
 
   <xacro:include filename="$(find catbot_description)/urdf/catbot/catbot_macro.xacro"/>
   <xacro:include filename="gazebo_catbot.xacro" />
@@ -20,20 +15,5 @@
   <xacro:unless value="$(arg use_ros2_control)">
     <xacro:include filename="gazebo_control.xacro" />
   </xacro:unless>
-
-
-  <!-- Load robot's macro with parameters -->
-  <!-- set prefix if multiple robots are used -->
-
-  <xacro:if value="$(arg use_ros2_control)">
-    <xacro:catbot_ros2_control
-      name="catbot"
-      prefix="$(arg prefix)"
-      use_mock_hardware="$(arg use_mock_hardware)"
-      mock_sensor_commands="$(arg mock_sensor_commands)"
-      sim_gazebo_classic="$(arg sim_gazebo_classic)"
-      sim_gazebo="$(arg sim_gazebo)"
-      simulation_controllers="$(arg simulation_controllers)" />
-  </xacro:if> 
 
 </robot>
