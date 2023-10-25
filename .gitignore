@@ -1,4 +1,9 @@
-build/*
-install/*
-log/*
+build
+install
+log
 site/*
+
+# Ignore micro-ros files from robot
+src/micro_ros_setup
+src/uros
+**/COLCON_IGNORE

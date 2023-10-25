@@ -4,42 +4,54 @@
 ![CI Linting](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-lint.yaml/badge.svg)
 
 
-A 4WD differential drive robot is controlled using ROS2 Humble running on a Raspberry Pi 4 (running Ubuntu server 22.04). The vehicle will be equipped with a camera for visual feedback and an RPLIDAR A1 sensor used for Simultaneous Localization and Mapping (SLAM), autonomous navigation and obstacle avoidance. The intent of the project is to learn about robotics, and to eventually recognize my cat's face and chase him to alleviate some boredom.
+A 4WD differential drive robot is controlled using ROS2 Humble running on a Raspberry Pi 4 (running Ubuntu server 22.04). The vehicle is equipped with a camera for visual feedback and an RPLIDAR A1 sensor used for Simultaneous Localization and Mapping (SLAM), autonomous navigation and obstacle avoidance. The Linorobot2 project is leveraged through my use of a Teensy 4.1 running a Micro-ROS node to interface with 4 motors/encoders and an IMU.
 
-See [the workspace template](/template.md) for usage instructions.
+The intent of the project is to learn about robotics, and to eventually recognize my cat's face and follow/chase him for his entertainment. 
+
+See [the workspace template](/template.md) for workspace usage instructions.
 
 
 ***(Work in Progress)***
 
 ## Tasks 
 (non-exhaustive)
-- [x] Convert CAD to URDF
 - [x] Simulate in Gazebo
-- [x] Simulate front wheels with ros2_control
-- [ ] Interface with motors [through arduino](https://github.com/joshnewans/ros_arduino_bridge) and [integrate with ros2_control](https://github.com/joshnewans/diffdrive_arduino/tree/humble)
-- [ ] Simulate 4wd differential drive steering
-- [ ] Interface ros2_control with all 4 motors
-- [ ] Finish Chassis Wiring
-- [ ] Integrate LIDAR
-- [ ] Purchase + integrate camera
-- [ ] Chase cat
+- [x] Interface with motors
+- [x] Finish Chassis Wiring
+- [x] Fix linorobot2_hardware ROS versions / add CI
+- [x] Integrate LIDAR
+- [x] Integrate camera
+- [x] Chase cat remotely
+- [x] Replace DC-DC converter
+- [x] Add battery voltage display/low-voltage cutoff
+- [ ] Fix SLAM
+- [ ] Implement OpenCV or similar to recognize cat
+- [ ] Autonomously chase cat
+- [ ] Convert CAD to more detailed URDF
+- [ ] Patch kernel to enable use of RPi Camera Module 3
 
-## Simulation
+#### Supervision of URDF work
 <p align='center'>
     <img src=docs/images/cricket_gazebo.jpg width="200">
 </p>
 
-To simulate in Gazebo:
-```bash
-ros2 launch catbot_simulation gazebo.launch.py
-```
-See options with 
-```
-ros2 launch catbot_simulation gazebo.launch.py --show-arguments
-```
-
 ## Hardware
-#### Robot Under Construction
+####  BroBot Front View
+<p align='center'>
+    <img src=docs/images/20231024_200513.jpg>
+</p>
+
+####  BroBot Side View
+<p align='center'>
+    <img src=docs/images/20231024_200719.jpg>
+</p>
+
+####  BroBot Rear Top View
+<p align='center'>
+    <img src=docs/images/20231024_200519.jpg>
+</p>
+
+#### BroBot Initial Construction
 <p align='center'>
     <img src=docs/images/wip_catbot.jpg width="1000">
 </p>
@@ -79,6 +91,8 @@ Some other tools or parts used in the project are as follows:
 - [Allison Thackston](https://github.com/athackst/vscode_ros2_workspace)
 - [Articulated Robotics](https://articulatedrobotics.xyz/)
 - [Lidarbot](https://github.com/TheNoobInventor/lidarbot)
+- [linorobot2](https://github.com/linorobot/linorobot2)
+- [linrobot2_hardware](https://github.com/linorobot/linorobot2_hardware)
 - [ros2_rover](https://github.com/mgonzs13/ros2_rover/)
 - Cricket
 <p align='center'>
