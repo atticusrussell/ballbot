@@ -14,7 +14,7 @@ jobs:
       matrix:
           linter: [lint_cmake, xmllint]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ros-tooling/setup-ros@master
       - uses: ros-tooling/action-ros-lint@master
         with:
@@ -31,7 +31,7 @@ jobs:
       matrix:
           linter: [pep257]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ros-tooling/setup-ros@master
       - uses: ros-tooling/action-ros-lint@master
         with:
@@ -48,7 +48,7 @@ jobs:
       matrix:
           linter: [flake8]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ros-tooling/setup-ros@master
       - uses: ros-tooling/action-ros-lint@master
         with:
@@ -66,7 +66,7 @@ jobs:
   #     matrix:
   #         linter: [cppcheck, cpplint, uncrustify]
   #   steps:
-  #     - uses: actions/checkout@v3
+  #     - uses: actions/checkout@v4
   #     - uses: ros-tooling/setup-ros@master
   #     - uses: ros-tooling/action-ros-lint@master
   #       with:
