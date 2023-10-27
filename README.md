@@ -1,4 +1,4 @@
-# Catbot
+# BroBot
 
 ![CI Testing](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-test.yaml/badge.svg)
 ![CI Linting](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-lint.yaml/badge.svg)
@@ -25,10 +25,13 @@ See [the workspace template](/template.md) for workspace usage instructions.
 - [x] Replace DC-DC converter
 - [x] Add battery voltage display/low-voltage cutoff
 - [x] Fix SLAM
-- [ ] Use Nav2 with costmap and goal pose
+- [ ] Figure out how I want to use Nav2 in simulation
+- [ ] Modify Nav2 launchfiles
+- [ ] Use Nav2 with costmap and goal pose in simulation
+- [ ] Test Nav2 with waypoints in simulation
+- [ ] Investigate Nav2 AMCL
+- [ ] Run Nav2 on real robot
 - [ ] Do loop of house with Nav2 waypoints
-- [ ] Test Nav2 AMCL
-- [ ] refine Nav2 launchfiles
 - [ ] Integrate gamepad and twist_mux
 - [ ] Implement OpenCV or similar to recognize cat
 - [ ] Autonomously chase cat
