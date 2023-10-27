@@ -24,7 +24,11 @@ See [the workspace template](/template.md) for workspace usage instructions.
 - [x] Chase cat remotely
 - [x] Replace DC-DC converter
 - [x] Add battery voltage display/low-voltage cutoff
-- [ ] Fix SLAM
+- [x] Fix SLAM
+- [ ] Use Nav2 with costmap and goal pose
+- [ ] Do loop of house with Nav2 waypoints
+- [ ] Test Nav2 AMCL
+- [ ] refine Nav2 launchfiles
 - [ ] Implement OpenCV or similar to recognize cat
 - [ ] Autonomously chase cat
 - [ ] Convert CAD to more detailed URDF
