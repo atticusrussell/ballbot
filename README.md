@@ -29,6 +29,7 @@ See [the workspace template](/template.md) for workspace usage instructions.
 - [ ] Do loop of house with Nav2 waypoints
 - [ ] Test Nav2 AMCL
 - [ ] refine Nav2 launchfiles
+- [ ] Integrate gamepad and twist_mux
 - [ ] Implement OpenCV or similar to recognize cat
 - [ ] Autonomously chase cat
 - [ ] Convert CAD to more detailed URDF
