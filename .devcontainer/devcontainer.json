@@ -6,8 +6,9 @@
     "--privileged",
     "--network=host",
     "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-    "--volume=/mnt/wslg:/mnt/wslg"
-    // uncomment to use intel iGPU
+    "--volume=/mnt/wslg:/mnt/wslg",
+	"--gpus=all"
+	// uncomment to use intel iGPU
     // "--device=/dev/dri"
   ],
   "mounts": [
@@ -17,8 +18,8 @@
 		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
 		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
 		"XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
-		"PULSE_SERVER": "${localEnv:PULSE_SERVER}"
-		// "LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+		"PULSE_SERVER": "${localEnv:PULSE_SERVER}",
+		"LIBGL_ALWAYS_SOFTWARE": "0" // 1 Needed for software rendering of opengl
 	},
   "customizations": {
 		"vscode": {
