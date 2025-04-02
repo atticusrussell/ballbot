@@ -1,0 +1,52 @@
+{
+    "name": "ROS Humble Desktop (GPU on WSL)",
+    "dockerFile": "../Dockerfile",
+    "context": "../..",
+    "runArgs": [
+        "--network=host",
+        "--cap-add=SYS_PTRACE",
+        "--security-opt=seccomp:unconfined",
+        "--security-opt=apparmor:unconfined",
+        
+        // WSLg/WSL2 GPU passthrough specifics
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+        "--volume=/usr/lib/wsl:/usr/lib/wsl",
+        "--volume=/mnt/wslg:/mnt/wslg",
+        "--gpus=all",
+        "--device=/dev/dxg"
+    ],
+    "mounts": [
+        // Persist bash history for the "vscode" user
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
+    ],
+    "containerEnv": {
+        // Pass WSL/WSLg environment variables for graphics
+        "DISPLAY": "${localEnv:DISPLAY}",
+        "WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
+        "XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
+        "PULSE_SERVER": "${localEnv:PULSE_SERVER}",
+        // For hardware-accelerated OpenGL
+        "LIBGL_ALWAYS_SOFTWARE": "0"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "althack.ament-task-provider",
+                "betwo.b2-catkin-tools",
+                "DotJoshJohnson.xml",
+                "ms-azuretools.vscode-docker",
+                "ms-iot.vscode-ros",
+                "ms-python.python",
+                "ms-vscode.cpptools",
+                "redhat.vscode-yaml",
+                "redhat.vscode-xml",
+                "smilerobotics.urdf",
+                "twxs.cmake",
+                "yzhang.markdown-all-in-one",
+                "zachflower.uncrustify",
+                "mtsmfm.vscode-stl-viewer",
+                "tomoki1207.pdf"
+            ]
+        }
+    }
+}

@@ -1,25 +1,29 @@
 {
-  "name": "humble desktop",
+  "name": "ROS Humble Desktop (Generic, No GPU)",
   "dockerFile": "Dockerfile",
   "context": "..",
   "runArgs": [
-    "--privileged",
     "--network=host",
+	"--cap-add=SYS_PTRACE",
+	"--security-opt=seccomp:unconfined",
+	"--security-opt=apparmor:unconfined",
+
     "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-    "--volume=/usr/lib/wsl:/usr/lib/wsl",
-    "--volume=/mnt/wslg:/mnt/wslg",
-	"--gpus=all",
-    "--device=/dev/dxg"
+    "--volume=/mnt/wslg:/mnt/wslg"
   ],
   "mounts": [
+	// Persist .bash_history for the "vscode" user
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
   ],
   "containerEnv": {
-		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
+		// Make sure the container sees the host DISPLAY for GUI apps
+		"DISPLAY": "${localEnv:DISPLAY}",
+		// Pass WSL/WSLg environment variables for graphics - even when not supporting gpu 
 		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
 		"XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
 		"PULSE_SERVER": "${localEnv:PULSE_SERVER}",
-		"LIBGL_ALWAYS_SOFTWARE": "0" // 1 Needed for software rendering of opengl
+		
+		"LIBGL_ALWAYS_SOFTWARE": "1" // 1 Needed for software rendering of opengl
 	},
   "customizations": {
 		"vscode": {
