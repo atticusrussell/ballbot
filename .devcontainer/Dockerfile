@@ -36,15 +36,15 @@ RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 ################################
 ## ADD ANY CUSTOM SETUP BELOW ##
 ################################
-USER root
-# for funky dotfiles setups
-RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /etc/profile
-USER $USERNAME
-
-
 # Temporary copy just for rosdep
 COPY ../src /tmp/src
-
 # Run rosdep from temporary workspace
 WORKDIR /tmp
 RUN rosdep install --from-paths src --ignore-src -r -y --skip-keys micro_ros_agent
+
+USER root
+# for funky dotfiles setups
+RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /etc/profile
+# for gpu support in wsl2
+RUN echo 'export LD_LIBRARY_PATH="/usr/lib/wsl/lib:$LD_LIBRARY_PATH"' >> /etc/profile
+USER $USERNAME
