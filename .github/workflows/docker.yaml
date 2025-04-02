@@ -1,0 +1,57 @@
+name: Build and Push Docker image to GHCR
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Dockerfile'
+      - 'src/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Docker tags
+      id: tags
+      run: |
+        REPO_NAME=${{ github.repository }}
+        IMAGE=ghcr.io/${REPO_NAME,,}
+        echo "image=$IMAGE" >> "$GITHUB_OUTPUT"
+        echo "tag_sha=$IMAGE:${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+        if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+          echo "tag_latest=$IMAGE:latest" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build Docker image
+      run: |
+        docker build -t ${{ steps.tags.outputs.tag_sha }} .
+
+        if [ -n "${{ steps.tags.outputs.tag_latest }}" ]; then
+          docker tag ${{ steps.tags.outputs.tag_sha }} ${{ steps.tags.outputs.tag_latest }}
+        fi
+
+    - name: Push Docker image(s)
+      run: |
+        docker push ${{ steps.tags.outputs.tag_sha }}
+
+        if [ -n "${{ steps.tags.outputs.tag_latest }}" ]; then
+          docker push ${{ steps.tags.outputs.tag_latest }}
+        fi
+
