@@ -1,0 +1,61 @@
+{
+    "name": "ROS Humble Desktop (GPU on Linux)",
+    "dockerFile": "../Dockerfile",
+    "context": "../..",
+  
+    // Here we specify additional runArgs that allow GPU usage and X11 access:
+    "runArgs": [
+      "--network=host",
+      "--cap-add=SYS_PTRACE",
+      "--security-opt=seccomp:unconfined",
+      "--security-opt=apparmor:unconfined",
+
+      // GPU passthrough specifics
+      "--gpus=all",
+      // Pass your DISPLAY from the host so GUI apps can connect to the X server
+      "--env=DISPLAY",
+      // This is optional but some people set this to force indirect rendering
+      "--env=LIBGL_ALWAYS_INDIRECT=1",
+      // Expose your local X11 socket to the container
+      "--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+      // Typically let the container see /dev/dri (for direct rendering)
+      "--device=/dev/dri:/dev/dri"
+    ],
+  
+    // If you want to preserve your bash history between container runs
+    "mounts": [
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
+    ],
+  
+    "containerEnv": {
+      "NVIDIA_VISIBLE_DEVICES": "all",
+      "NVIDIA_DRIVER_CAPABILITIES": "compute,video,graphics,utility",
+      // Or "all"
+      // Make sure your DISPLAY matches your host X server’s value
+      "DISPLAY": "${localEnv:DISPLAY}"
+    },
+  
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          // (Same extensions you had before)
+          "althack.ament-task-provider",
+          "betwo.b2-catkin-tools",
+          "DotJoshJohnson.xml",
+          "ms-azuretools.vscode-docker",
+          "ms-iot.vscode-ros",
+          "ms-python.python",
+          "ms-vscode.cpptools",
+          "redhat.vscode-yaml",
+          "redhat.vscode-xml",
+          "smilerobotics.urdf",
+          "twxs.cmake",
+          "yzhang.markdown-all-in-one",
+          "zachflower.uncrustify",
+          "mtsmfm.vscode-stl-viewer",
+          "tomoki1207.pdf"
+        ]
+      }
+    }
+  }
+  

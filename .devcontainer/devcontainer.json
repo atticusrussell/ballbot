@@ -1,33 +1,31 @@
-// See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
-	"dockerFile": "Dockerfile",
-	"build": {
-		"args": {
-			"WORKSPACE": "${containerWorkspaceFolder}"
-		}
-	},
-	"remoteUser": "ros",
-	"runArgs": [
-		"--network=host",
-		"--cap-add=SYS_PTRACE",
-		"--security-opt=seccomp:unconfined",
-		"--security-opt=apparmor:unconfined",
-		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-		"--volume=/mnt/wslg:/mnt/wslg",
-		"--volume=${localEnv:HOME}/.ssh:/home/ros/.ssh",
-		"--ipc=host"
-		// uncomment to use intel iGPU
-		// "--device=/dev/dri"
-	],
-	"containerEnv": {
-		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
+  "name": "ROS Humble Desktop (Generic, No GPU)",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "runArgs": [
+    "--network=host",
+	"--cap-add=SYS_PTRACE",
+	"--security-opt=seccomp:unconfined",
+	"--security-opt=apparmor:unconfined",
+
+    "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+    "--volume=/mnt/wslg:/mnt/wslg"
+  ],
+  "mounts": [
+	// Persist .bash_history for the "vscode" user
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
+  ],
+  "containerEnv": {
+		// Make sure the container sees the host DISPLAY for GUI apps
+		"DISPLAY": "${localEnv:DISPLAY}",
+		// Pass WSL/WSLg environment variables for graphics - even when not supporting gpu 
 		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
 		"XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
 		"PULSE_SERVER": "${localEnv:PULSE_SERVER}",
-		"LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+		
+		"LIBGL_ALWAYS_SOFTWARE": "1" // 1 Needed for software rendering of opengl
 	},
-	// Set *default* container specific settings.json values on container create.
-	"customizations": {
+  "customizations": {
 		"vscode": {
 			"extensions": [
 				"althack.ament-task-provider",
@@ -38,6 +36,7 @@
 				"ms-python.python",
 				"ms-vscode.cpptools",
 				"redhat.vscode-yaml",
+				"redhat.vscode-xml",
 				"smilerobotics.urdf",
 				"twxs.cmake",
 				"yzhang.markdown-all-in-one",
