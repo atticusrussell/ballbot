@@ -2,5 +2,5 @@ name: 'Lint'
 description: 'Lint using devcontainer'
 runs:
   using: 'docker'
-  image: '../../../.devcontainer/Dockerfile'
+  image: 'althack/ros2:humble-dev'
   entrypoint: ".github/actions/lint/run.sh"
