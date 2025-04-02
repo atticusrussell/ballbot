@@ -95,6 +95,12 @@ Some other tools or parts used in the project are as follows:
 |7| [Connector Crimp Pin Cable Kit JST SYP Futaba](https://www.amazon.com/dp/B09MYWTHDZ?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
 |8| Zip ties |
 
+## Instructions
+### Devcontainers
+The project can be built and developed in the VSCode devcontainers in `.devcontainer` .
+
+For the devcontainers with GPU passthrough enabled, you first must [install the nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html), either on Linux or on WSL2
+
 ## Acknowledgments
 - [Allison Thackston](https://github.com/athackst/vscode_ros2_workspace)
 - [Articulated Robotics](https://articulatedrobotics.xyz/)
