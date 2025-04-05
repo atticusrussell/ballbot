@@ -9,7 +9,10 @@
 	"--security-opt=apparmor:unconfined",
 
     "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-    "--volume=/mnt/wslg:/mnt/wslg"
+    "--volume=/mnt/wslg:/mnt/wslg",
+
+	// fix permissions
+    "--volume=/run/user/1000:/run/user/1000"
   ],
   "mounts": [
 	// Persist .bash_history for the "vscode" user
