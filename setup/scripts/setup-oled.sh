@@ -2,6 +2,10 @@
 
 set -e
 
+# Determine repo root relative to this script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(realpath "$SCRIPT_DIR/../..")"
+
 INSTALL_DIR="/opt/brobot"
 VENV_DIR="$INSTALL_DIR/venv"
 
@@ -18,10 +22,10 @@ pip install --upgrade pip
 pip install luma.oled psutil
 
 echo "Copying OLED display script to $INSTALL_DIR"
-cp setup/python_scripts/oled_display.py "$INSTALL_DIR/"
+cp "$REPO_ROOT/setup/python_scripts/oled_display.py" "$INSTALL_DIR/system_info.py"
 
 echo "Installing systemd service..."
-sudo cp setup/systemd_files/oled.service /etc/systemd/system/oled.service
+sudo cp "$REPO_ROOT/setup/systemd_files/oled.service" /etc/systemd/system/oled.service
 sudo systemctl daemon-reload
 sudo systemctl enable oled.service
 sudo systemctl start oled.service
