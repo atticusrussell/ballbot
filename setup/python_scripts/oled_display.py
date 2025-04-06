@@ -2,8 +2,13 @@
 
 import time
 import subprocess
-from demo_opts import get_device
+from luma.core.interface.serial import i2c
+from luma.oled.device import ssd1306
 from luma.core.render import canvas
+
+# Explicitly define I2C interface and OLED display
+serial = i2c(port=1, address=0x3c)
+device = ssd1306(serial, width=128, height=32)
 
 def system_info(device, draw):
     x = 2
@@ -24,8 +29,6 @@ def system_info(device, draw):
     draw.text((100, 16), free_mem, fill="white")
     draw.text((104, 16), ' GB', fill="white")
     draw.rectangle(device.bounding_box, outline="white")
-
-device = get_device()
 
 while True:
     with canvas(device) as draw:
