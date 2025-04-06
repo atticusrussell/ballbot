@@ -24,9 +24,11 @@ network:
   ethernets:
     eth0:
       dhcp4: true
+      optional: true
   wifis:
     wlan0:
       dhcp4: true
+      optional: true
       access-points:
         "YourSSID":
           password: "YourPassword"
