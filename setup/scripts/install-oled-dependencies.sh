@@ -12,6 +12,10 @@ sudo apt-get install -y \
   raspi-config
 
 echo "Adding current user to the i2c group..."
+if ! getent group i2c > /dev/null; then
+  echo "Group 'i2c' does not exist. Creating it..."
+  sudo groupadd i2c
+fi
 sudo usermod -a -G i2c $USER
 
 echo "Dependencies installed."
