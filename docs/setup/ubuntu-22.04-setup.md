@@ -54,7 +54,7 @@ After confirming that Wi-Fi works and you've rebooted, you can run a script to c
 You can download the script directly to your robot:
 
 ```bash
-curl -O https://raw.githubusercontent.com/atticusrussell/brobot/main/scripts/setup/post-wifi-setup.sh
+curl -O https://raw.githubusercontent.com/atticusrussell/brobot/main/setup/scripts/post-wifi-setup.sh
 chmod +x post-wifi-setup.sh
 ```
 
