@@ -22,7 +22,7 @@ pip install --upgrade pip
 pip install luma.oled psutil
 
 echo "Copying OLED display script to $INSTALL_DIR"
-cp "$REPO_ROOT/setup/python_scripts/oled_display.py" "$INSTALL_DIR/system_info.py"
+cp "$REPO_ROOT/setup/python_scripts/oled_display.py" "$INSTALL_DIR"
 
 echo "Installing systemd service..."
 sudo cp "$REPO_ROOT/setup/systemd_files/oled.service" /etc/systemd/system/oled.service
