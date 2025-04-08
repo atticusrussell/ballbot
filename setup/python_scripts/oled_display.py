@@ -23,17 +23,23 @@ def system_info(device, draw):
     # sed removes everything except digits and decimal point
     voltage = subprocess.getoutput("vcgencmd measure_volts core | sed 's/[^0-9.]//g'")
 
+    # Check for undervoltage using vcgencmd get_throttled
+    # If bit 0 or bit 16 is set in the hex output, it indicates undervoltage now or in the past
+    throttled = subprocess.getoutput("vcgencmd get_throttled | cut -d= -f2")
+    undervoltage = "OK" if throttled == "0x0" else "LOW"
+
     # Get disk usage of root (/) filesystem
     # df -Th shows disk usage with filesystem type
     # awk '{print $6}' grabs the 6th column (Use%)
     # tail -n1 skips the header and gets the actual data
     disk_usage = subprocess.getoutput("df -Th / | awk '{print $6}' | tail -n1")
 
-    # Get free memory in GB
-    # free -g shows memory info in gigabytes
-    # grep Mem selects the line that starts with 'Mem'
-    # awk '{print $4}' gets the 4th column, which is free memory
-    free_mem = subprocess.getoutput("free -g | grep Mem | awk '{print $4}'")
+    # Get memory usage percentage
+    # free -m shows memory in MB; grep selects 'Mem' line
+    # awk calculates (used / total) * 100
+    mem_percent = subprocess.getoutput(
+        "free -m | grep Mem | awk '{printf \"%.0f\", ($3 / $2) * 100}'"
+    )
 
     # Get IP address
     # hostname -I shows all IPs assigned
@@ -47,7 +53,7 @@ def system_info(device, draw):
     draw.text((x, 0), 'CPU:', fill="white")
     draw.text((36, 0), temp + '°C', fill="white")
     draw.text((82, 0), 'V:', fill="white")
-    draw.text((96, 0), voltage, fill="white")
+    draw.text((96, 0), undervoltage, fill="white")
 
     # Line 2: IP Address
     draw.text((x, 10), 'IP:', fill="white")
@@ -57,7 +63,7 @@ def system_info(device, draw):
     draw.text((x, 20), 'SD:', fill="white")
     draw.text((36, 20), disk_usage, fill="white")
     draw.text((70, 20), 'MEM:', fill="white")
-    draw.text((104, 20), free_mem + 'G', fill="white")
+    draw.text((104, 20), mem_percent + '%', fill="white")
 
     # Draw border
     draw.rectangle(device.bounding_box, outline="white")
