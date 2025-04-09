@@ -1,0 +1,11 @@
+[Unit]
+Description=52Pi OLED Display Service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/opt/brobot/venv/bin/python /opt/brobot/oled_display.py --width 128 --height 32
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
