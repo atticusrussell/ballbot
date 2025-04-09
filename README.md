@@ -6,7 +6,8 @@
 
 A 4WD differential drive robot is controlled using ROS2 Humble running on a Raspberry Pi 4 (running Ubuntu server 22.04). The vehicle is equipped with a camera for visual feedback and an RPLIDAR A1 sensor used for Simultaneous Localization and Mapping (SLAM), autonomous navigation and obstacle avoidance. The Linorobot2 project is leveraged through my use of a Teensy 4.1 running a Micro-ROS node to interface with 4 motors/encoders and an IMU.
 
-The intent of the project is to learn about robotics, and to eventually recognize my cat's face and follow/chase him for his entertainment. 
+The intent of the project is to explore robotics and computer vision by developing a robot that can detect a tennis ball, navigate toward it, and eventually return it to a person or designated base station — like a ball-retrieving assistant.
+
 
 See [the workspace template](/template.md) for workspace usage instructions.
 
@@ -14,34 +15,7 @@ See [the workspace template](/template.md) for workspace usage instructions.
 ***(Work in Progress)***
 
 ## Tasks 
-(non-exhaustive)
-- [x] Simulate in Gazebo
-- [x] Interface with motors
-- [x] Finish Chassis Wiring
-- [x] Fix linorobot2_hardware ROS versions / add CI
-- [x] Integrate LIDAR
-- [x] Integrate camera
-- [x] Chase cat remotely
-- [x] Replace DC-DC converter
-- [x] Add battery voltage display/low-voltage cutoff
-- [x] Fix SLAM
-- [ ] Figure out how I want to use Nav2 in simulation
-- [ ] Modify Nav2 launchfiles
-- [ ] Use Nav2 with costmap and goal pose in simulation
-- [ ] Test Nav2 with waypoints in simulation
-- [ ] Investigate Nav2 AMCL
-- [ ] Run Nav2 on real robot
-- [ ] Do loop of house with Nav2 waypoints
-- [ ] Integrate gamepad and twist_mux
-- [ ] Implement OpenCV or similar to recognize cat
-- [ ] Autonomously chase cat
-- [ ] Convert CAD to more detailed URDF
-- [ ] Patch kernel to enable use of RPi Camera Module 3
-
-#### Supervision of URDF work
-<p align='center'>
-    <img src=docs/images/cricket_gazebo.jpg width="200">
-</p>
+➡️ See the full task breakdown in [docs/TODO.md](docs/TODO.md)
 
 ## Hardware
 ####  BroBot Front View
@@ -108,8 +82,3 @@ For the devcontainers with GPU passthrough enabled, you first must [install the 
 - [linorobot2](https://github.com/linorobot/linorobot2)
 - [linrobot2_hardware](https://github.com/linorobot/linorobot2_hardware)
 - [ros2_rover](https://github.com/mgonzs13/ros2_rover/)
-- Cricket
-<p align='center'>
-    <img src=docs/images/cricket.jpg width="1000">
-</p>
-

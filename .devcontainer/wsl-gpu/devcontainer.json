@@ -13,7 +13,10 @@
         "--volume=/usr/lib/wsl:/usr/lib/wsl",
         "--volume=/mnt/wslg:/mnt/wslg",
         "--gpus=all",
-        "--device=/dev/dxg"
+        "--device=/dev/dxg",
+
+        // fix permissions
+        "--volume=/run/user/1000:/run/user/1000"
     ],
     "mounts": [
         // Persist bash history for the "vscode" user
