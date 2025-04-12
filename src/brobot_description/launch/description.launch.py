@@ -60,10 +60,9 @@ def generate_launch_description():
             package='joint_state_publisher',
             executable='joint_state_publisher',
             name='joint_state_publisher',
-            condition=IfCondition(LaunchConfiguration("publish_joints"))
-            # parameters=[
-            #     {'use_sim_time': LaunchConfiguration('use_sim_time')}
-            # ] #since galactic use_sim_time gets passed somewhere and rejects this when defined from launch file
+            condition=IfCondition(LaunchConfiguration("publish_joints")),
+            # JSP by default doesn't show  Got description unless in DEBUG
+            arguments=['--ros-args', '--log-level', 'joint_state_publisher:=DEBUG']
         ),
 
         Node(
