@@ -3,6 +3,7 @@ set -e
 
 WORKSPACE_DIR=$(pwd)
 IGNORED_SUFFIXES=("_viz" "_gazebo" "_simulation")
+IGNORED_DIR=".ignored_pkgs"
 
 # install rplidar ros2 drivers
 sudo apt install -y ros-$ROS_DISTRO-rplidar-ros
@@ -17,6 +18,8 @@ else
 fi
 
 echo "=== Temporarily moving out simulation/visualization packages ==="
+mkdir -p "$IGNORED_DIR"
+
 for dir in src/*; do
     pkg_name=$(basename "$dir")
     if [[ -d "$dir" ]]; then
@@ -24,7 +27,7 @@ for dir in src/*; do
             if [[ "$pkg_name" == *"$suffix" ]]; then
                 echo "Ignoring and moving $pkg_name"
                 touch "$dir/COLCON_IGNORE"
-                mv "$dir" ../..
+                mv "$dir" "$IGNORED_DIR/"
                 break
             fi
         done
@@ -59,14 +62,13 @@ source install/setup.bash
 
 echo "=== Restoring simulation/visualization packages ==="
 for suffix in "${IGNORED_SUFFIXES[@]}"; do
-    for dir in ../../*"$suffix"; do
+    for dir in "$IGNORED_DIR"/*"$suffix"; do
         [ -d "$dir" ] || continue
         echo "Restoring $(basename "$dir")"
         mv "$dir" src/
     done
 done
 
-# Install brobot packages
-# rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent --skip-keys micro_ros_agent
-# colcon build
-# source install/setup.bash
+echo ""
+echo "To use the ROS 2 environment in this terminal, run:"
+echo "  source install/setup.bash"

@@ -228,3 +228,20 @@ newgrp docker
 ```
 Log out and back in if docker still needs sudo.
 
+
+## 7. SSH helper (optional)
+
+append the following to your `.bashrc` or `.bash_profile` on the pi
+
+```bash
+# Start ssh-agent if not already running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    eval "$(ssh-agent -s)"
+fi
+
+# Automatically add your key (if not already added)
+SSH_KEY="$HOME/.ssh/id_ed25519"
+if [ -f "$SSH_KEY" ] && ! ssh-add -l | grep -q "$SSH_KEY"; then
+    ssh-add "$SSH_KEY" > /dev/null 2>&1
+fi
+```
