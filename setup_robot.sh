@@ -2,6 +2,7 @@
 set -e
 
 WORKSPACE_DIR=$(pwd)
+IGNORED_SUFFIXES=("_viz" "_gazebo" "_simulation")
 
 # install rplidar ros2 drivers
 sudo apt install -y ros-$ROS_DISTRO-rplidar-ros
@@ -15,46 +16,57 @@ else
     echo "rplidar.rules already exists. Skipping download and copy."
 fi
 
-# Make colcon ignore non-robot packages (simulation and X11 dependencies)
-touch src/brobot_gazebo/COLCON_IGNORE
-touch src/brobot_viz/COLCON_IGNORE
-touch src/catbot_simulation/COLCON_IGNORE
-
-# hide all brobot packages so they're not seen by rosdep
-for dir in brobot* catbot*; do
-    if [ -d "src/$dir" ]; then
-        mv "src/$dir" ../..
+echo "=== Temporarily moving out simulation/visualization packages ==="
+for dir in src/*; do
+    pkg_name=$(basename "$dir")
+    if [[ -d "$dir" ]]; then
+        for suffix in "${IGNORED_SUFFIXES[@]}"; do
+            if [[ "$pkg_name" == *"$suffix" ]]; then
+                echo "Ignoring and moving $pkg_name"
+                touch "$dir/COLCON_IGNORE"
+                mv "$dir" ../..
+                break
+            fi
+        done
     fi
 done
 
 # Download and install micro-ROS
-cd "$WORKSPACE_DIR"
-
+echo "=== Cloning micro_ros_setup if needed ==="
 if [ ! -d "src/micro_ros_setup" ]; then
     git clone -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_setup src/micro_ros_setup
 else
     echo "src/micro_ros_setup already exists. Skipping clone."
 fi
 
+echo "=== Installing required build tools ==="
 sudo apt install python3-vcstool build-essential
+
+echo "=== Running rosdep for hardware-only packages ==="
 sudo apt update && rosdep update
-rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent --skip-keys micro_ros_agent
+rosdep install --from-path src --ignore-src -y \
+    --skip-keys microxrcedds_agent \
+    --skip-keys micro_ros_agent
+
+echo "=== Building workspace (hardware-only packages) ==="
 colcon build
 source install/setup.bash
 
-# Setup micro-ROS agent
+echo "=== Setting up micro-ROS agent ==="
 ros2 run micro_ros_setup create_agent_ws.sh
 ros2 run micro_ros_setup build_agent.sh
 source install/setup.bash
 
-# Move brobot packages back
-for dir in brobot* catbot*; do
-    if [ -d "../../$dir" ]; then
-        mv "../../$dir" src/
-    fi
+echo "=== Restoring simulation/visualization packages ==="
+for suffix in "${IGNORED_SUFFIXES[@]}"; do
+    for dir in ../../*"$suffix"; do
+        [ -d "$dir" ] || continue
+        echo "Restoring $(basename "$dir")"
+        mv "$dir" src/
+    done
 done
 
 # Install brobot packages
-rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent --skip-keys micro_ros_agent
-colcon build
-source install/setup.bash
+# rosdep update && rosdep install --from-path src --ignore-src -y --skip-keys microxrcedds_agent --skip-keys micro_ros_agent
+# colcon build
+# source install/setup.bash
