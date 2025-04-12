@@ -1,0 +1,17 @@
+<!-- fixes issue when running nav of:
+[lifecycle_manager-8] 2025-04-12 17:42:19.376 [RTPS_READER_HISTORY Error] Change payload size of '24' bytes is larger than the history payload size of '11' bytes and cannot be resized. -> Function can_change_be_added_nts
+ -->
+<?xml version="1.0" encoding="UTF-8" ?>
+<dds>
+   <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
+      <!-- Default publisher profile -->
+      <data_writer profile_name="default publisher profile" is_default_profile="true">
+         <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+      </data_writer>
+
+      <!-- Default subscriber profile -->
+      <data_reader profile_name="default subscriber profile" is_default_profile="true">
+         <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
+      </data_reader>
+   </profiles>
+</dds>
