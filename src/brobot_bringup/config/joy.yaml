@@ -1,18 +1,22 @@
 teleop_twist_joy_node:
   ros__parameters:
+    deadzone: 0.05
+    autorepeat_rate: 20.0
 
     axis_linear:
       x: 1  # Left stick vertical
     scale_linear:
-      x: 0.2
+      x: 0.5
     scale_linear_turbo:
       x: 1.0
 
     axis_angular:
       yaw: 0  # Left stick horizontal
     scale_angular:
+      yaw: 0.5
+    scale_angular_turbo:
       yaw: 1.0
 
     require_enable_button: false 
-    enable_button: 0  # A button
-    enable_turbo_button: 5  # Right shoulder button
+    enable_button: 6  # Left trigger 
+    enable_turbo_button: 7  # Right trigger

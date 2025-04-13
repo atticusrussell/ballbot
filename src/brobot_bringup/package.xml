@@ -14,6 +14,8 @@
   <exec_depend>joy_linux</exec_depend>
   <exec_depend>teleop_twist_joy</exec_depend>
   <exec_depend>teleop_twist_keyboard</exec_depend>
+  <exec_depend>twist_mux</exec_depend>
+  <exec_depend>brobot_base</exec_depend>
   <exec_depend>micro_ros_agent</exec_depend>
   <!-- for fastrtps profile to work with micro ros agent-->
   <exec_depend>brobot_base</exec_depend>

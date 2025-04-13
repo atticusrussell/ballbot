@@ -44,6 +44,10 @@ def generate_launch_description():
         [FindPackageShare("brobot_base"), "config", "ekf.yaml"]
     )
 
+    twist_mux_config_path = PathJoinSubstitution(
+        [FindPackageShare("brobot_base"), "config", "twist_mux.yaml"]
+    )
+
     default_robot_launch_path = PathJoinSubstitution(
         [FindPackageShare('brobot_bringup'), 'launch', 'default_robot.launch.py']
     )
@@ -71,7 +75,7 @@ def generate_launch_description():
 
         DeclareLaunchArgument(
             name='joy', 
-            default_value='false',
+            default_value='true',
             description='Use Joystick'
         ),
 
@@ -84,6 +88,15 @@ def generate_launch_description():
                 ekf_config_path
             ],
             remappings=[("odometry/filtered", "odom")]
+        ),
+
+        Node(
+            package='twist_mux',
+            executable='twist_mux',
+            name='twist_mux_node',
+            output='screen',
+            parameters=[twist_mux_config_path],
+            remappings=[('/cmd_vel_out', '/cmd_vel')]
         ),
 
         IncludeLaunchDescription(

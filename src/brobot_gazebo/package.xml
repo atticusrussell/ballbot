@@ -13,6 +13,8 @@
     <exec_depend>gazebo_ros_pkgs</exec_depend>
     <exec_depend>rclpy</exec_depend>
     <exec_depend>geometry_msgs</exec_depend>
+    <exec_depend>twist_mux</exec_depend>
+    <exec_depend>brobot_base</exec_depend>
     <export>
         <build_type>ament_cmake</build_type>
     </export>
