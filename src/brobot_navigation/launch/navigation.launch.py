@@ -71,13 +71,26 @@ def generate_launch_description():
             description='Navigation map path'
         ),
 
+        # Include all of Nav2 except controller_server (we will launch it manually)
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(nav2_launch_path),
             launch_arguments={
                 'map': LaunchConfiguration("map"),
                 'use_sim_time': LaunchConfiguration("sim"),
-                'params_file': nav2_config_path
+                'params_file': nav2_config_path,
+                'autostart': 'true',
+                'controller_server': 'false'
             }.items()
+        ),
+
+        # Manually launch controller_server with remapped /cmd_vel
+        Node(
+            package='nav2_controller',
+            executable='controller_server',
+            name='controller_server',
+            output='screen',
+            parameters=[nav2_config_path, {'use_sim_time': LaunchConfiguration("sim")}],
+            remappings=[('/cmd_vel', '/cmd_vel_nav')]
         ),
 
         Node(
