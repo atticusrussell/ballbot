@@ -96,7 +96,7 @@ def generate_launch_description():
             name='twist_mux_node',
             output='screen',
             parameters=[twist_mux_config_path],
-            remappings=[('/cmd_vel_out', '/cmd_vel')]
+            remappings=[('/cmd_vel_out', '/cmd_vel_muxed')]
         ),
 
         IncludeLaunchDescription(
