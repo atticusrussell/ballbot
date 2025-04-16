@@ -4,12 +4,12 @@ twist_mux_node:
       navigation:
         topic   : cmd_vel
         timeout : 0.5
-        priority: 30
+        priority: 200
       tracker:
         topic   : cmd_vel_tracker
         timeout : 0.5
-        priority: 20
+        priority: 240
       joystick:
         topic   : cmd_vel_joy
         timeout : 0.5
-        priority: 100
+        priority: 255
