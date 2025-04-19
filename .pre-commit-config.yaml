@@ -12,6 +12,15 @@
 #
 # See https://github.com/pre-commit/pre-commit
 
+# Top-level exclude based on .ci_skip_packages
+# IMPORTANT: This regex pattern needs to be MANUALLY updated
+#            if you change the packages listed in .ci_skip_packages.
+#            It assumes package names correspond to directory names at the repo root.
+#            Adjust the pattern if your structure is different (e.g., packages under src/).
+# Example: If .ci_skip_packages contains 'ball_tracker' and 'another_pkg',
+#          the pattern would be '(^ball_tracker/|^another_pkg/)'
+exclude: '(^ball_tracker/)' # <-- MANUALLY SYNC WITH .ci_skip_packages
+
 repos:
   # Standard hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
