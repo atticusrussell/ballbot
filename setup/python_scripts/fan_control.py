@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 """
 Controls the 52Pi PWM fan based on CPU temperature.
@@ -33,10 +32,10 @@ SPEED_MAP = {
 def get_cpu_temp():
     """Read CPU temperature from system file and return in degrees Celsius."""
     try:
-        with open("/sys/class/thermal/thermal_zone0/temp", "r") as f:
+        with open("/sys/class/thermal/thermal_zone0/temp") as f:
             temp_milli = int(f.read().strip())
         return temp_milli / 1000.0
-    except (FileNotFoundError, ValueError, IOError) as e:
+    except (FileNotFoundError, ValueError, OSError) as e:
         print(f"Warning: Could not read CPU temperature: {e}", file=sys.stderr)
         # Return a safe default (e.g., high temp to ensure fan runs if sensor fails)
         # Or return None/raise exception if preferred error handling
