@@ -1,0 +1,5 @@
+# List of ROS packages whose test failures should be ignored in the mandatory CI phase.
+# Typically contains submodules or experimental packages.
+
+ball_tracker
+# yet_another_one (commented out)
