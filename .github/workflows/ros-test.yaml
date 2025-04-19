@@ -13,6 +13,8 @@ jobs:
       - 
         name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: true
       -
         name: Test
         uses: ./.github/actions/test/
