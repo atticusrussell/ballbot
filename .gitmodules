@@ -1,0 +1,6 @@
+[submodule "firmware"]
+	path = firmware
+	url = https://github.com/atticusrussell/linorobot2_hardware.git
+[submodule "src/ball_tracker"]
+	path = src/ball_tracker
+	url = https://github.com/atticusrussell/ball_tracker.git

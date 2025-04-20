@@ -1,3 +1,4 @@
+repositories: {}
 ## EXAMPLE DEPENDENCY
 #   <some_ros_package>:
 #     type: git

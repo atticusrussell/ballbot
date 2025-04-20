@@ -10,6 +10,7 @@
     <url type="bugtracker">https://github.com/atticusrussell/brobot/issues</url>
     <buildtool_depend>ament_cmake</buildtool_depend>
     <exec_depend>rviz2</exec_depend>
+    <exec_depend>compressed_image_transport</exec_depend>
     <export>
         <build_type>ament_cmake</build_type>
     </export>

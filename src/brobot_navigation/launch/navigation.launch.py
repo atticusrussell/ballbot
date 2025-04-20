@@ -14,16 +14,22 @@
 
 import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.conditions import IfCondition
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
+from ament_index_python.packages import get_package_share_directory
 
-MAP_NAME='playground' #change to the name of your own map here
+
+MAP_NAME='upstairs' #change to the name of your own map here
 
 def generate_launch_description():
+    # Retrieve the absolute path to the Fast DDS XML (fastrtps.xml) from the brobot_base package
+    brobot_base_share = get_package_share_directory('brobot_base')
+    fastrtps_xml_file = os.path.join(brobot_base_share, 'config', 'fastrtps.xml')
+
     depth_sensor = os.getenv('BROBOT_DEPTH_SENSOR', '')
 
     nav2_launch_path = PathJoinSubstitution(
@@ -43,6 +49,10 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        # Set the environment variables so that Fast DDS uses the custom XML profile.
+        SetEnvironmentVariable('FASTRTPS_DEFAULT_PROFILES_FILE', fastrtps_xml_file),
+        SetEnvironmentVariable('RMW_FASTRTPS_USE_QOS_FROM_XML', '1'),
+
         DeclareLaunchArgument(
             name='sim', 
             default_value='false',

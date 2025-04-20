@@ -23,7 +23,7 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    laser_sensor_name = os.getenv('BROBOT_LASER_SENSOR', '')
+    laser_sensor_name = os.getenv('BROBOT_LASER_SENSOR', 'rplidar')
     base_laser_sensor_name = os.getenv('BROBOT_BASE_LASER_SENSOR', '')
     
     fake_laser_config_path = PathJoinSubstitution(
