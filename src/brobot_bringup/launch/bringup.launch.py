@@ -12,16 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, PythonExpression
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.conditions import IfCondition, UnlessCondition
+from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
+    # Retrieve the absolute path to the Fast DDS XML (fastrtps.xml) from the brobot_base package
+    brobot_base_share = get_package_share_directory('brobot_base')
+    fastrtps_xml_file = os.path.join(brobot_base_share, 'config', 'fastrtps.xml')
+
     sensors_launch_path = PathJoinSubstitution(
         [FindPackageShare('brobot_bringup'), 'launch', 'sensors.launch.py']
     )
@@ -38,6 +44,10 @@ def generate_launch_description():
         [FindPackageShare("brobot_base"), "config", "ekf.yaml"]
     )
 
+    twist_mux_config_path = PathJoinSubstitution(
+        [FindPackageShare("brobot_base"), "config", "twist_mux.yaml"]
+    )
+
     default_robot_launch_path = PathJoinSubstitution(
         [FindPackageShare('brobot_bringup'), 'launch', 'default_robot.launch.py']
     )
@@ -47,6 +57,10 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        # Set the environment variables so that Fast DDS uses the custom XML profile.
+        SetEnvironmentVariable('FASTRTPS_DEFAULT_PROFILES_FILE', fastrtps_xml_file),
+        SetEnvironmentVariable('RMW_FASTRTPS_USE_QOS_FROM_XML', '1'),
+
         DeclareLaunchArgument(
             name='custom_robot', 
             default_value='false',
@@ -61,7 +75,7 @@ def generate_launch_description():
 
         DeclareLaunchArgument(
             name='joy', 
-            default_value='false',
+            default_value='true',
             description='Use Joystick'
         ),
 
@@ -74,6 +88,15 @@ def generate_launch_description():
                 ekf_config_path
             ],
             remappings=[("odometry/filtered", "odom")]
+        ),
+
+        Node(
+            package='twist_mux',
+            executable='twist_mux',
+            name='twist_mux_node',
+            output='screen',
+            parameters=[twist_mux_config_path],
+            remappings=[('/cmd_vel_out', '/cmd_vel_muxed')]
         ),
 
         IncludeLaunchDescription(

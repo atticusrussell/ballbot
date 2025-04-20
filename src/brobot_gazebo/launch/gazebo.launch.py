@@ -32,6 +32,10 @@ def generate_launch_description():
         [FindPackageShare("brobot_base"), "config", "ekf.yaml"]
     )
 
+    twist_mux_config_path = PathJoinSubstitution(
+        [FindPackageShare("brobot_base"), "config", "twist_mux.yaml"]
+    )
+
     world_path = PathJoinSubstitution(
         [FindPackageShare("brobot_gazebo"), "worlds", "bedroom_simple.world"]
     )
@@ -64,6 +68,18 @@ def generate_launch_description():
             package='brobot_gazebo',
             executable='command_timeout.py',
             name='command_timeout'
+        ),
+
+        Node(
+            package='twist_mux',
+            executable='twist_mux',
+            name='twist_mux_node',
+            output='screen',
+            parameters=[
+                {'use_sim_time': use_sim_time}, 
+                twist_mux_config_path
+            ],
+            remappings=[('/cmd_vel_out', '/cmd_vel')]
         ),
 
         Node(
