@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
 from launch import LaunchDescription
 from launch import LaunchContext
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
@@ -26,67 +25,63 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     slam_launch_path = PathJoinSubstitution(
-        [FindPackageShare('slam_toolbox'), 'launch', 'online_async_launch.py']
+        [FindPackageShare("slam_toolbox"), "launch", "online_async_launch.py"]
     )
 
     slam_config_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_navigation'), 'config', 'slam.yaml']
+        [FindPackageShare("brobot_navigation"), "config", "slam.yaml"]
     )
 
     navigation_launch_path = PathJoinSubstitution(
-        [FindPackageShare('nav2_bringup'), 'launch', 'navigation_launch.py']
+        [FindPackageShare("nav2_bringup"), "launch", "navigation_launch.py"]
     )
 
     nav2_config_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_navigation'), 'config', 'navigation.yaml']    
+        [FindPackageShare("brobot_navigation"), "config", "navigation.yaml"]
     )
 
     rviz_config_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_navigation'), 'rviz', 'brobot_slam.rviz']
+        [FindPackageShare("brobot_navigation"), "rviz", "brobot_slam.rviz"]
     )
-    
+
     lc = LaunchContext()
-    ros_distro = EnvironmentVariable('ROS_DISTRO')
-    slam_param_name = 'slam_params_file'
-    if ros_distro.perform(lc) == 'foxy': 
-        slam_param_name = 'params_file'
+    ros_distro = EnvironmentVariable("ROS_DISTRO")
+    slam_param_name = "slam_params_file"
+    if ros_distro.perform(lc) == "foxy":
+        slam_param_name = "params_file"
 
-    return LaunchDescription([
-        DeclareLaunchArgument(
-            name='sim', 
-            default_value='false',
-            description='Enable use_sime_time to true'
-        ),
-
-        DeclareLaunchArgument(
-            name='rviz', 
-            default_value='false',
-            description='Run rviz'
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(navigation_launch_path),
-            launch_arguments={
-                'use_sim_time': LaunchConfiguration("sim"),
-                'params_file': nav2_config_path
-            }.items()
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(slam_launch_path),
-            launch_arguments={
-                'use_sim_time': LaunchConfiguration("sim"),
-                slam_param_name: slam_config_path
-            }.items()
-        ),
-
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            output='screen',
-            arguments=['-d', rviz_config_path],
-            condition=IfCondition(LaunchConfiguration("rviz")),
-            parameters=[{'use_sim_time': LaunchConfiguration("sim")}]
-        )
-    ])
+    return LaunchDescription(
+        [
+            DeclareLaunchArgument(
+                name="sim",
+                default_value="false",
+                description="Enable use_sime_time to true",
+            ),
+            DeclareLaunchArgument(
+                name="rviz", default_value="false", description="Run rviz"
+            ),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(navigation_launch_path),
+                launch_arguments={
+                    "use_sim_time": LaunchConfiguration("sim"),
+                    "params_file": nav2_config_path,
+                }.items(),
+            ),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(slam_launch_path),
+                launch_arguments={
+                    "use_sim_time": LaunchConfiguration("sim"),
+                    slam_param_name: slam_config_path,
+                }.items(),
+            ),
+            Node(
+                package="rviz2",
+                executable="rviz2",
+                name="rviz2",
+                output="screen",
+                arguments=["-d", rviz_config_path],
+                condition=IfCondition(LaunchConfiguration("rviz")),
+                parameters=[{"use_sim_time": LaunchConfiguration("sim")}],
+            ),
+        ]
+    )

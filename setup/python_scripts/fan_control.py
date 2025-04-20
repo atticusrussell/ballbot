@@ -9,12 +9,12 @@ the fan speed connected to BCM pin 14 using PWM.
 
 import time
 import RPi.GPIO as GPIO
-import sys # For exiting gracefully
+import sys  # For exiting gracefully
 
 # --- Configuration ---
 FAN_PIN = 14  # BCM pin used to control the fan PWM
-PWM_FREQ = 100 # Hz - Frequency for PWM signal
-CHECK_INTERVAL = 5 # seconds - How often to check temperature and adjust fan
+PWM_FREQ = 100  # Hz - Frequency for PWM signal
+CHECK_INTERVAL = 5  # seconds - How often to check temperature and adjust fan
 
 # Temperature thresholds and corresponding duty cycles (in percent)
 # Ensure keys are sorted from lowest temp to highest
@@ -22,12 +22,13 @@ CHECK_INTERVAL = 5 # seconds - How often to check temperature and adjust fan
 # Example: 42°C meets the 40°C threshold, fan runs at 85%
 #          47°C meets the 45°C threshold, fan runs at 100%
 SPEED_MAP = {
-    0: 0,      # Temperature below first threshold (e.g., < 40°C), fan is off
-    40: 85,    # Temperature >= 40°C
-    45: 100,   # Temperature >= 45°C
+    0: 0,  # Temperature below first threshold (e.g., < 40°C), fan is off
+    40: 85,  # Temperature >= 40°C
+    45: 100,  # Temperature >= 45°C
 }
 
 # --- Functions ---
+
 
 def get_cpu_temp():
     """Read CPU temperature from system file and return in degrees Celsius."""
@@ -39,7 +40,8 @@ def get_cpu_temp():
         print(f"Warning: Could not read CPU temperature: {e}", file=sys.stderr)
         # Return a safe default (e.g., high temp to ensure fan runs if sensor fails)
         # Or return None/raise exception if preferred error handling
-        return 99.0 # Assume high temp on error to be safe
+        return 99.0  # Assume high temp on error to be safe
+
 
 def get_fan_duty_cycle(temp):
     """Determine the fan duty cycle based on temperature and SPEED_MAP."""
@@ -49,21 +51,22 @@ def get_fan_duty_cycle(temp):
     for threshold in sorted_thresholds:
         if temp >= threshold:
             return SPEED_MAP[threshold]
-    return 0 # Should not be reached if 0 threshold exists, but safe default
+    return 0  # Should not be reached if 0 threshold exists, but safe default
+
 
 # --- Main Execution ---
 
-pwm = None # Initialize pwm variable
+pwm = None  # Initialize pwm variable
 
 try:
     # Setup GPIO
-    GPIO.setwarnings(False) # Suppress warnings about channel usage
+    GPIO.setwarnings(False)  # Suppress warnings about channel usage
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(FAN_PIN, GPIO.OUT)
 
     # Initialize PWM
     pwm = GPIO.PWM(FAN_PIN, PWM_FREQ)
-    pwm.start(0) # Start with fan off
+    pwm.start(0)  # Start with fan off
 
     print("Starting fan control loop...")
     while True:

@@ -15,31 +15,29 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
 from geometry_msgs.msg import Twist
+
 
 class CommandTimeout(Node):
     def __init__(self):
-        super().__init__('command_timeout')
+        super().__init__("command_timeout")
         self.prev_cmd_time_ = self.get_clock().now()
         self.zero_cmd_sent_ = True
-        self.twist_publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
-        
+        self.twist_publisher_ = self.create_publisher(Twist, "cmd_vel", 10)
+
         brake_timer = self.create_timer(0.2, self.brake_timer_callback)
 
         twist_subscription = self.create_subscription(
-            Twist,
-            'cmd_vel',
-            self.twist_callback,
-            10)
+            Twist, "cmd_vel", self.twist_callback, 10
+        )
         twist_subscription
 
     def brake_timer_callback(self):
         now = self.get_clock().now()
         dt = (now - self.prev_cmd_time_).nanoseconds
 
-        #5Hz
-        if dt >= 2e+8 and not self.zero_cmd_sent_:
+        # 5Hz
+        if dt >= 2e8 and not self.zero_cmd_sent_:
             self.zero_cmd_sent_ = True
             twist_msg = Twist()
             twist_msg.linear.x = 0.0
@@ -54,6 +52,7 @@ class CommandTimeout(Node):
         self.zero_cmd_sent_ = False
         self.prev_cmd_time_ = self.get_clock().now()
 
+
 def main(args=None):
     rclpy.init(args=args)
 
@@ -62,5 +61,6 @@ def main(args=None):
     command_timeout.destroy_node()
     rclpy.shutdown()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

@@ -19,7 +19,7 @@
 #            Adjust the pattern if your structure is different (e.g., packages under src/).
 # Example: If .ci_skip_packages contains 'ball_tracker' and 'another_pkg',
 #          the pattern would be '(^ball_tracker/|^another_pkg/)'
-exclude: '(^ball_tracker/)' # <-- MANUALLY SYNC WITH .ci_skip_packages
+exclude: '(^ball_tracker/|^archive/)' # <-- MANUALLY SYNC WITH .ci_skip_packages
 
 repos:
   # Standard hooks
@@ -38,7 +38,6 @@ repos:
       - id: mixed-line-ending
         exclude_types: [rst]
       - id: fix-byte-order-marker
-
 
   # Python hooks
   - repo: https://github.com/asottile/pyupgrade

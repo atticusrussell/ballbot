@@ -14,8 +14,12 @@
 
 import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, PythonExpression
+from launch.actions import (
+    DeclareLaunchArgument,
+    IncludeLaunchDescription,
+    SetEnvironmentVariable,
+)
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -25,19 +29,19 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     # Retrieve the absolute path to the Fast DDS XML (fastrtps.xml) from the brobot_base package
-    brobot_base_share = get_package_share_directory('brobot_base')
-    fastrtps_xml_file = os.path.join(brobot_base_share, 'config', 'fastrtps.xml')
+    brobot_base_share = get_package_share_directory("brobot_base")
+    fastrtps_xml_file = os.path.join(brobot_base_share, "config", "fastrtps.xml")
 
     sensors_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_bringup'), 'launch', 'sensors.launch.py']
+        [FindPackageShare("brobot_bringup"), "launch", "sensors.launch.py"]
     )
 
     joy_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_bringup'), 'launch', 'joy_teleop.launch.py']
+        [FindPackageShare("brobot_bringup"), "launch", "joy_teleop.launch.py"]
     )
 
     description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_description'), 'launch', 'description.launch.py']
+        [FindPackageShare("brobot_description"), "launch", "description.launch.py"]
     )
 
     ekf_config_path = PathJoinSubstitution(
@@ -49,66 +53,57 @@ def generate_launch_description():
     )
 
     default_robot_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_bringup'), 'launch', 'default_robot.launch.py']
+        [FindPackageShare("brobot_bringup"), "launch", "default_robot.launch.py"]
     )
 
     custom_robot_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_bringup'), 'launch', 'custom_robot.launch.py']
+        [FindPackageShare("brobot_bringup"), "launch", "custom_robot.launch.py"]
     )
 
-    return LaunchDescription([
-        # Set the environment variables so that Fast DDS uses the custom XML profile.
-        SetEnvironmentVariable('FASTRTPS_DEFAULT_PROFILES_FILE', fastrtps_xml_file),
-        SetEnvironmentVariable('RMW_FASTRTPS_USE_QOS_FROM_XML', '1'),
-
-        DeclareLaunchArgument(
-            name='custom_robot', 
-            default_value='false',
-            description='Use custom robot'
-        ),
-
-        DeclareLaunchArgument(
-            name='base_serial_port', 
-            default_value='/dev/ttyACM0',
-            description='Linorobot Base Serial Port'
-        ),
-
-        DeclareLaunchArgument(
-            name='joy', 
-            default_value='true',
-            description='Use Joystick'
-        ),
-
-        Node(
-            package='robot_localization',
-            executable='ekf_node',
-            name='ekf_filter_node',
-            output='screen',
-            parameters=[
-                ekf_config_path
-            ],
-            remappings=[("odometry/filtered", "odom")]
-        ),
-
-        Node(
-            package='twist_mux',
-            executable='twist_mux',
-            name='twist_mux_node',
-            output='screen',
-            parameters=[twist_mux_config_path],
-            remappings=[('/cmd_vel_out', '/cmd_vel_muxed')]
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(default_robot_launch_path),
-            condition=UnlessCondition(LaunchConfiguration("custom_robot")),
-            launch_arguments={
-                'base_serial_port': LaunchConfiguration("base_serial_port")
-            }.items()
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(custom_robot_launch_path),
-            condition=IfCondition(LaunchConfiguration("custom_robot")),
-        )
-    ])
+    return LaunchDescription(
+        [
+            # Set the environment variables so that Fast DDS uses the custom XML profile.
+            SetEnvironmentVariable("FASTRTPS_DEFAULT_PROFILES_FILE", fastrtps_xml_file),
+            SetEnvironmentVariable("RMW_FASTRTPS_USE_QOS_FROM_XML", "1"),
+            DeclareLaunchArgument(
+                name="custom_robot",
+                default_value="false",
+                description="Use custom robot",
+            ),
+            DeclareLaunchArgument(
+                name="base_serial_port",
+                default_value="/dev/ttyACM0",
+                description="Linorobot Base Serial Port",
+            ),
+            DeclareLaunchArgument(
+                name="joy", default_value="true", description="Use Joystick"
+            ),
+            Node(
+                package="robot_localization",
+                executable="ekf_node",
+                name="ekf_filter_node",
+                output="screen",
+                parameters=[ekf_config_path],
+                remappings=[("odometry/filtered", "odom")],
+            ),
+            Node(
+                package="twist_mux",
+                executable="twist_mux",
+                name="twist_mux_node",
+                output="screen",
+                parameters=[twist_mux_config_path],
+                remappings=[("/cmd_vel_out", "/cmd_vel_muxed")],
+            ),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(default_robot_launch_path),
+                condition=UnlessCondition(LaunchConfiguration("custom_robot")),
+                launch_arguments={
+                    "base_serial_port": LaunchConfiguration("base_serial_port")
+                }.items(),
+            ),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(custom_robot_launch_path),
+                condition=IfCondition(LaunchConfiguration("custom_robot")),
+            ),
+        ]
+    )
