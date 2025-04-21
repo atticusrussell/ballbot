@@ -2,6 +2,7 @@ build
 install
 log
 site/*
+venv/
 
 # Ignore micro-ros files from robot
 src/micro_ros_setup

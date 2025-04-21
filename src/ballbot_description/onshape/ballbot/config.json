@@ -1,0 +1,9 @@
+{
+    "url": "https://cad.onshape.com/documents/833f9762904995f22ff7dd9f/w/38852c293063cfa13b203677/e/83ac8f3e1b8a64890594cf88",
+    "versionID": "dbc41dc96b1adb2ff43c4047",
+    "outputFormat": "urdf",
+    "addDummyBaseLink": "true",
+    "use_scads": true,
+    "collisions_as_visual": false
+}
+    

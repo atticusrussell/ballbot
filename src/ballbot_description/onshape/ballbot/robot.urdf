@@ -1,0 +1,825 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/833f9762904995f22ff7dd9f/w/38852c293063cfa13b203677/e/83ac8f3e1b8a64890594cf88 -->
+<robot name="ballbot">
+  <!-- Link base_link -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link still_chassis_assm__configuration_screwless -->
+  <link name="still_chassis_assm__configuration_screwless">
+    <inertial>
+      <origin xyz="-0.0045469 0.000278867 -0.00646934" rpy="0 0 0"/>
+      <mass value="1.03"/>
+      <inertia ixx="0.00257218" ixy="3.15363e-07" ixz="-6.31826e-05" iyy="0.00654382" iyz="4.01933e-06" izz="0.0072802"/>
+    </inertial>
+    <!-- Part motor_md520z30_12v__configuration_default -->
+    <collision>
+      <origin xyz="0.0680211 -0.0701141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0701141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0596141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0596141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0223141 -0.0235" rpy="1.5708 -3.03158e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.00616413 -0.0235" rpy="1.5708 -3.03158e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.00616413 -0.0235" rpy="1.5708 -3.03158e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0458641 -0.0235" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0458641 -0.0235" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0800211 -0.00696413 -0.0235" rpy="-1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 -0.0351141 -0.0235" rpy="-1.59987e-16 -3.03218e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v__configuration_default_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520__configuration_default -->
+    <collision>
+      <origin xyz="0.0680211 -0.0576141 -0.00375" rpy="1.5708 2.80046e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0568641 -0.003" rpy="-3.46945e-16 -2.79553e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0366141 -0.003" rpy="3.46945e-16 2.79553e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0576141 -0.0145" rpy="-1.5708 -2.80046e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0576141 -0.0235" rpy="-1.5708 -2.80046e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 -0.0383641 -0.004" rpy="-1.5708 -2.80046e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520__configuration_default_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60 -->
+    <collision>
+      <origin xyz="-0.110479 0.0583859 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.110479 0.0583859 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.110479 0.0583859 3.87034e-19" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part chassis_plate__configuration_default -->
+    <collision>
+      <origin xyz="-0.002479 4.74e-05 -0.001" rpy="-1.26218e-29 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <box size="0.242 0.140696 0.002"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-5.9848e-17 -8.32667e-17 -4.99115e-18" rpy="-1.26218e-29 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/chassis_plate__configuration_default.stl"/>
+      </geometry>
+      <material name="chassis_plate__configuration_default_material">
+        <color rgba="0 0.501961 0 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_2 -->
+    <collision>
+      <origin xyz="-0.00347892 0.0633859 0.03" rpy="-3.14159 3.22537e-15 8.39606e-16"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.00347892 0.0633859 0.03" rpy="-3.14159 3.22537e-15 8.39606e-16"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.00347892 0.0633859 -1.26635e-16" rpy="1.5708 3.22537e-15 8.39606e-16"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_2_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_3 -->
+    <collision>
+      <origin xyz="0.0830211 0.0503859 0.03" rpy="3.14159 1.22116e-27 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0830211 0.0503859 0.03" rpy="3.14159 1.22116e-27 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0830211 0.0503859 9.2427e-20" rpy="1.5708 1.22116e-27 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_3_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part chassis_plate__configuration_default_2 -->
+    <collision>
+      <origin xyz="-0.002479 4.74e-05 0.061" rpy="-5.55112e-17 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <box size="0.242 0.140696 0.002"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-8.50526e-17 -1.0366e-16 0.062" rpy="-5.55112e-17 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/chassis_plate__configuration_default.stl"/>
+      </geometry>
+      <material name="chassis_plate__configuration_default_2_material">
+        <color rgba="0 0.501961 0 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_4 -->
+    <collision>
+      <origin xyz="-0.110479 -0.0576141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.110479 -0.0576141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.110479 -0.0576141 3.87034e-19" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_4_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_5 -->
+    <collision>
+      <origin xyz="0.0830211 -0.0496141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0830211 -0.0496141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0830211 -0.0496141 9.2427e-20" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_5_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_6 -->
+    <collision>
+      <origin xyz="-0.00347892 -0.0626141 0.03" rpy="3.14159 -1.80411e-16 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.00347892 -0.0626141 0.03" rpy="3.14159 -1.80411e-16 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.00347892 -0.0626141 7.88861e-31" rpy="1.5708 -1.80411e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_6_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_md520z30_12v__configuration_default_2 -->
+    <collision>
+      <origin xyz="-0.0804789 0.0708859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0708859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0603859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0603859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0230859 -0.0235" rpy="1.5708 2.64774e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.00693587 -0.0235" rpy="1.5708 2.64774e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.00693587 -0.0235" rpy="1.5708 2.64774e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0466359 -0.0235" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0466359 -0.0235" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0924789 0.00773587 -0.0235" rpy="-1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 0.0358859 -0.0235" rpy="1.17568e-16 2.64761e-29 -6.55914e-16"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v__configuration_default_2_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520__configuration_default_2 -->
+    <collision>
+      <origin xyz="-0.0804789 0.0583859 -0.00375" rpy="1.5708 -2.87934e-29 3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0576359 -0.003" rpy="-6.93889e-17 2.88427e-29 -6.38378e-16"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0373859 -0.003" rpy="6.93889e-17 -2.88427e-29 3.14159"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0583859 -0.0145" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0583859 -0.0235" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 0.0391359 -0.004" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520__configuration_default_2_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_md520z30_12v__configuration_default_3 -->
+    <collision>
+      <origin xyz="-0.0804789 -0.0701141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0701141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0596141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0596141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0223141 -0.0235" rpy="1.5708 -1.46942e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.00616413 -0.0235" rpy="1.5708 -1.46942e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.00616413 -0.0235" rpy="1.5708 -1.46942e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0458641 -0.0235" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0458641 -0.0235" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0684789 -0.00696413 -0.0235" rpy="-1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 -0.0351141 -0.0235" rpy="2.84102e-16 -1.46925e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v__configuration_default_3_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520__configuration_default_3 -->
+    <collision>
+      <origin xyz="-0.0804789 -0.0576141 -0.00375" rpy="1.5708 1.23753e-29 9.02056e-17"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0568641 -0.003" rpy="9.71445e-17 -1.2326e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0366141 -0.003" rpy="-9.71445e-17 1.2326e-29 9.02056e-17"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0576141 -0.0145" rpy="-1.5708 -1.23753e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0576141 -0.0235" rpy="-1.5708 -1.23753e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 -0.0383641 -0.004" rpy="-1.5708 -1.23753e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520__configuration_default_3_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_md520z30_12v__configuration_default_4 -->
+    <collision>
+      <origin xyz="0.0680211 0.0708859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0708859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0603859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0603859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0230859 -0.0235" rpy="1.5708 -1.4446e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.00693587 -0.0235" rpy="1.5708 -1.4446e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.00693587 -0.0235" rpy="1.5708 -1.4446e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0466359 -0.0235" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0466359 -0.0235" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0560211 0.00773587 -0.0235" rpy="-1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 0.0358859 -0.0235" rpy="1.86957e-16 -1.4446e-29 7.96089e-17"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v__configuration_default_4_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520__configuration_default_4 -->
+    <collision>
+      <origin xyz="0.0680211 0.0583859 -0.00375" rpy="1.5708 1.24739e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0576359 -0.003" rpy="-1.42585e-29 -1.24246e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0373859 -0.003" rpy="1.42585e-29 1.24246e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0583859 -0.0145" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0583859 -0.0235" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 0.0391359 -0.004" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520__configuration_default_4_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link wheel_assm__configuration_screwless -->
+  <link name="wheel_assm__configuration_screwless">
+    <inertial>
+      <origin xyz="1.92461e-10 -6.43054e-11 0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70946e-05" ixy="3.93998e-09" ixz="5.55355e-14" iyy="1.70928e-05" iyz="1.12854e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel__configuration_default -->
+    <collision>
+      <origin xyz="-4.16334e-17 -2.08167e-17 0.00675" rpy="-7.92417e-16 5.26133e-16 0.677093"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-4.16334e-17 -2.08167e-17 0.00675" rpy="-7.92417e-16 5.26133e-16 0.677093"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-4.16334e-17 -2.08167e-17 0.00675" rpy="-1.5708 5.87365e-16 0.677093"/>
+      <geometry>
+        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+      </geometry>
+      <material name="wheel__configuration_default_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm__configuration_default -->
+    <visual>
+      <origin xyz="0 2.08167e-17 0.0006" rpy="1.5708 5.26133e-16 0.677093"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm__configuration_default_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless -->
+  <joint name="front_left_wheel_speed" type="continuous">
+    <origin xyz="0.0680211 0.0783859 -0.0305" rpy="-1.5708 -1.4446e-29 9.71445e-17"/>
+    <parent link="still_chassis_assm__configuration_screwless"/>
+    <child link="wheel_assm__configuration_screwless"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link wheel_assm__configuration_screwless_2 -->
+  <link name="wheel_assm__configuration_screwless_2">
+    <inertial>
+      <origin xyz="1.09714e-10 1.70702e-10 -0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70977e-05" ixy="2.3419e-12" ixz="-5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel__configuration_default_2 -->
+    <collision>
+      <origin xyz="-6.93889e-17 6.245e-17 -0.00675" rpy="-3.14159 -3.99574e-23 -2.90353e-18"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-6.93889e-17 6.245e-17 -0.00675" rpy="-3.14159 -3.99574e-23 -2.90353e-18"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-6.93889e-17 6.245e-17 -0.00675" rpy="1.5708 -6.12323e-17 -2.90353e-18"/>
+      <geometry>
+        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+      </geometry>
+      <material name="wheel__configuration_default_2_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm__configuration_default_2 -->
+    <visual>
+      <origin xyz="0 0 -0.0006" rpy="-1.5708 1.61556e-27 -2.90353e-18"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm__configuration_default_2_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless_2 -->
+  <joint name="front_right_wheel_speed" type="continuous">
+    <origin xyz="0.0680211 -0.0776141 -0.0305" rpy="-1.5708 0.672397 3.45821e-16"/>
+    <parent link="still_chassis_assm__configuration_screwless"/>
+    <child link="wheel_assm__configuration_screwless_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link wheel_assm__configuration_screwless_3 -->
+  <link name="wheel_assm__configuration_screwless_3">
+    <inertial>
+      <origin xyz="1.09714e-10 -1.70702e-10 0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70977e-05" ixy="-2.3419e-12" ixz="5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel__configuration_default_3 -->
+    <collision>
+      <origin xyz="-2.08167e-17 -2.77556e-17 0.00675" rpy="6.61744e-24 3.99574e-23 -3.29624e-18"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2.08167e-17 -2.77556e-17 0.00675" rpy="6.61744e-24 3.99574e-23 -3.29624e-18"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-2.08167e-17 -2.77556e-17 0.00675" rpy="-1.5708 6.12323e-17 -3.29624e-18"/>
+      <geometry>
+        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+      </geometry>
+      <material name="wheel__configuration_default_3_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm__configuration_default_3 -->
+    <visual>
+      <origin xyz="3.46945e-18 0 0.0006" rpy="1.5708 -1.61559e-27 -3.29624e-18"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm__configuration_default_3_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless_3 -->
+  <joint name="rear_left_wheel_speed" type="continuous">
+    <origin xyz="-0.0804789 0.0783859 -0.0305" rpy="-1.5708 1.53772 -2.56896e-15"/>
+    <parent link="still_chassis_assm__configuration_screwless"/>
+    <child link="wheel_assm__configuration_screwless_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link wheel_assm__configuration_screwless_4 -->
+  <link name="wheel_assm__configuration_screwless_4">
+    <inertial>
+      <origin xyz="1.09714e-10 1.70702e-10 -0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70977e-05" ixy="2.3419e-12" ixz="-5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel__configuration_default_4 -->
+    <collision>
+      <origin xyz="-6.93889e-18 6.93889e-17 -0.00675" rpy="3.14159 -3.99574e-23 2.50029e-18"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-6.93889e-18 6.93889e-17 -0.00675" rpy="3.14159 -3.99574e-23 2.50029e-18"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-6.93889e-18 6.93889e-17 -0.00675" rpy="1.5708 -6.12323e-17 2.50029e-18"/>
+      <geometry>
+        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+      </geometry>
+      <material name="wheel__configuration_default_4_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm__configuration_default_4 -->
+    <visual>
+      <origin xyz="-6.93889e-18 2.77556e-17 -0.0006" rpy="-1.5708 1.61565e-27 2.50029e-18"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm__configuration_default_4_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless_4 -->
+  <joint name="rear_right_wheel_speed" type="continuous">
+    <origin xyz="-0.0804789 -0.0776141 -0.0305" rpy="-1.5708 -1.53772 -1.71073e-14"/>
+    <parent link="still_chassis_assm__configuration_screwless"/>
+    <child link="wheel_assm__configuration_screwless_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from base_link to still_chassis_assm__configuration_screwless -->
+  <joint name="base_link_to_still_chassis_assm__configuration_screwless" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="base_link"/>
+    <child link="still_chassis_assm__configuration_screwless"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+</robot>
