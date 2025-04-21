@@ -652,6 +652,30 @@
       </material>
     </visual>
     <!-- Part hex_coupler_6mm__configuration_default -->
+    <collision>
+      <origin xyz="-4.09767e-18 1.72832e-17 0.0036" rpy="7.92417e-16 -5.26133e-16 -2.4645"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-4.09767e-18 1.72832e-17 0.0036" rpy="7.92417e-16 -5.26133e-16 -2.4645"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="8.19535e-18 2.78836e-17 -0.0054" rpy="3.14159 5.26133e-16 0.677093"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="8.19535e-18 2.78836e-17 -0.0054" rpy="3.14159 5.26133e-16 0.677093"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0 2.08167e-17 0.0006" rpy="1.5708 5.26133e-16 0.677093"/>
       <geometry>
@@ -700,6 +724,30 @@
       </material>
     </visual>
     <!-- Part hex_coupler_6mm__configuration_default_2 -->
+    <collision>
+      <origin xyz="1.33055e-34 8.93581e-35 -0.0036" rpy="-3.14159 2.84165e-32 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.33055e-34 8.93581e-35 -0.0036" rpy="-3.14159 2.84165e-32 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2.2611e-34 -1.88716e-34 0.0054" rpy="-4.99457e-32 -2.84165e-32 -2.90353e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2.2611e-34 -1.88716e-34 0.0054" rpy="-4.99457e-32 -2.84165e-32 -2.90353e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0 0 -0.0006" rpy="-1.5708 1.61556e-27 -2.90353e-18"/>
       <geometry>
@@ -748,6 +796,30 @@
       </material>
     </visual>
     <!-- Part hex_coupler_6mm__configuration_default_3 -->
+    <collision>
+      <origin xyz="3.46945e-18 2.59607e-34 0.0036" rpy="2.17503e-32 -6.31356e-34 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="3.46945e-18 2.59607e-34 0.0036" rpy="2.17503e-32 -6.31356e-34 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="3.46945e-18 -5.09214e-34 -0.0054" rpy="3.14159 6.31356e-34 -3.29624e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="3.46945e-18 -5.09214e-34 -0.0054" rpy="3.14159 6.31356e-34 -3.29624e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="3.46945e-18 0 0.0006" rpy="1.5708 -1.61559e-27 -3.29624e-18"/>
       <geometry>
@@ -796,6 +868,30 @@
       </material>
     </visual>
     <!-- Part hex_coupler_6mm__configuration_default_4 -->
+    <collision>
+      <origin xyz="-6.93889e-18 2.77556e-17 -0.0036" rpy="3.14159 -5.94805e-32 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-6.93889e-18 2.77556e-17 -0.0036" rpy="3.14159 -5.94805e-32 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-6.93889e-18 2.77556e-17 0.0054" rpy="3.37135e-31 5.94805e-32 2.50029e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-6.93889e-18 2.77556e-17 0.0054" rpy="3.37135e-31 5.94805e-32 2.50029e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="-6.93889e-18 2.77556e-17 -0.0006" rpy="-1.5708 1.61565e-27 2.50029e-18"/>
       <geometry>
