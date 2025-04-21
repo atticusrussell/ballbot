@@ -4,6 +4,11 @@
     "outputFormat": "urdf",
     "addDummyBaseLink": "true",
     "use_scads": true,
-    "collisions_as_visual": false
+    "collisions_as_visual": false,
+    "configuration": "simplify=screws",
+    "ignore": {
+        "screw*" : "collision",
+        "lock_washer*": "collision",
+        "hex_nut*": "collision"
+    }
 }
-    

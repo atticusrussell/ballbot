@@ -10,13 +10,473 @@
       <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
     </inertial>
   </link>
-  <!-- Link still_chassis_assm__configuration_screwless -->
-  <link name="still_chassis_assm__configuration_screwless">
+  <!-- Link still_chassis_assm__configuration_default -->
+  <link name="still_chassis_assm__configuration_default">
     <inertial>
-      <origin xyz="-0.0045469 0.000278867 -0.00646934" rpy="0 0 0"/>
-      <mass value="1.03"/>
-      <inertia ixx="0.00257218" ixy="3.15363e-07" ixz="-6.31826e-05" iyy="0.00654382" iyz="4.01933e-06" izz="0.0072802"/>
+      <origin xyz="-0.00548921 0.000292472 -0.00635749" rpy="0 0 0"/>
+      <mass value="1.12003"/>
+      <inertia ixx="0.00278292" ixy="-5.74808e-08" ixz="-5.94294e-05" iyy="0.00707239" iyz="3.6542e-06" izz="0.0079632"/>
     </inertial>
+    <!-- Part hex_nut_m3 -->
+    <visual>
+      <origin xyz="-0.0654789 -0.0256141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_2 -->
+    <visual>
+      <origin xyz="-0.0954789 0.0263859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_2_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8 -->
+    <visual>
+      <origin xyz="-0.0654789 0.0503859 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3 -->
+    <visual>
+      <origin xyz="-0.0654789 -0.0256141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_2 -->
+    <visual>
+      <origin xyz="-0.0654789 -0.0496141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_2_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_2 -->
+    <visual>
+      <origin xyz="-0.0954789 -0.0496141 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_2_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_3 -->
+    <visual>
+      <origin xyz="0.0830256 -0.0255576 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_3_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_3 -->
+    <visual>
+      <origin xyz="-0.0654744 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_3_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_4 -->
+    <visual>
+      <origin xyz="-0.0954744 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_4_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_4 -->
+    <visual>
+      <origin xyz="-0.0654789 -0.0496141 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_4_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_3 -->
+    <visual>
+      <origin xyz="-0.0954789 0.0503859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_3_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_5 -->
+    <visual>
+      <origin xyz="0.0830211 -0.0256141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_5_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_5 -->
+    <visual>
+      <origin xyz="-0.09547 0.0503859 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_5_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_4 -->
+    <visual>
+      <origin xyz="0.0530211 -0.0496141 -0.004" rpy="-9.71285e-30 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_4_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_6 -->
+    <visual>
+      <origin xyz="0.0530256 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_6_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_6 -->
+    <visual>
+      <origin xyz="0.0530256 -0.0496707 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_6_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_7 -->
+    <visual>
+      <origin xyz="-0.09547 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_7_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_7 -->
+    <visual>
+      <origin xyz="-0.0954744 0.0503293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_7_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_5 -->
+    <visual>
+      <origin xyz="0.0830211 -0.0256141 -0.004" rpy="-9.71285e-30 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_5_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_8 -->
+    <visual>
+      <origin xyz="0.05303 0.0503859 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_8_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_6 -->
+    <visual>
+      <origin xyz="-0.0954789 -0.0496141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_6_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_7 -->
+    <visual>
+      <origin xyz="0.0830211 0.0263859 -0.004" rpy="-8.32667e-17 -6.93889e-18 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_7_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_8 -->
+    <visual>
+      <origin xyz="0.0530256 -0.0256707 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_8_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_9 -->
+    <visual>
+      <origin xyz="-0.0654744 -0.0255576 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_9_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_10 -->
+    <visual>
+      <origin xyz="0.0830211 -0.0496141 -0.0064" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_10_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_8 -->
+    <visual>
+      <origin xyz="-0.0654789 -0.0496141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_8_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_11 -->
+    <visual>
+      <origin xyz="0.08303 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_11_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_12 -->
+    <visual>
+      <origin xyz="0.0530256 -0.0256707 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_12_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_9 -->
+    <visual>
+      <origin xyz="0.0530256 -0.0496707 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_9_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_9 -->
+    <visual>
+      <origin xyz="0.0530211 0.0263859 -0.004" rpy="-8.32667e-17 -6.93889e-18 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_9_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_10 -->
+    <visual>
+      <origin xyz="-0.0654789 0.0263859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_10_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_11 -->
+    <visual>
+      <origin xyz="-0.0654789 0.0503859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_11_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_10 -->
+    <visual>
+      <origin xyz="-0.0954789 -0.0496141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_10_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_12 -->
+    <visual>
+      <origin xyz="0.0530211 -0.0256141 -0.004" rpy="-9.71285e-30 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_12_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_13 -->
+    <visual>
+      <origin xyz="0.0830211 0.0503859 -0.0064" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_13_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_11 -->
+    <visual>
+      <origin xyz="-0.0954744 -0.0256707 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_11_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_13 -->
+    <visual>
+      <origin xyz="0.0530211 0.0503859 -0.004" rpy="-8.32667e-17 -6.93889e-18 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_13_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_14 -->
+    <visual>
+      <origin xyz="0.05303 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_14_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_12 -->
+    <visual>
+      <origin xyz="0.0830256 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_12_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_nut_m3_14 -->
+    <visual>
+      <origin xyz="-0.0954789 -0.0256141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_nut_m3.stl"/>
+      </geometry>
+      <material name="hex_nut_m3_14_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_13 -->
+    <visual>
+      <origin xyz="-0.0654789 0.0503859 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_13_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_15 -->
+    <visual>
+      <origin xyz="-0.06547 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_15_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_14 -->
+    <visual>
+      <origin xyz="0.0530256 0.0503293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_14_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x8_8_16 -->
+    <visual>
+      <origin xyz="-0.09547 -0.0256141 0.003" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+      </geometry>
+      <material name="screw_m3x8_8_16_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_15 -->
+    <visual>
+      <origin xyz="0.0757666 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_15_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6 -->
+    <visual>
+      <origin xyz="0.0602621 -0.0616141 -0.0100766" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part motor_md520z30_12v__configuration_default -->
     <collision>
       <origin xyz="0.0680211 -0.0701141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
@@ -87,6 +547,16 @@
         <color rgba="1 1 1 1.0"/>
       </material>
     </visual>
+    <!-- Part lock_washer_m3_16 -->
+    <visual>
+      <origin xyz="0.0602666 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_16_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part motor_bracket_md520__configuration_default -->
     <collision>
       <origin xyz="0.0680211 -0.0576141 -0.00375" rpy="1.5708 2.80046e-29 9.71445e-17"/>
@@ -127,6 +597,106 @@
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m3x6_6_2 -->
+    <visual>
+      <origin xyz="0.0757621 -0.0616141 -0.0100766" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_2_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_3 -->
+    <visual>
+      <origin xyz="0.0525166 -0.0616141 -0.0235566" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_3_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_17 -->
+    <visual>
+      <origin xyz="0.0602666 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_17_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_4 -->
+    <visual>
+      <origin xyz="0.0602621 -0.0616141 -0.0369234" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_4_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_5 -->
+    <visual>
+      <origin xyz="0.0757621 -0.0616141 -0.0369234" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_5_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_18 -->
+    <visual>
+      <origin xyz="0.0757666 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_18_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_19 -->
+    <visual>
+      <origin xyz="0.0525211 -0.0592141 -0.0235" rpy="1.5708 -2.77556e-16 -3.05311e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_19_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_20 -->
+    <visual>
+      <origin xyz="0.0835211 -0.0592141 -0.0235" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_20_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_6 -->
+    <visual>
+      <origin xyz="0.0835166 -0.0616141 -0.0235566" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_6_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_7 -->
+    <visual>
+      <origin xyz="0.0830121 0.0503859 0.065" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_7_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part spacer_m3_5_60 -->
     <collision>
       <origin xyz="-0.110479 0.0583859 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
@@ -163,6 +733,16 @@
       </geometry>
       <material name="chassis_plate__configuration_default_material">
         <color rgba="0 0.501961 0 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_8 -->
+    <visual>
+      <origin xyz="-0.110483 0.0584424 0.065" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_8_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
       </material>
     </visual>
     <!-- Part spacer_m3_5_60_2 -->
@@ -209,6 +789,66 @@
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m3x6_6_9 -->
+    <visual>
+      <origin xyz="-0.00347892 -0.0626141 -0.005" rpy="5.27356e-16 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_9_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_21 -->
+    <visual>
+      <origin xyz="-0.00347892 -0.0626141 0.0626" rpy="-2.84495e-16 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_21_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_22 -->
+    <visual>
+      <origin xyz="-0.110479 -0.0576141 -0.0026" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_22_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_23 -->
+    <visual>
+      <origin xyz="-0.00347892 -0.0626141 -0.002" rpy="1.04083e-16 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_23_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_24 -->
+    <visual>
+      <origin xyz="-0.110483 0.0584424 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_24_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x4_4 -->
+    <visual>
+      <origin xyz="0.0830121 -0.0496141 0.065" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x4_4.stl"/>
+      </geometry>
+      <material name="screw_m3x4_4_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part chassis_plate__configuration_default_2 -->
     <collision>
       <origin xyz="-0.002479 4.74e-05 0.061" rpy="-5.55112e-17 -6.12323e-17 9.71445e-17"/>
@@ -247,6 +887,16 @@
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
       </material>
     </visual>
+    <!-- Part lock_washer_m3_25 -->
+    <visual>
+      <origin xyz="-0.110483 -0.0575576 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_25_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part spacer_m3_5_60_5 -->
     <collision>
       <origin xyz="0.0830211 -0.0496141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
@@ -269,6 +919,26 @@
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m3x6_6_10 -->
+    <visual>
+      <origin xyz="-0.00346996 0.0633859 -0.005" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_10_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_11 -->
+    <visual>
+      <origin xyz="-0.110483 -0.0575576 -0.005" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_11_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part spacer_m3_5_60_6 -->
     <collision>
       <origin xyz="-0.00347892 -0.0626141 0.03" rpy="3.14159 -1.80411e-16 -1.5708"/>
@@ -289,6 +959,116 @@
       </geometry>
       <material name="spacer_m3_5_60_6_material">
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_12 -->
+    <visual>
+      <origin xyz="-0.0034834 -0.0626707 0.065" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_12_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_13 -->
+    <visual>
+      <origin xyz="-0.110483 0.0584424 -0.005" rpy="1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_13_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_26 -->
+    <visual>
+      <origin xyz="-0.00347444 0.0634424 -0.002" rpy="3.05311e-16 2.66454e-15 -4.92661e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_26_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_27 -->
+    <visual>
+      <origin xyz="-0.0034834 0.0634424 0.0626" rpy="-2.84495e-16 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_27_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_28 -->
+    <visual>
+      <origin xyz="-0.110479 0.0583859 -0.0026" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_28_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_29 -->
+    <visual>
+      <origin xyz="0.0830166 -0.0495576 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_29_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_14 -->
+    <visual>
+      <origin xyz="-0.0034834 0.0634424 0.065" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_14_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_15 -->
+    <visual>
+      <origin xyz="-0.110488 -0.0576141 0.065" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_15_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_30 -->
+    <visual>
+      <origin xyz="0.0830166 0.0504424 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_30_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_31 -->
+    <visual>
+      <origin xyz="-0.0882244 0.0599859 -0.0368668" rpy="1.5708 -2.63678e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_31_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_16 -->
+    <visual>
+      <origin xyz="-0.07272 0.0623859 -0.0100766" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_16_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
       </material>
     </visual>
     <!-- Part motor_md520z30_12v__configuration_default_2 -->
@@ -361,6 +1141,16 @@
         <color rgba="1 1 1 1.0"/>
       </material>
     </visual>
+    <!-- Part lock_washer_m3_32 -->
+    <visual>
+      <origin xyz="-0.0727244 0.0599859 -0.0368668" rpy="1.5708 -2.63678e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_32_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part motor_bracket_md520__configuration_default_2 -->
     <collision>
       <origin xyz="-0.0804789 0.0583859 -0.00375" rpy="1.5708 -2.87934e-29 3.14159"/>
@@ -399,6 +1189,116 @@
       </geometry>
       <material name="motor_bracket_md520__configuration_default_2_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_17 -->
+    <visual>
+      <origin xyz="-0.08822 0.0623859 -0.0100766" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_17_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_18 -->
+    <visual>
+      <origin xyz="-0.0649744 0.0623859 -0.0235566" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_18_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_33 -->
+    <visual>
+      <origin xyz="-0.0727244 0.0599859 -0.01002" rpy="1.5708 -2.63678e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_33_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_19 -->
+    <visual>
+      <origin xyz="-0.07272 0.0623859 -0.0369234" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_19_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_20 -->
+    <visual>
+      <origin xyz="-0.08822 0.0623859 -0.0369234" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_20_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_34 -->
+    <visual>
+      <origin xyz="-0.0882244 0.0599859 -0.01002" rpy="1.5708 -2.63678e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_34_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_35 -->
+    <visual>
+      <origin xyz="-0.0649789 0.0599859 -0.0235" rpy="1.5708 -2.77556e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_35_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_36 -->
+    <visual>
+      <origin xyz="-0.0959789 0.0599859 -0.0235" rpy="1.5708 -2.63678e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_36_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_21 -->
+    <visual>
+      <origin xyz="-0.0959744 0.0623859 -0.0235566" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_21_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_37 -->
+    <visual>
+      <origin xyz="-0.0727334 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_37_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_22 -->
+    <visual>
+      <origin xyz="-0.0882379 -0.0616141 -0.0100766" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_22_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
       </material>
     </visual>
     <!-- Part motor_md520z30_12v__configuration_default_3 -->
@@ -471,6 +1371,16 @@
         <color rgba="1 1 1 1.0"/>
       </material>
     </visual>
+    <!-- Part lock_washer_m3_38 -->
+    <visual>
+      <origin xyz="-0.0882334 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_38_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part motor_bracket_md520__configuration_default_3 -->
     <collision>
       <origin xyz="-0.0804789 -0.0576141 -0.00375" rpy="1.5708 1.23753e-29 9.02056e-17"/>
@@ -509,6 +1419,116 @@
       </geometry>
       <material name="motor_bracket_md520__configuration_default_3_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_23 -->
+    <visual>
+      <origin xyz="-0.0727379 -0.0616141 -0.0100766" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_23_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_24 -->
+    <visual>
+      <origin xyz="-0.0959834 -0.0616141 -0.0235566" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_24_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_39 -->
+    <visual>
+      <origin xyz="-0.0882334 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_39_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_25 -->
+    <visual>
+      <origin xyz="-0.0882379 -0.0616141 -0.0369234" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_25_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_26 -->
+    <visual>
+      <origin xyz="-0.0727379 -0.0616141 -0.0369234" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_26_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_40 -->
+    <visual>
+      <origin xyz="-0.0727334 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_40_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_41 -->
+    <visual>
+      <origin xyz="-0.0959789 -0.0592141 -0.0235" rpy="1.5708 -2.77556e-16 -3.1225e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_41_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_42 -->
+    <visual>
+      <origin xyz="-0.0649789 -0.0592141 -0.0235" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_42_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_27 -->
+    <visual>
+      <origin xyz="-0.0649834 -0.0616141 -0.0235566" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_27_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_43 -->
+    <visual>
+      <origin xyz="0.0602756 0.0599859 -0.0368668" rpy="1.5708 3.02189e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_43_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_28 -->
+    <visual>
+      <origin xyz="0.07578 0.0623859 -0.0100766" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_28_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
       </material>
     </visual>
     <!-- Part motor_md520z30_12v__configuration_default_4 -->
@@ -581,6 +1601,16 @@
         <color rgba="1 1 1 1.0"/>
       </material>
     </visual>
+    <!-- Part lock_washer_m3_44 -->
+    <visual>
+      <origin xyz="0.0757756 0.0599859 -0.0368668" rpy="1.5708 3.02189e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_44_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part motor_bracket_md520__configuration_default_4 -->
     <collision>
       <origin xyz="0.0680211 0.0583859 -0.00375" rpy="1.5708 1.24739e-29 -3.14159"/>
@@ -621,14 +1651,114 @@
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m3x6_6_29 -->
+    <visual>
+      <origin xyz="0.06028 0.0623859 -0.0100766" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_29_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_30 -->
+    <visual>
+      <origin xyz="0.0835256 0.0623859 -0.0235566" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_30_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_45 -->
+    <visual>
+      <origin xyz="0.0757756 0.0599859 -0.01002" rpy="1.5708 3.02189e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_45_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_31 -->
+    <visual>
+      <origin xyz="0.07578 0.0623859 -0.0369234" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_31_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_32 -->
+    <visual>
+      <origin xyz="0.06028 0.0623859 -0.0369234" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_32_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_46 -->
+    <visual>
+      <origin xyz="0.0602756 0.0599859 -0.01002" rpy="1.5708 3.02189e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_46_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_47 -->
+    <visual>
+      <origin xyz="0.0835211 0.0599859 -0.0235" rpy="1.5708 3.00801e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_47_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part lock_washer_m3_48 -->
+    <visual>
+      <origin xyz="0.0525211 0.0599859 -0.0235" rpy="1.5708 3.02189e-15 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/lock_washer_m3.stl"/>
+      </geometry>
+      <material name="lock_washer_m3_48_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m3x6_6_33 -->
+    <visual>
+      <origin xyz="0.0525256 0.0623859 -0.0235566" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+      </geometry>
+      <material name="screw_m3x6_6_33_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
   </link>
-  <!-- Link wheel_assm__configuration_screwless -->
-  <link name="wheel_assm__configuration_screwless">
+  <!-- Link wheel_assm__configuration_default -->
+  <link name="wheel_assm__configuration_default">
     <inertial>
-      <origin xyz="1.92461e-10 -6.43054e-11 0.00501766" rpy="0 0 0"/>
-      <mass value="0.0495"/>
-      <inertia ixx="1.70946e-05" ixy="3.93998e-09" ixz="5.55355e-14" iyy="1.70928e-05" iyz="1.12854e-14" izz="2.78542e-05"/>
+      <origin xyz="1.15035e-10 -3.86026e-09 0.0043163" rpy="0 0 0"/>
+      <mass value="0.0544576"/>
+      <inertia ixx="1.77527e-05" ixy="-1.62597e-07" ixz="3.82716e-13" iyy="1.78243e-05" iyz="-1.69841e-12" izz="2.82203e-05"/>
     </inertial>
+    <!-- Part screw_m4x8_8 -->
+    <visual>
+      <origin xyz="0.011044 0.0088779 -0.0074" rpy="-3.14159 1.69149e-15 -2.4645"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part wheel__configuration_default -->
     <collision>
       <origin xyz="-4.16334e-17 -2.08167e-17 0.00675" rpy="-7.92417e-16 5.26133e-16 0.677093"/>
@@ -649,6 +1779,16 @@
       </geometry>
       <material name="wheel__configuration_default_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part screw_m4x8_8_2 -->
+    <visual>
+      <origin xyz="-2.3398e-14 7.89022e-14 0.0111" rpy="-0.677093 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_2_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
       </material>
     </visual>
     <!-- Part hex_coupler_6mm__configuration_default -->
@@ -685,37 +1825,57 @@
         <color rgba="0.937255 0.67451 0 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m4x8_8_3 -->
+    <visual>
+      <origin xyz="-0.011044 -0.0088779 -0.0074" rpy="-1.5708 -1.81539e-15 0.677093"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_3_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
   </link>
-  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless -->
+  <!-- Joint from still_chassis_assm__configuration_default to wheel_assm__configuration_default -->
   <joint name="front_left_wheel_speed" type="continuous">
     <origin xyz="0.0680211 0.0783859 -0.0305" rpy="-1.5708 -1.4446e-29 9.71445e-17"/>
-    <parent link="still_chassis_assm__configuration_screwless"/>
-    <child link="wheel_assm__configuration_screwless"/>
+    <parent link="still_chassis_assm__configuration_default"/>
+    <child link="wheel_assm__configuration_default"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link wheel_assm__configuration_screwless_2 -->
-  <link name="wheel_assm__configuration_screwless_2">
+  <!-- Link wheel_assm__configuration_default_2 -->
+  <link name="wheel_assm__configuration_default_2">
     <inertial>
-      <origin xyz="1.09714e-10 1.70702e-10 -0.00501766" rpy="0 0 0"/>
-      <mass value="0.0495"/>
-      <inertia ixx="1.70977e-05" ixy="2.3419e-12" ixz="-5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+      <origin xyz="-2.32891e-09 3.08075e-09 -0.0043163" rpy="0 0 0"/>
+      <mass value="0.0544576"/>
+      <inertia ixx="1.7622e-05" ixy="3.83454e-12" ixz="7.65819e-13" iyy="1.7955e-05" iyz="-1.56352e-12" izz="2.82203e-05"/>
     </inertial>
+    <!-- Part screw_m4x8_8_4 -->
+    <visual>
+      <origin xyz="0.01417 -7.60225e-14 0.0074" rpy="8.10427e-17 1.11022e-16 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_4_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part wheel__configuration_default_2 -->
     <collision>
-      <origin xyz="-6.93889e-17 6.245e-17 -0.00675" rpy="-3.14159 -3.99574e-23 -2.90353e-18"/>
+      <origin xyz="-4.68375e-17 6.93889e-17 -0.00675" rpy="-3.14159 -3.99574e-23 8.31828e-18"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-6.93889e-17 6.245e-17 -0.00675" rpy="-3.14159 -3.99574e-23 -2.90353e-18"/>
+      <origin xyz="-4.68375e-17 6.93889e-17 -0.00675" rpy="-3.14159 -3.99574e-23 8.31828e-18"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-6.93889e-17 6.245e-17 -0.00675" rpy="1.5708 -6.12323e-17 -2.90353e-18"/>
+      <origin xyz="-4.68375e-17 6.93889e-17 -0.00675" rpy="1.5708 -6.12323e-17 8.31828e-18"/>
       <geometry>
         <mesh filename="package://assets/wheel__configuration_default.stl"/>
       </geometry>
@@ -723,33 +1883,43 @@
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m4x8_8_5 -->
+    <visual>
+      <origin xyz="3.13031e-14 -7.60086e-14 -0.0111" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_5_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part hex_coupler_6mm__configuration_default_2 -->
     <collision>
-      <origin xyz="1.33055e-34 8.93581e-35 -0.0036" rpy="-3.14159 2.84165e-32 3.14159"/>
+      <origin xyz="-1.73472e-18 -5.73221e-35 -0.0036" rpy="3.14159 -1.76644e-32 -3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="1.33055e-34 8.93581e-35 -0.0036" rpy="-3.14159 2.84165e-32 3.14159"/>
+      <origin xyz="-1.73472e-18 -5.73221e-35 -0.0036" rpy="3.14159 -1.76644e-32 -3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-2.2611e-34 -1.88716e-34 0.0054" rpy="-4.99457e-32 -2.84165e-32 -2.90353e-18"/>
+      <origin xyz="-1.73472e-18 1.04644e-34 0.0054" rpy="3.83113e-33 1.76644e-32 8.31828e-18"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-2.2611e-34 -1.88716e-34 0.0054" rpy="-4.99457e-32 -2.84165e-32 -2.90353e-18"/>
+      <origin xyz="-1.73472e-18 1.04644e-34 0.0054" rpy="3.83113e-33 1.76644e-32 8.31828e-18"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0 0 -0.0006" rpy="-1.5708 1.61556e-27 -2.90353e-18"/>
+      <origin xyz="-1.73472e-18 0 -0.0006" rpy="-1.5708 1.61561e-27 8.31828e-18"/>
       <geometry>
         <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
@@ -757,37 +1927,57 @@
         <color rgba="0.937255 0.67451 0 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m4x8_8_6 -->
+    <visual>
+      <origin xyz="-0.01417 -3.1114e-14 0.0074" rpy="1.5708 1.28814e-17 -4.59874e-17"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_6_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
   </link>
-  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless_2 -->
+  <!-- Joint from still_chassis_assm__configuration_default to wheel_assm__configuration_default_2 -->
   <joint name="front_right_wheel_speed" type="continuous">
-    <origin xyz="0.0680211 -0.0776141 -0.0305" rpy="-1.5708 0.672397 3.45821e-16"/>
-    <parent link="still_chassis_assm__configuration_screwless"/>
-    <child link="wheel_assm__configuration_screwless_2"/>
+    <origin xyz="0.0680211 -0.0776141 -0.0305" rpy="-1.5708 -1.26838 -1.05043e-15"/>
+    <parent link="still_chassis_assm__configuration_default"/>
+    <child link="wheel_assm__configuration_default_2"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link wheel_assm__configuration_screwless_3 -->
-  <link name="wheel_assm__configuration_screwless_3">
+  <!-- Link wheel_assm__configuration_default_3 -->
+  <link name="wheel_assm__configuration_default_3">
     <inertial>
-      <origin xyz="1.09714e-10 -1.70702e-10 0.00501766" rpy="0 0 0"/>
-      <mass value="0.0495"/>
-      <inertia ixx="1.70977e-05" ixy="-2.3419e-12" ixz="5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+      <origin xyz="-2.32891e-09 -3.08075e-09 0.0043163" rpy="0 0 0"/>
+      <mass value="0.0544576"/>
+      <inertia ixx="1.7622e-05" ixy="-3.83454e-12" ixz="-7.65819e-13" iyy="1.7955e-05" iyz="-1.56352e-12" izz="2.82203e-05"/>
     </inertial>
+    <!-- Part screw_m4x8_8_7 -->
+    <visual>
+      <origin xyz="0.01417 7.61058e-14 -0.0074" rpy="-3.14159 -1.17447e-16 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_7_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part wheel__configuration_default_3 -->
     <collision>
-      <origin xyz="-2.08167e-17 -2.77556e-17 0.00675" rpy="6.61744e-24 3.99574e-23 -3.29624e-18"/>
+      <origin xyz="-1.47452e-17 -1.38778e-17 0.00675" rpy="6.61744e-24 3.99574e-23 -2.53808e-17"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-2.08167e-17 -2.77556e-17 0.00675" rpy="6.61744e-24 3.99574e-23 -3.29624e-18"/>
+      <origin xyz="-1.47452e-17 -1.38778e-17 0.00675" rpy="6.61744e-24 3.99574e-23 -2.53808e-17"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-2.08167e-17 -2.77556e-17 0.00675" rpy="-1.5708 6.12323e-17 -3.29624e-18"/>
+      <origin xyz="-1.47451e-17 -1.38778e-17 0.00675" rpy="-1.5708 6.12323e-17 -2.53808e-17"/>
       <geometry>
         <mesh filename="package://assets/wheel__configuration_default.stl"/>
       </geometry>
@@ -795,33 +1985,43 @@
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m4x8_8_8 -->
+    <visual>
+      <origin xyz="3.12406e-14 7.60642e-14 0.0111" rpy="-6.71072e-17 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_8_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part hex_coupler_6mm__configuration_default_3 -->
     <collision>
-      <origin xyz="3.46945e-18 2.59607e-34 0.0036" rpy="2.17503e-32 -6.31356e-34 3.14159"/>
+      <origin xyz="-3.46945e-18 -1.38778e-17 0.0036" rpy="-7.73441e-32 2.2643e-32 3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="3.46945e-18 2.59607e-34 0.0036" rpy="2.17503e-32 -6.31356e-34 3.14159"/>
+      <origin xyz="-3.46945e-18 -1.38778e-17 0.0036" rpy="-7.73441e-32 2.2643e-32 3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="3.46945e-18 -5.09214e-34 -0.0054" rpy="3.14159 6.31356e-34 -3.29624e-18"/>
+      <origin xyz="-3.46945e-18 -1.38778e-17 -0.0054" rpy="-3.14159 -2.2643e-32 -2.53808e-17"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="3.46945e-18 -5.09214e-34 -0.0054" rpy="3.14159 6.31356e-34 -3.29624e-18"/>
+      <origin xyz="-3.46945e-18 -1.38778e-17 -0.0054" rpy="-3.14159 -2.2643e-32 -2.53808e-17"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="3.46945e-18 0 0.0006" rpy="1.5708 -1.61559e-27 -3.29624e-18"/>
+      <origin xyz="-3.46945e-18 -1.38778e-17 0.0006" rpy="1.5708 -1.61561e-27 -2.53808e-17"/>
       <geometry>
         <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
@@ -829,37 +2029,57 @@
         <color rgba="0.937255 0.67451 0 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m4x8_8_9 -->
+    <visual>
+      <origin xyz="-0.01417 3.11695e-14 -0.0074" rpy="-1.5708 -6.45636e-18 7.05474e-16"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_9_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
   </link>
-  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless_3 -->
+  <!-- Joint from still_chassis_assm__configuration_default to wheel_assm__configuration_default_3 -->
   <joint name="rear_left_wheel_speed" type="continuous">
-    <origin xyz="-0.0804789 0.0783859 -0.0305" rpy="-1.5708 1.53772 -2.56896e-15"/>
-    <parent link="still_chassis_assm__configuration_screwless"/>
-    <child link="wheel_assm__configuration_screwless_3"/>
+    <origin xyz="-0.0804789 0.0783859 -0.0305" rpy="-1.5708 1.14106 -8.02116e-16"/>
+    <parent link="still_chassis_assm__configuration_default"/>
+    <child link="wheel_assm__configuration_default_3"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link wheel_assm__configuration_screwless_4 -->
-  <link name="wheel_assm__configuration_screwless_4">
+  <!-- Link wheel_assm__configuration_default_4 -->
+  <link name="wheel_assm__configuration_default_4">
     <inertial>
-      <origin xyz="1.09714e-10 1.70702e-10 -0.00501766" rpy="0 0 0"/>
-      <mass value="0.0495"/>
-      <inertia ixx="1.70977e-05" ixy="2.3419e-12" ixz="-5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+      <origin xyz="-2.32891e-09 3.08075e-09 -0.0043163" rpy="0 0 0"/>
+      <mass value="0.0544576"/>
+      <inertia ixx="1.7622e-05" ixy="3.83454e-12" ixz="7.65819e-13" iyy="1.7955e-05" iyz="-1.56352e-12" izz="2.82203e-05"/>
     </inertial>
+    <!-- Part screw_m4x8_8_10 -->
+    <visual>
+      <origin xyz="0.01417 -7.60642e-14 0.0074" rpy="8.10428e-17 1.12003e-15 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_10_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part wheel__configuration_default_4 -->
     <collision>
-      <origin xyz="-6.93889e-18 6.93889e-17 -0.00675" rpy="3.14159 -3.99574e-23 2.50029e-18"/>
+      <origin xyz="-1.025e-24 2.77556e-17 -0.00675" rpy="3.14159 -3.99574e-23 1.71228e-17"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-6.93889e-18 6.93889e-17 -0.00675" rpy="3.14159 -3.99574e-23 2.50029e-18"/>
+      <origin xyz="-1.025e-24 2.77556e-17 -0.00675" rpy="3.14159 -3.99574e-23 1.71228e-17"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-6.93889e-18 6.93889e-17 -0.00675" rpy="1.5708 -6.12323e-17 2.50029e-18"/>
+      <origin xyz="0 2.77556e-17 -0.00675" rpy="1.5708 -6.12323e-17 1.71228e-17"/>
       <geometry>
         <mesh filename="package://assets/wheel__configuration_default.stl"/>
       </geometry>
@@ -867,33 +2087,43 @@
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m4x8_8_11 -->
+    <visual>
+      <origin xyz="3.13152e-14 -7.61058e-14 -0.0111" rpy="-3.14159 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_11_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
     <!-- Part hex_coupler_6mm__configuration_default_4 -->
     <collision>
-      <origin xyz="-6.93889e-18 2.77556e-17 -0.0036" rpy="3.14159 -5.94805e-32 -3.14159"/>
+      <origin xyz="1.38778e-17 -1.09668e-34 -0.0036" rpy="-3.14159 -6.32074e-32 -3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-6.93889e-18 2.77556e-17 -0.0036" rpy="3.14159 -5.94805e-32 -3.14159"/>
+      <origin xyz="1.38778e-17 -1.09668e-34 -0.0036" rpy="-3.14159 -6.32074e-32 -3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-6.93889e-18 2.77556e-17 0.0054" rpy="3.37135e-31 5.94805e-32 2.50029e-18"/>
+      <origin xyz="1.38778e-17 2.09337e-34 0.0054" rpy="-2.24947e-31 6.32074e-32 1.71228e-17"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-6.93889e-18 2.77556e-17 0.0054" rpy="3.37135e-31 5.94805e-32 2.50029e-18"/>
+      <origin xyz="1.38778e-17 2.09337e-34 0.0054" rpy="-2.24947e-31 6.32074e-32 1.71228e-17"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-6.93889e-18 2.77556e-17 -0.0006" rpy="-1.5708 1.61565e-27 2.50029e-18"/>
+      <origin xyz="1.38778e-17 0 -0.0006" rpy="-1.5708 1.61565e-27 1.71228e-17"/>
       <geometry>
         <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
@@ -901,20 +2131,30 @@
         <color rgba="0.937255 0.67451 0 1.0"/>
       </material>
     </visual>
+    <!-- Part screw_m4x8_8_12 -->
+    <visual>
+      <origin xyz="-0.01417 -3.12111e-14 0.0074" rpy="1.5708 -9.96122e-16 -4.89001e-16"/>
+      <geometry>
+        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+      </geometry>
+      <material name="screw_m4x8_8_12_material">
+        <color rgba="0.776471 0.756863 0.737255 1.0"/>
+      </material>
+    </visual>
   </link>
-  <!-- Joint from still_chassis_assm__configuration_screwless to wheel_assm__configuration_screwless_4 -->
+  <!-- Joint from still_chassis_assm__configuration_default to wheel_assm__configuration_default_4 -->
   <joint name="rear_right_wheel_speed" type="continuous">
-    <origin xyz="-0.0804789 -0.0776141 -0.0305" rpy="-1.5708 -1.53772 -1.71073e-14"/>
-    <parent link="still_chassis_assm__configuration_screwless"/>
-    <child link="wheel_assm__configuration_screwless_4"/>
+    <origin xyz="-0.0804789 -0.0776141 -0.0305" rpy="1.5708 1.46397 -3.14159"/>
+    <parent link="still_chassis_assm__configuration_default"/>
+    <child link="wheel_assm__configuration_default_4"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Joint from base_link to still_chassis_assm__configuration_screwless -->
-  <joint name="base_link_to_still_chassis_assm__configuration_screwless" type="fixed">
+  <!-- Joint from base_link to still_chassis_assm__configuration_default -->
+  <joint name="base_link_to_still_chassis_assm__configuration_default" type="fixed">
     <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="base_link"/>
-    <child link="still_chassis_assm__configuration_screwless"/>
+    <child link="still_chassis_assm__configuration_default"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
