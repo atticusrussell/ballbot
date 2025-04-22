@@ -10,5 +10,10 @@
         "screw*" : "collision",
         "lock_washer*": "collision",
         "hex_nut*": "collision"
-    }
+    },
+    "post_import_commands": [
+       "echo 'Running Python cleanup script...'",
+       "python cleanup_onshape_output.py ballbot/robot.urdf ballbot/assets",
+       "echo 'Python cleanup script finished.'"
+    ]
 }
