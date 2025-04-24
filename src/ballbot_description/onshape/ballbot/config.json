@@ -15,5 +15,6 @@
        "echo 'Running Python cleanup script...'",
        "python cleanup_onshape_output.py ballbot/robot.urdf ballbot/assets",
        "echo 'Python cleanup script finished.'"
-    ]
+    ],
+    "additional_xml": "gazebo_diff_drive.xml"
 }

@@ -1,0 +1,48 @@
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <ros>
+      <argument>odom:=odom/unfiltered</argument>
+    </ros>
+
+    <update_rate>100</update_rate>
+
+    <num_wheel_pairs>2</num_wheel_pairs>
+    <left_joint>front_left_wheel_speed</left_joint>
+    <right_joint>front_right_wheel_speed</right_joint>
+    <left_joint>rear_left_wheel_speed</left_joint>
+    <right_joint>rear_right_wheel_speed</right_joint>
+
+    <wheel_separation>0.16</wheel_separation>
+    <wheel_separation>0.16</wheel_separation>
+    <wheel_diameter>0.066</wheel_diameter>
+    <wheel_diameter>0.066</wheel_diameter>
+
+    <updateRate>100</updateRate>
+    <max_wheel_torque>20</max_wheel_torque>
+    <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+    <robot_base_frame>still_chassis_assm</robot_base_frame>
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>false</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+    <odometry_frame>odom</odometry_frame>
+
+  </plugin>
+</gazebo>
+
+<gazebo reference="wheel_assm">
+    <mu1>0.8</mu1> <mu2>0.8</mu2> <fdir1>1 0 0</fdir1>
+    <kp>1000000.0</kp> <kd>100.0</kd> <minDepth>0.001</minDepth> <maxVel>0.1</maxVel>
+</gazebo>
+<gazebo reference="wheel_assm_2">
+    <mu1>0.8</mu1> <mu2>0.8</mu2> <fdir1>1 0 0</fdir1>
+    <kp>1000000.0</kp> <kd>100.0</kd> <minDepth>0.001</minDepth> <maxVel>0.1</maxVel>
+</gazebo>
+<gazebo reference="wheel_assm_3">
+    <mu1>0.8</mu1> <mu2>0.8</mu2> <fdir1>1 0 0</fdir1>
+    <kp>1000000.0</kp> <kd>100.0</kd> <minDepth>0.001</minDepth> <maxVel>0.1</maxVel>
+</gazebo>
+<gazebo reference="wheel_assm_4">
+    <mu1>0.8</mu1> <mu2>0.8</mu2> <fdir1>1 0 0</fdir1>
+    <kp>1000000.0</kp> <kd>100.0</kd> <minDepth>0.001</minDepth> <maxVel>0.1</maxVel>
+</gazebo>
