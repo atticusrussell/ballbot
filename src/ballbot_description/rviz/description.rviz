@@ -4,6 +4,10 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
+        - /Status1
+        - /RobotModel1
+        - /RobotModel1/Status1
         - /LaserScan1
         - /LaserScan1/Topic1
         - /Image1
@@ -30,7 +34,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 0.8999999761581421
+    - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
       Description File: ""
@@ -48,49 +52,31 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        camera_link:
+        still_chassis_assm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_link_optical:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_left_wheel_link:
+        wheel_assm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        front_right_wheel_link:
+        wheel_assm_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        laser:
+        wheel_assm_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rear_left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rear_right_wheel_link:
+        wheel_assm_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -108,27 +94,17 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
-          Value: true
         base_link:
           Value: true
-        camera_link:
+        still_chassis_assm:
           Value: true
-        camera_link_optical:
+        wheel_assm:
           Value: true
-        front_left_wheel_link:
+        wheel_assm_2:
           Value: true
-        front_right_wheel_link:
+        wheel_assm_3:
           Value: true
-        imu_link:
-          Value: true
-        laser:
-          Value: true
-        odom:
-          Value: true
-        rear_left_wheel_link:
-          Value: true
-        rear_right_wheel_link:
+        wheel_assm_4:
           Value: true
       Marker Scale: 0.10000000149011612
       Name: TF
@@ -136,25 +112,16 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_footprint:
-          base_link:
-            camera_link:
-              camera_link_optical:
-                {}
-            imu_link:
+        base_link:
+          still_chassis_assm:
+            wheel_assm:
               {}
-            laser:
+            wheel_assm_2:
               {}
-          front_left_wheel_link:
-            {}
-          front_right_wheel_link:
-            {}
-          rear_left_wheel_link:
-            {}
-          rear_right_wheel_link:
-            {}
-        odom:
-          {}
+            wheel_assm_3:
+              {}
+            wheel_assm_4:
+              {}
       Update Interval: 0
       Value: true
     - Class: rviz_default_plugins/Axes
@@ -215,7 +182,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 238; 238; 236
-    Fixed Frame: base_footprint
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -233,25 +200,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 5.983721733093262
+      Distance: 0.7604632377624512
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.012173949740827084
+        Y: 0.03691084310412407
+        Z: -0.013798309490084648
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9403979182243347
+      Pitch: 0.799796462059021
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.4054019451141357
+      Yaw: 3.4554128646850586
     Saved: ~
 Window Geometry:
   Displays:
@@ -261,7 +228,7 @@ Window Geometry:
   Hide Right Dock: false
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000010000000000000217000003b9fc0200000002fb000000100044006900730070006c006100790073010000003d00000214000000c900fffffffb0000000a0049006d00610067006501000002570000019f0000002800ffffff00000563000003b900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000001000000000000037f000003b9fc0200000002fb000000100044006900730070006c006100790073010000003d00000214000000c900fffffffb0000000a0049006d00610067006501000002570000019f0000002800ffffff000003fb000003b900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Width: 1920
   X: 0
-  Y: 0
+  Y: 360
