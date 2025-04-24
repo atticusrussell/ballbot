@@ -21,7 +21,7 @@
     <visual>
       <origin xyz="-0.0654789 -0.0256141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -31,7 +31,7 @@
     <visual>
       <origin xyz="-0.0954789 0.0263859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_2_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -41,7 +41,7 @@
     <visual>
       <origin xyz="-0.0654789 0.0503859 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -51,7 +51,7 @@
     <visual>
       <origin xyz="-0.0654789 -0.0256141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -61,7 +61,7 @@
     <visual>
       <origin xyz="-0.0654789 -0.0496141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_2_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -71,7 +71,7 @@
     <visual>
       <origin xyz="-0.0954789 -0.0496141 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_2_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -81,7 +81,7 @@
     <visual>
       <origin xyz="0.0830256 -0.0255576 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_3_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -91,7 +91,7 @@
     <visual>
       <origin xyz="-0.0654744 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_3_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -101,7 +101,7 @@
     <visual>
       <origin xyz="-0.0954744 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_4_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -111,7 +111,7 @@
     <visual>
       <origin xyz="-0.0654789 -0.0496141 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_4_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -121,7 +121,7 @@
     <visual>
       <origin xyz="-0.0954789 0.0503859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_3_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -131,7 +131,7 @@
     <visual>
       <origin xyz="0.0830211 -0.0256141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_5_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -141,7 +141,7 @@
     <visual>
       <origin xyz="-0.09547 0.0503859 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_5_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -151,7 +151,7 @@
     <visual>
       <origin xyz="0.0530211 -0.0496141 -0.004" rpy="-9.71285e-30 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_4_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -161,7 +161,7 @@
     <visual>
       <origin xyz="0.0530256 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_6_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -171,7 +171,7 @@
     <visual>
       <origin xyz="0.0530256 -0.0496707 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_6_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -181,7 +181,7 @@
     <visual>
       <origin xyz="-0.09547 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_7_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -191,7 +191,7 @@
     <visual>
       <origin xyz="-0.0954744 0.0503293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_7_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -201,7 +201,7 @@
     <visual>
       <origin xyz="0.0830211 -0.0256141 -0.004" rpy="-9.71285e-30 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_5_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -211,7 +211,7 @@
     <visual>
       <origin xyz="0.05303 0.0503859 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_8_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -221,7 +221,7 @@
     <visual>
       <origin xyz="-0.0954789 -0.0496141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_6_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -231,7 +231,7 @@
     <visual>
       <origin xyz="0.0830211 0.0263859 -0.004" rpy="-8.32667e-17 -6.93889e-18 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_7_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -241,7 +241,7 @@
     <visual>
       <origin xyz="0.0530256 -0.0256707 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_8_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -251,7 +251,7 @@
     <visual>
       <origin xyz="-0.0654744 -0.0255576 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_9_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -261,7 +261,7 @@
     <visual>
       <origin xyz="0.0830211 -0.0496141 -0.0064" rpy="1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_10_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -271,7 +271,7 @@
     <visual>
       <origin xyz="-0.0654789 -0.0496141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_8_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -281,7 +281,7 @@
     <visual>
       <origin xyz="0.08303 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_11_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -291,7 +291,7 @@
     <visual>
       <origin xyz="0.0530256 -0.0256707 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_12_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -301,7 +301,7 @@
     <visual>
       <origin xyz="0.0530256 -0.0496707 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_9_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -311,7 +311,7 @@
     <visual>
       <origin xyz="0.0530211 0.0263859 -0.004" rpy="-8.32667e-17 -6.93889e-18 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_9_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -321,7 +321,7 @@
     <visual>
       <origin xyz="-0.0654789 0.0263859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_10_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -331,7 +331,7 @@
     <visual>
       <origin xyz="-0.0654789 0.0503859 -0.004" rpy="-2.08167e-17 -6.93889e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_11_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -341,7 +341,7 @@
     <visual>
       <origin xyz="-0.0954789 -0.0496141 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_10_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -351,7 +351,7 @@
     <visual>
       <origin xyz="0.0530211 -0.0256141 -0.004" rpy="-9.71285e-30 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_12_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -361,7 +361,7 @@
     <visual>
       <origin xyz="0.0830211 0.0503859 -0.0064" rpy="1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_13_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -371,7 +371,7 @@
     <visual>
       <origin xyz="-0.0954744 -0.0256707 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_11_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -381,7 +381,7 @@
     <visual>
       <origin xyz="0.0530211 0.0503859 -0.004" rpy="-8.32667e-17 -6.93889e-18 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_13_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -391,7 +391,7 @@
     <visual>
       <origin xyz="0.05303 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_14_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -401,7 +401,7 @@
     <visual>
       <origin xyz="0.0830256 0.0263293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_12_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -411,7 +411,7 @@
     <visual>
       <origin xyz="-0.0954789 -0.0256141 -0.004" rpy="-6.93889e-18 5.55112e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_nut_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_nut_m3.stl"/>
       </geometry>
       <material name="hex_nut_m3_14_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -421,7 +421,7 @@
     <visual>
       <origin xyz="-0.0654789 0.0503859 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_13_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -431,7 +431,7 @@
     <visual>
       <origin xyz="-0.06547 0.0263859 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_15_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -441,7 +441,7 @@
     <visual>
       <origin xyz="0.0530256 0.0503293 0.0006" rpy="-1.249e-16 -4.63518e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_14_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -451,7 +451,7 @@
     <visual>
       <origin xyz="-0.09547 -0.0256141 0.003" rpy="-1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x8_8.stl"/>
       </geometry>
       <material name="screw_m3x8_8_16_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -461,7 +461,7 @@
     <visual>
       <origin xyz="0.0757666 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_15_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -471,7 +471,7 @@
     <visual>
       <origin xyz="0.0602621 -0.0616141 -0.0100766" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -541,7 +541,7 @@
     <visual>
       <origin xyz="0.0680211 -0.0351141 -0.0235" rpy="-1.59987e-16 -3.03218e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_md520z30_12v__configuration_default.stl"/>
       </geometry>
       <material name="motor_md520z30_12v__configuration_default_material">
         <color rgba="1 1 1 1.0"/>
@@ -551,7 +551,7 @@
     <visual>
       <origin xyz="0.0602666 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_16_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -591,7 +591,7 @@
     <visual>
       <origin xyz="0.0680211 -0.0383641 -0.004" rpy="-1.5708 -2.80046e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_bracket_md520__configuration_default.stl"/>
       </geometry>
       <material name="motor_bracket_md520__configuration_default_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -601,7 +601,7 @@
     <visual>
       <origin xyz="0.0757621 -0.0616141 -0.0100766" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_2_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -611,7 +611,7 @@
     <visual>
       <origin xyz="0.0525166 -0.0616141 -0.0235566" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_3_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -621,7 +621,7 @@
     <visual>
       <origin xyz="0.0602666 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_17_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -631,7 +631,7 @@
     <visual>
       <origin xyz="0.0602621 -0.0616141 -0.0369234" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_4_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -641,7 +641,7 @@
     <visual>
       <origin xyz="0.0757621 -0.0616141 -0.0369234" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_5_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -651,7 +651,7 @@
     <visual>
       <origin xyz="0.0757666 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_18_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -661,7 +661,7 @@
     <visual>
       <origin xyz="0.0525211 -0.0592141 -0.0235" rpy="1.5708 -2.77556e-16 -3.05311e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_19_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -671,7 +671,7 @@
     <visual>
       <origin xyz="0.0835211 -0.0592141 -0.0235" rpy="1.5708 -2.63678e-16 -3.05311e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_20_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -681,7 +681,7 @@
     <visual>
       <origin xyz="0.0835166 -0.0616141 -0.0235566" rpy="-2.77556e-16 -3.46945e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_6_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -691,7 +691,7 @@
     <visual>
       <origin xyz="0.0830121 0.0503859 0.065" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_7_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -713,7 +713,7 @@
     <visual>
       <origin xyz="-0.110479 0.0583859 3.87034e-19" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+        <mesh filename="package://ballbot_description/meshes/spacer_m3_5_60.stl"/>
       </geometry>
       <material name="spacer_m3_5_60_material">
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
@@ -729,7 +729,7 @@
     <visual>
       <origin xyz="-5.9848e-17 -8.32667e-17 -4.99115e-18" rpy="-1.26218e-29 -6.12323e-17 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/chassis_plate__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/chassis_plate__configuration_default.stl"/>
       </geometry>
       <material name="chassis_plate__configuration_default_material">
         <color rgba="0 0.501961 0 1.0"/>
@@ -739,7 +739,7 @@
     <visual>
       <origin xyz="-0.110483 0.0584424 0.065" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_8_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -761,7 +761,7 @@
     <visual>
       <origin xyz="-0.00347892 0.0633859 -1.26635e-16" rpy="1.5708 3.22537e-15 8.39606e-16"/>
       <geometry>
-        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+        <mesh filename="package://ballbot_description/meshes/spacer_m3_5_60.stl"/>
       </geometry>
       <material name="spacer_m3_5_60_2_material">
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
@@ -783,7 +783,7 @@
     <visual>
       <origin xyz="0.0830211 0.0503859 9.2427e-20" rpy="1.5708 1.22116e-27 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+        <mesh filename="package://ballbot_description/meshes/spacer_m3_5_60.stl"/>
       </geometry>
       <material name="spacer_m3_5_60_3_material">
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
@@ -793,7 +793,7 @@
     <visual>
       <origin xyz="-0.00347892 -0.0626141 -0.005" rpy="5.27356e-16 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_9_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -803,7 +803,7 @@
     <visual>
       <origin xyz="-0.00347892 -0.0626141 0.0626" rpy="-2.84495e-16 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_21_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -813,7 +813,7 @@
     <visual>
       <origin xyz="-0.110479 -0.0576141 -0.0026" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_22_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -823,7 +823,7 @@
     <visual>
       <origin xyz="-0.00347892 -0.0626141 -0.002" rpy="1.04083e-16 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_23_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -833,7 +833,7 @@
     <visual>
       <origin xyz="-0.110483 0.0584424 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_24_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -843,7 +843,7 @@
     <visual>
       <origin xyz="0.0830121 -0.0496141 0.065" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x4_4.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x4_4.stl"/>
       </geometry>
       <material name="screw_m3x4_4_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -859,7 +859,7 @@
     <visual>
       <origin xyz="-8.50526e-17 -1.0366e-16 0.062" rpy="-5.55112e-17 -6.12323e-17 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/chassis_plate__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/chassis_plate__configuration_default.stl"/>
       </geometry>
       <material name="chassis_plate__configuration_default_2_material">
         <color rgba="0 0.501961 0 1.0"/>
@@ -881,7 +881,7 @@
     <visual>
       <origin xyz="-0.110479 -0.0576141 3.87034e-19" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+        <mesh filename="package://ballbot_description/meshes/spacer_m3_5_60.stl"/>
       </geometry>
       <material name="spacer_m3_5_60_4_material">
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
@@ -891,7 +891,7 @@
     <visual>
       <origin xyz="-0.110483 -0.0575576 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_25_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -913,7 +913,7 @@
     <visual>
       <origin xyz="0.0830211 -0.0496141 9.2427e-20" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+        <mesh filename="package://ballbot_description/meshes/spacer_m3_5_60.stl"/>
       </geometry>
       <material name="spacer_m3_5_60_5_material">
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
@@ -923,7 +923,7 @@
     <visual>
       <origin xyz="-0.00346996 0.0633859 -0.005" rpy="1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_10_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -933,7 +933,7 @@
     <visual>
       <origin xyz="-0.110483 -0.0575576 -0.005" rpy="1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_11_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -955,7 +955,7 @@
     <visual>
       <origin xyz="-0.00347892 -0.0626141 7.88861e-31" rpy="1.5708 -1.80411e-16 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+        <mesh filename="package://ballbot_description/meshes/spacer_m3_5_60.stl"/>
       </geometry>
       <material name="spacer_m3_5_60_6_material">
         <color rgba="0.196078 0.196078 0.196078 1.0"/>
@@ -965,7 +965,7 @@
     <visual>
       <origin xyz="-0.0034834 -0.0626707 0.065" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_12_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -975,7 +975,7 @@
     <visual>
       <origin xyz="-0.110483 0.0584424 -0.005" rpy="1.5708 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_13_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -985,7 +985,7 @@
     <visual>
       <origin xyz="-0.00347444 0.0634424 -0.002" rpy="3.05311e-16 2.66454e-15 -4.92661e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_26_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -995,7 +995,7 @@
     <visual>
       <origin xyz="-0.0034834 0.0634424 0.0626" rpy="-2.84495e-16 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_27_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1005,7 +1005,7 @@
     <visual>
       <origin xyz="-0.110479 0.0583859 -0.0026" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_28_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1015,7 +1015,7 @@
     <visual>
       <origin xyz="0.0830166 -0.0495576 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_29_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1025,7 +1025,7 @@
     <visual>
       <origin xyz="-0.0034834 0.0634424 0.065" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_14_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1035,7 +1035,7 @@
     <visual>
       <origin xyz="-0.110488 -0.0576141 0.065" rpy="1.5708 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_15_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1045,7 +1045,7 @@
     <visual>
       <origin xyz="0.0830166 0.0504424 0.0626" rpy="-2.77556e-17 -1.26218e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_30_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1055,7 +1055,7 @@
     <visual>
       <origin xyz="-0.0882244 0.0599859 -0.0368668" rpy="1.5708 -2.63678e-16 3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_31_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1065,7 +1065,7 @@
     <visual>
       <origin xyz="-0.07272 0.0623859 -0.0100766" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_16_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1135,7 +1135,7 @@
     <visual>
       <origin xyz="-0.0804789 0.0358859 -0.0235" rpy="1.17568e-16 2.64761e-29 -6.55914e-16"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_md520z30_12v__configuration_default.stl"/>
       </geometry>
       <material name="motor_md520z30_12v__configuration_default_2_material">
         <color rgba="1 1 1 1.0"/>
@@ -1145,7 +1145,7 @@
     <visual>
       <origin xyz="-0.0727244 0.0599859 -0.0368668" rpy="1.5708 -2.63678e-16 3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_32_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1185,7 +1185,7 @@
     <visual>
       <origin xyz="-0.0804789 0.0391359 -0.004" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_bracket_md520__configuration_default.stl"/>
       </geometry>
       <material name="motor_bracket_md520__configuration_default_2_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -1195,7 +1195,7 @@
     <visual>
       <origin xyz="-0.08822 0.0623859 -0.0100766" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_17_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1205,7 +1205,7 @@
     <visual>
       <origin xyz="-0.0649744 0.0623859 -0.0235566" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_18_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1215,7 +1215,7 @@
     <visual>
       <origin xyz="-0.0727244 0.0599859 -0.01002" rpy="1.5708 -2.63678e-16 3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_33_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1225,7 +1225,7 @@
     <visual>
       <origin xyz="-0.07272 0.0623859 -0.0369234" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_19_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1235,7 +1235,7 @@
     <visual>
       <origin xyz="-0.08822 0.0623859 -0.0369234" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_20_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1245,7 +1245,7 @@
     <visual>
       <origin xyz="-0.0882244 0.0599859 -0.01002" rpy="1.5708 -2.63678e-16 3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_34_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1255,7 +1255,7 @@
     <visual>
       <origin xyz="-0.0649789 0.0599859 -0.0235" rpy="1.5708 -2.77556e-16 3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_35_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1265,7 +1265,7 @@
     <visual>
       <origin xyz="-0.0959789 0.0599859 -0.0235" rpy="1.5708 -2.63678e-16 3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_36_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1275,7 +1275,7 @@
     <visual>
       <origin xyz="-0.0959744 0.0623859 -0.0235566" rpy="-2.77556e-16 -6.93889e-17 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_21_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1285,7 +1285,7 @@
     <visual>
       <origin xyz="-0.0727334 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_37_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1295,7 +1295,7 @@
     <visual>
       <origin xyz="-0.0882379 -0.0616141 -0.0100766" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_22_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1365,7 +1365,7 @@
     <visual>
       <origin xyz="-0.0804789 -0.0351141 -0.0235" rpy="2.84102e-16 -1.46925e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_md520z30_12v__configuration_default.stl"/>
       </geometry>
       <material name="motor_md520z30_12v__configuration_default_3_material">
         <color rgba="1 1 1 1.0"/>
@@ -1375,7 +1375,7 @@
     <visual>
       <origin xyz="-0.0882334 -0.0592141 -0.0368668" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_38_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1415,7 +1415,7 @@
     <visual>
       <origin xyz="-0.0804789 -0.0383641 -0.004" rpy="-1.5708 -1.23753e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_bracket_md520__configuration_default.stl"/>
       </geometry>
       <material name="motor_bracket_md520__configuration_default_3_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -1425,7 +1425,7 @@
     <visual>
       <origin xyz="-0.0727379 -0.0616141 -0.0100766" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_23_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1435,7 +1435,7 @@
     <visual>
       <origin xyz="-0.0959834 -0.0616141 -0.0235566" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_24_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1445,7 +1445,7 @@
     <visual>
       <origin xyz="-0.0882334 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_39_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1455,7 +1455,7 @@
     <visual>
       <origin xyz="-0.0882379 -0.0616141 -0.0369234" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_25_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1465,7 +1465,7 @@
     <visual>
       <origin xyz="-0.0727379 -0.0616141 -0.0369234" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_26_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1475,7 +1475,7 @@
     <visual>
       <origin xyz="-0.0727334 -0.0592141 -0.01002" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_40_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1485,7 +1485,7 @@
     <visual>
       <origin xyz="-0.0959789 -0.0592141 -0.0235" rpy="1.5708 -2.77556e-16 -3.1225e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_41_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1495,7 +1495,7 @@
     <visual>
       <origin xyz="-0.0649789 -0.0592141 -0.0235" rpy="1.5708 -2.63678e-16 -3.1225e-16"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_42_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1505,7 +1505,7 @@
     <visual>
       <origin xyz="-0.0649834 -0.0616141 -0.0235566" rpy="-2.77556e-16 9.71445e-17 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_27_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1515,7 +1515,7 @@
     <visual>
       <origin xyz="0.0602756 0.0599859 -0.0368668" rpy="1.5708 3.02189e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_43_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1525,7 +1525,7 @@
     <visual>
       <origin xyz="0.07578 0.0623859 -0.0100766" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_28_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1595,7 +1595,7 @@
     <visual>
       <origin xyz="0.0680211 0.0358859 -0.0235" rpy="1.86957e-16 -1.4446e-29 7.96089e-17"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_md520z30_12v__configuration_default.stl"/>
       </geometry>
       <material name="motor_md520z30_12v__configuration_default_4_material">
         <color rgba="1 1 1 1.0"/>
@@ -1605,7 +1605,7 @@
     <visual>
       <origin xyz="0.0757756 0.0599859 -0.0368668" rpy="1.5708 3.02189e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_44_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1645,7 +1645,7 @@
     <visual>
       <origin xyz="0.0680211 0.0391359 -0.004" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/motor_bracket_md520__configuration_default.stl"/>
       </geometry>
       <material name="motor_bracket_md520__configuration_default_4_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -1655,7 +1655,7 @@
     <visual>
       <origin xyz="0.06028 0.0623859 -0.0100766" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_29_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1665,7 +1665,7 @@
     <visual>
       <origin xyz="0.0835256 0.0623859 -0.0235566" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_30_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1675,7 +1675,7 @@
     <visual>
       <origin xyz="0.0757756 0.0599859 -0.01002" rpy="1.5708 3.02189e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_45_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1685,7 +1685,7 @@
     <visual>
       <origin xyz="0.07578 0.0623859 -0.0369234" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_31_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1695,7 +1695,7 @@
     <visual>
       <origin xyz="0.06028 0.0623859 -0.0369234" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_32_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1705,7 +1705,7 @@
     <visual>
       <origin xyz="0.0602756 0.0599859 -0.01002" rpy="1.5708 3.02189e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_46_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1715,7 +1715,7 @@
     <visual>
       <origin xyz="0.0835211 0.0599859 -0.0235" rpy="1.5708 3.00801e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_47_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1725,7 +1725,7 @@
     <visual>
       <origin xyz="0.0525211 0.0599859 -0.0235" rpy="1.5708 3.02189e-15 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/lock_washer_m3.stl"/>
+        <mesh filename="package://ballbot_description/meshes/lock_washer_m3.stl"/>
       </geometry>
       <material name="lock_washer_m3_48_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1735,7 +1735,7 @@
     <visual>
       <origin xyz="0.0525256 0.0623859 -0.0235566" rpy="-2.77556e-16 -7.01347e-30 -1.5708"/>
       <geometry>
-        <mesh filename="package://assets/screw_m3x6_6.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m3x6_6.stl"/>
       </geometry>
       <material name="screw_m3x6_6_33_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1753,7 +1753,7 @@
     <visual>
       <origin xyz="-0.0031546 -0.0138143 -0.0074" rpy="3.14159 -1.56336e-15 1.34629"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1775,7 +1775,7 @@
     <visual>
       <origin xyz="4.16334e-17 2.08167e-17 0.00675" rpy="-1.5708 3.84221e-15 -1.7953"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/wheel__configuration_default.stl"/>
       </geometry>
       <material name="wheel__configuration_default_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -1785,7 +1785,7 @@
     <visual>
       <origin xyz="6.72934e-14 -4.72955e-14 0.0111" rpy="1.7953 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_2_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1819,7 +1819,7 @@
     <visual>
       <origin xyz="1.38778e-17 -6.93889e-18 0.0006" rpy="1.5708 3.78098e-15 -1.7953"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
       <material name="hex_coupler_6mm__configuration_default_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
@@ -1829,7 +1829,7 @@
     <visual>
       <origin xyz="0.0031546 0.0138143 -0.0074" rpy="-1.5708 1.43946e-15 -1.7953"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_3_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1855,7 +1855,7 @@
     <visual>
       <origin xyz="0.01417 -7.60225e-14 0.0074" rpy="8.10427e-17 1.11022e-16 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_4_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1877,7 +1877,7 @@
     <visual>
       <origin xyz="-4.68375e-17 6.93889e-17 -0.00675" rpy="1.5708 -6.12323e-17 8.31828e-18"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/wheel__configuration_default.stl"/>
       </geometry>
       <material name="wheel__configuration_default_2_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -1887,7 +1887,7 @@
     <visual>
       <origin xyz="3.13031e-14 -7.60086e-14 -0.0111" rpy="-3.14159 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_5_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1921,7 +1921,7 @@
     <visual>
       <origin xyz="-1.73472e-18 0 -0.0006" rpy="-1.5708 1.61561e-27 8.31828e-18"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
       <material name="hex_coupler_6mm__configuration_default_2_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
@@ -1931,7 +1931,7 @@
     <visual>
       <origin xyz="-0.01417 -3.1114e-14 0.0074" rpy="1.5708 1.28814e-17 -4.59874e-17"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_6_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1957,7 +1957,7 @@
     <visual>
       <origin xyz="0.01417 7.61247e-14 -0.0074" rpy="-3.14159 -1.17447e-16 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_7_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -1979,7 +1979,7 @@
     <visual>
       <origin xyz="1.38778e-17 -3.54534e-17 0.00675" rpy="-1.5708 6.12323e-17 -1.9894e-17"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/wheel__configuration_default.stl"/>
       </geometry>
       <material name="wheel__configuration_default_3_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -1989,7 +1989,7 @@
     <visual>
       <origin xyz="3.1225e-14 7.61033e-14 0.0111" rpy="-7.35193e-16 1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_8_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -2023,7 +2023,7 @@
     <visual>
       <origin xyz="0 3.41524e-18 0.0006" rpy="1.5708 -1.61558e-27 -1.9894e-17"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
       <material name="hex_coupler_6mm__configuration_default_3_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
@@ -2033,7 +2033,7 @@
     <visual>
       <origin xyz="-0.01417 3.11522e-14 -0.0074" rpy="-1.5708 -6.45636e-18 8.42537e-16"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_9_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -2059,7 +2059,7 @@
     <visual>
       <origin xyz="0.01417 -7.60642e-14 0.0074" rpy="8.10428e-17 1.12003e-15 3.14159"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_10_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -2081,7 +2081,7 @@
     <visual>
       <origin xyz="0 2.77556e-17 -0.00675" rpy="1.5708 -6.12323e-17 1.71228e-17"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/wheel__configuration_default.stl"/>
       </geometry>
       <material name="wheel__configuration_default_4_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -2091,7 +2091,7 @@
     <visual>
       <origin xyz="3.13152e-14 -7.61058e-14 -0.0111" rpy="-3.14159 -1.5708 0"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_11_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>
@@ -2125,7 +2125,7 @@
     <visual>
       <origin xyz="1.38778e-17 0 -0.0006" rpy="-1.5708 1.61565e-27 1.71228e-17"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://ballbot_description/meshes/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
       <material name="hex_coupler_6mm__configuration_default_4_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
@@ -2135,7 +2135,7 @@
     <visual>
       <origin xyz="-0.01417 -3.12111e-14 0.0074" rpy="1.5708 -9.96122e-16 -4.89001e-16"/>
       <geometry>
-        <mesh filename="package://assets/screw_m4x8_8.stl"/>
+        <mesh filename="package://ballbot_description/meshes/screw_m4x8_8.stl"/>
       </geometry>
       <material name="screw_m4x8_8_12_material">
         <color rgba="0.776471 0.756863 0.737255 1.0"/>

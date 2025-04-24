@@ -11,10 +11,17 @@
         "lock_washer*": "collision",
         "hex_nut*": "collision"
     },
+    "additional_xml": "gazebo_diff_drive.xml",
     "post_import_commands": [
-       "echo 'Running Python cleanup script...'",
-       "python cleanup_onshape_output.py ballbot/robot.urdf ballbot/assets",
-       "echo 'Python cleanup script finished.'"
-    ],
-    "additional_xml": "gazebo_diff_drive.xml"
+        "echo '--- Starting Post-Import Processing ---'",
+        "echo 'Step 1: Cleaning names in intermediate URDF...'",
+        "python cleanup_names_only.py ballbot_generated/robot.urdf",
+        "echo 'Step 2: Fixing mesh paths and saving final URDF...'",
+        "mkdir -p ../urdf",
+        "python fix_ros_mesh_paths.py ballbot_generated/robot.urdf ../urdf/ballbot.urdf ballbot_description meshes",
+        "echo 'Step 3: Copying meshes to final location...'",
+        "mkdir -p ../meshes",
+        "cp ballbot_generated/assets/*.stl ../meshes/",
+        "echo '--- Post-Import Processing Finished ---'"
+    ]
 }
