@@ -856,8 +856,7 @@
     <model name='table'>
       <static>1</static>
       <link name='link'>
-        <collision name='surface'>
-          <pose>0 0 1 0 -0 0</pose>
+        <collision name='surface_collision'>  <pose>0 0 1 0 -0 0</pose>
           <geometry>
             <box>
               <size>1.5 0.8 0.03</size>
@@ -880,8 +879,7 @@
           </surface>
           <max_contacts>10</max_contacts>
         </collision>
-        <visual name='visual1'>
-          <pose>0 0 1 0 -0 0</pose>
+        <visual name='surface_visual'> <pose>0 0 1 0 -0 0</pose>
           <geometry>
             <box>
               <size>1.5 0.8 0.03</size>
@@ -894,8 +892,7 @@
             </script>
           </material>
         </visual>
-        <collision name='front_left_leg'>
-          <pose>0.68 0.38 0.5 0 -0 0</pose>
+        <collision name='front_left_leg_collision'> <pose>0.68 0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -916,8 +913,7 @@
             </friction>
           </surface>
         </collision>
-        <visual name='front_left_leg'>
-          <pose>0.68 0.38 0.5 0 -0 0</pose>
+        <visual name='front_left_leg_visual'> <pose>0.68 0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -931,8 +927,7 @@
             </script>
           </material>
         </visual>
-        <collision name='front_right_leg'>
-          <pose>0.68 -0.38 0.5 0 -0 0</pose>
+        <collision name='front_right_leg_collision'> <pose>0.68 -0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -953,8 +948,7 @@
             </friction>
           </surface>
         </collision>
-        <visual name='front_right_leg'>
-          <pose>0.68 -0.38 0.5 0 -0 0</pose>
+        <visual name='front_right_leg_visual'> <pose>0.68 -0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -968,8 +962,7 @@
             </script>
           </material>
         </visual>
-        <collision name='back_right_leg'>
-          <pose>-0.68 -0.38 0.5 0 -0 0</pose>
+        <collision name='back_right_leg_collision'> <pose>-0.68 -0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -990,8 +983,7 @@
             </friction>
           </surface>
         </collision>
-        <visual name='back_right_leg'>
-          <pose>-0.68 -0.38 0.5 0 -0 0</pose>
+        <visual name='back_right_leg_visual'> <pose>-0.68 -0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -1005,8 +997,7 @@
             </script>
           </material>
         </visual>
-        <collision name='back_left_leg'>
-          <pose>-0.68 0.38 0.5 0 -0 0</pose>
+        <collision name='back_left_leg_collision'> <pose>-0.68 0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -1027,8 +1018,7 @@
             </friction>
           </surface>
         </collision>
-        <visual name='back_left_leg'>
-          <pose>-0.68 0.38 0.5 0 -0 0</pose>
+        <visual name='back_left_leg_visual'> <pose>-0.68 0.38 0.5 0 -0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.02</radius>
@@ -1044,8 +1034,7 @@
         </visual>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
+        <kinematic>0</kinematic> </link>
       <pose>-1.35853 1.13358 0 0 -0 0</pose>
     </model>
     <model name='OfficeChairBlue'>
