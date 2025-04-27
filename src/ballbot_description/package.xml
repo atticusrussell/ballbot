@@ -12,7 +12,10 @@
     <exec_depend>joint_state_publisher</exec_depend>
     <exec_depend>robot_state_publisher</exec_depend>
     <exec_depend>xacro</exec_depend>
+    <!-- for gazebo plugins -->
+    <exec_depend>gazebo_ros</exec_depend>
     <export>
         <build_type>ament_cmake</build_type>
+        <gazebo_ros gazebo_model_path="${prefix}/share/${ros_package_name}/meshes"/>
     </export>
 </package>

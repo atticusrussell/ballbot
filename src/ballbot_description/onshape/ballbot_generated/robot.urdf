@@ -309,7 +309,7 @@
       <geometry>
         <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
-      <material name="hex_coupler_6mm_dfvgnzxzbnxcvsxfczqwerjklqweryuiopwerqpuio3_material">
+      <material name="hex_coupler_6mm_3_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
       </material>
     </visual>
@@ -1312,56 +1312,50 @@
       <num_wheel_pairs>2</num_wheel_pairs>
       <left_joint>front_left_wheel_speed</left_joint>
       <right_joint>front_right_wheel_speed</right_joint>
+      <wheel_separation>0.16</wheel_separation>
+      <wheel_diameter>0.066</wheel_diameter>
       <left_joint>rear_left_wheel_speed</left_joint>
       <right_joint>rear_right_wheel_speed</right_joint>
       <wheel_separation>0.16</wheel_separation>
-      <wheel_separation>0.16</wheel_separation>
       <wheel_diameter>0.066</wheel_diameter>
-      <wheel_diameter>0.066</wheel_diameter>
-      <updateRate>100</updateRate>
       <max_wheel_torque>20</max_wheel_torque>
       <max_wheel_acceleration>1.0</max_wheel_acceleration>
-      <robot_base_frame>still_chassis_assm</robot_base_frame>
+      <robot_base_frame>base_link</robot_base_frame>
       <publish_odom>true</publish_odom>
       <publish_odom_tf>false</publish_odom_tf>
       <publish_wheel_tf>true</publish_wheel_tf>
       <odometry_frame>odom</odometry_frame>
     </plugin>
   </gazebo>
+  <!-- gazebo collapses the visuals (and maybe more> of links connected
+via fixed joints, but we want to apply properites to the correct links
+so we're applying twice - one to the one to the top level name and one to the
+proper link
+  -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="still_chassis_assm">
+    <material>Gazebo/Green</material>
+  </gazebo>
   <gazebo reference="wheel_assm">
+    <material>Gazebo/Black</material>
     <mu1>0.8</mu1>
     <mu2>0.8</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
   </gazebo>
   <gazebo reference="wheel_assm_2">
+    <material>Gazebo/Black</material>
     <mu1>0.8</mu1>
     <mu2>0.8</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
   </gazebo>
   <gazebo reference="wheel_assm_3">
+    <material>Gazebo/Black</material>
     <mu1>0.8</mu1>
     <mu2>0.8</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
   </gazebo>
   <gazebo reference="wheel_assm_4">
+    <material>Gazebo/Black</material>
     <mu1>0.8</mu1>
     <mu2>0.8</mu2>
-    <fdir1>1 0 0</fdir1>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
   </gazebo>
 </robot>
