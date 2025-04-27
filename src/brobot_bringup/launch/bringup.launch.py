@@ -37,7 +37,7 @@ def generate_launch_description():
     )
 
     description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_description'), 'launch', 'description.launch.py']
+        [FindPackageShare('ballbot_description'), 'launch', 'description.launch.py']
     )
 
     ekf_config_path = PathJoinSubstitution(
@@ -63,7 +63,7 @@ def generate_launch_description():
 
         DeclareLaunchArgument(
             name='custom_robot', 
-            default_value='false',
+            default_value='true',
             description='Use custom robot'
         ),
 

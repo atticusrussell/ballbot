@@ -25,12 +25,6 @@ from launch_ros.actions import Node
 def generate_launch_description():
     laser_sensor_name = os.getenv('BROBOT_LASER_SENSOR', 'rplidar')
     base_laser_sensor_name = os.getenv('BROBOT_BASE_LASER_SENSOR', '')
-    
-    fake_laser_config_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_bringup'), 'config', 'fake_laser.yaml']
-    )
-
-    
 
     laser_launch_path = PathJoinSubstitution(
         [FindPackageShare('brobot_bringup'), 'launch', 'lasers.launch.py']

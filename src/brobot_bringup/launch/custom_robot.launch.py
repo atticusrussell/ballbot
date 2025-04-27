@@ -13,8 +13,8 @@
 # limitations under the License.
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
-from launch.substitutions import PathJoinSubstitution
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -26,24 +26,21 @@ def generate_launch_description():
     )
 
     description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_description'), 'launch', 'description.launch.py']
+        [FindPackageShare('ballbot_description'), 'launch', 'description.launch.py']
     )
 
     return LaunchDescription([
-        #run robot driver
-        #https://github.com/linorobot/sphero_rvr
-        Node(
-            package='sphero_rvr',
-            executable='sphero_node',
-            name='sphero_node',
-            output='screen'
+        DeclareLaunchArgument(
+            name='base_serial_port', 
+            default_value='/dev/ttyACM0',
+            description='Linorobot Base Serial Port'
         ),
-        #https://github.com/christianrauch/raspicam2_node
         Node(
-            package='raspicam2',
-            executable='raspicam2_node',
-            name='raspicam2',
-            output='screen'
+            package='micro_ros_agent',
+            executable='micro_ros_agent',
+            name='micro_ros_agent',
+            output='screen',
+            arguments=['serial', '--dev', LaunchConfiguration("base_serial_port")]
         ),
         #you can load your custom urdf launcher here
         #for demo's sake we'll use the default description launch file
