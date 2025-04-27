@@ -18,8 +18,8 @@
     <wheel_separation>0.16</wheel_separation>
     <wheel_diameter>0.066</wheel_diameter>
 
-    <max_wheel_torque>20</max_wheel_torque>
-    <max_wheel_acceleration>1.0</max_wheel_acceleration>
+    <max_wheel_torque>0.47</max_wheel_torque>
+    <max_wheel_acceleration>20.0</max_wheel_acceleration>
 
     <robot_base_frame>base_link</robot_base_frame>
     <publish_odom>true</publish_odom>
@@ -34,9 +34,6 @@
 via fixed joints, so we are only applying properties to the top level
 assembly that's been collapsed
   -->
-<gazebo reference="base_link">
-  <material>Gazebo/Green</material>
-</gazebo>
 <gazebo reference="still_chassis_assm">
   <material>Gazebo/Green</material>
 </gazebo>
