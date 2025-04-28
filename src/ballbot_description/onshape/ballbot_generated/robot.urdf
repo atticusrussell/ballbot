@@ -13,10 +13,32 @@
   <!-- Link still_chassis_assm -->
   <link name="still_chassis_assm">
     <inertial>
-      <origin xyz="0.00506382 0.000296754 0.0113063" rpy="0 0 0"/>
-      <mass value="1.23353"/>
-      <inertia ixx="0.00461098" ixy="-8.37752e-07" ixz="-0.00112278" iyy="0.00926014" iyz="2.03192e-06" izz="0.00803884"/>
+      <origin xyz="0.00479321 0.000296966 0.0112846" rpy="0 0 0"/>
+      <mass value="1.23648"/>
+      <inertia ixx="0.00461156" ixy="-8.08005e-07" ixz="-0.00112582" iyy="0.00929832" iyz="2.03431e-06" izz="0.00807704"/>
     </inertial>
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5 -->
+    <visual>
+      <origin xyz="-0.108479 -0.00961413 -1.53132e-30" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part pz_pan_head_screw_m2_5x0_45_x_6__1594e833f5b11f4fecc3a0ad0b729b46 -->
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5_2 -->
+    <visual>
+      <origin xyz="-0.108479 0.0103859 -1.78375e-30" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part pz_pan_head_screw_m2_5x0_45_x_6__1594e833f5b11f4fecc3a0ad0b729b46_2 -->
     <!-- Part motor_md520z30_12v -->
     <collision>
       <origin xyz="0.0680211 -0.0701141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
@@ -1200,6 +1222,104 @@
     <origin xyz="0.0855211 0.000385868 0.1195" rpy="-3.14159 -4.57342e-14 1.72878"/>
     <parent link="still_chassis_assm"/>
     <child link="rplidar_a1_head"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link mpu_9250 -->
+  <link name="mpu_9250">
+    <inertial>
+      <origin xyz="0.00558677 -0.01025 -0.000785" rpy="0 0 0"/>
+      <mass value="0.00102531"/>
+      <inertia ixx="5.13864e-08" ixy="1.20245e-49" ixz="-2.7743e-69" iyy="1.85373e-08" iyz="3.39442e-55" izz="6.95025e-08"/>
+    </inertial>
+    <!-- Part board_ipt -->
+    <collision>
+      <origin xyz="-8.67362e-18 0 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0015"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-8.67362e-18 -0.0205 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0015"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.02168 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.01914 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.0166 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.01406 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.01152 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.00898 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.00644 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.0039 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 -0.00136 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0115 0.00118 -0.001" rpy="-6.66027e-48 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.0005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0055 -0.01025 0" rpy="3.14159 5.3114e-62 3.66019e-42"/>
+      <geometry>
+        <mesh filename="package://assets/board_ipt.stl"/>
+      </geometry>
+      <material name="board_ipt_material">
+        <color rgba="0 0 0.6 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to mpu_9250 -->
+  <joint name="imu" type="fixed">
+    <origin xyz="-0.108479 0.0103859 0.005" rpy="-3.14159 -0 -3.14159"/>
+    <parent link="still_chassis_assm"/>
+    <child link="mpu_9250"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
