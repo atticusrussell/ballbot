@@ -15,6 +15,11 @@
         "*lock_washer*": "all",
         "*hex_nut*": "all"
     },
+    "joint_properties": {
+        "lidar": {
+            "type": "fixed"
+        }
+    },
     "additional_xml": "gazebo.xml",
     "post_import_commands": [
         "echo 'Step 2: Fixing mesh paths and saving final URDF...'",

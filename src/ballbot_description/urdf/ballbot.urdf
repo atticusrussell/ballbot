@@ -915,19 +915,19 @@
     </inertial>
     <!-- Part wheel_2 -->
     <collision>
-      <origin xyz="-4.68375e-17 6.93889e-17 -0.00675" rpy="-3.14159 -3.99574e-23 8.31828e-18"/>
+      <origin xyz="-6.245e-17 6.93889e-17 -0.00675" rpy="-3.14159 -3.99574e-23 1.97637e-18"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-4.68375e-17 6.93889e-17 -0.00675" rpy="-3.14159 -3.99574e-23 8.31828e-18"/>
+      <origin xyz="-6.245e-17 6.93889e-17 -0.00675" rpy="-3.14159 -3.99574e-23 1.97637e-18"/>
       <geometry>
         <cylinder length="0.0265" radius="0.033995"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-4.68375e-17 6.93889e-17 -0.00675" rpy="1.5708 -6.12323e-17 8.31828e-18"/>
+      <origin xyz="-6.245e-17 6.93889e-17 -0.00675" rpy="1.5708 -6.12323e-17 1.97637e-18"/>
       <geometry>
         <mesh filename="package://ballbot_description/meshes/wheel__configuration_default.stl"/>
       </geometry>
@@ -937,31 +937,31 @@
     </visual>
     <!-- Part hex_coupler_6mm_2 -->
     <collision>
-      <origin xyz="-1.73472e-18 -5.73221e-35 -0.0036" rpy="3.14159 -1.76644e-32 -3.14159"/>
+      <origin xyz="-6.93889e-18 -6.93889e-18 -0.0036" rpy="-3.14159 6.26052e-32 -3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-1.73472e-18 -5.73221e-35 -0.0036" rpy="3.14159 -1.76644e-32 -3.14159"/>
+      <origin xyz="-6.93889e-18 -6.93889e-18 -0.0036" rpy="-3.14159 6.26052e-32 -3.14159"/>
       <geometry>
         <cylinder length="0.006" radius="0.0069282"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-1.73472e-18 1.04644e-34 0.0054" rpy="3.83113e-33 1.76644e-32 8.31828e-18"/>
+      <origin xyz="-6.93889e-18 -6.93889e-18 0.0054" rpy="-4.6458e-33 -6.26052e-32 1.97637e-18"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-1.73472e-18 1.04644e-34 0.0054" rpy="3.83113e-33 1.76644e-32 8.31828e-18"/>
+      <origin xyz="-6.93889e-18 -6.93889e-18 0.0054" rpy="-4.6458e-33 -6.26052e-32 1.97637e-18"/>
       <geometry>
         <cylinder length="0.012" radius="0.0057"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-1.73472e-18 0 -0.0006" rpy="-1.5708 1.61561e-27 8.31828e-18"/>
+      <origin xyz="-6.93889e-18 -6.93889e-18 -0.0006" rpy="-1.5708 1.61553e-27 1.97637e-18"/>
       <geometry>
         <mesh filename="package://ballbot_description/meshes/hex_coupler_6mm__configuration_default.stl"/>
       </geometry>
@@ -972,7 +972,7 @@
   </link>
   <!-- Joint from still_chassis_assm to wheel_assm_2 -->
   <joint name="front_right_wheel_speed" type="continuous">
-    <origin xyz="0.0680211 -0.0776141 -0.0305" rpy="-1.5708 -1.26838 -1.05043e-15"/>
+    <origin xyz="0.0680211 -0.0776141 -0.0305" rpy="1.5708 -1.24974 -3.14159"/>
     <parent link="still_chassis_assm"/>
     <child link="wheel_assm_2"/>
     <axis xyz="0 0 1"/>
@@ -1125,14 +1125,14 @@
   <!-- Link rplidar_a1_head -->
   <link name="rplidar_a1_head">
     <inertial>
-      <origin xyz="0.00217985 0.00613983 -0.0019193" rpy="0 0 0"/>
+      <origin xyz="0.00217985 0.00613983 -0.0111798" rpy="0 0 0"/>
       <mass value="0.0241835"/>
       <inertia ixx="4.9791e-06" ixy="-8.90865e-07" ixz="-2.20273e-07" iyy="9.87383e-06" iyz="-2.23652e-07" izz="1.37159e-05"/>
     </inertial>
     <!-- Part woodscrews_gb_type136_m2x6_n_ipt_3 -->
     <!-- Part detector_ipt -->
     <visual>
-      <origin xyz="0.016954 0.0112841 -0.000339529" rpy="-4.51298e-13 1.36674 3.13938"/>
+      <origin xyz="0.016954 0.0112841 -0.0096" rpy="-4.51275e-13 1.36674 3.13938"/>
       <geometry>
         <mesh filename="package://ballbot_description/meshes/detector_ipt.stl"/>
       </geometry>
@@ -1142,7 +1142,7 @@
     </visual>
     <!-- Part detector_mount_ipt -->
     <visual>
-      <origin xyz="-7.14114e-05 -0.000178361 0.00866047" rpy="3.14159 -8.09241e-14 3.13938"/>
+      <origin xyz="-7.14114e-05 -0.000178361 -0.0006" rpy="3.14159 -8.09275e-14 3.13938"/>
       <geometry>
         <mesh filename="package://ballbot_description/meshes/detector_mount_ipt.stl"/>
       </geometry>
@@ -1152,19 +1152,19 @@
     </visual>
     <!-- Part head_ipt -->
     <collision>
-      <origin xyz="6.90477e-18 -1.39248e-17 -0.000239529" rpy="-3.14159 -3.41219e-18 -2.56803e-17"/>
+      <origin xyz="1.17961e-16 -1.249e-16 -0.0095" rpy="3.14159 -0 -5.94147e-18"/>
       <geometry>
         <cylinder length="0.02" radius="0.0336123"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="6.90477e-18 -1.39248e-17 -0.000239529" rpy="-3.14159 -3.41219e-18 -2.56803e-17"/>
+      <origin xyz="1.17961e-16 -1.249e-16 -0.0095" rpy="3.14159 -0 -5.94147e-18"/>
       <geometry>
         <cylinder length="0.02" radius="0.034612"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="6.93889e-18 -1.38778e-17 -0.0102395" rpy="4.69647e-18 -3.41219e-18 -2.56803e-17"/>
+      <origin xyz="1.17961e-16 -1.249e-16 -0.0195" rpy="0 -0 -5.94147e-18"/>
       <geometry>
         <mesh filename="package://ballbot_description/meshes/head_ipt.stl"/>
       </geometry>
@@ -1174,7 +1174,7 @@
     </visual>
     <!-- Part laser_ipt -->
     <visual>
-      <origin xyz="-0.025014 -0.00591097 -0.00133953" rpy="-3.14159 0.804343 -0.134007"/>
+      <origin xyz="-0.025014 -0.00591097 -0.0106" rpy="-3.14159 0.804343 -0.134007"/>
       <geometry>
         <mesh filename="package://ballbot_description/meshes/laser_ipt.stl"/>
       </geometry>
@@ -1185,7 +1185,7 @@
     <!-- Part woodscrews_gb_type136_m2x6_n_ipt_4 -->
     <!-- Part laser_mount_ipt -->
     <visual>
-      <origin xyz="-1.78156e-13 9.24677e-14 0.00766047" rpy="3.14159 -6.48648e-14 -3.13597"/>
+      <origin xyz="-1.77847e-13 9.22457e-14 -0.0016" rpy="3.14159 -6.48683e-14 -3.13597"/>
       <geometry>
         <mesh filename="package://ballbot_description/meshes/laser_mount_ipt.stl"/>
       </geometry>
@@ -1196,12 +1196,12 @@
     <!-- Part woodscrews_gb_type136_m2x6_n_ipt_5 -->
   </link>
   <!-- Joint from still_chassis_assm to rplidar_a1_head -->
-  <joint name="lidar" type="revolute">
-    <origin xyz="0.0855211 0.000385868 0.12876" rpy="-3.14159 6.81317e-14 1.05236"/>
+  <joint name="lidar" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.1195" rpy="-3.14159 -4.57342e-14 1.72878"/>
     <parent link="still_chassis_assm"/>
     <child link="rplidar_a1_head"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+    <limit effort="10" velocity="10"/>
   </joint>
   <!-- Joint from base_link to still_chassis_assm -->
   <joint name="base_link_to_still_chassis_assm" type="fixed">
