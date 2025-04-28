@@ -511,6 +511,18 @@
       <inertia ixx="3.27986e-06" ixy="2.74852e-08" ixz="4.09339e-09" iyy="3.1709e-06" iyz="2.66228e-08" izz="5.88876e-06"/>
     </inertial>
     <!-- Part head_ipt -->
+    <collision>
+      <origin xyz="-6.93889e-18 1.38778e-17 0.01" rpy="3.14159 2.81571e-30 1.27957e-17"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.0336123"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-6.93889e-18 1.38778e-17 0.01" rpy="3.14159 2.81571e-30 1.27957e-17"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.034612"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="-6.93889e-18 1.38778e-17 0" rpy="-1.11114e-29 2.81571e-30 1.27957e-17"/>
       <geometry>
