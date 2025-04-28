@@ -434,6 +434,187 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
+  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt -->
+  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt">
+    <inertial>
+      <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
+      <mass value="7.63832e-05"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="8.01788e-32" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+    </inertial>
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt -->
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt -->
+  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_fixed" type="fixed">
+    <origin xyz="0.110726 0.0125808 0.1325" rpy="-1.17437 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_detector_ipt -->
+  <link name="still_chassis_assm_detector_ipt">
+    <inertial>
+      <origin xyz="2.17373e-19 0.00186823 3.71859e-19" rpy="0 0 0"/>
+      <mass value="0.00982014"/>
+      <inertia ixx="2.24197e-07" ixy="-5.02562e-25" ixz="1.22513e-24" iyy="2.36422e-07" iyz="2.44598e-23" izz="2.24197e-07"/>
+    </inertial>
+    <!-- Part detector_ipt -->
+    <visual>
+      <origin xyz="0 1.38778e-17 8.67362e-19" rpy="4.4103e-17 2.78279e-17 -9.442e-18"/>
+      <geometry>
+        <mesh filename="package://assets/detector_ipt.stl"/>
+      </geometry>
+      <material name="detector_ipt_material">
+        <color rgba="0.717647 0.717647 0.717647 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_detector_ipt -->
+  <joint name="still_chassis_assm_detector_ipt_fixed" type="fixed">
+    <origin xyz="0.0882947 0.0205619 0.129" rpy="3.14159 -1.36674 -1.11796"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_detector_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_detector_mount_ipt -->
+  <link name="still_chassis_assm_detector_mount_ipt">
+    <inertial>
+      <origin xyz="-0.0159882 0.0209585 0.00846469" rpy="0 0 0"/>
+      <mass value="0.00130069"/>
+      <inertia ixx="9.84921e-08" ixy="-1.81316e-08" ixz="-4.80197e-10" iyy="8.20542e-08" iyz="3.4192e-09" izz="1.06056e-07"/>
+    </inertial>
+    <!-- Part detector_mount_ipt -->
+    <visual>
+      <origin xyz="1.38778e-17 1.38778e-17 0" rpy="-8.63694e-30 1.31378e-29 5.2258e-17"/>
+      <geometry>
+        <mesh filename="package://assets/detector_mount_ipt.stl"/>
+      </geometry>
+      <material name="detector_mount_ipt_material">
+        <color rgba="0.462745 0.462745 0.462745 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_detector_mount_ipt -->
+  <joint name="still_chassis_assm_detector_mount_ipt_fixed" type="fixed">
+    <origin xyz="0.0853916 0.000243904 0.12" rpy="-2.66271e-13 1.72854e-13 -1.11796"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_detector_mount_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_head_ipt -->
+  <link name="still_chassis_assm_head_ipt">
+    <inertial>
+      <origin xyz="-0.000130083 -0.00060772 0.00519291" rpy="0 0 0"/>
+      <mass value="0.00711679"/>
+      <inertia ixx="3.27986e-06" ixy="2.74852e-08" ixz="4.09339e-09" iyy="3.1709e-06" iyz="2.66228e-08" izz="5.88876e-06"/>
+    </inertial>
+    <!-- Part head_ipt -->
+    <visual>
+      <origin xyz="-6.93889e-18 1.38778e-17 0" rpy="-1.11114e-29 2.81571e-30 1.27957e-17"/>
+      <geometry>
+        <mesh filename="package://assets/head_ipt.stl"/>
+      </geometry>
+      <material name="head_ipt_material">
+        <color rgba="0.419608 0.419608 0.419608 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_head_ipt -->
+  <joint name="still_chassis_assm_head_ipt_fixed" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.1389" rpy="-3.14159 -9.16055e-14 2.02143"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_head_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_laser_ipt -->
+  <link name="still_chassis_assm_laser_ipt">
+    <inertial>
+      <origin xyz="-6.09596e-15 -0.00968125 2.53735e-16" rpy="0 0 0"/>
+      <mass value="0.00497222"/>
+      <inertia ixx="1.91091e-07" ixy="-7.2549e-24" ixz="2.37481e-24" iyy="2.84146e-08" iyz="-7.76773e-24" izz="1.89569e-07"/>
+    </inertial>
+    <!-- Part laser_ipt -->
+    <visual>
+      <origin xyz="0 2.08167e-17 0" rpy="1.0243e-17 1.06232e-17 -4.68835e-17"/>
+      <geometry>
+        <mesh filename="package://assets/laser_ipt.stl"/>
+      </geometry>
+      <material name="laser_ipt_material">
+        <color rgba="0.866667 0.423529 0.0235294 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_laser_ipt -->
+  <joint name="still_chassis_assm_laser_ipt_fixed" type="fixed">
+    <origin xyz="0.0910946 -0.0247055 0.13" rpy="2.70738e-13 -0.804343 2.15543"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_laser_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2 -->
+  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2">
+    <inertial>
+      <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
+      <mass value="7.63832e-05"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="-1.06777e-31" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+    </inertial>
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_2 -->
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2 -->
+  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2_fixed" type="fixed">
+    <origin xyz="0.0591707 0.00985469 0.1325" rpy="-1.06785 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_laser_mount_ipt -->
+  <link name="still_chassis_assm_laser_mount_ipt">
+    <inertial>
+      <origin xyz="0.0208683 0.0214736 0.00841055" rpy="0 0 0"/>
+      <mass value="0.000744536"/>
+      <inertia ixx="3.81569e-08" ixy="8.40456e-09" ixz="-2.46664e-11" iyy="2.47138e-08" iyz="1.96932e-09" izz="3.46216e-08"/>
+    </inertial>
+    <!-- Part laser_mount_ipt -->
+    <visual>
+      <origin xyz="6.93889e-18 0 0" rpy="-1.21234e-29 9.31873e-30 -1.37664e-17"/>
+      <geometry>
+        <mesh filename="package://assets/laser_mount_ipt.stl"/>
+      </geometry>
+      <material name="laser_mount_ipt_material">
+        <color rgba="0.462745 0.462745 0.462745 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_laser_mount_ipt -->
+  <joint name="still_chassis_assm_laser_mount_ipt_fixed" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.121" rpy="-2.81973e-13 1.55655e-13 -1.12579"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_laser_mount_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3 -->
+  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3">
+    <inertial>
+      <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
+      <mass value="7.63832e-05"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="8.74249e-32" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+    </inertial>
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_3 -->
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3 -->
+  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3_fixed" type="fixed">
+    <origin xyz="0.076592 -0.0261522 0.1325" rpy="-1.06785 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
   <!-- Link still_chassis_assm_motor_md520z30_12v -->
   <link name="still_chassis_assm_motor_md520z30_12v">
     <inertial>
@@ -1152,6 +1333,430 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
+  <!-- Link still_chassis_assm_motor_board_ipt -->
+  <link name="still_chassis_assm_motor_board_ipt">
+    <inertial>
+      <origin xyz="-4.70515e-33 1.77337e-18 0.0008" rpy="0 0 0"/>
+      <mass value="0.00127935"/>
+      <inertia ixx="8.66489e-08" ixy="1.01834e-24" ixz="0" iyy="8.66489e-08" iyz="4.25867e-39" izz="1.72752e-07"/>
+    </inertial>
+    <!-- Part motor_board_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 -1.23092e-17"/>
+      <geometry>
+        <mesh filename="package://assets/motor_board_ipt.stl"/>
+      </geometry>
+      <material name="motor_board_ipt_material">
+        <color rgba="0.788235 0.788235 0.788235 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_motor_board_ipt -->
+  <joint name="still_chassis_assm_motor_board_ipt_fixed" type="fixed">
+    <origin xyz="0.0400211 0.000385868 0.0909" rpy="-1.98086e-16 -1.26575e-16 2.0044"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_motor_board_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4 -->
+  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4">
+    <inertial>
+      <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
+      <mass value="7.63832e-05"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="3.54311e-33" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+    </inertial>
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_4 -->
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4 -->
+  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4_fixed" type="fixed">
+    <origin xyz="0.0400211 0.0113859 0.1163" rpy="3.10866 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_motor_ipt -->
+  <link name="still_chassis_assm_motor_ipt">
+    <inertial>
+      <origin xyz="-2.57623e-15 7.604e-15 0.00831946" rpy="0 0 0"/>
+      <mass value="0.131981"/>
+      <inertia ixx="1.20053e-05" ixy="-4.4375e-14" ixz="0" iyy="1.21873e-05" iyz="0" izz="1.64334e-05"/>
+    </inertial>
+    <!-- Part motor_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 -1.12927e-32"/>
+      <geometry>
+        <mesh filename="package://assets/motor_ipt.stl"/>
+      </geometry>
+      <material name="motor_ipt_material">
+        <color rgba="0.960784 0.960784 0.960784 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_motor_ipt -->
+  <joint name="still_chassis_assm_motor_ipt_fixed" type="fixed">
+    <origin xyz="0.0400211 0.000385868 0.0945" rpy="-6.12279e-17 -1.84437e-16 1.5708"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_motor_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_connector_1_25_4pin_ipt -->
+  <link name="still_chassis_assm_connector_1_25_4pin_ipt">
+    <inertial>
+      <origin xyz="-0.000104252 0.000754651 0.000313787" rpy="0 0 0"/>
+      <mass value="6.37994e-05"/>
+      <inertia ixx="1e-09" ixy="-2.34434e-12" ixz="9.28704e-13" iyy="1e-09" iyz="1.64079e-11" izz="1e-09"/>
+    </inertial>
+    <!-- Part connector_1_25_4pin_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 -8.49769e-33"/>
+      <geometry>
+        <mesh filename="package://assets/connector_1_25_4pin_ipt.stl"/>
+      </geometry>
+      <material name="connector_1_25_4pin_ipt_material">
+        <color rgba="0.960784 0.960784 0.960784 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_connector_1_25_4pin_ipt -->
+  <joint name="still_chassis_assm_connector_1_25_4pin_ipt_fixed" type="fixed">
+    <origin xyz="0.0633211 0.000260868 0.10215" rpy="-3.14159 -1.22465e-16 1.5708"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_connector_1_25_4pin_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_rubber_ipt -->
+  <link name="still_chassis_assm_rubber_ipt">
+    <inertial>
+      <origin xyz="0.00612547 -4.72185e-08 4.51746e-12" rpy="0 0 0"/>
+      <mass value="0.00083994"/>
+      <inertia ixx="4.82081e-07" ixy="9.16853e-13" ixz="1.35984e-38" iyy="1.19768e-06" iyz="1.04062e-44" izz="7.16024e-07"/>
+    </inertial>
+    <!-- Part rubber_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.13499e-32 0"/>
+      <geometry>
+        <mesh filename="package://assets/rubber_ipt.stl"/>
+      </geometry>
+      <material name="rubber_ipt_material">
+        <color rgba="0.462745 0.462745 0.462745 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_rubber_ipt -->
+  <joint name="still_chassis_assm_rubber_ipt_fixed" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.117186" rpy="1.5708 -1.37204e-16 -3.14159"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_rubber_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_head_base_ipt -->
+  <link name="still_chassis_assm_head_base_ipt">
+    <inertial>
+      <origin xyz="2.96331e-06 -3.04325e-05 -0.000506347" rpy="0 0 0"/>
+      <mass value="0.0122368"/>
+      <inertia ixx="4.23783e-06" ixy="-8.15387e-09" ixz="-4.97816e-09" iyy="4.40281e-06" iyz="-3.64448e-10" izz="8.37671e-06"/>
+    </inertial>
+    <!-- Part head_base_ipt -->
+    <visual>
+      <origin xyz="0 -6.93889e-18 0" rpy="0 -2.52435e-29 -6.8322e-18"/>
+      <geometry>
+        <mesh filename="package://assets/head_base_ipt.stl"/>
+      </geometry>
+      <material name="head_base_ipt_material">
+        <color rgba="0.235294 0.235294 0.235294 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_head_base_ipt -->
+  <joint name="still_chassis_assm_head_base_ipt_fixed" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.117" rpy="-9.16055e-14 -1.4551e-13 -2.69096"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_head_base_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_wheel_ipt -->
+  <link name="still_chassis_assm_wheel_ipt">
+    <inertial>
+      <origin xyz="-2.41935e-19 -2.91455e-18 0.00191305" rpy="0 0 0"/>
+      <mass value="0.000740487"/>
+      <inertia ixx="1.55254e-08" ixy="-3.05363e-25" ixz="2.73559e-40" iyy="1.55254e-08" iyz="1.09424e-39" izz="2.88621e-08"/>
+    </inertial>
+    <!-- Part wheel_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.46519e-32 -6.16298e-33 -1.68231e-17"/>
+      <geometry>
+        <mesh filename="package://assets/wheel_ipt.stl"/>
+      </geometry>
+      <material name="wheel_ipt_material">
+        <color rgba="0.235294 0.235294 0.235294 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_wheel_ipt -->
+  <joint name="still_chassis_assm_wheel_ipt_fixed" type="fixed">
+    <origin xyz="0.0400211 0.000385868 0.115" rpy="1.28639e-16 3.79626e-17 -1.44637"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_wheel_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_connector_1_25_3pin_ipt -->
+  <link name="still_chassis_assm_connector_1_25_3pin_ipt">
+    <inertial>
+      <origin xyz="4.36902e-06 0.000187569 -0.00032435" rpy="0 0 0"/>
+      <mass value="5.87188e-05"/>
+      <inertia ixx="1e-09" ixy="-3.44227e-13" ixz="-8.32099e-14" iyy="1e-09" iyz="-9.95164e-12" izz="1e-09"/>
+    </inertial>
+    <!-- Part connector_1_25_3pin_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 3.89087e-31 0"/>
+      <geometry>
+        <mesh filename="package://assets/connector_1_25_3pin_ipt.stl"/>
+      </geometry>
+      <material name="connector_1_25_3pin_ipt_material">
+        <color rgba="0.960784 0.960784 0.960784 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_connector_1_25_3pin_ipt -->
+  <joint name="still_chassis_assm_connector_1_25_3pin_ipt_fixed" type="fixed">
+    <origin xyz="0.0525211 2.33735e-05 0.0892" rpy="1.5708 -2.44929e-16 1.5708"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_connector_1_25_3pin_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_base_ipt -->
+  <link name="still_chassis_assm_base_ipt">
+    <inertial>
+      <origin xyz="0.00606497 -1.08142e-07 -0.00369296" rpy="0 0 0"/>
+      <mass value="0.0178296"/>
+      <inertia ixx="6.01179e-06" ixy="-1.72854e-10" ixz="-4.07045e-07" iyy="1.02484e-05" iyz="-5.94829e-12" izz="1.58344e-05"/>
+    </inertial>
+    <!-- Part base_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 -1.17343e-56"/>
+      <geometry>
+        <mesh filename="package://assets/base_ipt.stl"/>
+      </geometry>
+      <material name="base_ipt_material">
+        <color rgba="0.235294 0.235294 0.235294 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_base_ipt -->
+  <joint name="still_chassis_assm_base_ipt_fixed" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.114" rpy="7.70228e-28 1.52349e-29 -3.14159"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_base_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5 -->
+  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5">
+    <inertial>
+      <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
+      <mass value="7.63832e-05"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="3.54311e-33" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+    </inertial>
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_5 -->
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5 -->
+  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5_fixed" type="fixed">
+    <origin xyz="0.0400211 -0.0106141 0.1163" rpy="3.10866 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_motherboard_ipt -->
+  <link name="still_chassis_assm_motherboard_ipt">
+    <inertial>
+      <origin xyz="0.00269244 -9.46148e-16 0.0005" rpy="0 0 0"/>
+      <mass value="0.00295286"/>
+      <inertia ixx="6.90516e-07" ixy="-1.60225e-62" ixz="0" iyy="6.7492e-07" iyz="0" izz="1.36494e-06"/>
+    </inertial>
+    <!-- Part motherboard_ipt -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 -1.17343e-56"/>
+      <geometry>
+        <mesh filename="package://assets/motherboard_ipt.stl"/>
+      </geometry>
+      <material name="motherboard_ipt_material">
+        <color rgba="0.960784 0.960784 0.960784 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_motherboard_ipt -->
+  <joint name="still_chassis_assm_motherboard_ipt_fixed" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.104" rpy="7.70228e-28 1.52349e-29 -3.14159"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_motherboard_ipt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_fixed" type="fixed">
+    <origin xyz="0.113521 0.0283859 0.094" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_2 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_2">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 1.38406e-17" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_2 -->
+    <visual>
+      <origin xyz="0 0 1.38778e-17" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_2 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_2_fixed" type="fixed">
+    <origin xyz="0.113521 0.0283859 0.078" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_3 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_3">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_3 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_3_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_3 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_3_fixed" type="fixed">
+    <origin xyz="0.113521 0.0283859 0.11" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_4 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_4">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_4 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_4_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_4 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_4_fixed" type="fixed">
+    <origin xyz="0.113521 -0.0276141 0.094" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_5 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_5">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_5 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_5_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_5 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_5_fixed" type="fixed">
+    <origin xyz="0.113521 -0.0276141 0.078" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_6 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_6">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -1.3915e-17" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_6 -->
+    <visual>
+      <origin xyz="0 0 -1.38778e-17" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_6_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_6 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_6_fixed" type="fixed">
+    <origin xyz="0.113521 -0.0276141 0.11" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_6"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
   <!-- Link still_chassis_assm_motor_md520z30_12v_4 -->
   <link name="still_chassis_assm_motor_md520z30_12v_4">
     <inertial>
@@ -1291,6 +1896,162 @@
     <origin xyz="0.0680211 0.0391359 -0.004" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
     <parent link="still_chassis_assm"/>
     <child link="still_chassis_assm_motor_bracket_md520_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_7 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_7">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_7 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_7_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_7 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_7_fixed" type="fixed">
+    <origin xyz="0.0435211 -0.0196141 0.094" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_7"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_8 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_8">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_8 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_8_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_8 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_8_fixed" type="fixed">
+    <origin xyz="0.0435211 -0.0196141 0.078" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_8"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_9 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_9">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_9 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_9_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_9 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_9_fixed" type="fixed">
+    <origin xyz="0.0435211 -0.0196141 0.11" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_9"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_10 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_10">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_10 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_10_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_10 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_10_fixed" type="fixed">
+    <origin xyz="0.0435211 0.0203859 0.094" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_10"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_11 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_11">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_11 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_11_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_11 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_11_fixed" type="fixed">
+    <origin xyz="0.0435211 0.0203859 0.078" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_11"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_12 -->
+  <link name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_12">
+    <inertial>
+      <origin xyz="0.00902537 -2.23207e-19 -3.72011e-20" rpy="0 0 0"/>
+      <mass value="0.00294966"/>
+      <inertia ixx="1.02446e-08" ixy="0" ixz="0" iyy="8.28166e-08" iyz="4.45086e-49" izz="8.28167e-08"/>
+    </inertial>
+    <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_12 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="2.68718e-42 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664352_hex_stand_off_m2_5x16.stl"/>
+      </geometry>
+      <material name="bn_3318_3664352_hex_stand_off_m2_5x16_12_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_12 -->
+  <joint name="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_12_fixed" type="fixed">
+    <origin xyz="0.0435211 0.0203859 0.11" rpy="-2.84495e-16 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="still_chassis_assm_bn_3318_3664352_hex_stand_off_m2_5x16_12"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>

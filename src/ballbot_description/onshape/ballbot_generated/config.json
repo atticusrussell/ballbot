@@ -22,7 +22,7 @@
         "python fix_ros_mesh_paths.py ballbot_generated/robot.urdf ../urdf/ballbot.urdf ballbot_description meshes",
         "echo 'Step 3: Copying meshes to final location...'",
         "mkdir -p ../meshes",
-        "cp ballbot_generated/assets/*.stl ../meshes/",
+        "cp ballbot_generated/assets/**/*.stl ../meshes/",
         "echo '--- Post-Import Processing Finished ---'"
     ]
 }
