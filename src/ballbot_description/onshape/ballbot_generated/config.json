@@ -5,7 +5,7 @@
     "addDummyBaseLink": true,
     "use_scads": true,
     "merge_stls": false,
-    "use_fixed_links": true,
+    "use_fixed_links": false,
     "collisions_as_visual": false,
     "configuration": "simplify=Default",
     "clean_config_suffix": true,

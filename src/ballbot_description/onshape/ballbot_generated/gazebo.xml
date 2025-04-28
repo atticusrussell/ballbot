@@ -5,25 +5,24 @@
       <argument>odom:=odom/unfiltered</argument>
     </ros>
 
-    <update_rate>100</update_rate>
-
     <num_wheel_pairs>2</num_wheel_pairs>
-
+    
     <left_joint>front_left_wheel_speed</left_joint>
     <right_joint>front_right_wheel_speed</right_joint>
     <wheel_separation>0.16</wheel_separation>
     <wheel_diameter>0.066</wheel_diameter>
-
+    
     <left_joint>rear_left_wheel_speed</left_joint>
     <right_joint>rear_right_wheel_speed</right_joint>
     <wheel_separation>0.16</wheel_separation>
     <wheel_diameter>0.066</wheel_diameter>
-
+    
     <!-- calculated for stall torque of 4.8 kg*cm  -->
     <max_wheel_torque>0.47</max_wheel_torque>
     <!-- tuned value -->
     <max_wheel_acceleration>20.0</max_wheel_acceleration>
-
+    
+    <update_rate>100</update_rate>
     <robot_base_frame>base_link</robot_base_frame>
     <publish_odom>true</publish_odom>
     <publish_odom_tf>false</publish_odom_tf>
@@ -66,9 +65,13 @@ assembly that's been collapsed
   <mu2>0.8</mu2>
 </gazebo>
 
+<gazebo reference="rplidar_a1_head">
+  <material>Gazebo/Grey</material>
+</gazebo>
+
 <!-- configure lidar  -->
 <!-- Gazebo Sensor Plugin for RPLIDAR A1 -->
-<gazebo reference="rplidar_a1_head_head_ipt">
+<gazebo reference="rplidar_a1_head">
   <!-- Give sensor a unique name -->
   <sensor type="gpu_ray" name="rplidar_a1_sensor">
     <always_on>true</always_on>
