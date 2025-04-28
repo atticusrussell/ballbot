@@ -15,7 +15,7 @@
         "*lock_washer*": "all",
         "*hex_nut*": "all"
     },
-    "additional_xml": "gazebo_diff_drive.xml",
+    "additional_xml": "gazebo.xml",
     "post_import_commands": [
         "echo 'Step 2: Fixing mesh paths and saving final URDF...'",
         "mkdir -p ../urdf",

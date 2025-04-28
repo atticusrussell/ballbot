@@ -434,33 +434,41 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt -->
-  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt">
+  <!-- Link rplidar_a1_head -->
+  <link name="rplidar_a1_head">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+  </link>
+  <!-- Link rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_3 -->
+  <link name="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_3">
     <inertial>
       <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
       <mass value="7.63832e-05"/>
-      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="8.01788e-32" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="8.39215e-32" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
     </inertial>
-    <!-- Part woodscrews_gb_type136_m2x6_n_ipt -->
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_3 -->
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt -->
-  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_fixed" type="fixed">
-    <origin xyz="0.110726 0.0125808 0.1325" rpy="-1.17437 1.5708 0"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_3 -->
+  <joint name="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_3_fixed" type="fixed">
+    <origin xyz="-4.91829e-14 0.028 -0.00383953" rpy="-2.29454 -1.5708 0"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_3"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_detector_ipt -->
-  <link name="still_chassis_assm_detector_ipt">
+  <!-- Link rplidar_a1_head_detector_ipt -->
+  <link name="rplidar_a1_head_detector_ipt">
     <inertial>
-      <origin xyz="2.17373e-19 0.00186823 3.71859e-19" rpy="0 0 0"/>
+      <origin xyz="1.40632e-17 0.00186823 -5.47363e-19" rpy="0 0 0"/>
       <mass value="0.00982014"/>
-      <inertia ixx="2.24197e-07" ixy="-5.02562e-25" ixz="1.22513e-24" iyy="2.36422e-07" iyz="2.44598e-23" izz="2.24197e-07"/>
+      <inertia ixx="2.24197e-07" ixy="-7.83931e-24" ixz="-7.42569e-24" iyy="2.36422e-07" iyz="4.26719e-24" izz="2.24197e-07"/>
     </inertial>
     <!-- Part detector_ipt -->
     <visual>
-      <origin xyz="0 1.38778e-17 8.67362e-19" rpy="4.4103e-17 2.78279e-17 -9.442e-18"/>
+      <origin xyz="1.38778e-17 0 0" rpy="1.63436e-17 7.29815e-18 -2.41494e-17"/>
       <geometry>
         <mesh filename="package://assets/detector_ipt.stl"/>
       </geometry>
@@ -469,16 +477,16 @@
       </material>
     </visual>
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_detector_ipt -->
-  <joint name="still_chassis_assm_detector_ipt_fixed" type="fixed">
-    <origin xyz="0.0882947 0.0205619 0.129" rpy="3.14159 -1.36674 -1.11796"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_detector_ipt"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_detector_ipt -->
+  <joint name="rplidar_a1_head_detector_ipt_fixed" type="fixed">
+    <origin xyz="0.016954 0.0112841 -0.000339529" rpy="-4.51298e-13 1.36674 3.13938"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_detector_ipt"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_detector_mount_ipt -->
-  <link name="still_chassis_assm_detector_mount_ipt">
+  <!-- Link rplidar_a1_head_detector_mount_ipt -->
+  <link name="rplidar_a1_head_detector_mount_ipt">
     <inertial>
       <origin xyz="-0.0159882 0.0209585 0.00846469" rpy="0 0 0"/>
       <mass value="0.00130069"/>
@@ -486,7 +494,7 @@
     </inertial>
     <!-- Part detector_mount_ipt -->
     <visual>
-      <origin xyz="1.38778e-17 1.38778e-17 0" rpy="-8.63694e-30 1.31378e-29 5.2258e-17"/>
+      <origin xyz="0 1.38778e-17 0" rpy="5.04871e-29 -2.05104e-29 1.63339e-17"/>
       <geometry>
         <mesh filename="package://assets/detector_mount_ipt.stl"/>
       </geometry>
@@ -495,16 +503,16 @@
       </material>
     </visual>
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_detector_mount_ipt -->
-  <joint name="still_chassis_assm_detector_mount_ipt_fixed" type="fixed">
-    <origin xyz="0.0853916 0.000243904 0.12" rpy="-2.66271e-13 1.72854e-13 -1.11796"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_detector_mount_ipt"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_detector_mount_ipt -->
+  <joint name="rplidar_a1_head_detector_mount_ipt_fixed" type="fixed">
+    <origin xyz="-7.14114e-05 -0.000178361 0.00866047" rpy="3.14159 -8.09241e-14 3.13938"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_detector_mount_ipt"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_head_ipt -->
-  <link name="still_chassis_assm_head_ipt">
+  <!-- Link rplidar_a1_head_head_ipt -->
+  <link name="rplidar_a1_head_head_ipt">
     <inertial>
       <origin xyz="-0.000130083 -0.00060772 0.00519291" rpy="0 0 0"/>
       <mass value="0.00711679"/>
@@ -512,19 +520,19 @@
     </inertial>
     <!-- Part head_ipt -->
     <collision>
-      <origin xyz="-6.93889e-18 1.38778e-17 0.01" rpy="3.14159 2.81571e-30 1.27957e-17"/>
+      <origin xyz="5.05726e-32 -1.38778e-17 0.01" rpy="-3.14159 1.01145e-29 -2.56803e-17"/>
       <geometry>
         <cylinder length="0.02" radius="0.0336123"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-6.93889e-18 1.38778e-17 0.01" rpy="3.14159 2.81571e-30 1.27957e-17"/>
+      <origin xyz="5.05726e-32 -1.38778e-17 0.01" rpy="-3.14159 1.01145e-29 -2.56803e-17"/>
       <geometry>
         <cylinder length="0.02" radius="0.034612"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="-6.93889e-18 1.38778e-17 0" rpy="-1.11114e-29 2.81571e-30 1.27957e-17"/>
+      <origin xyz="0 -1.38778e-17 0" rpy="9.80363e-30 1.01145e-29 -2.56803e-17"/>
       <geometry>
         <mesh filename="package://assets/head_ipt.stl"/>
       </geometry>
@@ -533,24 +541,24 @@
       </material>
     </visual>
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_head_ipt -->
-  <joint name="still_chassis_assm_head_ipt_fixed" type="fixed">
-    <origin xyz="0.0855211 0.000385868 0.1389" rpy="-3.14159 -9.16055e-14 2.02143"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_head_ipt"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_head_ipt -->
+  <joint name="rplidar_a1_head_head_ipt_fixed" type="fixed">
+    <origin xyz="6.93889e-18 -1.38778e-17 -0.0102395" rpy="4.69647e-18 -3.41219e-18 -2.56803e-17"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_head_ipt"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_laser_ipt -->
-  <link name="still_chassis_assm_laser_ipt">
+  <!-- Link rplidar_a1_head_laser_ipt -->
+  <link name="rplidar_a1_head_laser_ipt">
     <inertial>
-      <origin xyz="-6.09596e-15 -0.00968125 2.53735e-16" rpy="0 0 0"/>
+      <origin xyz="-6.08168e-15 -0.00968125 2.67964e-16" rpy="0 0 0"/>
       <mass value="0.00497222"/>
-      <inertia ixx="1.91091e-07" ixy="-7.2549e-24" ixz="2.37481e-24" iyy="2.84146e-08" iyz="-7.76773e-24" izz="1.89569e-07"/>
+      <inertia ixx="1.91091e-07" ixy="-2.88347e-24" ixz="-8.91704e-24" iyy="2.84146e-08" iyz="-4.14508e-24" izz="1.89569e-07"/>
     </inertial>
     <!-- Part laser_ipt -->
     <visual>
-      <origin xyz="0 2.08167e-17 0" rpy="1.0243e-17 1.06232e-17 -4.68835e-17"/>
+      <origin xyz="1.38778e-17 -2.77556e-17 1.38778e-17" rpy="-2.61112e-17 7.69884e-18 -1.7748e-17"/>
       <geometry>
         <mesh filename="package://assets/laser_ipt.stl"/>
       </geometry>
@@ -559,33 +567,33 @@
       </material>
     </visual>
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_laser_ipt -->
-  <joint name="still_chassis_assm_laser_ipt_fixed" type="fixed">
-    <origin xyz="0.0910946 -0.0247055 0.13" rpy="2.70738e-13 -0.804343 2.15543"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_laser_ipt"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_laser_ipt -->
+  <joint name="rplidar_a1_head_laser_ipt_fixed" type="fixed">
+    <origin xyz="-0.025014 -0.00591097 -0.00133953" rpy="-3.14159 0.804343 -0.134007"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_laser_ipt"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2 -->
-  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2">
+  <!-- Link rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_4 -->
+  <link name="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_4">
     <inertial>
       <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
       <mass value="7.63832e-05"/>
-      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="-1.06777e-31" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="1.9795e-32" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
     </inertial>
-    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_2 -->
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_4 -->
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2 -->
-  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2_fixed" type="fixed">
-    <origin xyz="0.0591707 0.00985469 0.1325" rpy="-1.06785 1.5708 0"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_4 -->
+  <joint name="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_4_fixed" type="fixed">
+    <origin xyz="0.02 -0.0195959 -0.00383953" rpy="-2.18802 -1.5708 0"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_4"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_laser_mount_ipt -->
-  <link name="still_chassis_assm_laser_mount_ipt">
+  <!-- Link rplidar_a1_head_laser_mount_ipt -->
+  <link name="rplidar_a1_head_laser_mount_ipt">
     <inertial>
       <origin xyz="0.0208683 0.0214736 0.00841055" rpy="0 0 0"/>
       <mass value="0.000744536"/>
@@ -593,7 +601,7 @@
     </inertial>
     <!-- Part laser_mount_ipt -->
     <visual>
-      <origin xyz="6.93889e-18 0 0" rpy="-1.21234e-29 9.31873e-30 -1.37664e-17"/>
+      <origin xyz="-6.93889e-18 0 0" rpy="0 3.3921e-29 4.16923e-17"/>
       <geometry>
         <mesh filename="package://assets/laser_mount_ipt.stl"/>
       </geometry>
@@ -602,30 +610,38 @@
       </material>
     </visual>
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_laser_mount_ipt -->
-  <joint name="still_chassis_assm_laser_mount_ipt_fixed" type="fixed">
-    <origin xyz="0.0855211 0.000385868 0.121" rpy="-2.81973e-13 1.55655e-13 -1.12579"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_laser_mount_ipt"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_laser_mount_ipt -->
+  <joint name="rplidar_a1_head_laser_mount_ipt_fixed" type="fixed">
+    <origin xyz="-1.78156e-13 9.24677e-14 0.00766047" rpy="3.14159 -6.48648e-14 -3.13597"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_laser_mount_ipt"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3 -->
-  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3">
+  <!-- Link rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_5 -->
+  <link name="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_5">
     <inertial>
       <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
       <mass value="7.63832e-05"/>
-      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="8.74249e-32" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
+      <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="1.56416e-32" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
     </inertial>
-    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_3 -->
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_5 -->
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3 -->
-  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3_fixed" type="fixed">
-    <origin xyz="0.076592 -0.0261522 0.1325" rpy="-1.06785 1.5708 0"/>
-    <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_3"/>
+  <!-- Joint from rplidar_a1_head to rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_5 -->
+  <joint name="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_5_fixed" type="fixed">
+    <origin xyz="-0.02 -0.0195959 -0.00383953" rpy="-2.18802 -1.5708 0"/>
+    <parent link="rplidar_a1_head"/>
+    <child link="rplidar_a1_head_woodscrews_gb_type136_m2x6_n_ipt_5"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from still_chassis_assm to rplidar_a1_head -->
+  <joint name="lidar" type="revolute">
+    <origin xyz="0.0855211 0.000385868 0.12876" rpy="-3.14159 6.81317e-14 1.05236"/>
+    <parent link="still_chassis_assm"/>
+    <child link="rplidar_a1_head"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
   <!-- Link still_chassis_assm_motor_md520z30_12v -->
   <link name="still_chassis_assm_motor_md520z30_12v">
@@ -1371,20 +1387,20 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4 -->
-  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4">
+  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt -->
+  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt">
     <inertial>
       <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
       <mass value="7.63832e-05"/>
       <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="3.54311e-33" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
     </inertial>
-    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_4 -->
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt -->
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4 -->
-  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4_fixed" type="fixed">
+  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt -->
+  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_fixed" type="fixed">
     <origin xyz="0.0400211 0.0113859 0.1163" rpy="3.10866 1.5708 0"/>
     <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_4"/>
+    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
@@ -1570,20 +1586,20 @@
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
-  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5 -->
-  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5">
+  <!-- Link still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2 -->
+  <link name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2">
     <inertial>
       <origin xyz="0.00296116 -1.81625e-08 2.47228e-09" rpy="0 0 0"/>
       <mass value="7.63832e-05"/>
       <inertia ixx="1e-09" ixy="-2.78851e-15" ixz="3.54311e-33" iyy="1e-09" iyz="-1.11285e-15" izz="1e-09"/>
     </inertial>
-    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_5 -->
+    <!-- Part woodscrews_gb_type136_m2x6_n_ipt_2 -->
   </link>
-  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5 -->
-  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5_fixed" type="fixed">
+  <!-- Joint from still_chassis_assm to still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2 -->
+  <joint name="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2_fixed" type="fixed">
     <origin xyz="0.0400211 -0.0106141 0.1163" rpy="3.10866 1.5708 0"/>
     <parent link="still_chassis_assm"/>
-    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_5"/>
+    <child link="still_chassis_assm_woodscrews_gb_type136_m2x6_n_ipt_2"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
   </joint>
@@ -2076,6 +2092,7 @@
     <limit effort="10" velocity="10"/>
   </joint>
   <!-- Additional gazebo_diff_drive.xml -->
+  <!-- configure diff drive -->
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <ros>
@@ -2091,7 +2108,9 @@
       <right_joint>rear_right_wheel_speed</right_joint>
       <wheel_separation>0.16</wheel_separation>
       <wheel_diameter>0.066</wheel_diameter>
+      <!-- calculated for stall torque of 4.8 kg*cm  -->
       <max_wheel_torque>0.47</max_wheel_torque>
+      <!-- tuned value -->
       <max_wheel_acceleration>20.0</max_wheel_acceleration>
       <robot_base_frame>base_link</robot_base_frame>
       <publish_odom>true</publish_odom>
@@ -2104,6 +2123,7 @@
 via fixed joints, so we are only applying properties to the top level
 assembly that's been collapsed
   -->
+  <!-- 0.8 should be good for rubber -->
   <gazebo reference="still_chassis_assm">
     <material>Gazebo/Green</material>
   </gazebo>
@@ -2126,5 +2146,57 @@ assembly that's been collapsed
     <material>Gazebo/Black</material>
     <mu1>0.8</mu1>
     <mu2>0.8</mu2>
+  </gazebo>
+  <!-- configure lidar  -->
+  <!-- Gazebo Sensor Plugin for RPLIDAR A1 -->
+  <gazebo reference="rplidar_a1_head_head_ipt">
+    <!-- Give sensor a unique name -->
+    <sensor type="gpu_ray" name="rplidar_a1_sensor">
+      <always_on>true</always_on>
+      <!-- Scan rate in Hz -->
+      <update_rate>10</update_rate>
+      <!-- Sensor pose relative to the link origin -->
+      <pose>0 0 0 0 0 0</pose>
+      <!-- Set to true to see rays in Gazebo -->
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <!-- Number of rays per scan -->
+            <samples>360</samples>
+            <!-- Resolution factor (usually 1) -->
+            <resolution>1</resolution>
+            <!-- Start angle in radians -->
+            <min_angle>-3.14159</min_angle>
+            <!-- End angle in radians -->
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <!-- Minimum range in meters -->
+          <min>0.08</min>
+          <!-- Maximum range in meters -->
+          <max>12.0</max>
+          <!-- Range resolution (noise factor) -->
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <!-- Add some noise -->
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="rplidar_a1_lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <!-- Remap internal topic to /scan -->
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <!-- Frame ID for the published LaserScan msg -->
+        <frame_name>laser</frame_name>
+        <topic_name>scan</topic_name>
+      </plugin>
+    </sensor>
   </gazebo>
 </robot>
