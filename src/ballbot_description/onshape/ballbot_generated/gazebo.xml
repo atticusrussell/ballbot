@@ -121,3 +121,28 @@ assembly that's been collapsed
     </plugin>
   </sensor>
 </gazebo>
+
+<!-- IMU -->
+<gazebo reference="mpu_9250">
+  <gravity>true</gravity>
+  <sensor name="imu_sensor" type="imu">
+  <always_on>true</always_on>
+  <update_rate>20</update_rate>
+  <visualize>true</visualize>
+  <topic>__default_topic__</topic>
+  <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+      <ros>
+        <remapping>~/out:=imu/data</remapping>
+      </ros>
+      <topicName>imu/data</topicName>
+      <bodyName>mpu_9250</bodyName>
+      <updateRateHZ>10.0</updateRateHZ>
+      <gaussianNoise>0.0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+      <frameName>mpu_9250</frameName>
+      <initialOrientationAsReference>false</initialOrientationAsReference>
+  </plugin>
+  <pose>0 0 0 0 0 0</pose>
+  </sensor>
+</gazebo>
