@@ -1317,7 +1317,7 @@ assembly that's been collapsed
         </ros>
         <output_type>sensor_msgs/LaserScan</output_type>
         <!-- Frame ID for the published LaserScan msg -->
-        <frame_name>laser</frame_name>
+        <frame_name>rplidar_a1_head</frame_name>
         <topic_name>scan</topic_name>
       </plugin>
     </sensor>

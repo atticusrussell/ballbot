@@ -9,7 +9,6 @@
     "collisions_as_visual": false,
     "configuration": "simplify=Default",
     "clean_config_suffix": true,
-    "remove_parent_prefix": true,
     "ignore": {
         "*screw*" : "all",
         "*lock_washer*": "all",
