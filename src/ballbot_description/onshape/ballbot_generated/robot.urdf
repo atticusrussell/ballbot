@@ -13,9 +13,9 @@
   <!-- Link still_chassis_assm -->
   <link name="still_chassis_assm">
     <inertial>
-      <origin xyz="0.00479321 0.000296966 0.0112846" rpy="0 0 0"/>
-      <mass value="1.23648"/>
-      <inertia ixx="0.00461156" ixy="-8.08005e-07" ixz="-0.00112582" iyy="0.00929832" iyz="2.03431e-06" izz="0.00807704"/>
+      <origin xyz="0.00770582 0.000369553 0.0116168" rpy="0 0 0"/>
+      <mass value="1.27612"/>
+      <inertia ixx="0.00463086" ixy="-9.22091e-06" ixz="-0.0011647" iyy="0.00965528" iyz="1.07796e-06" izz="0.00842382"/>
     </inertial>
     <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5 -->
     <visual>
@@ -795,6 +795,37 @@
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
       </material>
     </visual>
+    <!-- Part webcam_neck -->
+    <visual>
+      <origin xyz="0.107271 0.00263587 0.0464905" rpy="2.44337 1.96137e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_neck.stl"/>
+      </geometry>
+      <material name="webcam_neck_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part webcam_base -->
+    <visual>
+      <origin xyz="0.0825211 0.00263587 0.0100127" rpy="-1.5708 1.96137e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_base.stl"/>
+      </geometry>
+      <material name="webcam_base_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part pan_head_cross_recess_screw_is5_iso_7045___m3_x_4___z___4n -->
+    <!-- Part webcam_bolt -->
+    <visual>
+      <origin xyz="0.114021 0.0156359 0.0545333" rpy="1.05135e-14 -1.39617 5.06882e-15"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_bolt.stl"/>
+      </geometry>
+      <material name="webcam_bolt_material">
+        <color rgba="0.917647 0.917647 0.917647 1.0"/>
+      </material>
+    </visual>
     <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_7 -->
     <visual>
       <origin xyz="0.0435211 -0.0196141 0.094" rpy="-2.84495e-16 1.5708 0"/>
@@ -1174,19 +1205,19 @@
     </visual>
     <!-- Part head_ipt -->
     <collision>
-      <origin xyz="1.17961e-16 -1.249e-16 -0.0095" rpy="3.14159 -0 -5.94147e-18"/>
+      <origin xyz="1.17961e-16 -1.11022e-16 -0.0095" rpy="3.14159 -0 -5.94147e-18"/>
       <geometry>
         <cylinder length="0.02" radius="0.0336123"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="1.17961e-16 -1.249e-16 -0.0095" rpy="3.14159 -0 -5.94147e-18"/>
+      <origin xyz="1.17961e-16 -1.11022e-16 -0.0095" rpy="3.14159 -0 -5.94147e-18"/>
       <geometry>
         <cylinder length="0.02" radius="0.034612"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="1.17961e-16 -1.249e-16 -0.0195" rpy="0 -0 -5.94147e-18"/>
+      <origin xyz="1.17961e-16 -1.11022e-16 -0.0195" rpy="0 -0 -5.94147e-18"/>
       <geometry>
         <mesh filename="package://assets/head_ipt.stl"/>
       </geometry>
@@ -1207,7 +1238,7 @@
     <!-- Part woodscrews_gb_type136_m2x6_n_ipt_4 -->
     <!-- Part laser_mount_ipt -->
     <visual>
-      <origin xyz="-1.77847e-13 9.22457e-14 -0.0016" rpy="3.14159 -6.48683e-14 -3.13597"/>
+      <origin xyz="-1.77847e-13 9.22595e-14 -0.0016" rpy="3.14159 -6.48683e-14 -3.13597"/>
       <geometry>
         <mesh filename="package://assets/laser_mount_ipt.stl"/>
       </geometry>
@@ -1322,6 +1353,82 @@
     <child link="mpu_9250"/>
     <axis xyz="0 0 1"/>
     <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link webcam -->
+  <link name="webcam">
+    <inertial>
+      <origin xyz="1.93827e-07 0.0198974 0.00749985" rpy="0 0 0"/>
+      <mass value="0.019904"/>
+      <inertia ixx="7.59017e-06" ixy="-1.69916e-11" ixz="2.88799e-10" iyy="6.0477e-06" iyz="-1.20283e-10" izz="4.11563e-06"/>
+    </inertial>
+    <!-- Part webcam_sensor -->
+    <collision>
+      <origin xyz="-2.18658e-16 0.034 0.0075" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-2.18658e-16 0.034 0.0075" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.006"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-2.15106e-16 0.026 0.0075" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_sensor.stl"/>
+      </geometry>
+      <material name="webcam_sensor_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part webcam_glass -->
+    <visual>
+      <origin xyz="-2.15106e-16 0.026 0.0075" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_glass.stl"/>
+      </geometry>
+      <material name="webcam_glass_material">
+        <color rgba="0.713725 0.760784 0.8 1.0"/>
+      </material>
+    </visual>
+    <!-- Part webcam_body -->
+    <collision>
+      <origin xyz="6.93889e-18 0.0165 0.0075" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <box size="0.079734 0.033688 0.024"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="6.93889e-18 0.0150456 0.0075" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="6.93889e-18 0.0150456 0.0075" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.006"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="6.93889e-18 0.0230456 0.0075" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_body.stl"/>
+      </geometry>
+      <material name="webcam_body_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to webcam -->
+  <joint name="webcam" type="revolute">
+    <origin xyz="0.114021 -0.00486413 0.0545333" rpy="-1.5708 -1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="webcam"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
   </joint>
   <!-- Joint from base_link to still_chassis_assm -->
   <joint name="base_link_to_still_chassis_assm" type="fixed">
