@@ -13,10 +13,21 @@
   <!-- Link still_chassis_assm -->
   <link name="still_chassis_assm">
     <inertial>
-      <origin xyz="0.00946732 0.000401593 0.0122235" rpy="0 0 0"/>
-      <mass value="1.29443"/>
-      <inertia ixx="0.00467021" ixy="-1.43151e-05" ixz="-0.00126117" iyy="0.00997208" iyz="-6.76458e-07" izz="0.00871096"/>
+      <origin xyz="0.0152524 0.000352955 0.0153895" rpy="0 0 0"/>
+      <mass value="1.71089"/>
+      <inertia ixx="0.00535432" ixy="-2.27855e-05" ixz="-0.00118399" iyy="0.0123802" iyz="1.0945e-06" izz="0.0115328"/>
     </inertial>
+    <!-- Part pz_pan_head_screw_m2_5x0_45_x_6__1594e833f5b11f4fecc3a0ad0b729b46 -->
+    <!-- Part ea25_5 -->
+    <visual>
+      <origin xyz="-0.112979 -0.000364132 0.032" rpy="-1.89327e-29 1.26255e-29 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/ea25_5.stl"/>
+      </geometry>
+      <material name="ea25_5_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
     <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5 -->
     <visual>
       <origin xyz="-0.108479 -0.00961413 -1.53132e-30" rpy="9.71445e-17 -1.5708 0"/>
@@ -27,7 +38,7 @@
         <color rgba="0.980392 0.713725 0.00392157 1.0"/>
       </material>
     </visual>
-    <!-- Part pz_pan_head_screw_m2_5x0_45_x_6__1594e833f5b11f4fecc3a0ad0b729b46 -->
+    <!-- Part pz_pan_head_screw_m2_5x0_45_x_6__1594e833f5b11f4fecc3a0ad0b729b46_2 -->
     <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5_2 -->
     <visual>
       <origin xyz="-0.108479 0.0103859 -1.78375e-30" rpy="9.71445e-17 -1.5708 0"/>
@@ -38,7 +49,17 @@
         <color rgba="0.980392 0.713725 0.00392157 1.0"/>
       </material>
     </visual>
-    <!-- Part pz_pan_head_screw_m2_5x0_45_x_6__1594e833f5b11f4fecc3a0ad0b729b46_2 -->
+    <!-- Part pz_pan_head_screw_m2_5x0_45_x_6__1594e833f5b11f4fecc3a0ad0b729b46_3 -->
+    <!-- Part battery -->
+    <visual>
+      <origin xyz="0.0805211 0.000385868 0.022" rpy="-6.93889e-16 1.62634e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/battery.stl"/>
+      </geometry>
+      <material name="battery_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
     <!-- Part motor_md520z30_12v -->
     <collision>
       <origin xyz="0.0680211 -0.0701141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
@@ -795,6 +816,66 @@
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
       </material>
     </visual>
+    <!-- Part bn_3318_3664351_hex_stand_off_m2_5x12 -->
+    <visual>
+      <origin xyz="-0.112979 0.0293859 8.67362e-18" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664351_hex_stand_off_m2_5x12.stl"/>
+      </geometry>
+      <material name="bn_3318_3664351_hex_stand_off_m2_5x12_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3319_3664358_hex_stand_off_m2_5x10 -->
+    <visual>
+      <origin xyz="-0.112979 0.0293859 0.022" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3319_3664358_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3319_3664358_hex_stand_off_m2_5x10_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10 -->
+    <visual>
+      <origin xyz="-0.112979 0.0293859 0.012" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664351_hex_stand_off_m2_5x12_2 -->
+    <visual>
+      <origin xyz="-0.112979 -0.0286141 9.1073e-18" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664351_hex_stand_off_m2_5x12.stl"/>
+      </geometry>
+      <material name="bn_3318_3664351_hex_stand_off_m2_5x12_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3319_3664358_hex_stand_off_m2_5x10_2 -->
+    <visual>
+      <origin xyz="-0.112979 -0.0286141 0.022" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3319_3664358_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3319_3664358_hex_stand_off_m2_5x10_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_2 -->
+    <visual>
+      <origin xyz="-0.112979 -0.0286141 0.012" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
     <!-- Part bn_3318_3664352_hex_stand_off_m2_5x16_7 -->
     <visual>
       <origin xyz="0.0435211 -0.0196141 0.094" rpy="-2.84495e-16 1.5708 0"/>
@@ -857,19 +938,19 @@
     </visual>
     <!-- Part webcam_sensor -->
     <collision>
-      <origin xyz="0.148021 0.00263587 0.0545333" rpy="1.5708 -1.93361e-15 1.5708"/>
+      <origin xyz="0.153649 0.00263587 0.0556436" rpy="1.5708 9.15974e-17 1.5708"/>
       <geometry>
         <cylinder length="0.017" radius="0.01"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.148021 0.00263587 0.0545333" rpy="1.5708 -1.93361e-15 1.5708"/>
+      <origin xyz="0.153649 0.00263587 0.0556436" rpy="1.5708 9.15974e-17 1.5708"/>
       <geometry>
         <cylinder length="0.017" radius="0.006"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0.140021 0.00263587 0.0545333" rpy="1.5708 -1.93361e-15 1.5708"/>
+      <origin xyz="0.145649 0.00263587 0.0556436" rpy="1.5708 9.15974e-17 1.5708"/>
       <geometry>
         <mesh filename="package://assets/webcam_sensor.stl"/>
       </geometry>
@@ -879,25 +960,25 @@
     </visual>
     <!-- Part webcam_body -->
     <collision>
-      <origin xyz="0.130521 0.00263587 0.0545333" rpy="1.5708 -1.96137e-15 1.5708"/>
+      <origin xyz="0.136149 0.00263587 0.0556436" rpy="1.5708 6.38402e-17 1.5708"/>
       <geometry>
         <box size="0.079734 0.033688 0.024"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.129067 0.00263587 0.0545333" rpy="1.5708 1.96137e-15 -1.5708"/>
+      <origin xyz="0.134694 0.00263587 0.0556436" rpy="1.5708 -6.38402e-17 -1.5708"/>
       <geometry>
         <cylinder length="0.017" radius="0.01"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0.129067 0.00263587 0.0545333" rpy="1.5708 1.96137e-15 -1.5708"/>
+      <origin xyz="0.134694 0.00263587 0.0556436" rpy="1.5708 -6.38402e-17 -1.5708"/>
       <geometry>
         <cylinder length="0.017" radius="0.006"/>
       </geometry>
     </collision>
     <visual>
-      <origin xyz="0.137067 0.00263587 0.0545333" rpy="1.5708 1.96137e-15 -1.5708"/>
+      <origin xyz="0.142694 0.00263587 0.0556436" rpy="1.5708 -6.38402e-17 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/webcam_body.stl"/>
       </geometry>
@@ -907,7 +988,7 @@
     </visual>
     <!-- Part webcam_neck -->
     <visual>
-      <origin xyz="0.107271 0.00263587 0.0464905" rpy="2.44337 1.97783e-15 -1.5708"/>
+      <origin xyz="0.113193 0.00263587 0.0473628" rpy="2.4794 -5.55112e-17 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/webcam_neck.stl"/>
       </geometry>
@@ -917,7 +998,7 @@
     </visual>
     <!-- Part webcam_base -->
     <visual>
-      <origin xyz="0.0825211 0.00263587 0.0100127" rpy="-1.5708 1.96137e-15 -1.5708"/>
+      <origin xyz="0.0895211 0.00263587 0.0100127" rpy="-1.5708 1.96137e-15 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/webcam_base.stl"/>
       </geometry>
@@ -928,7 +1009,7 @@
     <!-- Part pan_head_cross_recess_screw_is5_iso_7045___m3_x_4___z___4n -->
     <!-- Part webcam_bolt -->
     <visual>
-      <origin xyz="0.114021 0.0156359 0.0545333" rpy="1.13319e-14 -1.39617 4.2851e-15"/>
+      <origin xyz="0.119649 0.0156359 0.0556436" rpy="-4.62097e-16 -1.4322 5.61155e-16"/>
       <geometry>
         <mesh filename="package://assets/webcam_bolt.stl"/>
       </geometry>
@@ -1407,9 +1488,9 @@
   <!-- Link webcam_glass -->
   <link name="webcam_glass">
     <inertial>
-      <origin xyz="1.45304e-19 0 -0.000399182" rpy="0 0 0"/>
+      <origin xyz="1.45304e-19 6.93889e-18 -0.000399182" rpy="0 0 0"/>
       <mass value="0.00160321"/>
-      <inertia ixx="1.81656e-08" ixy="-2.79755e-38" ixz="-3.70084e-24" iyy="1.81656e-08" iyz="-5.50093e-25" izz="2.71493e-08"/>
+      <inertia ixx="1.81656e-08" ixy="-3.29015e-38" ixz="-3.70084e-24" iyy="1.81656e-08" iyz="-5.50093e-25" izz="2.71493e-08"/>
     </inertial>
     <!-- Part webcam_glass -->
     <visual>
@@ -1424,7 +1505,7 @@
   </link>
   <!-- Joint from still_chassis_assm to webcam_glass -->
   <joint name="webcam" type="fixed">
-    <origin xyz="0.152521 0.00263587 0.0545333" rpy="3.14159 1.5708 0"/>
+    <origin xyz="0.158149 0.00263587 0.0556436" rpy="3.14159 1.5708 0"/>
     <parent link="still_chassis_assm"/>
     <child link="webcam_glass"/>
     <axis xyz="0 0 1"/>
