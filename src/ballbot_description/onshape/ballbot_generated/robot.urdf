@@ -1577,12 +1577,12 @@ assembly that's been collapsed
   <joint name="webcam_to_sensor_mount_joint" type="fixed">
     <parent link="webcam_glass"/>
     <child link="camera_sensor_mount"/>
-    <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+    <origin xyz="0 0 0" rpy="3.14159 1.5708 0"/>
   </joint>
   <!-- camera -->
   <link name="camera_link_optical"/>
   <joint name="camera_optical_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="-1.57 1.5708 -1.57"/>
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
     <parent link="camera_sensor_mount"/>
     <child link="camera_link_optical"/>
   </joint>
@@ -1590,7 +1590,7 @@ assembly that's been collapsed
   <gazebo reference="camera_sensor_mount">
     <material>Gazebo/GreyTransparent</material>
     <sensor name="camera" type="camera">
-      <pose>0 1.5708 0 1.5708 1.5708 1.5708</pose>
+      <pose>0 0 0 0 0 0</pose>
       <update_rate>24.0</update_rate>
       <visualize>true</visualize>
       <camera name="camera">

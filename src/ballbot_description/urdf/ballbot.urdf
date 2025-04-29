@@ -1577,7 +1577,7 @@ assembly that's been collapsed
   <joint name="webcam_to_sensor_mount_joint" type="fixed">
     <parent link="webcam_glass"/>
     <child link="camera_sensor_mount"/>
-    <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+    <origin xyz="0 0 0" rpy="3.14159 1.5708 0"/>
   </joint>
   <!-- camera -->
   <link name="camera_link_optical"/>
