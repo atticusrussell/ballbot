@@ -17,6 +17,9 @@
     "joint_properties": {
         "lidar": {
             "type": "fixed"
+        },
+        "webcam": {
+            "type": "fixed"
         }
     },
     "additional_xml": "gazebo.xml",

@@ -146,3 +146,46 @@ assembly that's been collapsed
   <pose>0 0 0 0 0 0</pose>
   </sensor>
 </gazebo>
+
+<link name="camera_sensor_mount"/>
+
+<joint name="webcam_to_sensor_mount_joint" type="fixed">
+  <parent link="webcam_glass"/>
+  <child link="camera_sensor_mount"/>
+  <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+</joint>
+
+<!-- camera -->
+<link name="camera_link_optical"/>
+
+<joint name="camera_optical_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="-1.57 1.5708 -1.57"/>
+  <parent link="camera_sensor_mount"/>
+  <child link="camera_link_optical"/>
+</joint>
+
+<!-- https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-Camera#gazebo_ros_camera -->
+<gazebo reference="camera_sensor_mount">
+  <material>Gazebo/GreyTransparent</material>
+  <sensor name="camera" type="camera">
+    <pose>0 0 0 0 0 0</pose>
+    <update_rate>24.0</update_rate>
+    <visualize>true</visualize>
+    <camera name="camera">
+      <!-- TODO find info about webcam -->
+      <horizontal_fov>1.0</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>50</far>
+      </clip>
+    </camera>
+    <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+      <frame_name>camera_link_optical</frame_name>
+    </plugin>
+  </sensor>
+</gazebo>
