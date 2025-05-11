@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "833f9762904995f22ff7dd9f",
+    "documentMicroversion": "242f0526d92bb11c4ccf8e4b",
+    "elementId": "5cc94e7f59506072a89e0c08",
+    "fullConfiguration": "default",
+    "id": "MKyyKVPach+dRBdSn",
+    "isStandardContent": false,
+    "name": "A1_UART-Bridge <1>",
+    "partId": "JGD",
+    "suppressed": false,
+    "type": "Part"
+}

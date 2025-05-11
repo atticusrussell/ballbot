@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "833f9762904995f22ff7dd9f",
+    "documentMicroversion": "242f0526d92bb11c4ccf8e4b",
+    "elementId": "39ad0f84a89891c748cecde3",
+    "fullConfiguration": "default",
+    "id": "MmisMpRWgUi0KEuV0",
+    "isStandardContent": false,
+    "name": "Teensy 4.1 <1>",
+    "partId": "JGD",
+    "suppressed": false,
+    "type": "Part"
+}

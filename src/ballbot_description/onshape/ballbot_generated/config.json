@@ -7,7 +7,7 @@
     "merge_stls": false,
     "use_fixed_links": false,
     "collisions_as_visual": false,
-    "configuration": "simplify=Default",
+    "configuration": "Configuration=Default",
     "clean_config_suffix": true,
     "ignore": {
         "*screw*" : "all",

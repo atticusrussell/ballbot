@@ -69,6 +69,10 @@ assembly that's been collapsed
   <material>Gazebo/Grey</material>
 </gazebo>
 
+<gazebo reference="mpu_9250">
+  <material>Gazebo/Blue</material>
+</gazebo>
+
 <!-- configure lidar  -->
 <!-- Gazebo Sensor Plugin for RPLIDAR A1 -->
 <gazebo reference="rplidar_a1_head">
