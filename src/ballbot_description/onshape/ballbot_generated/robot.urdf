@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!-- Generated using onshape-to-robot -->
-<!-- Onshape https://cad.onshape.com/documents/833f9762904995f22ff7dd9f/w/38852c293063cfa13b203677/e/83ac8f3e1b8a64890594cf88 -->
+<!-- Onshape document_id: 833f9762904995f22ff7dd9f / version_id: b91ed6985ab785ef4accfe30 -->
 <robot name="ballbot_generated">
   <!-- Link base_link -->
   <link name="base_link">

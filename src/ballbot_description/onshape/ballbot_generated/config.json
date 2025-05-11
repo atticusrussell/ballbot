@@ -1,6 +1,7 @@
 {
-    "url": "https://cad.onshape.com/documents/833f9762904995f22ff7dd9f/w/38852c293063cfa13b203677/e/83ac8f3e1b8a64890594cf88",
-    "versionID": "dbc41dc96b1adb2ff43c4047",
+    "document_id": "833f9762904995f22ff7dd9f",
+    "version_id": "b91ed6985ab785ef4accfe30",
+    "element_id": "83ac8f3e1b8a64890594cf88",
     "outputFormat": "urdf",
     "addDummyBaseLink": true,
     "use_scads": true,
