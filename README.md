@@ -1,4 +1,4 @@
-# BroBot
+# Ballbot
 
 ![CI Testing](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-test.yaml/badge.svg)
 ![CI Linting](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-lint.yaml/badge.svg)
@@ -30,17 +30,17 @@ A python program, [onshape-to-robot](https://github.com/rhoban/onshape-to-robot/
 
 
 ## Hardware
-####  BroBot Front View
+####  Ballbot Front View
 <p align='center'>
     <img src=docs/images/20231024_200513.jpg>
 </p>
 
-####  BroBot Side View
+####  Ballbot Side View
 <p align='center'>
     <img src=docs/images/20231024_200719.jpg>
 </p>
 
-####  BroBot Rear Top View
+####  Ballbot Rear Top View
 <p align='center'>
     <img src=docs/images/20231024_200519.jpg>
 </p>
@@ -61,8 +61,7 @@ The following components were used in this project:
 |8| [GeeekPi Fan Hat with OLED for RPi 4/3/2/B/+](https://www.amazon.com/dp/B09MVL8BWQ?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
 |9| [GeeekPi M2.5 Standoffs](https://www.amazon.com/dp/B07PHBTTGV?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
 |10| [Dupont Wires](https://www.amazon.com/dp/B01EV70C78?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|11| Arduino Uno|
-|12| Spare wires|
+|11| Spare wires|
 
 Some other tools or parts used in the project are as follows:
 
