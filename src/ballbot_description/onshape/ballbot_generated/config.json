@@ -9,7 +9,7 @@
     "use_fixed_links": false,
     "collisions_as_visual": false,
     "configuration": "Configuration=Default",
-    "clean_config_suffix": true,
+    "include_configuration_suffix": false,
     "ignore": {
         "*screw*" : "all",
         "*lock_washer*": "all",

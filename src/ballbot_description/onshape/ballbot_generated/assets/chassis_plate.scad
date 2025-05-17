@@ -1,4 +1,4 @@
-% scale(1000) import("chassis_plate__configuration_default.stl");
+% scale(1000) import("chassis_plate.stl");
 
 // Sketch PureShapes 2
 multmatrix([[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]]) {

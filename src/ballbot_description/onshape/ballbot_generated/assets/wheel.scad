@@ -1,4 +1,4 @@
-% scale(1000) import("wheel__configuration_default.stl");
+% scale(1000) import("wheel.stl");
 
 // Sketch PureShapes 26.5
 multmatrix([[1.0, 0.0, -6.123233995736766e-17, -8.113285044351214e-16], [-6.123233995736766e-17, 0.0, -1.0, -13.25], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0]]) {

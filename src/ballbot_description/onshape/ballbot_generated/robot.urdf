@@ -221,7 +221,7 @@
     <visual>
       <origin xyz="0.0680211 -0.0351141 -0.0235" rpy="-1.59987e-16 -3.03218e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
       </geometry>
       <material name="motor_md520z30_12v_material">
         <color rgba="1 1 1 1.0"/>
@@ -261,7 +261,7 @@
     <visual>
       <origin xyz="0.0680211 -0.0383641 -0.004" rpy="-1.5708 -2.80046e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
       </geometry>
       <material name="motor_bracket_md520_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -299,7 +299,7 @@
     <visual>
       <origin xyz="-5.9848e-17 -8.32667e-17 -4.99115e-18" rpy="-1.26218e-29 -6.12323e-17 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/chassis_plate__configuration_default.stl"/>
+        <mesh filename="package://assets/chassis_plate.stl"/>
       </geometry>
       <material name="chassis_plate_material">
         <color rgba="0 0.501961 0 1.0"/>
@@ -359,7 +359,7 @@
     <visual>
       <origin xyz="-8.50526e-17 -1.0366e-16 0.062" rpy="-5.55112e-17 -6.12323e-17 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/chassis_plate__configuration_default.stl"/>
+        <mesh filename="package://assets/chassis_plate.stl"/>
       </geometry>
       <material name="chassis_plate_2_material">
         <color rgba="0 0.501961 0 1.0"/>
@@ -545,7 +545,7 @@
     <visual>
       <origin xyz="-0.0804789 0.0358859 -0.0235" rpy="1.17568e-16 2.64761e-29 -6.55914e-16"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
       </geometry>
       <material name="motor_md520z30_12v_2_material">
         <color rgba="1 1 1 1.0"/>
@@ -585,7 +585,7 @@
     <visual>
       <origin xyz="-0.0804789 0.0391359 -0.004" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
       </geometry>
       <material name="motor_bracket_md520_2_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -655,7 +655,7 @@
     <visual>
       <origin xyz="-0.0804789 -0.0351141 -0.0235" rpy="2.84102e-16 -1.46925e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
       </geometry>
       <material name="motor_md520z30_12v_3_material">
         <color rgba="1 1 1 1.0"/>
@@ -695,7 +695,7 @@
     <visual>
       <origin xyz="-0.0804789 -0.0383641 -0.004" rpy="-1.5708 -1.23753e-29 -3.14159"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
       </geometry>
       <material name="motor_bracket_md520_3_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -865,7 +865,7 @@
     <visual>
       <origin xyz="0.0680211 0.0358859 -0.0235" rpy="1.86957e-16 -1.4446e-29 7.96089e-17"/>
       <geometry>
-        <mesh filename="package://assets/motor_md520z30_12v__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
       </geometry>
       <material name="motor_md520z30_12v_4_material">
         <color rgba="1 1 1 1.0"/>
@@ -905,7 +905,7 @@
     <visual>
       <origin xyz="0.0680211 0.0391359 -0.004" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
       <geometry>
-        <mesh filename="package://assets/motor_bracket_md520__configuration_default.stl"/>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
       </geometry>
       <material name="motor_bracket_md520_4_material">
         <color rgba="0.780392 0.760784 0.741176 1.0"/>
@@ -1406,7 +1406,7 @@
     <visual>
       <origin xyz="1.38778e-17 -1.04083e-16 0.00675" rpy="-1.5708 2.46681e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://assets/wheel.stl"/>
       </geometry>
       <material name="wheel_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -1440,7 +1440,7 @@
     <visual>
       <origin xyz="0 6.93889e-18 0.0006" rpy="1.5708 1.85449e-16 1.5708"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
       </geometry>
       <material name="hex_coupler_6mm_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
@@ -1478,7 +1478,7 @@
     <visual>
       <origin xyz="-5.89806e-17 5.55112e-17 -0.00675" rpy="1.5708 -6.12323e-17 2.30393e-16"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://assets/wheel.stl"/>
       </geometry>
       <material name="wheel_2_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -1512,7 +1512,7 @@
     <visual>
       <origin xyz="0 0 -0.0006" rpy="-1.5708 1.61566e-27 4.67735e-18"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
       </geometry>
       <material name="hex_coupler_6mm_2_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
@@ -1550,7 +1550,7 @@
     <visual>
       <origin xyz="1.38778e-17 -2.77556e-17 0.00675" rpy="-1.5708 3.99229e-15 -2.76446e-14"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://assets/wheel.stl"/>
       </geometry>
       <material name="wheel_3_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -1584,7 +1584,7 @@
     <visual>
       <origin xyz="0 0 0.0006" rpy="1.5708 -1.61559e-27 0"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
       </geometry>
       <material name="hex_coupler_6mm_3_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
@@ -1622,7 +1622,7 @@
     <visual>
       <origin xyz="2.63678e-16 2.498e-16 -0.00675" rpy="1.5708 -6.12323e-17 -9.93187e-16"/>
       <geometry>
-        <mesh filename="package://assets/wheel__configuration_default.stl"/>
+        <mesh filename="package://assets/wheel.stl"/>
       </geometry>
       <material name="wheel_4_material">
         <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
@@ -1656,7 +1656,7 @@
     <visual>
       <origin xyz="0 0 -0.0006" rpy="-1.5708 1.61557e-27 6.01328e-18"/>
       <geometry>
-        <mesh filename="package://assets/hex_coupler_6mm__configuration_default.stl"/>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
       </geometry>
       <material name="hex_coupler_6mm_4_material">
         <color rgba="0.937255 0.67451 0 1.0"/>
