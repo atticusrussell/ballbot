@@ -11,7 +11,7 @@
 - [x] Replace DC-DC converter  
 - [x] Add battery voltage display / low-voltage cutoff  
 - [x] Replace wiring from buck converter to RPi (dropping 200mV — causing undervoltage)  
-  - [ ] stress test
+  - [x] stress test
 
 - [ ] Add actuator / gripper or scoop mechanism  
 - [ ] Evaluate adding depth camera (for ball/person detection or terrain nav)  
@@ -31,11 +31,11 @@
 
 - [x] Add script and documents for basic Ubuntu config post-install
 - [x] Update TODO regarding tennis ball
-- [ ] Add documentation and scripts for installing/configuring peripherals  
-  - [ ] Setup OLED Pi HAT and fan  
-    - [ ] Can this show voltage too?  
-  - [ ] Setup LIDAR  
-  - [ ] Setup webcam  
+- [x] Add documentation and scripts for installing/configuring peripherals  
+  - [x] Setup OLED Pi HAT and fan  
+    - [x] Can this show voltage too?  
+  - [x] Setup LIDAR  
+  - [x] Setup webcam  
   - [ ] Setup Teensy with `linorobot2_hardware`  
 
 - [ ] Document ROS installation and dependencies  
@@ -54,7 +54,7 @@
 
 ## 🎾 Tennis Ball Goal
 
-- [ ] Recognize tennis ball (CV pipeline)  
+- [x] Recognize tennis ball (CV pipeline)  
 - [ ] Locate tennis ball (3D if possible — depth camera?)  
 - [ ] Plan path to tennis ball  
 - [ ] Navigate to tennis ball using Nav2  
@@ -89,7 +89,7 @@
 
 ## 🧪 Side Quests 
 - [x] Fix `linorobot2_hardware` ROS versions and add CI  
-- [ ] Convert CAD to detailed URDF  
+- [x] Convert CAD to detailed URDF  
 
 ## Technical Maintenance
 - [ ] Upgrade to latest Gazebo version  

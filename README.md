@@ -17,6 +17,18 @@ See [the workspace template](/template.md) for workspace usage instructions.
 ## Tasks 
 ➡️ See the full task breakdown in [docs/TODO.md](docs/TODO.md)
 
+## CAD
+
+The robot is modeled in CAD using the program [Onshape](https://onshape.com). The robot model is in [this public document](https://cad.onshape.com/documents/833f9762904995f22ff7dd9f/w/38852c293063cfa13b203677/e/83ac8f3e1b8a64890594cf88).
+
+A python program, [onshape-to-robot](https://github.com/rhoban/onshape-to-robot/), is used to convert the CAD model from the Onshape Document into URDF to be used by ROS. To update the URDF based on the cad, you can use the script `generate_urdf_from_cad.sh`. Read the [onshape-to-robot documents](https://onshape-to-robot.readthedocs.io/), as an API key in your environment is necessary. 
+
+####  Onshape Capture
+<p align='center'>
+    <img src=docs/images/onshape-capture-isometric-2025-05-17-17-49-17.png>
+</p>
+
+
 ## Hardware
 ####  BroBot Front View
 <p align='center'>
@@ -33,10 +45,6 @@ See [the workspace template](/template.md) for workspace usage instructions.
     <img src=docs/images/20231024_200519.jpg>
 </p>
 
-#### BroBot Initial Construction
-<p align='center'>
-    <img src=docs/images/wip_catbot.jpg width="1000">
-</p>
 
 ### Part list
 The following components were used in this project:
