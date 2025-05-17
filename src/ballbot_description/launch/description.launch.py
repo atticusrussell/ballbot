@@ -18,6 +18,7 @@ from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution, EnvironmentVariable
 from launch.conditions import IfCondition
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -75,7 +76,10 @@ def generate_launch_description():
                     'use_sim_time': LaunchConfiguration('use_sim_time'),
                     # Use Command substitution with 'cat' to load the plain URDF content
                     # This avoids calling xacro on a non-xacro file
-                    'robot_description': Command(['cat ', LaunchConfiguration('urdf')])
+                    'robot_description': ParameterValue(
+                        Command(['cat ', LaunchConfiguration('urdf')]),
+                        value_type=str
+                    )
                 }
             ]
         ),
