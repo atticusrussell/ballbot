@@ -1,15 +1,14 @@
 <!-- BASE LINK -->
-
-<link name="base_link"/>
+<link name="base_footprint"/>
 
 <joint name="base_footprint_joint" type="fixed">
-  <parent link="base_link"/>
-  <child link="base_footprint"/>
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
   <!-- distance between bottom of wheel and origin in CAD -->
-  <origin xyz="0 0 -0.06449697" rpy="0 0 0"/>
+  <origin xyz="0 0 0.06449697" rpy="0 0 0"/>
 </joint>
 
-<link name="base_footprint"/>
+<link name="base_link"/>
 
 <!-- Joint from base_link to still_chassis_assm -->
 <joint name="base_link_to_still_chassis_assm" type="fixed">
