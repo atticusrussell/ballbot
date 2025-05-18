@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <!-- Generated using onshape-to-robot -->
-<!-- Onshape document_id: 833f9762904995f22ff7dd9f / version_id: b91ed6985ab785ef4accfe30 -->
+<!-- Onshape document_id: 833f9762904995f22ff7dd9f / version_id: 8ce6ac7e5fe3024d412c8ba5 -->
 <robot name="ballbot_generated">
   <!-- Link still_chassis_assm -->
   <link name="still_chassis_assm">
     <inertial>
-      <origin xyz="0.0111808 0.00087496 0.0243927" rpy="0 0 0"/>
+      <origin xyz="0.0111808 0.000872117 0.0243927" rpy="0 0 0"/>
       <mass value="2.02918"/>
-      <inertia ixx="0.0072642" ixy="4.57537e-05" ixz="-0.00113486" iyy="0.0155896" iyz="-0.000116765" izz="0.0134396"/>
+      <inertia ixx="0.00726382" ixy="4.53923e-05" ixz="-0.00113486" iyy="0.0155896" iyz="-0.000116276" izz="0.0134392"/>
     </inertial>
     <!-- Part terminal_block_10x -->
     <visual>
@@ -1175,7 +1175,7 @@
     </visual>
     <!-- Part bracket -->
     <visual>
-      <origin xyz="-0.0384289 0.0347919 0.062" rpy="-1.90193e-16 -1.19336e-17 3.14159"/>
+      <origin xyz="-0.0384289 0.0346911 0.062" rpy="-1.90193e-16 -1.19336e-17 3.14159"/>
       <geometry>
         <mesh filename="package://assets/bracket.stl"/>
       </geometry>
@@ -1346,7 +1346,7 @@
     </visual>
     <!-- Part switch_cover -->
     <visual>
-      <origin xyz="-0.0585156 0.0339081 0.132258" rpy="-1.13446 -2.44464e-16 -1.5708"/>
+      <origin xyz="-0.0585156 0.0338073 0.132258" rpy="-1.13446 -2.44464e-16 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/switch_cover.stl"/>
       </geometry>
@@ -1356,7 +1356,7 @@
     </visual>
     <!-- Part switch_lever -->
     <visual>
-      <origin xyz="-0.0603277 0.0338574 0.113134" rpy="-0.471239 -2.51628e-17 -1.5708"/>
+      <origin xyz="-0.0603277 0.0337565 0.113134" rpy="-0.471239 -2.51628e-17 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/switch_lever.stl"/>
       </geometry>
@@ -1366,7 +1366,7 @@
     </visual>
     <!-- Part switch_fixed -->
     <visual>
-      <origin xyz="-0.0570989 0.0338573 0.112359" rpy="4.71345e-15 1.90193e-16 -1.5708"/>
+      <origin xyz="-0.0570989 0.0337565 0.112359" rpy="4.71345e-15 1.90193e-16 -1.5708"/>
       <geometry>
         <mesh filename="package://assets/switch_fixed.stl"/>
       </geometry>
@@ -1440,7 +1440,7 @@
     </visual>
   </link>
   <!-- Joint from still_chassis_assm to wheel_assm -->
-  <joint name="front_left_wheel_speed" type="continuous">
+  <joint name="front_left_wheel_joint_speed" type="continuous">
     <origin xyz="0.0680211 0.0783859 -0.0305" rpy="-1.5708 -1.4446e-29 9.71445e-17"/>
     <parent link="still_chassis_assm"/>
     <child link="wheel_assm"/>
@@ -1512,7 +1512,7 @@
     </visual>
   </link>
   <!-- Joint from still_chassis_assm to wheel_assm_2 -->
-  <joint name="front_right_wheel_speed" type="continuous">
+  <joint name="front_right_wheel_joint_speed" type="continuous">
     <origin xyz="0.0680211 -0.0776141 -0.0305" rpy="-1.5708 -1.53772 -1.03884e-14"/>
     <parent link="still_chassis_assm"/>
     <child link="wheel_assm_2"/>
@@ -1584,7 +1584,7 @@
     </visual>
   </link>
   <!-- Joint from still_chassis_assm to wheel_assm_3 -->
-  <joint name="rear_left_wheel_speed" type="continuous">
+  <joint name="rear_left_wheel_joint_speed" type="continuous">
     <origin xyz="-0.0804789 0.0783859 -0.0305" rpy="-1.5708 1.5708 0"/>
     <parent link="still_chassis_assm"/>
     <child link="wheel_assm_3"/>
@@ -1656,7 +1656,7 @@
     </visual>
   </link>
   <!-- Joint from still_chassis_assm to wheel_assm_4 -->
-  <joint name="rear_right_wheel_speed" type="continuous">
+  <joint name="rear_right_wheel_joint_speed" type="continuous">
     <origin xyz="-0.0804789 -0.0776141 -0.0305" rpy="-1.5708 -1.53772 3.02617e-15"/>
     <parent link="still_chassis_assm"/>
     <child link="wheel_assm_4"/>
@@ -1802,12 +1802,12 @@
         <argument>odom:=odom/unfiltered</argument>
       </ros>
       <num_wheel_pairs>2</num_wheel_pairs>
-      <left_joint>front_left_wheel_speed</left_joint>
-      <right_joint>front_right_wheel_speed</right_joint>
+      <left_joint>front_left_wheel_joint_speed</left_joint>
+      <right_joint>front_right_wheel_joint_speed</right_joint>
       <wheel_separation>0.16</wheel_separation>
       <wheel_diameter>0.066</wheel_diameter>
-      <left_joint>rear_left_wheel_speed</left_joint>
-      <right_joint>rear_right_wheel_speed</right_joint>
+      <left_joint>rear_left_wheel_joint_speed</left_joint>
+      <right_joint>rear_right_wheel_joint_speed</right_joint>
       <wheel_separation>0.16</wheel_separation>
       <wheel_diameter>0.066</wheel_diameter>
       <!-- calculated for stall torque of 4.8 kg*cm  -->

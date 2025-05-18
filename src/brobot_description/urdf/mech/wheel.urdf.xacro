@@ -36,7 +36,7 @@
         </material>
       </visual>  
     </gazebo>
-    <joint name="${side}_wheel_joint" type="continuous">
+    <joint name="${side}_wheel_joint_speed" type="continuous">
       <axis xyz="0 1 0" />
       <parent link="base_link"/>
       <child link="${side}_wheel_link"/>
