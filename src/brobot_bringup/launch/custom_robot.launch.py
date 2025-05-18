@@ -45,7 +45,11 @@ def generate_launch_description():
         #you can load your custom urdf launcher here
         #for demo's sake we'll use the default description launch file
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(description_launch_path)
+            PythonLaunchDescriptionSource(description_launch_path),
+            launch_arguments={
+                'use_sim_time': str(False),
+                'publish_joints': 'false',
+            }.items()
         ),
         #hardware/sensor specific launch files
         #for demo's sake we'll use the default description launch file

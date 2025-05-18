@@ -40,8 +40,9 @@ def generate_launch_description():
         ),
         
         DeclareLaunchArgument(
-            name='publish_joints', 
-            default_value='true',
+            name='publish_joints',
+            # false in 
+            default_value='false',
             description='Launch joint_states_publisher'
         ),
 
