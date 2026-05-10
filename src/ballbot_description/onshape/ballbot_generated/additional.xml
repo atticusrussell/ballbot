@@ -99,7 +99,7 @@ assembly that's been collapsed
 <!-- Gazebo Sensor Plugin for RPLIDAR A1 -->
 <gazebo reference="rplidar_a1_head">
   <!-- Give sensor a unique name -->
-  <sensor type="gpu_ray" name="rplidar_a1_sensor">
+  <sensor type="ray" name="rplidar_a1_sensor">
     <always_on>true</always_on>
     <!-- Scan rate in Hz -->
     <update_rate>10</update_rate>
