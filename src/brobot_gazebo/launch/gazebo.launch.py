@@ -41,7 +41,7 @@ def generate_launch_description():
     )
 
     description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_description'), 'launch', 'description.launch.py']
+        [FindPackageShare('ballbot_description'), 'launch', 'description.launch.py']
     )
 
     return LaunchDescription([
@@ -61,7 +61,7 @@ def generate_launch_description():
             executable='spawn_entity.py',
             name='urdf_spawner',
             output='screen',
-            arguments=["-topic", "robot_description", "-entity", "brobot"]
+            arguments=["-topic", "robot_description", "-entity", "ballbot"]
         ),
 
         Node(

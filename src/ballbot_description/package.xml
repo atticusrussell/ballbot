@@ -16,6 +16,6 @@
     <exec_depend>gazebo_ros</exec_depend>
     <export>
         <build_type>ament_cmake</build_type>
-        <gazebo_ros gazebo_model_path="${prefix}/share/${ros_package_name}/meshes"/>
+        <gazebo_ros gazebo_model_path="${prefix}/share"/>
     </export>
 </package>

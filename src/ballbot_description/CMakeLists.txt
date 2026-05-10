@@ -9,5 +9,7 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/hooks/gazebo_model_path.dsv.in")
+
 # --- Final Package Setup ---
 ament_package()
