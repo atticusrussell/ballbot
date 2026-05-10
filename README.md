@@ -1,84 +1,67 @@
-# BroBot
+# BallBot
 
-![CI Testing](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-test.yaml/badge.svg)
-![CI Linting](https://github.com/atticusrussell/catbot/actions/workflows/.github/workflows/ros-lint.yaml/badge.svg)
+[![CI Testing](https://github.com/atticusrussell/ballbot/actions/workflows/ros-test.yaml/badge.svg)](https://github.com/atticusrussell/ballbot/actions/workflows/ros-test.yaml)
+[![CI Linting](https://github.com/atticusrussell/ballbot/actions/workflows/ros-lint.yaml/badge.svg)](https://github.com/atticusrussell/ballbot/actions/workflows/ros-lint.yaml)
 
+A 4WD differential-drive robot running ROS 2 Humble that detects pickleballs on a court, navigates to them, picks them up with an onboard 6-DOF arm, and returns them to a base station — all while staying outside the court boundary so it doesn't get stepped on.
 
-A 4WD differential drive robot is controlled using ROS2 Humble running on a Raspberry Pi 4 (running Ubuntu server 22.04). The vehicle is equipped with a camera for visual feedback and an RPLIDAR A1 sensor used for Simultaneous Localization and Mapping (SLAM), autonomous navigation and obstacle avoidance. The Linorobot2 project is leveraged through my use of a Teensy 4.1 running a Micro-ROS node to interface with 4 motors/encoders and an IMU.
+The original v1 platform paired a Raspberry Pi 4 with a Teensy 4.1 (motor/encoder/IMU via [linorobot2](https://github.com/linorobot/linorobot2)), an RPLIDAR A1, and a USB webcam. The v2 redesign in progress swaps in a Jetson Orin Nano Super, a DOFBOT-SE 6-DOF arm, and an rpicam3.
 
-The intent of the project is to explore robotics and computer vision by developing a robot that can detect a tennis ball, navigate toward it, and eventually return it to a person or designated base station — like a ball-retrieving assistant.
-
-
-See [the workspace template](/template.md) for workspace usage instructions.
-
-
-***(Work in Progress)***
-
-## Tasks 
-➡️ See the full task breakdown in [docs/TODO.md](docs/TODO.md)
+**Status**: v2 in active development. See:
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — system design, node graph, TF tree, open architectural questions
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — milestone breakdown
+- [GitHub Project: Ballbot](https://github.com/users/atticusrussell/projects/6) — live progress
 
 ## Hardware
-####  BroBot Front View
-<p align='center'>
-    <img src=docs/images/20231024_200513.jpg>
-</p>
 
-####  BroBot Side View
-<p align='center'>
-    <img src=docs/images/20231024_200719.jpg>
-</p>
+#### Front view
+<p align='center'><img src=docs/images/20231024_200513.jpg></p>
 
-####  BroBot Rear Top View
-<p align='center'>
-    <img src=docs/images/20231024_200519.jpg>
-</p>
+#### Side view
+<p align='center'><img src=docs/images/20231024_200719.jpg></p>
 
-#### BroBot Initial Construction
-<p align='center'>
-    <img src=docs/images/wip_catbot.jpg width="1000">
-</p>
+#### Rear top view
+<p align='center'><img src=docs/images/20231024_200519.jpg></p>
 
-### Part list
-The following components were used in this project:
+#### Initial construction
+<p align='center'><img src=docs/images/wip_catbot.jpg width="1000"></p>
+
+### v1 part list
 
 | | Part |
 | --| --|
-|1| [Raspberry Pi 4 (4 GB)](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)|
-|2| [AmazonBasics 128 GB SD Card](https://www.amazon.com/dp/B08TJRVWV1?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|3| [Yahboom Aluminum Alloy ROS Robot Car Chassis (4wd chassis)](https://category.yahboom.net/collections/a-chassis-bracket/products/ros-chassis)|
-|4| [L298N Motor Drivers](https://www.amazon.com/dp/B07BK1QL5T?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|1| [Raspberry Pi 4 (4 GB)](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) — *being replaced by Jetson Orin Nano Super in v2*|
+|2| [AmazonBasics 128 GB SD Card](https://www.amazon.com/dp/B08TJRVWV1)|
+|3| [Yahboom Aluminum 4WD ROS Robot Car Chassis](https://category.yahboom.net/collections/a-chassis-bracket/products/ros-chassis)|
+|4| [L298N Motor Drivers](https://www.amazon.com/dp/B07BK1QL5T)|
 |5| [DFRobot DC-DC Power Module 25W DFR0205](https://www.digikey.com/en/products/detail/dfrobot/DFR0205/6588491)|
-|6| [Screw-down Terminal Block Strips Dual Row 10A 380V](https://www.amazon.com/dp/B08V4W637Q?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
+|6| [Screw-down Terminal Block Strips](https://www.amazon.com/dp/B08V4W637Q)|
 |7| [RPLIDAR A1](https://www.slamtec.com/en/Lidar/A1)|
-|8| [GeeekPi Fan Hat with OLED for RPi 4/3/2/B/+](https://www.amazon.com/dp/B09MVL8BWQ?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|9| [GeeekPi M2.5 Standoffs](https://www.amazon.com/dp/B07PHBTTGV?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|10| [Dupont Wires](https://www.amazon.com/dp/B01EV70C78?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|11| Arduino Uno|
-|12| Spare wires|
+|8| [GeeekPi Fan Hat with OLED](https://www.amazon.com/dp/B09MVL8BWQ)|
+|9| Teensy 4.1 (running [linorobot2_hardware](https://github.com/linorobot/linorobot2_hardware))|
+|10| Various standoffs, wires, and crimped connectors|
 
-Some other tools or parts used in the project are as follows:
+### v2 additions (in progress)
 
-| | Tool/Part |
-| --| --|
-|1| [Soldering iron](https://www.amazon.com/gp/product/B00ANZRT4M/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)|
-|2| [SOMELINE Ferrule Crimping Tool Kit](https://www.amazon.com/dp/B09FSWKRH5?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|3| Screwdriver set|
-|4| [Hot Glue Gun](https://www.amazon.com/dp/B00FI6QWBM?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|5| [Hot Glue](https://www.amazon.com/dp/B06X1CZWC5?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|6| [iCrimp IWS-3220M Micro Connector Pin Crimping Tool](https://www.amazon.com/dp/B078WPT5M1?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|7| [Connector Crimp Pin Cable Kit JST SYP Futaba](https://www.amazon.com/dp/B09MYWTHDZ?psc=1&ref=ppx_yo2ov_dt_b_product_details)|
-|8| Zip ties |
+- Jetson Orin Nano Super (compute upgrade)
+- DOFBOT-SE 6-DOF arm + gripper (manipulation)
+- Raspberry Pi Camera Module 3 (CSI, replacing the USB webcam)
 
-## Instructions
-### Devcontainers
-The project can be built and developed in the VSCode devcontainers in `.devcontainer` .
+See `ARCHITECTURE.md` for the full v2 hardware story including the open question on whether to bypass the DOFBOT STM32 expansion board and drive it directly over I2C from the Orin.
 
-For the devcontainers with GPU passthrough enabled, you first must [install the nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html), either on Linux or on WSL2
+## Development
+
+The project builds and runs in the VSCode devcontainers under `.devcontainer/`. Pick the variant matching your host:
+
+- `linux-gpu/` — Linux host with NVIDIA GPU
+- `wsl-gpu/` — WSL 2 with GPU passthrough
+
+For GPU passthrough you'll first need the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
 ## Acknowledgments
-- [Allison Thackston](https://github.com/athackst/vscode_ros2_workspace)
-- [Articulated Robotics](https://articulatedrobotics.xyz/)
+
+- [Allison Thackston](https://github.com/athackst/vscode_ros2_workspace) — workspace template
+- [Articulated Robotics](https://articulatedrobotics.xyz/) — tutorials
 - [Lidarbot](https://github.com/TheNoobInventor/lidarbot)
-- [linorobot2](https://github.com/linorobot/linorobot2)
-- [linrobot2_hardware](https://github.com/linorobot/linorobot2_hardware)
+- [linorobot2](https://github.com/linorobot/linorobot2) and [linorobot2_hardware](https://github.com/linorobot/linorobot2_hardware) — base platform
 - [ros2_rover](https://github.com/mgonzs13/ros2_rover/)
