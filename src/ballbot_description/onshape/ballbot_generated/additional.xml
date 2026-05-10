@@ -1,0 +1,217 @@
+<!-- BASE LINK -->
+<link name="base_footprint"/>
+
+<joint name="base_footprint_joint" type="fixed">
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+  <!-- distance between bottom of wheel and origin in CAD -->
+  <origin xyz="0 0 0.06449697" rpy="0 0 0"/>
+</joint>
+
+<link name="base_link"/>
+
+<!-- Joint from base_link to still_chassis_assm -->
+<joint name="base_link_to_still_chassis_assm" type="fixed">
+  <origin xyz="0 0 0" rpy="0 -0 0"/>
+  <parent link="base_link"/>
+  <child link="still_chassis_assm"/>
+  <axis xyz="0 0 1"/>
+  <limit effort="10" velocity="10"/>
+</joint>
+
+
+<!-- configure diff drive -->
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <ros>
+      <argument>odom:=odom/unfiltered</argument>
+    </ros>
+
+    <num_wheel_pairs>2</num_wheel_pairs>
+    
+    <left_joint>front_left_wheel_joint_speed</left_joint>
+    <right_joint>front_right_wheel_joint_speed</right_joint>
+    <wheel_separation>0.16</wheel_separation>
+    <wheel_diameter>0.066</wheel_diameter>
+    
+    <left_joint>rear_left_wheel_joint_speed</left_joint>
+    <right_joint>rear_right_wheel_joint_speed</right_joint>
+    <wheel_separation>0.16</wheel_separation>
+    <wheel_diameter>0.066</wheel_diameter>
+    
+    <!-- calculated for stall torque of 4.8 kg*cm  -->
+    <max_wheel_torque>0.47</max_wheel_torque>
+    <!-- tuned value -->
+    <max_wheel_acceleration>20.0</max_wheel_acceleration>
+    
+    <update_rate>100</update_rate>
+    <robot_base_frame>base_link</robot_base_frame>
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>false</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+    <odometry_frame>odom</odometry_frame>
+
+  </plugin>
+</gazebo>
+
+<!-- gazebo collapses the visuals (and maybe more> of links connected
+via fixed joints, so we are only applying properties to the top level
+assembly that's been collapsed
+  -->
+<!-- 0.8 should be good for rubber -->
+<gazebo reference="still_chassis_assm">
+  <material>Gazebo/Green</material>
+</gazebo>
+
+<gazebo reference="wheel_assm">
+  <material>Gazebo/Black</material>
+  <mu1>0.8</mu1>
+  <mu2>0.8</mu2>
+</gazebo>
+
+<gazebo reference="wheel_assm_2">
+  <material>Gazebo/Black</material>
+  <mu1>0.8</mu1>
+  <mu2>0.8</mu2>
+</gazebo>
+
+<gazebo reference="wheel_assm_3">
+  <material>Gazebo/Black</material>
+  <mu1>0.8</mu1>
+  <mu2>0.8</mu2>
+</gazebo>
+
+<gazebo reference="wheel_assm_4">
+  <material>Gazebo/Black</material>
+  <mu1>0.8</mu1>
+  <mu2>0.8</mu2>
+</gazebo>
+
+<gazebo reference="rplidar_a1_head">
+  <material>Gazebo/Grey</material>
+</gazebo>
+
+<gazebo reference="mpu_9250">
+  <material>Gazebo/Blue</material>
+</gazebo>
+
+<!-- configure lidar  -->
+<!-- Gazebo Sensor Plugin for RPLIDAR A1 -->
+<gazebo reference="rplidar_a1_head">
+  <!-- Give sensor a unique name -->
+  <sensor type="gpu_ray" name="rplidar_a1_sensor">
+    <always_on>true</always_on>
+    <!-- Scan rate in Hz -->
+    <update_rate>10</update_rate>
+     <!-- Sensor pose relative to the link origin -->
+    <pose>0 0 0 0 0 0</pose>
+    <!-- Set to true to see rays in Gazebo -->
+    <visualize>true</visualize>
+    <ray>
+      <scan>
+        <horizontal>
+          <!-- Number of rays per scan -->
+          <samples>360</samples>
+          <!-- Resolution factor (usually 1) -->
+          <resolution>1</resolution>
+           <!-- Start angle in radians -->
+          <min_angle>-3.14159</min_angle>
+          <!-- End angle in radians -->
+          <max_angle>3.14159</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <!-- Minimum range in meters -->
+        <min>0.08</min>
+         <!-- Maximum range in meters -->
+        <max>12.0</max>
+        <!-- Range resolution (noise factor) -->
+        <resolution>0.01</resolution>
+      </range>
+      <noise>
+         <type>gaussian</type>
+         <mean>0.0</mean>
+          <!-- Add some noise -->
+         <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="rplidar_a1_lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+         <!-- Remap internal topic to /scan -->
+        <remapping>~/out:=scan</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <!-- Frame ID for the published LaserScan msg -->
+      <frame_name>rplidar_a1_head</frame_name> 
+      <topic_name>scan</topic_name>
+    </plugin>
+  </sensor>
+</gazebo>
+
+<!-- IMU -->
+<gazebo reference="mpu_9250">
+  <gravity>true</gravity>
+  <sensor name="imu_sensor" type="imu">
+  <always_on>true</always_on>
+  <update_rate>20</update_rate>
+  <visualize>true</visualize>
+  <topic>__default_topic__</topic>
+  <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+      <ros>
+        <remapping>~/out:=imu/data</remapping>
+      </ros>
+      <topicName>imu/data</topicName>
+      <bodyName>mpu_9250</bodyName>
+      <updateRateHZ>10.0</updateRateHZ>
+      <gaussianNoise>0.0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+      <frameName>mpu_9250</frameName>
+      <initialOrientationAsReference>false</initialOrientationAsReference>
+  </plugin>
+  <pose>0 0 0 0 0 0</pose>
+  </sensor>
+</gazebo>
+
+<link name="camera_sensor_mount"/>
+
+<joint name="webcam_to_sensor_mount_joint" type="fixed">
+  <parent link="webcam_glass"/>
+  <child link="camera_sensor_mount"/>
+  <origin xyz="0 0 0" rpy="3.14159 1.5708 0"/>
+</joint>
+
+<!-- camera -->
+<link name="camera_link_optical"/>
+
+<joint name="camera_optical_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+  <parent link="camera_sensor_mount"/>
+  <child link="camera_link_optical"/>
+</joint>
+
+<!-- https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-Camera#gazebo_ros_camera -->
+<gazebo reference="camera_sensor_mount">
+  <material>Gazebo/GreyTransparent</material>
+  <sensor name="camera" type="camera">
+    <pose>0 0 0 0 0 0</pose>
+    <update_rate>24.0</update_rate>
+    <visualize>true</visualize>
+    <camera name="camera">
+      <!-- TODO find info about webcam -->
+      <horizontal_fov>1.0</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>50</far>
+      </clip>
+    </camera>
+    <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+      <frame_name>camera_link_optical</frame_name>
+    </plugin>
+  </sensor>
+</gazebo>
