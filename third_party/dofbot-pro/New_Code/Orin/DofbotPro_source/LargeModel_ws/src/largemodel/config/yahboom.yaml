@@ -1,0 +1,62 @@
+
+#按地区实际情况选择国内/国际版本，国内版本注释掉国际版参数，国际版注释掉国内参数
+#Select the domestic or international version based on the actual situation of the region.
+#Comment out the parameters of the international version for the domestic version, and comment out the domestic parameters for the international version
+
+
+#-----------------------------------------------------国内版本参数 Domestic version parameters------------------------------------------------------------
+
+
+asr:                                    #语音节点参数 # Voice node parameters
+ ros__parameters:
+   VAD_MODE: 2                         #vad灵敏度 # VAD sensitivity
+   sample_rate: 16000                  #asr录音音频采样率 # ASR recording audio sample rate
+   frame_duration_ms:  30              #vad帧大小单位ms # VAD frame size in milliseconds
+   use_oline_asr: True                #是否使用在线asr识别 # Whether to use online ASR recognition
+   mic_serial_port: "/dev/myspeech"         #麦克风串口别名 # Microphone serial port alias
+   mic_index: 0                        #麦克风索引 # Microphone index
+   language: 'zh'                      #系统声音语言 # System sound language
+   regional_setting : "China"          #international：国际版  China：国内版 # international: International version, China: Domestic version
+
+action_service:                         #动作服务器节点参数 # Action server node parameters
+ ros__parameters:
+   Speed_topic: "/cmd_vel"             #速度话题 # Speed topic
+   text_chat_mode: False               #文字交互模式 # Text chat mode
+   image_topic: "/camera/color/image_raw" #相机图像话题 # Camera image topic
+   useolinetts: True                   #是否使用在线语音合成 # Whether to use online text-to-speech synthesis
+   language: 'zh'                      #本地语音合成语言 #  local text-to-speech synthesis language  
+   regional_setting : "China"          #international：国际版  China：国内版 # international: International version, China: Domestic version
+model_service:                          #模型服务器节点参数 # Model server node parameters
+ ros__parameters:
+   language: 'zh'                      #大模型接口语言 # Large model API language
+   regional_setting : "China"          #international：国际版  China：国内版 # international: International version, China: Domestic version
+
+
+#-----------------------------------------------------国际版本参数 International version parameters------------------------------------------------------------
+
+# asr:                                    #语音节点参数 # Voice node parameters
+#    ros__parameters:
+#      VAD_MODE: 2                         #vad灵敏度 # VAD sensitivity
+#      sample_rate: 16000                  #asr录音音频采样率 # ASR recording audio sample rate
+#      frame_duration_ms:  30              #vad帧大小单位ms # VAD frame size in milliseconds
+#      use_oline_asr: True                #是否使用在线asr识别 # Whether to use online ASR recognition
+#      mic_serial_port: "/dev/myspeech"         #麦克风串口别名 # Microphone serial port alias
+#      mic_index: 0                        #麦克风索引 # Microphone index
+#      language: 'en'                      #系统声音语言 # System sound language
+#      regional_setting : "international"          #international：国际版  China：国内版 # international: International version, China: Domestic version
+
+# action_service:                         #动作服务器节点参数 # Action server node parameters
+#    ros__parameters:
+#      Speed_topic: "/cmd_vel"             #速度话题 # Speed topic
+#      text_chat_mode: False               #文字交互模式 # Text chat mode
+#      image_topic: "/camera/color/image_raw" #相机图像话题 # Camera image topic
+#      useolinetts: True                   #是否使用在线语音合成 # Whether to use online text-to-speech synthesis
+#      language: 'en'                      #本地语音合成语言 #  local text-to-speech synthesis language  
+#      regional_setting : "international"          #international：国际版  China：国内版 # international: International version, China: Domestic version
+
+# model_service:                          #模型服务器节点参数 # Model server node parameters
+#    ros__parameters:
+#      language: 'en'                      #大模型接口语言 # Large model API language
+#      regional_setting : "international"          #international：国际版  China：国内版 # international: International version, China: Domestic version
+
+

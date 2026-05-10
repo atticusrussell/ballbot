@@ -1,0 +1,163 @@
+#根据实际的场景环境，自定义地图中的区域，可以添加任意个区域，注意和大模型的地图映射保持一致即可
+#According to the actual scene environment, customize the areas in the map. You can add any number of areas, just make sure they are consistent with the map mapping of the large model
+#地图映射Map mapping
+
+
+A: 
+  name: '水果店'
+  position:
+    x: 1.633
+    y: 3.490
+    z: 0.0
+  orientation:
+    x: 0.0
+    y: 0.0
+    z: 0.618
+    w: 0.786
+
+B: 
+  name: '五金店'
+  position:
+    x: 2.436
+    y: -0.574 
+    z: 0.0
+  orientation:
+    x: 0.0
+    y: 0.0
+    z: -0.090
+    w: 0.996  
+
+C: 
+  name: '便利店'
+  position:
+    x: 0.024
+    y: -1.820
+    z: 0.0
+  orientation:
+    x: 0.0
+    y: 0.0
+    z: 0.031
+    w: 1.000
+# C: 
+#   name: '不合格区'
+#   position:
+#     x: -1.787
+#     y: -1.433
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.765
+#     w: 0.644
+
+# D: 
+#   name: '成品仓库'
+#   position:
+#     x: -1.580
+#     y: 0.178
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: 0.997
+#     w: 0.077
+# E: 
+#   name: '装配间'
+#   position:
+#     x: 2.620
+#     y: -0.865
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.738
+#     w: 0.675
+
+# F: 
+#   name: '便利店'
+#   position:
+#     x: 2.367471694946289
+#     y: -1.568994164466858
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.3106425066197889
+#     w: 0.950526818706855
+
+# H: 
+#   name: '五金店'
+#   position:
+#     x: 2.367471694946289
+#     y: -1.568994164466858
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.3106425066197889
+#     w: 0.950526818706855
+
+# I: 
+#   name: '水果店'
+#   position:
+#     x: 2.367471694946289
+#     y: -1.568994164466858
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.3106425066197889
+#     w: 0.950526818706855
+
+# J: 
+#   name: '玩具房'
+#   position:
+#     x: 2.367471694946289
+#     y: -1.568994164466858
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.3106425066197889
+#     w: 0.950526818706855
+
+# M: 
+#   name: '电脑房'
+#   position:
+#     x: 2.367471694946289
+#     y: -1.568994164466858
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.3106425066197889
+#     w: 0.950526818706855
+
+# N: 
+#   name: '厨房'
+#   position:
+#     x: 2.367471694946289
+#     y: -1.568994164466858
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.3106425066197889
+#     w: 0.950526818706855
+
+# Z: 
+#   name: '工作间'
+#   position:
+#     x: 2.367471694946289
+#     y: -1.568994164466858
+#     z: 0.0
+#   orientation:
+#     x: 0.0
+#     y: 0.0
+#     z: -0.3106425066197889
+#     w: 0.950526818706855
+
+
+#此处可新增添加区域对应的栅格地图坐标点，注意和上面格式保持一致
+#Here, you can add the raster map coordinate points corresponding to the added area. Please note that the format should be consistent with the above
+

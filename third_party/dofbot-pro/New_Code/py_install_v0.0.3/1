@@ -1,0 +1,10 @@
+High Performance MPEG 1.0/2.0/2.5 Audio Player for Layers 1, 2 and 3
+	version 1.29.3; written and copyright by Michael Hipp and others
+	free software (LGPL) without any warranty but with best wishes
+
+Directory: /home/jetson/speech_music/
+Playing MPEG stream 1 of 1: 0.mp3 ...
+
+MPEG 2.0 L III cbr48 16000 mono
+
+[0:00] Decoding of 0.mp3 finished.

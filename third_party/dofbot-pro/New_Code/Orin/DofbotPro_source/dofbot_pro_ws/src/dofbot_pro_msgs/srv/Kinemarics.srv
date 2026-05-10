@@ -1,0 +1,8 @@
+# request
+string  kin_name
+float64[] src_pos
+float64[] src_joints
+---
+# response
+float64[] target_joints
+float64[] target_pos

@@ -1,0 +1,16 @@
+ID,Code,Unnamed: 2,Unnamed: 3,Unnamed: 4,Description,Unnamed: 6
+0,xiao ya,,,,小亚,
+1,fen jian yi hao,,,,分拣1号,
+2,fen jian er hao,,,,分拣2号,
+3,fen jian san hao,,,,分拣3号,
+4,fen jian si hao,,,,分拣4号,
+5,yi chu gao du yi chang ji qi ma,,,,移除高度异常机器码,
+6,kai shi la ji fen jian,,,,开始垃圾分拣,s
+7,fen jian hong se kuai,,,,分拣红色块,
+8,fen jian lv se kuai,,,,分拣绿色块,
+9,fen jian lan se kuai,,,,分拣蓝色块,
+10,fen jian huang se kuai,,,,分拣黄色块,
+11,yi chu gao du yi chang se kuai,,,,移除高度异常色块,
+12,zhui zong jia qu ji qi ma,,,,追踪夹取机器码,
+13,zhui zong jia qu se kuai,,,,追踪夹取色块,
+14,zhui zong jia qu wu ti,,,,追踪夹取物体KCF,

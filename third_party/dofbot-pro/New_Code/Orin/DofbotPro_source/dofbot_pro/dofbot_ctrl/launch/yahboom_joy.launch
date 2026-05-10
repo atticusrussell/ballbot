@@ -1,0 +1,4 @@
+<launch>
+    <node name="joy_node" pkg="joy" type="joy_node" output="screen"/>
+    <node name="yahboom_joy" pkg="dofbot_ctrl" type="yahboom_joy.py" output="screen"/>
+</launch>

@@ -1,0 +1,10 @@
+# request
+string  srv_joints
+---
+# response
+float64 srv_joint1
+float64 srv_joint2
+float64 srv_joint3
+float64 srv_joint4
+float64 srv_joint5
+float64 srv_joint6

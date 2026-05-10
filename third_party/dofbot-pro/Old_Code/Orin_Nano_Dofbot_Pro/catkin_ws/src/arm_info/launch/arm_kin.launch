@@ -1,0 +1,4 @@
+<launch>
+    <node name="kin" pkg="arm_info" type="kinemarics_arm" output="screen"/>
+    <node name="dofbot_server" pkg="dofbot_info" type="kinemarics_dofbot" output="screen"/>
+</launch>

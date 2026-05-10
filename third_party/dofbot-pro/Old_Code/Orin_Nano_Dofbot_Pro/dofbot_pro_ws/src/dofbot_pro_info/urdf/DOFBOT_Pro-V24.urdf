@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="DOFBOT_Pro-V24">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-8.03990775049002E-05 -0.047909102545025 0.0178929922479837"
+        rpy="0 0 0" />
+      <mass
+        value="0.226715356738094" />
+      <inertia
+        ixx="0.000941235900529474"
+        ixy="1.96595690487739E-07"
+        ixz="-1.92013763256786E-08"
+        iyy="0.000320658126022968"
+        iyz="4.70777587170016E-07"
+        izz="0.00124091439723775" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Arm1_Link">
+    <inertial>
+      <origin
+        xyz="5.8502554842299E-05 8.08930896073479E-07 0.0151588472397511"
+        rpy="0 0 0" />
+      <mass
+        value="0.0190944145578009" />
+      <inertia
+        ixx="2.63000362214602E-06"
+        ixy="1.86092472832301E-11"
+        ixz="-5.13405476724606E-13"
+        iyy="3.23897778253385E-06"
+        iyz="-3.67149353395585E-12"
+        izz="4.26796179673564E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.627450980392157 0.235294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm1_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0895"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Arm1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Arm2_Link">
+    <inertial>
+      <origin
+        xyz="0.000130415757000624 -0.00344478769817672 0.0308784096910935"
+        rpy="0 0 0" />
+      <mass
+        value="0.0490165810314109" />
+      <inertia
+        ixx="1.39162215909594E-05"
+        ixy="5.43638962900696E-09"
+        ixz="-8.78821448842528E-08"
+        iyy="1.75199204831691E-05"
+        iyz="-2.12120513306296E-08"
+        izz="7.8366236099642E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm2_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0329999999999998"
+      rpy="0 0 0" />
+    <parent
+      link="Arm1_Link" />
+    <child
+      link="Arm2_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Arm3_Link">
+    <inertial>
+      <origin
+        xyz="0.000230967054965725 -0.00348204370352792 0.0312592459064578"
+        rpy="0 0 0" />
+      <mass
+        value="0.048440358459506" />
+      <inertia
+        ixx="1.38979016256566E-05"
+        ixy="5.43978935549867E-09"
+        ixz="-8.85621441120929E-08"
+        iyy="1.75079503451724E-05"
+        iyz="-2.12151610966136E-08"
+        izz="7.82850206989584E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm3_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.000549999999999828 0 0.0828499999999964"
+      rpy="0 0 0" />
+    <parent
+      link="Arm2_Link" />
+    <child
+      link="Arm3_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Arm4_Link">
+    <inertial>
+      <origin
+        xyz="0.000227540164921769 0.03109305832312 0.00147902351759331"
+        rpy="0 0 0" />
+      <mass
+        value="0.0514137195213267" />
+      <inertia
+        ixx="1.35762829960252E-05"
+        ixy="-8.3143905383249E-08"
+        ixz="1.38469939139634E-08"
+        iyy="7.84603866645587E-06"
+        iyz="4.42461954608176E-07"
+        izz="1.19583990821912E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm4_Joint"
+    type="revolute">
+    <origin
+      xyz="-5.0000000000161E-05 0 0.0828500000000002"
+      rpy="1.57079632679386 0 0" />
+    <parent
+      link="Arm3_Link" />
+    <child
+      link="Arm4_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="DaBai_DCW2_Link">
+    <inertial>
+      <origin
+        xyz="-0.00111469541405074 -0.00351412421432029 -0.00418813161645996"
+        rpy="0 0 0" />
+      <mass
+        value="0.0293755297121113" />
+      <inertia
+        ixx="2.76434054220682E-06"
+        ixy="-2.76480687443034E-07"
+        ixz="-9.40713511426976E-09"
+        iyy="1.8060407385237E-05"
+        iyz="-2.60089027453777E-08"
+        izz="1.64397450962647E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/DaBai_DCW2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/DaBai_DCW2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="DaBai_DCW2_Joint"
+    type="fixed">
+    <origin
+      xyz="-0.000199999999999811 0.0688999999999998 0.0506000000000001"
+      rpy="0.00872664625997288 0 0" />
+    <parent
+      link="Arm4_Link" />
+    <child
+      link="DaBai_DCW2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Arm5_Link">
+    <inertial>
+      <origin
+        xyz="0.00235741208930174 0.0252993188041484 -0.0177392953871262"
+        rpy="0 0 0" />
+      <mass
+        value="0.0430083476508951" />
+      <inertia
+        ixx="1.97122862329609E-06"
+        ixy="1.89792665597089E-14"
+        ixz="-1.67939070054071E-08"
+        iyy="5.36186431413705E-06"
+        iyz="2.34746503699539E-08"
+        izz="5.53838702529143E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Arm5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm5_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0781490000000018 0.00215000000000008"
+      rpy="0 0 0" />
+    <parent
+      link="Arm4_Link" />
+    <child
+      link="Arm5_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.5708"
+      upper="3.1416"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="rlink1">
+    <inertial>
+      <origin
+        xyz="0.00749116814580786 -0.00307321799185767 -0.000464635678333755"
+        rpy="0 0 0" />
+      <mass
+        value="0.00469661968877021" />
+      <inertia
+        ixx="1.75593869528931E-07"
+        ixy="1.43536048346218E-07"
+        ixz="-1.26883994326372E-14"
+        iyy="3.79532710135279E-07"
+        iyz="2.15697674722041E-14"
+        izz="5.45544990381141E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/rlink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/rlink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="grip_joint"
+    type="revolute">
+    <origin
+      xyz="0.012625 0.029275 0.00475"
+      rpy="0 0 0.42401" />
+    <parent
+      link="Arm5_Link" />
+    <child
+      link="rlink1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.6"
+      upper="0"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="rlink2">
+    <inertial>
+      <origin
+        xyz="0.0226141324774871 0.0059803329609566 -0.0015000000000811"
+        rpy="0 0 0" />
+      <mass
+        value="0.0061448729710299" />
+      <inertia
+        ixx="8.32491933647363E-08"
+        ixy="-2.30536208178864E-07"
+        ixz="1.38859919118182E-21"
+        iyy="1.50198384397576E-06"
+        iyz="4.42973648537865E-22"
+        izz="1.57601572788395E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/rlink2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/rlink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rlink_joint2"
+    type="continuous">
+    <origin
+      xyz="0.027229 -0.012593 -0.0025"
+      rpy="0 0 1.1468" />
+    <parent
+      link="rlink1" />
+    <child
+      link="rlink2" />
+    <axis
+      xyz="0 0 1" />
+    <mimic
+      joint="grip_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="llink1">
+    <inertial>
+      <origin
+        xyz="0.00820826397266411 0.00331562797223822 -0.000169455905230487"
+        rpy="0 0 0" />
+      <mass
+        value="0.00426700659319946" />
+      <inertia
+        ixx="1.59952298353262E-07"
+        ixy="-1.45977725988548E-07"
+        ixz="1.40824337766991E-14"
+        iyy="3.83993508462618E-07"
+        iyz="2.06247137218602E-14"
+        izz="5.36665525055747E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/llink1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/llink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="llink_joint1"
+    type="continuous">
+    <origin
+      xyz="-0.012375 0.029275 0.0045"
+      rpy="0 0 2.7292" />
+    <parent
+      link="Arm5_Link" />
+    <child
+      link="llink1" />
+    <axis
+      xyz="0 0 1" />
+    <mimic
+      joint="grip_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="llink2">
+    <inertial>
+      <origin
+        xyz="0.022693636106365 -0.00567117715290189 -0.00150000000001033"
+        rpy="0 0 0" />
+      <mass
+        value="0.00614487297102989" />
+      <inertia
+        ixx="7.7222050966129E-08"
+        ixy="2.1109168877747E-07"
+        ixz="-1.745047335744E-23"
+        iyy="1.50801098637436E-06"
+        iyz="2.00783225011056E-22"
+        izz="1.57601572788395E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/llink2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/llink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="llink_joint2"
+    type="continuous">
+    <origin
+      xyz="0.027362 0.012302 -0.0025"
+      rpy="0 0 -1.1584" />
+    <parent
+      link="llink1" />
+    <child
+      link="llink2" />
+    <axis
+      xyz="0 0 1" />
+    <mimic
+      joint="grip_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="rlink3">
+    <inertial>
+      <origin
+        xyz="0.0134814991683401 -0.00608539893016097 -0.00271410065786873"
+        rpy="0 0 0" />
+      <mass
+        value="0.00270971831665519" />
+      <inertia
+        ixx="3.5323009777615E-08"
+        ixy="5.79062995313412E-08"
+        ixz="-4.75588661871607E-24"
+        iyy="1.37469474694365E-07"
+        iyz="7.7063958918197E-23"
+        izz="1.63254833713165E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/rlink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/rlink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rlink_joint3"
+    type="continuous">
+    <origin
+      xyz="0.0045 0.047275 0.0045"
+      rpy="0 0 0.42401" />
+    <parent
+      link="Arm5_Link" />
+    <child
+      link="rlink3" />
+    <axis
+      xyz="0 0 1" />
+    <mimic
+      joint="grip_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="llink3">
+    <inertial>
+      <origin
+        xyz="0.0135672709891435 0.00589169397307496 -0.00271410065782715"
+        rpy="0 0 0" />
+      <mass
+        value="0.00270971831665518" />
+      <inertia
+        ixx="3.36854742851965E-08"
+        ixy="-5.64197619739425E-08"
+        ixz="6.34777376861961E-23"
+        iyy="1.39107010186784E-07"
+        iyz="-4.89325012478006E-23"
+        izz="1.63254833713166E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/llink3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/llink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="llink_joint3"
+    type="continuous">
+    <origin
+      xyz="-0.0045 0.047275 0.0045"
+      rpy="0 0 2.7292" />
+    <parent
+      link="Arm5_Link" />
+    <child
+      link="llink3" />
+    <axis
+      xyz="0 0 1" />
+    <mimic
+      joint="grip_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="Gripping_point_Link">
+    <inertial>
+      <origin
+        xyz="0.00156296722365762 -0.0620110924022177 -0.00099856166886296"
+        rpy="0 0 0" />
+      <mass
+        value="0.0122493178431464" />
+      <inertia
+        ixx="1.54800679852484E-06"
+        ixy="-2.46226021055366E-08"
+        ixz="2.45567123666471E-10"
+        iyy="2.39268476633203E-06"
+        iyz="-2.26591157028006E-11"
+        izz="3.92233853036599E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Gripping_point_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DOFBOT_Pro-V24/meshes/Gripping_point_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Gripping_point_Joint"
+    type="fixed">
+    <origin
+      xyz="0 0.09 0.00" 
+      rpy="0 0 0" />
+    <parent
+      link="Arm5_Link" />
+    <child
+      link="Gripping_point_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

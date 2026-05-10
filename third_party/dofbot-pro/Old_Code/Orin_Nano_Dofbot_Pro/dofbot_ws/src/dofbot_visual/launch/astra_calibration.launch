@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find astra_camera)/launch/astrapro.launch"/>
+    <node name="IR_transform" pkg="yahboomcar_visual" type="IR_transform" output="screen"/>
+</launch>

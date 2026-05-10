@@ -1,0 +1,5 @@
+High Performance MPEG 1.0/2.0/2.5 Audio Player for Layers 1, 2 and 3
+	version 1.29.3; written and copyright by Michael Hipp and others
+	free software (LGPL) without any warranty but with best wishes
+[src/libmpg123/readers.c:INT123_open_stream():1204] error: Cannot open file /home/jetson/speech_music/answer0.mp3: No such file or directory
+main: [src/mpg123.c:open_track():776] error: Cannot open /home/jetson/speech_music/answer0.mp3: File access error. (code 22)

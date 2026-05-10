@@ -1,0 +1,8 @@
+<launch>
+    <arg name="image_view" default="false" />
+  
+    <include file="$(find usb_cam)/launch/usb_cam.launch">
+      <arg name="image_view" value="$(arg image_view)" />
+    </include>
+  </launch>
+  

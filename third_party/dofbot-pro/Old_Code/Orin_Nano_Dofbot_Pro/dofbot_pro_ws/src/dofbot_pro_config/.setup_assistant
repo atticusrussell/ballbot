@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: DOFBOT_Pro-V24
+    relative_path: urdf/DOFBOT_Pro-V24.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/DOFBOT_Pro-V24.srdf
+  CONFIG:
+    author_name: yahboom
+    author_email: yahboom@163.com
+    generated_timestamp: 1726207955

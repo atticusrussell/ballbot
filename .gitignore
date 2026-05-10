@@ -30,9 +30,3 @@ devel/
 .ipynb_checkpoints/
 .virtual_documents/
 
-# Yahboom precompiled ML models — generic, replaceable from Drive, not project-relevant
-# (face landmarks dlib model, frozen TF graph, garbage-classifier YOLOv5 weights)
-third_party/**/*.dat
-third_party/**/*.pb
-third_party/**/*.pt
-third_party/**/*.pth

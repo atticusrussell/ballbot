@@ -10,3 +10,12 @@
 [submodule "docs/third_party/dofbot-se"]
 	path = docs/third_party/dofbot-se
 	url = https://github.com/YahboomTechnology/DOFBOT-SE
+[submodule "third_party/dofbot-pro/New_Code/Orin/DofbotPro_source/CH341SER"]
+	path = third_party/dofbot-pro/New_Code/Orin/DofbotPro_source/CH341SER
+	url = https://github.com/clhchan/CH341SER.git
+[submodule "third_party/dofbot-pro/New_Code/Orin/DofbotPro_source/ultralytics"]
+	path = third_party/dofbot-pro/New_Code/Orin/DofbotPro_source/ultralytics
+	url = https://github.com/ultralytics/ultralytics.git
+[submodule "third_party/dofbot-pro/Old_Code/Orin_Nano_Dofbot_Pro/ar_track_ws/src/ar_track_alvar"]
+	path = third_party/dofbot-pro/Old_Code/Orin_Nano_Dofbot_Pro/ar_track_ws/src/ar_track_alvar
+	url = https://github.com/machinekoder/ar_track_alvar.git

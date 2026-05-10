@@ -1,0 +1,12 @@
+[Unit]
+Description=yahboom_oled start service
+After=multi-user.target
+
+[Service]
+Type=idle
+User=jetson
+ExecStart=/bin/sh -c "python3 /home/jetson/software/oled_yahboom/yahboom_oled.py"
+WorkingDirectory=/home/jetson
+
+[Install]
+WantedBy=multi-user.target

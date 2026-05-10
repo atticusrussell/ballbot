@@ -1,0 +1,57 @@
+#大模型接口配置文件Large model interface configuration file
+
+#--------------------------------------------------------国内用户语音配置选项 International users do not need to configure------------------------------------------------
+#oline_asr配置
+oline_asr_sample_rate: 16000                                                   #asr音频采样率
+oline_asr_model : 'paraformer-realtime-v2'                                     # 'paraformer-realtime-v2','paraformer-realtime-v1','paraformer-realtime-8k-v2','paraformer-realtime-8k-v1','gummy-realtime-v1','gummy-chat-v1'
+
+#oline_tts配置
+tts_supplier :  "aliyun"                                                        #tts语音合成模型供应商：aliyun/baidu 目前提供两个平台的接口，详见large_model_interface.py接口程序
+
+#通义千问平台语音合成配置
+oline_tts_model : "cosyvoice-v2"                                                #语音模型
+voice_tone : "longwan_v2"
+
+tongyi_api_key : "sk-*****************" 
+
+#----------------------------------------------------------国内可选配置项（非必须）International users do not need to configure--------------------------------------------------
+
+#百度智能云平台语音合成模型
+baidu_API_KEY : 'xxxxxxxxxxxxxxxxxxxxxxxx'                                      #百度平台语音合成API_KEY
+baidu_SECRET_KEY : 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'                           #百度平台语音合成SECRET_KEY
+PER : 4                                                                         # 发音人选择, 基础音库：0为度小美，1为度小宇，3为度逍遥，4为度丫丫，精品音库：5为度小娇，103为度米朵，106为度博文，110为度小童，111为度小萌，默认为度小美
+SPD : 5                                                                         # 语速，取值0-15，默认为5中语速
+PIT : 5                                                                         # 音调，取值0-15，默认为5中语调
+VOL : 5                                                                         # 音量，取值0-9，默认为5中音量
+CUID : 'sjI8aIfp4GkK4tSuWbNvVvxNVfG0GY18'                                       # 设备标识，获取地址：https://console.bce.baidu.com/support/?u=aiconsole&timestamp=1749002896844#/api?product=AI&project=%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF&parent=%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90&api=text2audio&method=post
+
+
+#------------------------------------------------------国内外用户配置选项Configuration options for domestic and international users in China--------------------------------------------
+
+decision_AI_api_key : "app-5GSHihDiYZ0WpYGqI3RBu1Xf"                   #国内dify决策大模型应用API_KEY   API_KEY for large-scale decision-making model applications used by Chinese users
+execution_AI_api_key : "app-yOK2MUHfrz8BOYiTdZ4TzZJJ"                  #国内dify执行大模型应用API_KEY   API_KEY for large-scale execution model applications used by Chinese users
+
+#decision_AI_api_key : "app-j101HNJqWhtTKFSQy3i6dHqU"   #API_KEY for international users of the Dify decision-making large model application
+#execution_AI_api_key : "app-CUVKRpaXE4Ys9tPNpRBm3MZe"   #API_KEY for international users of the Dify execute large model application 
+
+#--------------------------------------------------------系统配置（无特殊请勿修改）System configuration (Please do not modify unless otherwise specified)-----------------------------------
+#本地tts模型配置Local tts model configuration
+tts_language : "zh"        #zh：中文 en：英文
+zh_tts_model : "/home/jetson/MODELS/tts/zh/zh_CN-huayan-medium.onnx"              
+zh_tts_json : "/home/jetson/MODELS/tts/zh/zh_CN-huayan-medium.onnx.json"  
+en_tts_model : "/home/jetson/MODELS/tts/en/en_US-libritts-high.onnx"              
+en_tts_json : "/home/jetson/MODELS/tts/en/en_US-libritts-high.onnx.json" 
+#本地asr模型配置Local asr model configuration
+local_asr_model : "/home/jetson/MODELS/asr/SenseVoiceSmall"
+#通义接口地址，无需修改Tongyi interface address, no need to modify
+tongyi_base_url : "https://dashscope.aliyuncs.com/compatible-mode/v1" 
+
+#网络适配器network adapter
+network_adapter : "wlP1p1s0"
+
+
+
+
+
+
+

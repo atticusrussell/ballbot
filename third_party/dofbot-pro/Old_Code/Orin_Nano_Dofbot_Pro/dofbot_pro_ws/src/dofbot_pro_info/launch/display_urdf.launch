@@ -1,0 +1,6 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder
+        '$(find dofbot_pro_info)/urdf/DOFBOT_Pro-V25.urdf' "/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+</launch>

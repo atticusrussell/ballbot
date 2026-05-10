@@ -1,0 +1,9 @@
+# 请求部分
+string promtrequest
+string infertype
+---
+# 响应部分
+string response
+string[] action_list  
+bool status
+

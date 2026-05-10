@@ -1,0 +1,4 @@
+<launch>
+    <node name="dofbot_pro_kin" pkg="dofbot_pro_info" type="kinemarics_dofbot_pro"/>
+    <include file="$(find orbbec_camera)/launch/dabai_dcw2.launch"/>
+</launch>
