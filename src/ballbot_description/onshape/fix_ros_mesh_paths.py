@@ -20,7 +20,6 @@ def correct_mesh_paths(input_urdf_path, output_urdf_path, package_name, assets_i
         print(f"Reading input URDF: {input_urdf_path}")
         with open(input_urdf_path, 'r') as f_in:
             content = f_in.read()
-        original_content = content
 
         print(f"Correcting mesh paths to use package '{package_name}' and subdir '{assets_install_subdir}'...")
         # Find 'package://assets/...' and replace with 'package://<package_name>/<assets_subdir>/...'

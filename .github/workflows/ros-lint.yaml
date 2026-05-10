@@ -26,9 +26,12 @@ jobs:
               ament_flake8 --config .github/ament_flake8.ini src/
               ;;
             xmllint)
-              # additional.xml is a fragment used by onshape-to-robot,
-              # not a complete XML document.
-              ament_xmllint --exclude src/ballbot_description/onshape/ballbot_generated/additional.xml src/
+              # additional.xml is an onshape-to-robot fragment, not a
+              # complete XML document. ament_xmllint --exclude has greedy
+              # nargs that mangles the positional path, so build the file
+              # list with find instead.
+              find src -name '*.xml' ! -path '*/ballbot_generated/additional.xml' -print0 \
+                | xargs -0 -r ament_xmllint
               ;;
             *)
               ament_${{ matrix.linter }} src/

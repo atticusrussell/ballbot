@@ -15,8 +15,8 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
 from geometry_msgs.msg import Twist
+
 
 class CommandTimeout(Node):
     def __init__(self):
@@ -25,14 +25,13 @@ class CommandTimeout(Node):
         self.zero_cmd_sent_ = True
         self.twist_publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
 
-        brake_timer = self.create_timer(0.2, self.brake_timer_callback)
+        self.create_timer(0.2, self.brake_timer_callback)
 
-        twist_subscription = self.create_subscription(
+        self.create_subscription(
             Twist,
             'cmd_vel_muxed',
             self.twist_callback,
             10)
-        twist_subscription
 
     def brake_timer_callback(self):
         now = self.get_clock().now()
