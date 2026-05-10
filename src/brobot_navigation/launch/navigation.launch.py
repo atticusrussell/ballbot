@@ -14,12 +14,12 @@
 
 import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, GroupAction, IncludeLaunchDescription, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.conditions import IfCondition
 from launch_ros.substitutions import FindPackageShare
-from launch_ros.actions import Node
+from launch_ros.actions import Node, SetRemap
 from ament_index_python.packages import get_package_share_directory
 
 
@@ -71,14 +71,17 @@ def generate_launch_description():
             description='Navigation map path'
         ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(nav2_launch_path),
-            launch_arguments={
-                'map': LaunchConfiguration("map"),
-                'use_sim_time': LaunchConfiguration("sim"),
-                'params_file': nav2_config_path
-            }.items()
-        ),
+        GroupAction([
+            SetRemap(src='/cmd_vel', dst='/cmd_vel_nav'),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(nav2_launch_path),
+                launch_arguments={
+                    'map': LaunchConfiguration("map"),
+                    'use_sim_time': LaunchConfiguration("sim"),
+                    'params_file': nav2_config_path
+                }.items()
+            ),
+        ]),
 
         Node(
             package='rviz2',

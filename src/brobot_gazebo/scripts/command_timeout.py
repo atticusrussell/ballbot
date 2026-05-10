@@ -24,12 +24,12 @@ class CommandTimeout(Node):
         self.prev_cmd_time_ = self.get_clock().now()
         self.zero_cmd_sent_ = True
         self.twist_publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
-        
+
         brake_timer = self.create_timer(0.2, self.brake_timer_callback)
 
         twist_subscription = self.create_subscription(
             Twist,
-            'cmd_vel',
+            'cmd_vel_muxed',
             self.twist_callback,
             10)
         twist_subscription
@@ -48,6 +48,8 @@ class CommandTimeout(Node):
             self.twist_publisher_.publish(twist_msg)
 
     def twist_callback(self, msg):
+        self.twist_publisher_.publish(msg)
+
         if msg.linear.x == 0 and msg.linear.y == 0 and msg.angular.z == 0:
             return
 

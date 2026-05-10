@@ -2,7 +2,7 @@ twist_mux_node:
   ros__parameters:
     topics:
       navigation:
-        topic   : cmd_vel
+        topic   : cmd_vel_nav
         timeout : 0.5
         priority: 200
       tracker:
