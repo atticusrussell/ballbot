@@ -47,14 +47,14 @@
 - [ ] Update docs to reflect real components  
   - Teensy 4.1  
   - Link to `linorobot2_hardware`  
-    - [ ] Consider using submodule  
-    - [ ] Add script to pull/build in top-level repo  
+    - [x] Consider using submodule  
+    - [x] Add script to pull/build in top-level repo  
 
 ---
 
 ## 🎾 Tennis Ball Goal
 
-- [ ] Recognize tennis ball (CV pipeline)  
+- [x] Recognize tennis ball (CV pipeline)  
 - [ ] Locate tennis ball (3D if possible — depth camera?)  
 - [ ] Plan path to tennis ball  
 - [ ] Navigate to tennis ball using Nav2  
@@ -69,6 +69,15 @@
 - [ ] Evaluate ball delivery logic — person, goalpost, or bin  
 
 ---
+
+
+# Simulation (active)
+- [ ] simulate tennis court
+  - [ ] gazebo? Isaac?
+- [ ] work on recognition / localization inside that simulated tennis court
+  - [ ] rough - not a lot for LIDAR to work with
+  - [ ] is this the depth camera
+
 
 ## 🤖 ROS & Simulation
 
