@@ -53,9 +53,13 @@
           "yzhang.markdown-all-in-one",
           "zachflower.uncrustify",
           "mtsmfm.vscode-stl-viewer",
-          "tomoki1207.pdf"
+          "tomoki1207.pdf",
+          "bierner.markdown-mermaid"
         ]
       }
+    },
+    "features": {
+      "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
     }
   }
   
