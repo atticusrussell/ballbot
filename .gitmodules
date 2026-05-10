@@ -4,3 +4,9 @@
 [submodule "src/ball_tracker"]
 	path = src/ball_tracker
 	url = https://github.com/atticusrussell/ball_tracker.git
+[submodule "docs/third_party/dofbot-pro"]
+	path = docs/third_party/dofbot-pro
+	url = https://github.com/YahboomTechnology/DOFBOT-Pro
+[submodule "docs/third_party/dofbot-se"]
+	path = docs/third_party/dofbot-se
+	url = https://github.com/YahboomTechnology/DOFBOT-SE
