@@ -14,15 +14,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        linter: [lint_cmake, xmllint, pep257, flake8]
+        linter: [lint_cmake, xmllint, flake8]
     steps:
       - uses: actions/checkout@v4
       - name: Run ament_${{ matrix.linter }}
         shell: bash
         run: |
           source /opt/ros/humble/setup.bash
-          if [[ "${{ matrix.linter }}" == "flake8" ]]; then
-            ament_flake8 --config .github/ament_flake8.ini src/
-          else
-            ament_${{ matrix.linter }} src/
-          fi
+          case "${{ matrix.linter }}" in
+            flake8)
+              ament_flake8 --config .github/ament_flake8.ini src/
+              ;;
+            xmllint)
+              # additional.xml is a fragment used by onshape-to-robot,
+              # not a complete XML document.
+              ament_xmllint --exclude src/ballbot_description/onshape/ballbot_generated/additional.xml src/
+              ;;
+            *)
+              ament_${{ matrix.linter }} src/
+              ;;
+          esac

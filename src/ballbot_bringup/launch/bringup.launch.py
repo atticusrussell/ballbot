@@ -27,18 +27,6 @@ def generate_launch_description():
     ballbot_base_share = get_package_share_directory('ballbot_base')
     fastrtps_xml_file = os.path.join(ballbot_base_share, 'config', 'fastrtps.xml')
 
-    sensors_launch_path = PathJoinSubstitution(
-        [FindPackageShare('ballbot_bringup'), 'launch', 'sensors.launch.py']
-    )
-
-    joy_launch_path = PathJoinSubstitution(
-        [FindPackageShare('ballbot_bringup'), 'launch', 'joy_teleop.launch.py']
-    )
-
-    description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('ballbot_description'), 'launch', 'description.launch.py']
-    )
-
     ekf_config_path = PathJoinSubstitution(
         [FindPackageShare("ballbot_base"), "config", "ekf.yaml"]
     )
@@ -60,12 +48,6 @@ def generate_launch_description():
             name='base_serial_port',
             default_value='/dev/ttyACM0',
             description='Linorobot Base Serial Port'
-        ),
-
-        DeclareLaunchArgument(
-            name='joy', 
-            default_value='true',
-            description='Use Joystick'
         ),
 
         Node(
