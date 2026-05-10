@@ -30,8 +30,6 @@ def generate_launch_description():
     ballbot_base_share = get_package_share_directory('ballbot_base')
     fastrtps_xml_file = os.path.join(ballbot_base_share, 'config', 'fastrtps.xml')
 
-    depth_sensor = os.getenv('BALLBOT_DEPTH_SENSOR', '')
-
     nav2_launch_path = PathJoinSubstitution(
         [FindPackageShare('nav2_bringup'), 'launch', 'bringup_launch.py']
     )

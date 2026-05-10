@@ -12,31 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
-from launch.substitutions import PathJoinSubstitution, PythonExpression
+from launch.actions import IncludeLaunchDescription
+from launch.substitutions import PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.substitutions import FindPackageShare
-from launch.conditions import IfCondition
-from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    laser_sensor_name = os.getenv('BALLBOT_LASER_SENSOR', 'rplidar')
-    base_laser_sensor_name = os.getenv('BALLBOT_BASE_LASER_SENSOR', '')
-    
-    fake_laser_config_path = PathJoinSubstitution(
-        [FindPackageShare('ballbot_bringup'), 'config', 'fake_laser.yaml']
-    )
-
-    
-
     laser_launch_path = PathJoinSubstitution(
         [FindPackageShare('ballbot_bringup'), 'launch', 'lasers.launch.py']
     )
-
-    
 
     camera_launch_path = PathJoinSubstitution(
         [FindPackageShare('ballbot_bringup'), 'launch', 'camera.launch.py']
@@ -45,21 +31,8 @@ def generate_launch_description():
     return LaunchDescription([
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(laser_launch_path),
-            condition=IfCondition(PythonExpression(['"" != "', laser_sensor_name, '"'])),
-            launch_arguments={'sensor': laser_sensor_name}.items()   
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(laser_launch_path),
-            condition=IfCondition(PythonExpression(['"" != "', base_laser_sensor_name, '"'])),
-            launch_arguments={
-                'sensor': base_laser_sensor_name,
-                'topic_name': 'base/scan',
-                'frame_id': 'base_laser'
-            }.items()   
         ),
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(camera_launch_path)
-        ),   
+            PythonLaunchDescriptionSource(camera_launch_path),
+        ),
     ])
-
