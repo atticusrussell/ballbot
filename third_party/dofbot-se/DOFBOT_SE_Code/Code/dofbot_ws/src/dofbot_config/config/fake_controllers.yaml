@@ -1,0 +1,18 @@
+controller_list:
+  - name: fake_dofbot_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - arm_joint1
+      - arm_joint2
+      - arm_joint3
+      - arm_joint4
+      - arm_joint5
+  - name: fake_grip_group_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - grip_joint
+initial:  # Define initial robot poses per group
+  - group: dofbot
+    pose: up
+  - group: grip_group
+    pose: close

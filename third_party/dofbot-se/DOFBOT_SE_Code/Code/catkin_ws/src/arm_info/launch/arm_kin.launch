@@ -1,0 +1,3 @@
+<launch>
+    <node name="kin" pkg="arm_info" type="kinemarics_arm" output="screen"/>
+</launch>

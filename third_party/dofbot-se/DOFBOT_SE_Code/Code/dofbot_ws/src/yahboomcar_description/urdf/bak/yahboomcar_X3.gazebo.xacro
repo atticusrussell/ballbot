@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot name="yahboomcar" xmlns:xacro="http://ros.org/wiki/xacro">
+    <gazebo reference="back_left_wheel">
+        <mu1 value="2.0"/>
+        <mu2 value="2.0"/>
+        <kp  value="10000000.0" />
+        <kd  value="1.0" />
+        <fdir1 value="1 0 0"/>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="back_right_wheel">
+        <mu1 value="2.0"/>
+        <mu2 value="2.0"/>
+        <kp  value="10000000.0" />
+        <kd  value="1.0" />
+        <fdir1 value="1 0 0"/>
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="front_left_wheel">
+        <mu1 value="2.0"/>
+        <mu2 value="2.0"/>
+        <kp  value="10000000.0" />
+        <kd  value="1.0" />
+        <fdir1 value="0 0 1"/>
+        <material>Gazebo/Black</material>
+    </gazebo>
+        <gazebo reference="front_right_wheel">
+        <mu1 value="2.0"/>
+        <mu2 value="2.0"/>
+        <kp  value="10000000.0" />
+        <kd  value="1.0" />
+        <fdir1 value="0 0 1"/>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+		    <robotNamespace>/yahboomcar</robotNamespace>
+		    <!--robotParam>robot_description</robotParam-->
+		    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+		    <legacyModeNS>true</legacyModeNS>
+		</plugin>
+	</gazebo>
+ 
+    <gazebo>
+        <plugin name="mecanum_controller" filename="libgazebo_ros_planar_move.so">
+            <robotNamespace>/yahboomcar</robotNamespace>
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <leftFrontJoint>front_left_joint</leftFrontJoint>
+            <rightFrontJoint>front_right_joint</rightFrontJoint>
+            <leftRearJoint>back_left_joint</leftRearJoint>
+            <rightRearJoint>back_right_joint</rightRearJoint>
+            <odometryRate>60.0</odometryRate>
+            <robotBaseFrame>base_link</robotBaseFrame>
+        </plugin>
+    </gazebo>
+
+</robot>

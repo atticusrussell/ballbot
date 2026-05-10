@@ -10,10 +10,25 @@ src/micro_ros_setup
 src/uros
 **/COLCON_IGNORE
 
+# Override global ~/.gitignore_global which ignores *.so — we want kinematics
+# libs (and any vendored shared libraries) tracked through LFS
+!*.so
+
 # Python compiled artifacts
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Python packaging artifacts
+*.egg
+*.egg-info/
+
+# ROS 1 / catkin build artifacts (devel; build is already covered above)
+devel/
+
+# Jupyter cache + LSP shadow files
+.ipynb_checkpoints/
+.virtual_documents/
 
 # Yahboom precompiled ML models — generic, replaceable from Drive, not project-relevant
 # (face landmarks dlib model, frozen TF graph, garbage-classifier YOLOv5 weights)

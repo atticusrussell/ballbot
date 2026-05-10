@@ -1,0 +1,8 @@
+<launch>
+    <!--include file="$(find rplidar_ros)/launch/rplidar.launch"/-->
+    <include file="$(find yahboomcar_ctrl)/launch/yahboom_joy.launch"/>
+    <include file="$(find yahboomcar_bringup)/launch/yahboomcar.launch"/>
+    <!-- web_video_server -->
+    <node pkg="web_video_server" type="web_video_server" name="web_video_server" output="screen"/>
+    <node name="msgToimg" pkg="arm_mediapipe" type="msgToimg.py" output="screen" required="true"/>
+</launch>

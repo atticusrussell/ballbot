@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="yahboomcar_X3plus" xmlns:xacro="http://wiki.ros.org/xacro">
+    <material name="Green">
+        <color rgba="0 0.7 0 1"/>
+    </material>
+    <material name="White">
+        <color rgba="0.7 0.7 0.7 1"/>
+    </material>
+    <xacro:property name="ns" value="$(arg ns)"/>
+    <link name="${ns}/base_footprint"/>
+    <link name="${ns}/imu_link"/>
+    <!-- common link-->
+    <xacro:macro name="common_link" params="name material path *origin">
+        <link name="${ns}/${name}">
+            <visual>
+                <geometry>
+                    <mesh filename="package://yahboomcar_description/meshes/${path}/visual/${name}.STL"/>
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <material name="${material}"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://yahboomcar_description/meshes/${path}/collision/${name}.STL"/>
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </collision>
+            <xacro:insert_block name="origin"/>
+        </link>
+    </xacro:macro>
+    <!-- revolute joint-->
+    <xacro:macro name="revolute_joint" params="name parent child xyz rpy axisZ lower upper">
+        <joint name="${ns}/${name}" type="revolute">
+            <parent link="${ns}/${parent}"/>
+            <child link="${ns}/${child}"/>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+            <axis xyz="0 0 ${axisZ}"/>
+            <limit lower="${lower}" upper="${upper}" effort="100" velocity="1"/>
+        </joint>
+    </xacro:macro>
+
+    <!-- continuous joint-->
+    <xacro:macro name="continuous_joint" params="name parent child xyz rpy mimic">
+        <joint name="${ns}/${name}" type="continuous">
+            <parent link="${ns}/${parent}"/>
+            <child link="${ns}/${child}"/>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+            <axis xyz="0 0 1"/>
+            <mimic joint="${ns}/grip_joint" multiplier="${mimic}"/>
+        </joint>
+    </xacro:macro>
+
+    <!-- fixed joint-->
+    <xacro:macro name="fixed_joint" params="name parent child xyz rpy">
+        <joint name="${ns}/${name}" type="fixed">
+            <parent link="${ns}/${parent}"/>
+            <child link="${ns}/${child}"/>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+        </joint>
+    </xacro:macro>
+
+    <common_link name="base_link" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="-0.0304416859098744 4.23384368655101E-05 0.0448234503408059" rpy="0 0 0"/>
+            <mass value="1.0754239466482"/>
+            <inertia
+                    ixx="0.0208831789264125"
+                    ixy="2.4618093127858E-06"
+                    ixz="0.00616019290028669"
+                    iyy="0.0265621377486244"
+                    iyz="-1.10079499865282E-06"
+                    izz="0.0129535610833954"/>
+        </inertial>
+    </common_link>
+    <fixed_joint name="base_joint" parent="base_footprint" child="base_link" xyz="0.0 0.0 0.076" rpy="0 0 0"/>
+    <fixed_joint name="base_imu" parent="base_link" child="imu_link" xyz="0.001 0.017 0.0322" rpy="0 3.1415 1.5707"/>
+
+    <common_link name="laser_link" material="White" path="sensor">
+        <inertial>
+            <origin xyz="-0.0176558922685589 0.000671805271544437 0.0219302095894866" rpy="0 0 0"/>
+            <mass value="0.0483909504209895"/>
+            <inertia ixx="1.58456966399128E-05" ixy="-4.23913983850005E-07" ixz="-2.09597897904374E-07"
+                     iyy="3.89262522903605E-05" iyz="3.24809725932687E-07" izz="4.86230801106223E-05"/>
+        </inertial>
+    </common_link>
+    <fixed_joint name="laser_joint" parent="base_link" child="laser_link" xyz="0.10478 0 0.0471" rpy="0 0 0"/>
+    <common_link name="camera_link" material="White" path="sensor">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </common_link>
+    <fixed_joint name="camera_joint" parent="base_link" child="camera_link" xyz="-0.043645 0 0.41955" rpy="0 0 0"/>
+
+    <common_link name="arm_link1" material="White" path="X3plus">
+        <inertial>
+            <origin xyz="1.99179507982521E-05 -5.98354652829568E-05 0.0114289358828097" rpy="0 0 0"/>
+            <mass value="0.0279545499871709"/>
+            <inertia
+                    ixx="1.19144359314975E-05"
+                    ixy="-9.26068510046816E-09"
+                    ixz="3.16060516198683E-09"
+                    iyy="1.05642517915377E-05"
+                    iyz="2.69674403668579E-08"
+                    izz="1.49639510661413E-05"/>
+        </inertial>
+    </common_link>
+    <revolute_joint name="arm_joint1" parent="base_link" child="arm_link1" xyz="0.09825 0 0.102" rpy="0 0 0" axisZ="-1"
+                    lower="-${pi/2}" upper="${pi/2}"/>
+    <common_link name="arm_link2" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.024903 -0.0022632 -0.00066663" rpy="0 0 0"/>
+            <mass value="0.031605"/>
+            <inertia
+                    ixx="5.8495E-06"
+                    ixy="-8.8092E-07"
+                    ixz="1.5336E-07"
+                    iyy="2.667E-05"
+                    iyz="7.1365E-09"
+                    izz="2.4695E-05"/>
+        </inertial>
+    </common_link>
+    <revolute_joint name="arm_joint2" parent="arm_link1" child="arm_link2" xyz="0 0 0.0405"
+                    rpy="-${pi/2} 0 0" axisZ="-1" lower="-${pi/2}" upper="${pi/2}"/>
+    <common_link name="arm_link3" material="White" path="X3plus">
+        <inertial>
+            <origin xyz="0.024903 -0.0022634 -0.0013962" rpy="0 0 0"/>
+            <mass value="0.031605"/>
+            <inertia
+                    ixx="5.8492E-06"
+                    ixy="-8.8063E-07"
+                    ixz="1.4331E-07"
+                    iyy="2.667E-05"
+                    iyz="8.9675E-09"
+                    izz="2.4695E-05"/>
+        </inertial>
+    </common_link>
+    <revolute_joint name="arm_joint3" parent="arm_link2" child="arm_link3" xyz="0 -0.0829 0" rpy="0 0 0"
+                    axisZ="-1" lower="-${pi/2}" upper="${pi/2}"/>
+    <common_link name="arm_link4" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.036246 0.0023413 -0.0019655" rpy="0 0 0"/>
+            <mass value="0.049766"/>
+            <inertia
+                    ixx="1.1857E-05"
+                    ixy="-6.5371E-06"
+                    ixz="-4.1044E-08"
+                    iyy="3.6323E-05"
+                    iyz="-1.2132E-07"
+                    izz="4.1769E-05"/>
+        </inertial>
+    </common_link>
+    <revolute_joint name="arm_joint4" parent="arm_link3" child="arm_link4" xyz="0 -0.0829 0" rpy="0 0 0"
+                    axisZ="-1" lower="-${pi/2}" upper="${pi/2}"/>
+    <common_link name="arm_link5" material="White" path="X3plus">
+        <inertial>
+            <origin xyz="0.0023228 0.018169 0.028684" rpy="0 0 0"/>
+            <mass value="0.04069"/>
+            <inertia
+                    ixx="1.0627E-05"
+                    ixy="-3.0402E-07"
+                    ixz="-1.9524E-07"
+                    iyy="9.6306E-06"
+                    iyz="-1.3265E-06"
+                    izz="1.3298E-05"/>
+        </inertial>
+    </common_link>
+    <revolute_joint name="arm_joint5" parent="arm_link4" child="arm_link5" xyz="-0.00215 -0.17455 0"
+                    rpy="${pi/2} 0 0" axisZ="1" lower="-${pi/2}" upper="${pi}"/>
+
+    <common_link name="rlink1" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.00653227489887718 0.000416767821288678 0.000980984132845697" rpy="0 0 0"/>
+            <mass value="0.00117883201961805"/>
+            <inertia
+                    ixx="3.30415008842026E-08"
+                    ixy="8.05114594599862E-09"
+                    ixz="-1.46441757999184E-10"
+                    iyy="1.67254031134004E-07"
+                    iyz="-9.31932225400159E-12"
+                    izz="1.99277285249309E-07"/>
+        </inertial>
+    </common_link>
+    <revolute_joint name="grip_joint" parent="arm_link5" child="rlink1" xyz="-0.0035 -0.012625 -0.0685"
+                    rpy="0 -${pi/2} 0" axisZ="1" lower="-${pi/2}" upper="0"/>
+    <common_link name="rlink2" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.021158 0.0063295 -0.0030251" rpy="0 0 0"/>
+            <mass value="0.0024469"/>
+            <inertia
+                    ixx="5.188E-08"
+                    ixy="-1.2303E-07"
+                    ixz="-1.2978E-09"
+                    iyy="6.3204E-07"
+                    iyz="-3.8824E-10"
+                    izz="6.6364E-07"/>
+        </inertial>
+    </common_link>
+    <continuous_joint name="rlink_joint2" parent="rlink1" child="rlink2" xyz="0.03 -0.00075429 0" rpy="0 0 0" mimic="-1"/>
+
+    <common_link name="rlink3" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.014355 1.1499E-05 -0.0033992" rpy="0 0 0"/>
+            <mass value="0.00087627"/>
+            <inertia
+                    ixx="2.0534E-08"
+                    ixy="-1.0235E-10"
+                    ixz="1.074E-09"
+                    iyy="1.4825E-07"
+                    iyz="8.7073E-13"
+                    izz="1.3089E-07"/>
+        </inertial>
+    </common_link>
+    <continuous_joint name="rlink_joint3" parent="arm_link5" child="rlink3" xyz="-0.0035 -0.0045 -0.0505"
+                      rpy="0 -${pi/2} 0" mimic="1"/>
+    <common_link name="llink1" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.00628617364795481 -0.000318530407893543 0.00100000338924466" rpy="0 0 0"/>
+            <mass value="0.00121010771282268"/>
+            <inertia
+                    ixx="3.18226609060835E-08"
+                    ixy="-8.06236004452728E-09"
+                    ixz="3.99064856025629E-14"
+                    iyy="1.69267681405915E-07"
+                    iyz="1.87039773440675E-14"
+                    izz="2.00283878176223E-07"/>
+        </inertial>
+    </common_link>
+    <continuous_joint name="llink_joint1" parent="arm_link5" child="llink1" xyz="-0.0035 0.012375 -0.0685"
+                      rpy="0 -${pi/2} 0" mimic="-1"/>
+    <common_link name="llink2" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.021159 -0.0063248 -0.0030251" rpy="0 0 0"/>
+            <mass value="0.0024469"/>
+            <inertia ixx="5.1826E-08" ixy="1.229E-07" ixz="-1.2979E-09" iyy="6.321E-07" iyz="3.8796E-10"
+                     izz="6.6364E-07"/>
+        </inertial>
+    </common_link>
+    <continuous_joint name="llink_joint2" parent="llink1" child="llink2" xyz="0.03 0.00065104 0" rpy="0 0 0"
+                      mimic="1"/>
+    <common_link name="llink3" material="Green" path="X3plus">
+        <inertial>
+            <origin xyz="0.014354 -7.4795E-05 -0.0033992" rpy="0 0 0"/>
+            <mass value="0.00087627"/>
+            <inertia ixx="2.0537E-08" ixy="6.6549E-10" ixz="1.074E-09" iyy="1.4825E-07" iyz="-5.5867E-12"
+                     izz="1.3089E-07"/>
+        </inertial>
+    </common_link>
+    <continuous_joint name="llink_joint3" parent="arm_link5" child="llink3" xyz="-0.0035 0.0045 -0.0505"
+                      rpy="0 -${pi/2} 0" mimic="-1"/>
+
+    <common_link name="mono_link" material="White" path="sensor">
+        <inertial>
+            <origin xyz="5.8458E-05 0.0095015 -0.0014824" rpy="0 0 0"/>
+            <mass value="0.0097589"/>
+            <inertia ixx="3.3488E-06" ixy="1.3667E-08" ixz="6.4235E-09" iyy="1.8662E-06" iyz="-1.0265E-07"
+                     izz="2.5696E-06"/>
+        </inertial>
+    </common_link>
+    <fixed_joint name="mono_joint" parent="arm_link4" child="mono_link" xyz="-0.0481 -0.05145 -0.0022"
+                 rpy="${pi/2} 0 0"/>
+
+</robot>

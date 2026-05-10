@@ -1,0 +1,6 @@
+<launch>
+    <arg name="version" default="py" doc="version type [py,cpp]"/>
+    <include file="$(find astra_camera)/launch/astrapro.launch"/>
+    <node name="astra_rgb_image_py" pkg="yahboomcar_visual" type="astra_rgb_image.py" output="screen" if="$(eval arg('version') == 'py')"/>
+    <node name="astra_rgb_image_cpp" pkg="yahboomcar_visual" type="astra_rgb_image" output="screen" unless="$(eval arg('version') == 'py')"/>
+</launch>

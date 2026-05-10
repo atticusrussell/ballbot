@@ -1,0 +1,8 @@
+<launch>
+    <arg name="cloud_topic" default="/color_cloud"
+         doc="cloud_topic type [/color_cloud,/cloud_pcd,/camera/depth_registered/points]"/>
+    <node name="pointCloud_visualize" pkg="yahboomcar_visual" type="pointCloud_visualize" output="screen">
+        <remap from="/cloud_topic" to="$(arg cloud_topic)"/>
+    </node>
+</launch>
+

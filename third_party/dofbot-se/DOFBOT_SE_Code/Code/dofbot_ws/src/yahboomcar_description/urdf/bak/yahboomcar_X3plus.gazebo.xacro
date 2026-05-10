@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="yahboomcar_X3plus" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+		    <robotNamespace>/yahboomcar</robotNamespace>
+		    <!--robotParam>robot_description</robotParam-->
+		    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+		    <legacyModeNS>true</legacyModeNS>
+		</plugin>
+	</gazebo>
+ 
+    <gazebo>
+        <plugin name="mecanum_controller" filename="libgazebo_ros_planar_move.so">
+            <robotNamespace>/yahboomcar</robotNamespace>
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <odometryRate>60.0</odometryRate>
+            <robotBaseFrame>base_link</robotBaseFrame>
+        </plugin>
+    </gazebo>
+
+</robot>

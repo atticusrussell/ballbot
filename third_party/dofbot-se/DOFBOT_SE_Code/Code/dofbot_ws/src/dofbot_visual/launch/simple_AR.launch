@@ -1,0 +1,10 @@
+<launch>
+    <arg name="flip" default="False"/>
+    <arg name="display" default="False"/>
+    <node name="simple_AR" pkg="yahboomcar_visual" type="simple_AR.py" output="screen" args="$(arg display)">
+        <param name="flip" type="bool" value="$(arg flip)"/>
+        <remap from="/simpleAR/camera" to="/simpleAR/camera"/>
+    </node>
+    <!-- web_video_server -->
+    <node pkg="web_video_server" type="web_video_server" name="web_video_server" output="screen"/>
+</launch>
