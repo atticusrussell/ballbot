@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/opt/brobot/venv/bin/python /opt/brobot/oled_display.py --width 128 --height 32
+ExecStart=/opt/ballbot/venv/bin/python /opt/ballbot/oled_display.py --width 128 --height 32
 Restart=always
 
 [Install]

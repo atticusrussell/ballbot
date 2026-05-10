@@ -6,7 +6,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(realpath "$SCRIPT_DIR/../..")"
 
-INSTALL_DIR="/opt/brobot"
+INSTALL_DIR="/opt/ballbot"
 VENV_DIR="$INSTALL_DIR/venv"
 
 echo "Creating target install directory: $INSTALL_DIR"

@@ -8,7 +8,6 @@ site/*
 # Ignore micro-ros files from robot
 src/micro_ros_setup
 src/uros
-**/COLCON_IGNORE
 
 # Override global ~/.gitignore_global which ignores *.so — we want kinematics
 # libs (and any vendored shared libraries) tracked through LFS

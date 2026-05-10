@@ -13,8 +13,8 @@ References:
 This setup assumes you have cloned this repository directly onto your Raspberry Pi:
 
 ```bash
-git clone https://github.com/atticusrussell/brobot.git
-cd brobot
+git clone https://github.com/atticusrussell/ballbot.git
+cd ballbot
 ```
 
 ---
@@ -57,9 +57,9 @@ sudo ./setup-oled.sh
 
 This script will:
 
-- Create a virtual environment in `/opt/brobot/venv`
+- Create a virtual environment in `/opt/ballbot/venv`
 - Install `luma.oled` and `psutil`
-- Copy the custom OLED display script to `/opt/brobot/system_info.py`
+- Copy the custom OLED display script to `/opt/ballbot/system_info.py`
 - Register and start a systemd service to run the display on boot
 
 ---
@@ -69,13 +69,13 @@ This script will:
 Once installed, the active OLED script on your robot is located at:
 
 ```bash
-/opt/brobot/system_info.py
+/opt/ballbot/system_info.py
 ```
 
 You can edit this file directly to change what’s displayed. For example:
 
 ```bash
-sudo nano /opt/brobot/system_info.py
+sudo nano /opt/ballbot/system_info.py
 ```
 
 After making changes, restart the service to apply them:

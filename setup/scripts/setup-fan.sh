@@ -17,7 +17,7 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(realpath "$SCRIPT_DIR/../..")"  # Assumes script is in setup/scripts
 
-INSTALL_DIR="/opt/brobot"
+INSTALL_DIR="/opt/ballbot"
 FAN_SCRIPT_SRC="$REPO_ROOT/setup/python_scripts/fan_control.py"
 FAN_SCRIPT_DEST="$INSTALL_DIR/fan_control.py"
 SERVICE_FILE_SRC="$REPO_ROOT/setup/systemd_files/fan.service"

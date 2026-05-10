@@ -25,7 +25,10 @@ RUN sudo usermod --append --groups video $USERNAME
 RUN sudo apt update && sudo apt upgrade -y
 
 # Install Git
-RUN sudo apt install -y git
+RUN sudo apt install -y \
+    bash-completion \
+    git \
+    git-lfs
 
 # Rosdep update
 RUN rosdep update

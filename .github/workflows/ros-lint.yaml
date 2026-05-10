@@ -6,70 +6,34 @@ on:
   workflow_dispatch:
 
 jobs:
-  general_lint:
+  lint:
     name: ament_${{ matrix.linter }}
     runs-on: ubuntu-latest
+    container:
+      image: althack/ros2:humble-dev
     strategy:
       fail-fast: false
       matrix:
-          linter: [lint_cmake, xmllint]
+        linter: [lint_cmake, xmllint, flake8]
     steps:
       - uses: actions/checkout@v4
-      - uses: ros-tooling/setup-ros@master
-      - uses: ros-tooling/action-ros-lint@master
-        with:
-          linter: ${{ matrix.linter }}
-          package-name:
-            catbot_description
-            catbot_simulation
-
-  python_lint:
-    name: ament_${{ matrix.linter }}
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-          linter: [pep257]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ros-tooling/setup-ros@master
-      - uses: ros-tooling/action-ros-lint@master
-        with:
-          linter: ${{ matrix.linter }}
-          package-name:
-            catbot_description
-            catbot_simulation
-
-  flake8_python_lint:
-    name: ament_${{ matrix.linter }}
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-          linter: [flake8]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ros-tooling/setup-ros@master
-      - uses: ros-tooling/action-ros-lint@master
-        with:
-          linter: ${{ matrix.linter }}
-          arguments: "--config .github/ament_flake8.ini"
-          package-name:
-            catbot_description
-            catbot_simulation
-
-  # cpp_lint:
-  #   name: ament_${{ matrix.linter }}
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #         linter: [cppcheck, cpplint, uncrustify]
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: ros-tooling/setup-ros@master
-  #     - uses: ros-tooling/action-ros-lint@master
-  #       with:
-  #         linter: ${{ matrix.linter }}
-  #         package-name:
-            
+      - name: Run ament_${{ matrix.linter }}
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          case "${{ matrix.linter }}" in
+            flake8)
+              ament_flake8 --config .github/ament_flake8.ini src/
+              ;;
+            xmllint)
+              # additional.xml is an onshape-to-robot fragment, not a
+              # complete XML document. ament_xmllint --exclude has greedy
+              # nargs that mangles the positional path, so build the file
+              # list with find instead.
+              find src -name '*.xml' ! -path '*/ballbot_generated/additional.xml' -print0 \
+                | xargs -0 -r ament_xmllint
+              ;;
+            *)
+              ament_${{ matrix.linter }} src/
+              ;;
+          esac

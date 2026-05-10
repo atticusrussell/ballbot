@@ -1,0 +1,38 @@
+{
+    "document_id": "833f9762904995f22ff7dd9f",
+    "version_id": "8ce6ac7e5fe3024d412c8ba5",
+    "element_id": "83ac8f3e1b8a64890594cf88",
+    "outputFormat": "urdf",
+    "addDummyBaseLink": false,
+    "use_scads": true,
+    "merge_stls": false,
+    "use_fixed_links": false,
+    "collisions_as_visual": false,
+    "configuration": "Configuration=Default",
+    "include_configuration_suffix": false,
+    "ignore": {
+        "*screw*" : "all",
+        "*lock_washer*": "all",
+        "*hex_nut*": "all"
+    },
+    "joint_properties": {
+        "lidar": {
+            "type": "fixed"
+        },
+        "webcam": {
+            "type": "fixed"
+        }
+    },
+    "additional_xml": "additional.xml",
+    "post_import_commands": [
+        "echo 'Step 2: Fixing mesh paths and saving final URDF...'",
+        "mkdir -p ../urdf",
+        "python fix_ros_mesh_paths.py ballbot_generated/robot.urdf ../urdf/ballbot.urdf ballbot_description meshes",
+        "echo 'Step 3: Copying meshes to final location...'",
+        "mkdir -p ../meshes",
+        "[ -d ballbot_generated/assets/merged ] && mkdir -p ../meshes/merged",
+        "cp ballbot_generated/assets/*.stl ../meshes/ || true",
+        "[ -d ballbot_generated/assets/merged ] && cp ballbot_generated/assets/merged/*.stl ../meshes/merged/ || true",
+        "echo '--- Post-Import Processing Finished ---'"
+    ]
+}

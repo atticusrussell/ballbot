@@ -1,0 +1,1973 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: 833f9762904995f22ff7dd9f / version_id: 8ce6ac7e5fe3024d412c8ba5 -->
+<robot name="ballbot_generated">
+  <!-- Link still_chassis_assm -->
+  <link name="still_chassis_assm">
+    <inertial>
+      <origin xyz="0.0111808 0.000872117 0.0243927" rpy="0 0 0"/>
+      <mass value="2.02918"/>
+      <inertia ixx="0.00726382" ixy="4.53923e-05" ixz="-0.00113486" iyy="0.0155896" iyz="-0.000116276" izz="0.0134392"/>
+    </inertial>
+    <!-- Part terminal_block_10x -->
+    <visual>
+      <origin xyz="-0.107376 -0.0297641 0.0588869" rpy="1.5708 2.77556e-17 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/terminal_block_10x.stl"/>
+      </geometry>
+      <material name="terminal_block_10x_material">
+        <color rgba="0.498039 0.498039 0.498039 1.0"/>
+      </material>
+    </visual>
+    <!-- Part ea25_5 -->
+    <visual>
+      <origin xyz="-0.112979 -0.000364132 0.032" rpy="-1.89327e-29 1.26255e-29 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/ea25_5.stl"/>
+      </geometry>
+      <material name="ea25_5_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part m1_5_rubber_spacer -->
+    <visual>
+      <origin xyz="0.0565211 -0.00886413 0.062" rpy="-7.71115e-28 -1.34476e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/m1_5_rubber_spacer.stl"/>
+      </geometry>
+      <material name="m1_5_rubber_spacer_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5 -->
+    <visual>
+      <origin xyz="-0.108479 -0.00961413 -1.53132e-30" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part a1_uart_bridge -->
+    <visual>
+      <origin xyz="0.0666072 0.0164025 0.0632875" rpy="-1.34106e-29 7.70226e-28 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/a1_uart_bridge.stl"/>
+      </geometry>
+      <material name="a1_uart_bridge_material">
+        <color rgba="0.498039 0.498039 0.498039 1.0"/>
+      </material>
+    </visual>
+    <!-- Part terminal_block_12x -->
+    <visual>
+      <origin xyz="-0.180729 -0.0453262 -0.00311311" rpy="1.5708 -3.27533e-28 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/terminal_block_12x.stl"/>
+      </geometry>
+      <material name="terminal_block_12x_material">
+        <color rgba="0.498039 0.498039 0.498039 1.0"/>
+      </material>
+    </visual>
+    <!-- Part rplidar_a1_base -->
+    <visual>
+      <origin xyz="-0.00503218 -0.132532 -0.622292" rpy="9.36751e-17 2.5091e-14 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/rplidar_a1_base.stl"/>
+      </geometry>
+      <material name="rplidar_a1_base_material">
+        <color rgba="0.972549 0.529412 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part m1_5_rubber_spacer_2 -->
+    <visual>
+      <origin xyz="0.0565211 0.00963587 0.062" rpy="-7.71115e-28 -1.34476e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/m1_5_rubber_spacer.stl"/>
+      </geometry>
+      <material name="m1_5_rubber_spacer_2_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5_2 -->
+    <visual>
+      <origin xyz="-0.108479 0.0103859 -1.78375e-30" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part m1_5_rubber_spacer_3 -->
+    <visual>
+      <origin xyz="0.0705211 0.00963587 0.062" rpy="-7.71115e-28 -1.34476e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/m1_5_rubber_spacer.stl"/>
+      </geometry>
+      <material name="m1_5_rubber_spacer_3_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part teensy_4_1 -->
+    <visual>
+      <origin xyz="0.0334011 0.0164959 0.003386" rpy="3.14159 -7.49401e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/teensy_4_1.stl"/>
+      </geometry>
+      <material name="teensy_4_1_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part battery -->
+    <visual>
+      <origin xyz="0.0805211 0.000385868 0.022" rpy="-6.93889e-16 1.62634e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/battery.stl"/>
+      </geometry>
+      <material name="battery_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part terminal_block_10x_2 -->
+    <visual>
+      <origin xyz="-0.0982289 0.046298 -0.00311311" rpy="1.5708 -4.996e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/terminal_block_10x.stl"/>
+      </geometry>
+      <material name="terminal_block_10x_2_material">
+        <color rgba="0.498039 0.498039 0.498039 1.0"/>
+      </material>
+    </visual>
+    <!-- Part m1_5_rubber_spacer_4 -->
+    <visual>
+      <origin xyz="0.0705211 -0.00886413 0.062" rpy="-7.71115e-28 -1.34476e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/m1_5_rubber_spacer.stl"/>
+      </geometry>
+      <material name="m1_5_rubber_spacer_4_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_md520z30_12v -->
+    <collision>
+      <origin xyz="0.0680211 -0.0701141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0701141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0596141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0596141 -0.0305" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0223141 -0.0235" rpy="1.5708 -3.03158e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.00616413 -0.0235" rpy="1.5708 -3.03158e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.00616413 -0.0235" rpy="1.5708 -3.03158e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0458641 -0.0235" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0458641 -0.0235" rpy="1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0800211 -0.00696413 -0.0235" rpy="-1.5708 3.03158e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 -0.0351141 -0.0235" rpy="-1.59987e-16 -3.03218e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520 -->
+    <collision>
+      <origin xyz="0.0680211 -0.0576141 -0.00375" rpy="1.5708 2.80046e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0568641 -0.003" rpy="-3.46945e-16 -2.79553e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0366141 -0.003" rpy="3.46945e-16 2.79553e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0576141 -0.0145" rpy="-1.5708 -2.80046e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 -0.0576141 -0.0235" rpy="-1.5708 -2.80046e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 -0.0383641 -0.004" rpy="-1.5708 -2.80046e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60 -->
+    <collision>
+      <origin xyz="-0.110479 0.0583859 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.110479 0.0583859 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.110479 0.0583859 3.87034e-19" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part chassis_plate -->
+    <collision>
+      <origin xyz="-0.002479 4.74e-05 -0.001" rpy="-1.26218e-29 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <box size="0.242 0.140696 0.002"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-5.9848e-17 -8.32667e-17 -4.99115e-18" rpy="-1.26218e-29 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/chassis_plate.stl"/>
+      </geometry>
+      <material name="chassis_plate_material">
+        <color rgba="0 0.501961 0 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_2 -->
+    <collision>
+      <origin xyz="-0.00347892 0.0633859 0.03" rpy="-3.14159 3.22537e-15 8.39606e-16"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.00347892 0.0633859 0.03" rpy="-3.14159 3.22537e-15 8.39606e-16"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.00347892 0.0633859 -1.26635e-16" rpy="1.5708 3.22537e-15 8.39606e-16"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_2_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_3 -->
+    <collision>
+      <origin xyz="0.0830211 0.0503859 0.03" rpy="3.14159 1.22116e-27 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0830211 0.0503859 0.03" rpy="3.14159 1.22116e-27 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0830211 0.0503859 9.2427e-20" rpy="1.5708 1.22116e-27 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_3_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part chassis_plate_2 -->
+    <collision>
+      <origin xyz="-0.002479 4.74e-05 0.061" rpy="-5.55112e-17 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <box size="0.242 0.140696 0.002"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-8.50526e-17 -1.0366e-16 0.062" rpy="-5.55112e-17 -6.12323e-17 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/chassis_plate.stl"/>
+      </geometry>
+      <material name="chassis_plate_2_material">
+        <color rgba="0 0.501961 0 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_4 -->
+    <collision>
+      <origin xyz="-0.110479 -0.0576141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.110479 -0.0576141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.110479 -0.0576141 3.87034e-19" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_4_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_5 -->
+    <collision>
+      <origin xyz="0.0830211 -0.0496141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0830211 -0.0496141 0.03" rpy="3.14159 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0830211 -0.0496141 9.2427e-20" rpy="1.5708 -1.26218e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_5_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part spacer_m3_5_60_6 -->
+    <collision>
+      <origin xyz="-0.00347892 -0.0626141 0.03" rpy="3.14159 -1.80411e-16 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.00347892 -0.0626141 0.03" rpy="3.14159 -1.80411e-16 -1.5708"/>
+      <geometry>
+        <cylinder length="0.06" radius="0.0025"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.00347892 -0.0626141 7.88861e-31" rpy="1.5708 -1.80411e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/spacer_m3_5_60.stl"/>
+      </geometry>
+      <material name="spacer_m3_5_60_6_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10 -->
+    <visual>
+      <origin xyz="-0.0194289 0.0106359 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part l298n -->
+    <visual>
+      <origin xyz="-0.000678922 0.0293859 0.01" rpy="1.5708 4.89586e-12 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/l298n.stl"/>
+      </geometry>
+      <material name="l298n_material">
+        <color rgba="0.0196078 0.0196078 0.0196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_2 -->
+    <visual>
+      <origin xyz="-0.0194289 0.0481359 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_3 -->
+    <visual>
+      <origin xyz="0.0180711 0.0481359 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_3_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_4 -->
+    <visual>
+      <origin xyz="0.0180711 0.0106359 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_4_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_md520z30_12v_2 -->
+    <collision>
+      <origin xyz="-0.0804789 0.0708859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0708859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0603859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0603859 -0.0305" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0230859 -0.0235" rpy="1.5708 2.64774e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.00693587 -0.0235" rpy="1.5708 2.64774e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.00693587 -0.0235" rpy="1.5708 2.64774e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0466359 -0.0235" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0466359 -0.0235" rpy="1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0924789 0.00773587 -0.0235" rpy="-1.5708 -2.64774e-29 3.14159"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 0.0358859 -0.0235" rpy="1.17568e-16 2.64761e-29 -6.55914e-16"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v_2_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520_2 -->
+    <collision>
+      <origin xyz="-0.0804789 0.0583859 -0.00375" rpy="1.5708 -2.87934e-29 3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0576359 -0.003" rpy="-6.93889e-17 2.88427e-29 -6.38378e-16"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0373859 -0.003" rpy="6.93889e-17 -2.88427e-29 3.14159"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0583859 -0.0145" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 0.0583859 -0.0235" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 0.0391359 -0.004" rpy="-1.5708 2.87934e-29 -6.38378e-16"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520_2_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_md520z30_12v_3 -->
+    <collision>
+      <origin xyz="-0.0804789 -0.0701141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0701141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0596141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0596141 -0.0305" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0223141 -0.0235" rpy="1.5708 -1.46942e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.00616413 -0.0235" rpy="1.5708 -1.46942e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.00616413 -0.0235" rpy="1.5708 -1.46942e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0458641 -0.0235" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0458641 -0.0235" rpy="1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0684789 -0.00696413 -0.0235" rpy="-1.5708 1.46942e-29 9.02057e-17"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 -0.0351141 -0.0235" rpy="2.84102e-16 -1.46925e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v_3_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520_3 -->
+    <collision>
+      <origin xyz="-0.0804789 -0.0576141 -0.00375" rpy="1.5708 1.23753e-29 9.02056e-17"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0568641 -0.003" rpy="9.71445e-17 -1.2326e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0366141 -0.003" rpy="-9.71445e-17 1.2326e-29 9.02056e-17"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0576141 -0.0145" rpy="-1.5708 -1.23753e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0804789 -0.0576141 -0.0235" rpy="-1.5708 -1.23753e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0804789 -0.0383641 -0.004" rpy="-1.5708 -1.23753e-29 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520_3_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_5 -->
+    <visual>
+      <origin xyz="-0.0774789 0.0293859 0.072" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_5_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part xh_m609 -->
+    <visual>
+      <origin xyz="-0.115979 0.0326359 0.072" rpy="-4.73732e-15 4.89659e-12 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/xh_m609.stl"/>
+      </geometry>
+      <material name="xh_m609_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_6 -->
+    <visual>
+      <origin xyz="-0.112979 0.0293859 0.072" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_6_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3319_3664358_hex_stand_off_m2_5x10 -->
+    <visual>
+      <origin xyz="-0.112979 -0.0211141 0.072" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3319_3664358_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3319_3664358_hex_stand_off_m2_5x10_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20 -->
+    <visual>
+      <origin xyz="0.113521 0.0283859 0.092" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_2 -->
+    <visual>
+      <origin xyz="0.113521 0.0283859 0.072" rpy="-9.71445e-17 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_3 -->
+    <visual>
+      <origin xyz="0.113521 0.0283859 0.112" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_3_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_4 -->
+    <visual>
+      <origin xyz="0.113521 -0.0276141 0.092" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_4_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_5 -->
+    <visual>
+      <origin xyz="0.113521 -0.0276141 0.072" rpy="-9.71445e-17 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_5_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_6 -->
+    <visual>
+      <origin xyz="0.113521 -0.0276141 0.112" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_6_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_md520z30_12v_4 -->
+    <collision>
+      <origin xyz="0.0680211 0.0708859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0708859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.015" radius="0.003"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0603859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0603859 -0.0305" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0230859 -0.0235" rpy="1.5708 -1.4446e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0257" radius="0.016375"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.00693587 -0.0235" rpy="1.5708 -1.4446e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.00693587 -0.0235" rpy="1.5708 -1.4446e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.0067" radius="0.007"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0466359 -0.0235" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0466359 -0.0235" rpy="1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <cylinder length="0.0215" radius="0.0185"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0560211 0.00773587 -0.0235" rpy="-1.5708 1.4446e-29 -3.14159"/>
+      <geometry>
+        <box size="0.006 0.014 0.005"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 0.0358859 -0.0235" rpy="1.86957e-16 -1.4446e-29 7.96089e-17"/>
+      <geometry>
+        <mesh filename="package://assets/motor_md520z30_12v.stl"/>
+      </geometry>
+      <material name="motor_md520z30_12v_4_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <!-- Part motor_bracket_md520_4 -->
+    <collision>
+      <origin xyz="0.0680211 0.0583859 -0.00375" rpy="1.5708 1.24739e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0576359 -0.003" rpy="-1.42585e-29 -1.24246e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.0035 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0373859 -0.003" rpy="1.42585e-29 1.24246e-29 -3.14159"/>
+      <geometry>
+        <box size="0.04 0.037 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0583859 -0.0145" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
+      <geometry>
+        <box size="0.04 0.018 0.002"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0680211 0.0583859 -0.0235" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
+      <geometry>
+        <cylinder length="0.002" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0680211 0.0391359 -0.004" rpy="-1.5708 -1.24739e-29 9.71445e-17"/>
+      <geometry>
+        <mesh filename="package://assets/motor_bracket_md520.stl"/>
+      </geometry>
+      <material name="motor_bracket_md520_4_material">
+        <color rgba="0.780392 0.760784 0.741176 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664351_hex_stand_off_m2_5x12 -->
+    <visual>
+      <origin xyz="-0.112979 0.0293859 8.67362e-18" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664351_hex_stand_off_m2_5x12.stl"/>
+      </geometry>
+      <material name="bn_3318_3664351_hex_stand_off_m2_5x12_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3319_3664358_hex_stand_off_m2_5x10_2 -->
+    <visual>
+      <origin xyz="-0.112979 0.0293859 0.022" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3319_3664358_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3319_3664358_hex_stand_off_m2_5x10_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_7 -->
+    <visual>
+      <origin xyz="-0.112979 0.0293859 0.012" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_7_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part camera_module_3 -->
+    <visual>
+      <origin xyz="0.0967911 8.68467e-07 0.090095" rpy="1.5708 1.58339e-29 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/camera_module_3.stl"/>
+      </geometry>
+      <material name="camera_module_3_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_8 -->
+    <visual>
+      <origin xyz="-0.0194289 -0.0478641 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_8_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part l298n_2 -->
+    <visual>
+      <origin xyz="-0.000678922 -0.0291141 0.01" rpy="1.5708 4.89659e-12 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/l298n.stl"/>
+      </geometry>
+      <material name="l298n_2_material">
+        <color rgba="0.0196078 0.0196078 0.0196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_9 -->
+    <visual>
+      <origin xyz="-0.0194289 -0.0103641 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_9_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_10 -->
+    <visual>
+      <origin xyz="0.0180711 -0.0103641 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_10_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_11 -->
+    <visual>
+      <origin xyz="0.0180711 -0.0478641 0.01" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_11_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664351_hex_stand_off_m2_5x12_2 -->
+    <visual>
+      <origin xyz="-0.112979 -0.0286141 9.1073e-18" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664351_hex_stand_off_m2_5x12.stl"/>
+      </geometry>
+      <material name="bn_3318_3664351_hex_stand_off_m2_5x12_2_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3319_3664358_hex_stand_off_m2_5x10_3 -->
+    <visual>
+      <origin xyz="-0.112979 -0.0286141 0.022" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3319_3664358_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3319_3664358_hex_stand_off_m2_5x10_3_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664350_hex_stand_off_m2_5x10_12 -->
+    <visual>
+      <origin xyz="-0.112979 -0.0286141 0.012" rpy="9.71445e-17 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664350_hex_stand_off_m2_5x10.stl"/>
+      </geometry>
+      <material name="bn_3318_3664350_hex_stand_off_m2_5x10_12_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_7 -->
+    <visual>
+      <origin xyz="0.0435211 -0.0196141 0.092" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_7_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_8 -->
+    <visual>
+      <origin xyz="0.0435211 -0.0196141 0.072" rpy="-9.71445e-17 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_8_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_9 -->
+    <visual>
+      <origin xyz="0.0435211 -0.0196141 0.112" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_9_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_10 -->
+    <visual>
+      <origin xyz="0.0435211 0.0203859 0.092" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_10_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_11 -->
+    <visual>
+      <origin xyz="0.0435211 0.0203859 0.072" rpy="-9.71445e-17 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_11_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_12 -->
+    <visual>
+      <origin xyz="0.0435211 0.0203859 0.112" rpy="-3.46945e-18 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_12_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5_3 -->
+    <visual>
+      <origin xyz="0.0180711 -0.0473641 0.067" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_3_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_13 -->
+    <visual>
+      <origin xyz="-0.0309289 0.0106359 0.07858" rpy="-3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_13_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part raspberry_pi_4_model_b -->
+    <visual>
+      <origin xyz="-0.00642892 -0.00836413 0.06779" rpy="1.5708 4.8954e-12 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/raspberry_pi_4_model_b.stl"/>
+      </geometry>
+      <material name="raspberry_pi_4_model_b_material">
+        <color rgba="0.768627 0.886275 0.952941 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5_4 -->
+    <visual>
+      <origin xyz="0.0180711 0.0106359 0.067" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_4_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_14 -->
+    <visual>
+      <origin xyz="0.0180711 -0.0473641 0.07858" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_14_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_15 -->
+    <visual>
+      <origin xyz="0.0180711 0.0106359 0.07858" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_15_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_stand_off_m2_5x20_16 -->
+    <visual>
+      <origin xyz="-0.0309289 -0.0473641 0.07858" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_stand_off_m2_5x20.stl"/>
+      </geometry>
+      <material name="hex_stand_off_m2_5x20_16_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5_5 -->
+    <visual>
+      <origin xyz="-0.0309289 0.0106359 0.067" rpy="-1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_5_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bn_3318_3664347_hex_stand_off_m2_5x5_6 -->
+    <visual>
+      <origin xyz="-0.0309289 -0.0473641 0.067" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/bn_3318_3664347_hex_stand_off_m2_5x5.stl"/>
+      </geometry>
+      <material name="bn_3318_3664347_hex_stand_off_m2_5x5_6_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part bracket -->
+    <visual>
+      <origin xyz="-0.0384289 0.0346911 0.062" rpy="-1.90193e-16 -1.19336e-17 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bracket.stl"/>
+      </geometry>
+      <material name="bracket_material">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+      </material>
+    </visual>
+    <!-- Part kksb_camera_mount_base -->
+    <visual>
+      <origin xyz="0.0965211 0.000385868 0.062" rpy="-1.16751e-21 1.16751e-21 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/kksb_camera_mount_base.stl"/>
+      </geometry>
+      <material name="kksb_camera_mount_base_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part kksb_camera_mount_spacer -->
+    <visual>
+      <origin xyz="0.0895111 0.000385868 0.0381344" rpy="-1.16751e-21 -8.11175e-18 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/kksb_camera_mount_spacer.stl"/>
+      </geometry>
+      <material name="kksb_camera_mount_spacer_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part kksb_camera_mount_spacer_2 -->
+    <visual>
+      <origin xyz="0.0895111 0.0213359 0.0510844" rpy="-1.73589e-18 -8.11175e-18 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/kksb_camera_mount_spacer.stl"/>
+      </geometry>
+      <material name="kksb_camera_mount_spacer_2_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part kksb_camera_mount_spacer_3 -->
+    <visual>
+      <origin xyz="0.0895111 0.000385868 0.0510844" rpy="-1.16751e-21 -8.11175e-18 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/kksb_camera_mount_spacer.stl"/>
+      </geometry>
+      <material name="kksb_camera_mount_spacer_3_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part kksb_camera_mount -->
+    <visual>
+      <origin xyz="0.0895111 0.000385868 0.0510844" rpy="-1.16751e-21 1.16751e-21 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/kksb_camera_mount.stl"/>
+      </geometry>
+      <material name="kksb_camera_mount_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part kksb_camera_mount_spacer_4 -->
+    <visual>
+      <origin xyz="0.0895111 0.0213359 0.0381344" rpy="-1.73589e-18 -8.11175e-18 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/kksb_camera_mount_spacer.stl"/>
+      </geometry>
+      <material name="kksb_camera_mount_spacer_4_material">
+        <color rgba="0.196078 0.196078 0.196078 1.0"/>
+      </material>
+    </visual>
+    <!-- Part webcam_sensor -->
+    <collision>
+      <origin xyz="0.153649 0.00263587 0.0556436" rpy="1.5708 -1.93361e-15 1.5708"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.153649 0.00263587 0.0556436" rpy="1.5708 -1.93361e-15 1.5708"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.006"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.145649 0.00263587 0.0556436" rpy="1.5708 -1.93361e-15 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_sensor.stl"/>
+      </geometry>
+      <material name="webcam_sensor_material">
+        <color rgba="0.262745 0.282353 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part webcam_body -->
+    <collision>
+      <origin xyz="0.136149 0.00263587 0.0556436" rpy="1.5708 -1.96137e-15 1.5708"/>
+      <geometry>
+        <box size="0.079734 0.033688 0.024"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.134694 0.00263587 0.0556436" rpy="1.5708 1.96137e-15 -1.5708"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.134694 0.00263587 0.0556436" rpy="1.5708 1.96137e-15 -1.5708"/>
+      <geometry>
+        <cylinder length="0.017" radius="0.006"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.142694 0.00263587 0.0556436" rpy="1.5708 1.96137e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_body.stl"/>
+      </geometry>
+      <material name="webcam_body_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part webcam_neck -->
+    <visual>
+      <origin xyz="0.113193 0.00263587 0.0473628" rpy="2.4794 1.96969e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_neck.stl"/>
+      </geometry>
+      <material name="webcam_neck_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part webcam_base -->
+    <visual>
+      <origin xyz="0.0895211 0.00263587 0.0100127" rpy="-1.5708 1.96137e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_base.stl"/>
+      </geometry>
+      <material name="webcam_base_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+      </material>
+    </visual>
+    <!-- Part pan_head_cross_recess_screw_is5_iso_7045___m3_x_4___z___4n -->
+    <!-- Part webcam_bolt -->
+    <visual>
+      <origin xyz="0.119649 0.0156359 0.0556436" rpy="1.4197e-14 -1.4322 1.38508e-15"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_bolt.stl"/>
+      </geometry>
+      <material name="webcam_bolt_material">
+        <color rgba="0.917647 0.917647 0.917647 1.0"/>
+      </material>
+    </visual>
+    <!-- Part fan_hat -->
+    <visual>
+      <origin xyz="-0.00639581 -0.00832968 0.07653" rpy="6.42066e-15 6.82035e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/fan_hat.stl"/>
+      </geometry>
+      <material name="fan_hat_material">
+        <color rgba="0.615686 0.811765 0.929412 1.0"/>
+      </material>
+    </visual>
+    <!-- Part male_pin_header -->
+    <visual>
+      <origin xyz="-0.0522613 -0.00828603 0.07652" rpy="6.84149e-15 5.74721e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/male_pin_header.stl"/>
+      </geometry>
+      <material name="male_pin_header_material">
+        <color rgba="0.980392 0.713725 0.00392157 1.0"/>
+      </material>
+    </visual>
+    <!-- Part switch_cover -->
+    <visual>
+      <origin xyz="-0.0585156 0.0338073 0.132258" rpy="-1.13446 -2.44464e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/switch_cover.stl"/>
+      </geometry>
+      <material name="switch_cover_material">
+        <color rgba="0 0 0.784314 1.0"/>
+      </material>
+    </visual>
+    <!-- Part switch_lever -->
+    <visual>
+      <origin xyz="-0.0603277 0.0337565 0.113134" rpy="-0.471239 -2.51628e-17 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/switch_lever.stl"/>
+      </geometry>
+      <material name="switch_lever_material">
+        <color rgba="0.796078 0.823529 0.937255 1.0"/>
+      </material>
+    </visual>
+    <!-- Part switch_fixed -->
+    <visual>
+      <origin xyz="-0.0570989 0.0337565 0.112359" rpy="4.71345e-15 1.90193e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/switch_fixed.stl"/>
+      </geometry>
+      <material name="switch_fixed_material">
+        <color rgba="0.917647 0.917647 0.917647 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Link wheel_assm -->
+  <link name="wheel_assm">
+    <inertial>
+      <origin xyz="1.70702e-10 1.09714e-10 0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70897e-05" ixy="2.3419e-12" ixz="2.59988e-14" iyy="1.70977e-05" iyz="5.03549e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel -->
+    <collision>
+      <origin xyz="1.38778e-17 -1.04083e-16 0.00675" rpy="4.14604e-16 1.85449e-16 1.5708"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.38778e-17 -1.04083e-16 0.00675" rpy="4.14604e-16 1.85449e-16 1.5708"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="1.38778e-17 -1.04083e-16 0.00675" rpy="-1.5708 2.46681e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm -->
+    <collision>
+      <origin xyz="1.7273e-33 6.93889e-18 0.0036" rpy="-4.14604e-16 -1.85449e-16 -1.5708"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.7273e-33 6.93889e-18 0.0036" rpy="-4.14604e-16 -1.85449e-16 -1.5708"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-3.4646e-33 6.93889e-18 -0.0054" rpy="-3.14159 1.85449e-16 1.5708"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-3.4646e-33 6.93889e-18 -0.0054" rpy="-3.14159 1.85449e-16 1.5708"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 6.93889e-18 0.0006" rpy="1.5708 1.85449e-16 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to wheel_assm -->
+  <joint name="front_left_wheel_joint_speed" type="continuous">
+    <origin xyz="0.0680211 0.0783859 -0.0305" rpy="-1.5708 -1.4446e-29 9.71445e-17"/>
+    <parent link="still_chassis_assm"/>
+    <child link="wheel_assm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link wheel_assm_2 -->
+  <link name="wheel_assm_2">
+    <inertial>
+      <origin xyz="1.09714e-10 1.70702e-10 -0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70977e-05" ixy="2.3419e-12" ixz="-5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel_2 -->
+    <collision>
+      <origin xyz="-5.89806e-17 5.55112e-17 -0.00675" rpy="-3.14159 -3.99574e-23 2.30393e-16"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-5.89806e-17 5.55112e-17 -0.00675" rpy="-3.14159 -3.99574e-23 2.30393e-16"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-5.89806e-17 5.55112e-17 -0.00675" rpy="1.5708 -6.12323e-17 2.30393e-16"/>
+      <geometry>
+        <mesh filename="package://assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_2_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm_2 -->
+    <collision>
+      <origin xyz="-1.03424e-34 -4.40869e-35 -0.0036" rpy="3.14159 -7.05293e-32 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-1.03424e-34 -4.40869e-35 -0.0036" rpy="3.14159 -7.05293e-32 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="2.46849e-34 7.81738e-35 0.0054" rpy="4.96136e-33 7.05293e-32 4.67735e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="2.46849e-34 7.81738e-35 0.0054" rpy="4.96136e-33 7.05293e-32 4.67735e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 -0.0006" rpy="-1.5708 1.61566e-27 4.67735e-18"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm_2_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to wheel_assm_2 -->
+  <joint name="front_right_wheel_joint_speed" type="continuous">
+    <origin xyz="0.0680211 -0.0776141 -0.0305" rpy="-1.5708 -1.53772 -1.03884e-14"/>
+    <parent link="still_chassis_assm"/>
+    <child link="wheel_assm_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link wheel_assm_3 -->
+  <link name="wheel_assm_3">
+    <inertial>
+      <origin xyz="1.09714e-10 -1.70702e-10 0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70977e-05" ixy="-2.3419e-12" ixz="5.0355e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel_3 -->
+    <collision>
+      <origin xyz="1.38778e-17 -2.77556e-17 0.00675" rpy="1.26693e-15 3.93106e-15 -2.76446e-14"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.38778e-17 -2.77556e-17 0.00675" rpy="1.26693e-15 3.93106e-15 -2.76446e-14"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="1.38778e-17 -2.77556e-17 0.00675" rpy="-1.5708 3.99229e-15 -2.76446e-14"/>
+      <geometry>
+        <mesh filename="package://assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_3_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm_3 -->
+    <collision>
+      <origin xyz="-1.14017e-35 1.863e-36 0.0036" rpy="3.22384e-34 -2.86611e-33 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-1.14017e-35 1.863e-36 0.0036" rpy="3.22384e-34 -2.86611e-33 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="6.28034e-35 6.27401e-36 -0.0054" rpy="3.14159 2.86611e-33 1.48957e-60"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="6.28034e-35 6.27401e-36 -0.0054" rpy="3.14159 2.86611e-33 1.48957e-60"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0.0006" rpy="1.5708 -1.61559e-27 0"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm_3_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to wheel_assm_3 -->
+  <joint name="rear_left_wheel_joint_speed" type="continuous">
+    <origin xyz="-0.0804789 0.0783859 -0.0305" rpy="-1.5708 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="wheel_assm_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link wheel_assm_4 -->
+  <link name="wheel_assm_4">
+    <inertial>
+      <origin xyz="1.09714e-10 1.70702e-10 -0.00501766" rpy="0 0 0"/>
+      <mass value="0.0495"/>
+      <inertia ixx="1.70977e-05" ixy="2.3419e-12" ixz="-5.03549e-14" iyy="1.70897e-05" iyz="-2.59988e-14" izz="2.78542e-05"/>
+    </inertial>
+    <!-- Part wheel_4 -->
+    <collision>
+      <origin xyz="2.63678e-16 2.498e-16 -0.00675" rpy="3.14159 -3.99574e-23 -9.93187e-16"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="2.63678e-16 2.498e-16 -0.00675" rpy="3.14159 -3.99574e-23 -9.93187e-16"/>
+      <geometry>
+        <cylinder length="0.0265" radius="0.033995"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="2.63678e-16 2.498e-16 -0.00675" rpy="1.5708 -6.12323e-17 -9.93187e-16"/>
+      <geometry>
+        <mesh filename="package://assets/wheel.stl"/>
+      </geometry>
+      <material name="wheel_4_material">
+        <color rgba="0.0823529 0.0823529 0.0823529 1.0"/>
+      </material>
+    </visual>
+    <!-- Part hex_coupler_6mm_4 -->
+    <collision>
+      <origin xyz="1.46707e-35 -5.79497e-35 -0.0036" rpy="-3.14159 1.61262e-32 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.46707e-35 -5.79497e-35 -0.0036" rpy="-3.14159 1.61262e-32 -3.14159"/>
+      <geometry>
+        <cylinder length="0.006" radius="0.0069282"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.06586e-35 1.05899e-34 0.0054" rpy="-2.92092e-33 -1.61262e-32 6.01328e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.06586e-35 1.05899e-34 0.0054" rpy="-2.92092e-33 -1.61262e-32 6.01328e-18"/>
+      <geometry>
+        <cylinder length="0.012" radius="0.0057"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 -0.0006" rpy="-1.5708 1.61557e-27 6.01328e-18"/>
+      <geometry>
+        <mesh filename="package://assets/hex_coupler_6mm.stl"/>
+      </geometry>
+      <material name="hex_coupler_6mm_4_material">
+        <color rgba="0.937255 0.67451 0 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to wheel_assm_4 -->
+  <joint name="rear_right_wheel_joint_speed" type="continuous">
+    <origin xyz="-0.0804789 -0.0776141 -0.0305" rpy="-1.5708 -1.53772 3.02617e-15"/>
+    <parent link="still_chassis_assm"/>
+    <child link="wheel_assm_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link rplidar_a1_head -->
+  <link name="rplidar_a1_head">
+    <inertial>
+      <origin xyz="-0.0038177 0.00287126 -0.0126469" rpy="0 0 0"/>
+      <mass value="0.0241839"/>
+      <inertia ixx="1.04392e-05" ixy="-1.25169e-07" ixz="2.59646e-07" iyy="9.37632e-06" iyz="-2.81087e-07" izz="1.8048e-05"/>
+    </inertial>
+    <!-- Part rplidar_a1_head -->
+    <visual>
+      <origin xyz="0.0905533 -0.132918 0.753692" rpy="3.14159 4.5115e-14 -1.06439e-17"/>
+      <geometry>
+        <mesh filename="package://assets/rplidar_a1_head.stl"/>
+      </geometry>
+      <material name="rplidar_a1_head_material">
+        <color rgba="0.768627 0.886275 0.952941 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to rplidar_a1_head -->
+  <joint name="lidar" type="fixed">
+    <origin xyz="0.0855211 0.000385868 0.1315" rpy="-3.14159 -1.87145e-13 3.07126"/>
+    <parent link="still_chassis_assm"/>
+    <child link="rplidar_a1_head"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link mpu_9250 -->
+  <link name="mpu_9250">
+    <inertial>
+      <origin xyz="0.0072258 -0.0101825 -0.00197243" rpy="0 0 0"/>
+      <mass value="0.00152565"/>
+      <inertia ixx="8.66938e-08" ixy="1.66001e-10" ixz="7.1086e-09" iyy="4.06315e-08" iyz="5.34551e-12" izz="1.06135e-07"/>
+    </inertial>
+    <!-- Part mpu_9250 -->
+    <visual>
+      <origin xyz="0.013 -0.02275 -0.00157" rpy="-1.5708 5.32064e-62 3.66015e-42"/>
+      <geometry>
+        <mesh filename="package://assets/mpu_9250.stl"/>
+      </geometry>
+      <material name="mpu_9250_material">
+        <color rgba="0.917647 0.917647 0.917647 1.0"/>
+      </material>
+    </visual>
+    <!-- Part mpu_9250_headers -->
+    <visual>
+      <origin xyz="0.01 -0.02275 -1.5281e-09" rpy="1.5708 6.56235e-17 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/mpu_9250_headers.stl"/>
+      </geometry>
+      <material name="mpu_9250_headers_material">
+        <color rgba="0.768627 0.886275 0.952941 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to mpu_9250 -->
+  <joint name="imu" type="fixed">
+    <origin xyz="-0.108479 0.0103859 0.005" rpy="-3.14159 -0 -3.14159"/>
+    <parent link="still_chassis_assm"/>
+    <child link="mpu_9250"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link webcam_glass -->
+  <link name="webcam_glass">
+    <inertial>
+      <origin xyz="1.45304e-19 6.93889e-18 -0.000399182" rpy="0 0 0"/>
+      <mass value="0.00160321"/>
+      <inertia ixx="1.81656e-08" ixy="-2.79755e-38" ixz="-3.70084e-24" iyy="1.81656e-08" iyz="-5.50093e-25" izz="2.71493e-08"/>
+    </inertial>
+    <!-- Part webcam_glass -->
+    <visual>
+      <origin xyz="0 0.0344126 0.0573214" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/webcam_glass.stl"/>
+      </geometry>
+      <material name="webcam_glass_material">
+        <color rgba="0.713725 0.760784 0.8 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to webcam_glass -->
+  <joint name="webcam" type="fixed">
+    <origin xyz="0.158149 0.00263587 0.0556436" rpy="3.14159 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="webcam_glass"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link cam_3_lens_front -->
+  <link name="cam_3_lens_front">
+    <inertial>
+      <origin xyz="-8.21704e-20 4.91901e-20 -8.50685e-05" rpy="0 0 0"/>
+      <mass value="2.21049e-06"/>
+      <inertia ixx="1e-09" ixy="1.86087e-57" ixz="1.23241e-50" iyy="1e-09" iyz="1.35554e-43" izz="1e-09"/>
+    </inertial>
+    <!-- Part cam_3_lens_front -->
+    <visual>
+      <origin xyz="0 0 0.00625" rpy="-3.14159 1.53132e-38 -1.4013e-45"/>
+      <geometry>
+        <mesh filename="package://assets/cam_3_lens_front.stl"/>
+      </geometry>
+      <material name="cam_3_lens_front_material">
+        <color rgba="0.964706 0.964706 0.952941 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <!-- Joint from still_chassis_assm to cam_3_lens_front -->
+  <joint name="camera_module_lens" type="fixed">
+    <origin xyz="0.103041 8.68467e-07 0.090095" rpy="3.14159 1.5708 0"/>
+    <parent link="still_chassis_assm"/>
+    <child link="cam_3_lens_front"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Additional additional.xml -->
+  <!-- BASE LINK -->
+  <link name="base_footprint"/>
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <!-- distance between bottom of wheel and origin in CAD -->
+    <origin xyz="0 0 0.06449697" rpy="0 0 0"/>
+  </joint>
+  <link name="base_link"/>
+  <!-- Joint from base_link to still_chassis_assm -->
+  <joint name="base_link_to_still_chassis_assm" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="base_link"/>
+    <child link="still_chassis_assm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- configure diff drive -->
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <argument>odom:=odom/unfiltered</argument>
+      </ros>
+      <num_wheel_pairs>2</num_wheel_pairs>
+      <left_joint>front_left_wheel_joint_speed</left_joint>
+      <right_joint>front_right_wheel_joint_speed</right_joint>
+      <wheel_separation>0.16</wheel_separation>
+      <wheel_diameter>0.066</wheel_diameter>
+      <left_joint>rear_left_wheel_joint_speed</left_joint>
+      <right_joint>rear_right_wheel_joint_speed</right_joint>
+      <wheel_separation>0.16</wheel_separation>
+      <wheel_diameter>0.066</wheel_diameter>
+      <!-- calculated for stall torque of 4.8 kg*cm  -->
+      <max_wheel_torque>0.47</max_wheel_torque>
+      <!-- tuned value -->
+      <max_wheel_acceleration>20.0</max_wheel_acceleration>
+      <update_rate>100</update_rate>
+      <robot_base_frame>base_link</robot_base_frame>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>false</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <odometry_frame>odom</odometry_frame>
+    </plugin>
+  </gazebo>
+  <!-- gazebo collapses the visuals (and maybe more> of links connected
+via fixed joints, so we are only applying properties to the top level
+assembly that's been collapsed
+  -->
+  <!-- 0.8 should be good for rubber -->
+  <gazebo reference="still_chassis_assm">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="wheel_assm">
+    <material>Gazebo/Black</material>
+    <mu1>0.8</mu1>
+    <mu2>0.8</mu2>
+  </gazebo>
+  <gazebo reference="wheel_assm_2">
+    <material>Gazebo/Black</material>
+    <mu1>0.8</mu1>
+    <mu2>0.8</mu2>
+  </gazebo>
+  <gazebo reference="wheel_assm_3">
+    <material>Gazebo/Black</material>
+    <mu1>0.8</mu1>
+    <mu2>0.8</mu2>
+  </gazebo>
+  <gazebo reference="wheel_assm_4">
+    <material>Gazebo/Black</material>
+    <mu1>0.8</mu1>
+    <mu2>0.8</mu2>
+  </gazebo>
+  <gazebo reference="rplidar_a1_head">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="mpu_9250">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <!-- configure lidar  -->
+  <!-- Gazebo Sensor Plugin for RPLIDAR A1 -->
+  <gazebo reference="rplidar_a1_head">
+    <!-- Give sensor a unique name -->
+    <sensor type="gpu_ray" name="rplidar_a1_sensor">
+      <always_on>true</always_on>
+      <!-- Scan rate in Hz -->
+      <update_rate>10</update_rate>
+      <!-- Sensor pose relative to the link origin -->
+      <pose>0 0 0 0 0 0</pose>
+      <!-- Set to true to see rays in Gazebo -->
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <!-- Number of rays per scan -->
+            <samples>360</samples>
+            <!-- Resolution factor (usually 1) -->
+            <resolution>1</resolution>
+            <!-- Start angle in radians -->
+            <min_angle>-3.14159</min_angle>
+            <!-- End angle in radians -->
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <!-- Minimum range in meters -->
+          <min>0.08</min>
+          <!-- Maximum range in meters -->
+          <max>12.0</max>
+          <!-- Range resolution (noise factor) -->
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <!-- Add some noise -->
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="rplidar_a1_lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <!-- Remap internal topic to /scan -->
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <!-- Frame ID for the published LaserScan msg -->
+        <frame_name>rplidar_a1_head</frame_name>
+        <topic_name>scan</topic_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- IMU -->
+  <gazebo reference="mpu_9250">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>20</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <ros>
+          <remapping>~/out:=imu/data</remapping>
+        </ros>
+        <topicName>imu/data</topicName>
+        <bodyName>mpu_9250</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>mpu_9250</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <link name="camera_sensor_mount"/>
+  <joint name="webcam_to_sensor_mount_joint" type="fixed">
+    <parent link="webcam_glass"/>
+    <child link="camera_sensor_mount"/>
+    <origin xyz="0 0 0" rpy="3.14159 1.5708 0"/>
+  </joint>
+  <!-- camera -->
+  <link name="camera_link_optical"/>
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="camera_sensor_mount"/>
+    <child link="camera_link_optical"/>
+  </joint>
+  <!-- https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-Camera#gazebo_ros_camera -->
+  <gazebo reference="camera_sensor_mount">
+    <material>Gazebo/GreyTransparent</material>
+    <sensor name="camera" type="camera">
+      <pose>0 0 0 0 0 0</pose>
+      <update_rate>24.0</update_rate>
+      <visualize>true</visualize>
+      <camera name="camera">
+        <!-- TODO find info about webcam -->
+        <horizontal_fov>1.0</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>50</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <frame_name>camera_link_optical</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>

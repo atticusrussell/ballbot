@@ -5,7 +5,7 @@ After=multi-user.target
 [Service]
 Type=simple
 # Use the system python3 interpreter as RPi.GPIO is installed via apt
-ExecStart=/usr/bin/python3 /opt/brobot/fan_control.py
+ExecStart=/usr/bin/python3 /opt/ballbot/fan_control.py
 Restart=always
 # Optional: Add user/group if needed, though usually GPIO access requires group membership
 # User=pi
