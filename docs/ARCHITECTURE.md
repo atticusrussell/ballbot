@@ -4,7 +4,7 @@ Reference architecture for the v2 redesign — pickleball ball-retrieval robot w
 
 This document is the source of truth for system structure. Per-phase task tracking lives in GitHub Issues / Milestones.
 
-> **Naming policy**: the robot's name in prose is **BallBot**. Existing ROS package names (`brobot_description`, `brobot_navigation`, etc.) keep their `brobot_` prefix — renaming packages is a refactor for another day, not part of v2. New documentation uses BallBot.
+> **Naming policy**: the robot's name in prose is **BallBot**, and ROS packages use the `ballbot_` prefix (`ballbot_description`, `ballbot_navigation`, etc.).
 
 ---
 
@@ -152,13 +152,13 @@ Load-bearing custom topics. Standard ROS topics (`/scan`, `/odom`, `/cmd_vel`, `
 | `/grasp/target_pose` | `geometry_msgs/PoseStamped` | BT | `visual_servo_controller` | Pose of target ball in `gripper_link` approach frame |
 | `/arm/joint_states` | `sensor_msgs/JointState` | DOFBOT driver | RViz, MoveIt | Standard arm state |
 
-DDS profile remains FastDDS with the custom XML at `brobot_base/config/fastrtps.xml` (see existing `bringup.launch.py`).
+DDS profile remains FastDDS with the custom XML at `ballbot_base/config/fastrtps.xml` (see existing `bringup.launch.py`).
 
 ---
 
 ## 5. Behavior Tree decomposition
 
-Each phase ends with a BT extension. The BT lives in a new package (suggested: `brobot_behavior`) and uses `nav2_behavior_tree` for action plumbing.
+Each phase ends with a BT extension. The BT lives in a new package (suggested: `ballbot_behavior`) and uses `nav2_behavior_tree` for action plumbing.
 
 ### BT v0 — end of M1B
 "Drive to a point and come home."
@@ -258,18 +258,18 @@ flowchart TB
 
 | Package | Role | Status |
 |---|---|---|
-| `brobot_description` | URDF, meshes, onshape-to-robot pipeline | major rework in **M0.1** (resurrect catbot_description CAD pipeline + simplified collisions); v2 design changes in M0.2 |
-| `brobot_base` | Base driver config (linorobot2 fork), EKF, twist_mux | exists, minimal v2 changes |
-| `brobot_bringup` | Launch files for real + sim | exists, extended per phase |
-| `brobot_gazebo` | Sim worlds, plugins | exists, new pickleball court world in M3A; may absorb `obstacles.world` from `archive/catbot_simulation` |
-| `brobot_navigation` | nav2 + AMCL config + maps | exists, retuned in M1A/M1B |
-| `brobot_vision` | Detector node + dataset tools | exists, gains YOLO + TensorRT in M2 |
-| `brobot_perception` (new) | Court line detection, VO, court polygon publisher | M3A |
-| `brobot_manipulation` (new) | Visual servoing, arm action server, grasp | M4A |
-| `brobot_behavior` (new) | Behavior tree XMLs + custom BT nodes | M1B onward |
+| `ballbot_description` | URDF, meshes, onshape-to-robot pipeline | major rework in **M0.1** (resurrect catbot_description CAD pipeline + simplified collisions); v2 design changes in M0.2 |
+| `ballbot_base` | Base driver config (linorobot2 fork), EKF, twist_mux | exists, minimal v2 changes |
+| `ballbot_bringup` | Launch files for real + sim | exists, extended per phase |
+| `ballbot_gazebo` | Sim worlds, plugins | exists, new pickleball court world in M3A; may absorb `obstacles.world` from `archive/catbot_simulation` |
+| `ballbot_navigation` | nav2 + AMCL config + maps | exists, retuned in M1A/M1B |
+| `ballbot_vision` | Detector node + dataset tools | exists, gains YOLO + TensorRT in M2 |
+| `ballbot_perception` (new) | Court line detection, VO, court polygon publisher | M3A |
+| `ballbot_manipulation` (new) | Visual servoing, arm action server, grasp | M4A |
+| `ballbot_behavior` (new) | Behavior tree XMLs + custom BT nodes | M1B onward |
 | `ball_tracker` (legacy) | Color-blob detector | retained as fallback / tuning aid |
 | `archive/catbot_description` | Onshape-to-robot pipeline + CAD-derived URDF | **source material for M0.1 migration**; archive can be deleted after merge |
-| `archive/catbot_simulation` | Older standalone Gazebo launch + `obstacles.world` | source for `obstacles.world` only; rest superseded by `brobot_gazebo` |
+| `archive/catbot_simulation` | Older standalone Gazebo launch + `obstacles.world` | source for `obstacles.world` only; rest superseded by `ballbot_gazebo` |
 
 ---
 
@@ -301,11 +301,11 @@ These are explicit unresolved decisions. Each will move out of this section as i
 - **2026-05-10** — Search-behavior decision deferred. v1 placeholder: park-at-corner with chassis cam pointed at court. BT search subtree is the only thing that changes when this is decided.
 - **2026-05-10** — Pan/tilt gimbal: deferred entirely, no URDF placeholder. Adding the link later is trivial; carrying it now is premature complexity.
 - **2026-05-10** — M0 split into M0.1 (URDF foundation migration from `archive/catbot_description`) and M0.2 (v2 CAD design changes). Reason: keeps the v2 design changes a "rerun the import" instead of "rebuild the URDF system," and protects against future CAD churn.
-- **2026-05-10** — Robot's prose name is "BallBot." Existing `brobot_*` package names retained — package rename is out of scope for v2.
+- **2026-05-10** — Robot's prose name is "BallBot." All `brobot_*` ROS packages renamed to `ballbot_*` to match (reverses an earlier same-day call to defer the rename).
 - **2026-05-10** — Yahboom DOFBOT-Pro URDF (`SystemFile_OrinNANOSUPER`) + ROS code adopted as source for the arm in v2. Re-CADing the arm in Onshape is unnecessary; compose Pro URDF + own chassis CAD instead. Closes open question 11.
 - **2026-05-10** — Yahboom code distribution reality: GitHub repos host only PDFs (tutorials, courses). Source code (URDFs, ROS nodes, system images) is on Google Drive only — link in `Annex_Download_Link.txt`. Practical impact: submodule the GitHub repos for tutorial PDFs; do a manual Drive pull for code into `third_party/dofbot-pro-code/`.
 - **2026-05-10** — STM32 bypass investigation slated for M0.2 (must precede CAD changes). DOFBOT-Pro firmware exists for direct Orin-to-expansion-board I2C. Decision affects cable routing.
-- **2026-05-10** — `archive/catbot_description/` and `archive/catbot_simulation/` to be deleted after M0.1 merge. Git history preserves; `obstacles.world` absorbed into `brobot_gazebo` if useful.
+- **2026-05-10** — `archive/catbot_description/` and `archive/catbot_simulation/` to be deleted after M0.1 merge. Git history preserves; `obstacles.world` absorbed into `ballbot_gazebo` if useful.
 - **2026-05-10** — Repo layout: `third_party/` at root for code submodules (Yahboom repos); `docs/third_party/` for documentation (datasheets, tutorials). Two separate domains.
 - **2026-05-10** — Roadmap moved to `docs/ROADMAP.md`. Refinement happens by editing that file, not by re-dumping in chat.
 

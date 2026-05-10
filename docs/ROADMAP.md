@@ -21,13 +21,13 @@ Milestone + issue breakdown for the v2 redesign. This is the working planning do
 ---
 
 ## M0.1 — URDF foundation migration 🟦
-**Goal**: Resurrect `archive/catbot_description`'s onshape-to-robot pipeline into `brobot_description` with simplified collisions. Mass-accurate v1 robot in URDF (no v2 design changes yet).
+**Goal**: Resurrect `archive/catbot_description`'s onshape-to-robot pipeline into `ballbot_description` with simplified collisions. Mass-accurate v1 robot in URDF (no v2 design changes yet).
 **Branch**: `phase/M0.1-urdf-foundation`
 **Issues**:
-- Add `onshape-to-robot` pipeline to `brobot_description` (config.json, `moveMeshes.sh`, `urdf_newlines.py`)
+- Add `onshape-to-robot` pipeline to `ballbot_description` (config.json, `moveMeshes.sh`, `urdf_newlines.py`)
 - Migrate CAD-derived chassis + wheel meshes from `archive/catbot_description/meshes/`
 - Replace parametric base + wheel xacros with CAD-derived URDF macros
-- Keep brobot's modular sensor xacros (camera, laser, imu) — wire them into the new base
+- Configure sensors (camera, lidar, IMU) via the onshape-to-robot pipeline's `additional.xml` block
 - Simplify collision shapes: switch from full mesh collision to convex hull or primitive boxes (use the alternate forms already CAD'd)
 - Verify URDF spawns in Gazebo with no self-collision
 - Verify TF tree clean
@@ -59,7 +59,7 @@ Milestone + issue breakdown for the v2 redesign. This is the working planning do
 **Branch**: `phase/M1A-sim-nav`
 **Issues**:
 - Build multi-room sim world (4-5 rooms, doorways, clutter)
-- Update `brobot_gazebo` launch to spawn v2 URDF in new world
+- Update `ballbot_gazebo` launch to spawn v2 URDF in new world
 - Configure nav2 params yaml for v2 footprint + dynamics
 - Generate sim map via `slam_toolbox`
 - Read AMCL / particle filter background (Probabilistic Robotics ch 8 or equivalent)

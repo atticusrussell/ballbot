@@ -10,11 +10,11 @@ References:
 
 ## Requirements
 
-This guide assumes you have cloned your repository (e.g., `brobot`) directly onto your Raspberry Pi:
+This guide assumes you have cloned your repository (e.g., `ballbot`) directly onto your Raspberry Pi:
 
 ```bash
-git clone https://github.com/atticusrussell/brobot.git
-cd brobot
+git clone https://github.com/atticusrussell/ballbot.git
+cd ballbot
 ```
 
 ---
@@ -33,10 +33,10 @@ sudo ./setup-fan.sh
 This script will:
 
 - Install the required system dependencies (`python3`, `python3-pip`, `python3-rpi.gpio`).
-- Copy the fan control Python script to `/opt/brobot`.
+- Copy the fan control Python script to `/opt/ballbot`.
 - Install and start the systemd service for fan control.
 
-After running the script, the fan control will automatically monitor the CPU temperature using the script `/opt/brobot/fan_control.py`:
+After running the script, the fan control will automatically monitor the CPU temperature using the script `/opt/ballbot/fan_control.py`:
 - **≥ 45°C:** Fan at 100% duty cycle  
 - **≥ 40°C:** Fan at 85% duty cycle  
 - **Below 40°C:** Fan off
@@ -48,7 +48,7 @@ After running the script, the fan control will automatically monitor the CPU tem
 If you wish to modify the behavior (e.g., adjust temperature thresholds or change the GPIO pin), edit the Python file directly:
 
 ```bash
-sudo nano /opt/brobot/fan_control.py
+sudo nano /opt/ballbot/fan_control.py
 ```
 
 After making any changes, restart the service to apply them:
