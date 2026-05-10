@@ -15,11 +15,10 @@
 import os
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, PythonExpression
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-from launch.conditions import IfCondition, UnlessCondition
 from ament_index_python.packages import get_package_share_directory
 
 
@@ -37,7 +36,7 @@ def generate_launch_description():
     )
 
     description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_description'), 'launch', 'description.launch.py']
+        [FindPackageShare('ballbot_description'), 'launch', 'description.launch.py']
     )
 
     ekf_config_path = PathJoinSubstitution(
@@ -48,12 +47,8 @@ def generate_launch_description():
         [FindPackageShare("brobot_base"), "config", "twist_mux.yaml"]
     )
 
-    default_robot_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_bringup'), 'launch', 'default_robot.launch.py']
-    )
-
-    custom_robot_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_bringup'), 'launch', 'custom_robot.launch.py']
+    robot_launch_path = PathJoinSubstitution(
+        [FindPackageShare('brobot_bringup'), 'launch', 'robot.launch.py']
     )
 
     return LaunchDescription([
@@ -62,13 +57,7 @@ def generate_launch_description():
         SetEnvironmentVariable('RMW_FASTRTPS_USE_QOS_FROM_XML', '1'),
 
         DeclareLaunchArgument(
-            name='custom_robot', 
-            default_value='false',
-            description='Use custom robot'
-        ),
-
-        DeclareLaunchArgument(
-            name='base_serial_port', 
+            name='base_serial_port',
             default_value='/dev/ttyACM0',
             description='Linorobot Base Serial Port'
         ),
@@ -100,15 +89,9 @@ def generate_launch_description():
         ),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(default_robot_launch_path),
-            condition=UnlessCondition(LaunchConfiguration("custom_robot")),
+            PythonLaunchDescriptionSource(robot_launch_path),
             launch_arguments={
                 'base_serial_port': LaunchConfiguration("base_serial_port")
             }.items()
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(custom_robot_launch_path),
-            condition=IfCondition(LaunchConfiguration("custom_robot")),
         )
     ])

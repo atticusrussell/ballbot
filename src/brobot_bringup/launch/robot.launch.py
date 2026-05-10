@@ -27,7 +27,7 @@ def generate_launch_description():
     )
 
     description_launch_path = PathJoinSubstitution(
-        [FindPackageShare('brobot_description'), 'launch', 'description.launch.py']
+        [FindPackageShare('ballbot_description'), 'launch', 'description.launch.py']
     )
 
     return LaunchDescription([
