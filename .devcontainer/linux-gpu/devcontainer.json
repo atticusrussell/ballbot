@@ -43,7 +43,6 @@
           "betwo.b2-catkin-tools",
           "DotJoshJohnson.xml",
           "ms-azuretools.vscode-docker",
-          "ms-iot.vscode-ros",
           "ms-python.python",
           "ms-vscode.cpptools",
           "redhat.vscode-yaml",
@@ -54,7 +53,8 @@
           "zachflower.uncrustify",
           "mtsmfm.vscode-stl-viewer",
           "tomoki1207.pdf",
-          "bierner.markdown-mermaid"
+          "bierner.markdown-mermaid",
+          "Ranch-Hand-Robotics.rde-pack"
         ]
       }
     },
