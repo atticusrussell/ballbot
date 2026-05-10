@@ -13,6 +13,7 @@ Milestone + issue breakdown for the v2 redesign. This is the working planning do
 - Each milestone gets a GitHub Milestone (native).
 - Each bullet under "Issues" gets a GitHub Issue (native), tagged with the milestone.
 - Each milestone gets its own feature branch (`phase/M<id>-<slug>`), PR'd to `humble` when the milestone closes.
+- **Each milestone closure gets a git tag**: `m{id}-complete` (e.g., `m0.1-complete`, `m1a-complete`, `m4b-complete`). Tag every milestone, including prep / reading / hardware milestones, for trivial rollback to any phase boundary.
 - Reading-group issues use a checklist of chapter PDFs from `docs/third_party/dofbot-tutorials/`.
 - Behavior tree (BT) extension issues live at the end of their parent "B" milestone.
 - HW integration milestones (M*.5) are atomic and small — green-light test only.
@@ -32,7 +33,7 @@ Milestone + issue breakdown for the v2 redesign. This is the working planning do
 - Verify TF tree clean
 - Confirm mass + CoG match v1 robot
 - Delete `archive/catbot_description/` and `archive/catbot_simulation/` after merge (preserve `obstacles.world` first if absorbing)
-- Open PR + tag `v1-urdf-cad`
+- Open PR + tag `m0.1-complete`
 
 ---
 
@@ -49,7 +50,7 @@ Milestone + issue breakdown for the v2 redesign. This is the working planning do
 - Rerun onshape-to-robot import
 - Verify v2 URDF spawns in Gazebo, no self-collision
 - Sanity-check inertia + CoG against estimated v2 numbers
-- Tag `v2-design-rough`, open PR
+- Open PR + tag `m0.2-complete`
 
 ---
 
@@ -251,24 +252,13 @@ Prefer DOFBOT-Pro Orin-Super tutorials (ROS 2 native, MoveIt2) over DOFBOT-SE (R
 
 ---
 
-## Cross-cutting setup (not a milestone, do in parallel as needed)
+## Tutorial reading sources
 
-These are repo-hygiene tasks that don't fit a milestone:
+- DOFBOT-SE tutorials (`docs/third_party/dofbot-se/`, also a vendored copy at `docs/third_party/dofbot-tutorials/`) are **ROS 1**. Useful for fundamentals (PID, OpenCV, Linux), less useful for ROS 2 specifics.
+- DOFBOT-Pro tutorials (`docs/third_party/dofbot-pro/`) include `23.For_JetsonORIN_SUPER_JetPack6.2/` with **ROS 2 native** content: MoveIt2 configuration, MoveIt2 inverse kinematics, MoveIt2 trajectory planning, ROS 2 URDF model.
+- **Reading-C (Pre-Manipulation) prefers the Pro/Orin-Super tutorials** for MoveIt2 + ROS 2 chapters, falling back to SE only for fundamentals.
+- Yahboom-provided source code (URDFs, ROS nodes) is at `third_party/dofbot-pro/` (Drive download) and `third_party/dofbot-se/` — separate from the docs.
 
-- Add `third_party/` at repo root for code submodules (separate from `docs/third_party/` which holds reference documents)
-- Submodule `YahboomTechnology/DOFBOT-Pro` (https://github.com/YahboomTechnology/DOFBOT-Pro) — *PDFs only*, 500MB of tutorials including ROS 2 + Orin-Super-JetPack-6.2 specific content. Goes under `third_party/dofbot-pro/`.
-- Submodule `YahboomTechnology/DOFBOT-SE` — your hardware variant. Goes under `third_party/dofbot-se/`.
-- Add `COLCON_IGNORE` to each submodule so colcon doesn't try to build them.
-- **Manually download DOFBOT-Pro source code from Google Drive** (link in `DOFBOT-Pro/Annex_Download_Link.txt`): https://drive.google.com/drive/folders/13Rp6BC_t_N1sBiD6OY1-aM88_jkhX6nn — Yahboom does not host source code on GitHub.
-  - Extract to `third_party/dofbot-pro-code/` (not a submodule — manual pull)
-  - Add a `README.md` documenting source URL + download date
-  - Commit the ROS code (URDFs, Python nodes); `.gitignore` any large binary system image
-- Update `docs/TODO.md` to remove items now absorbed into milestones; keep only true side-quests.
-- Establish git tag conventions (`v1-urdf-cad`, `v2-design-rough`, etc.)
-- Set up GitHub Issue + Milestone scaffolding (deferred until roadmap stabilizes)
+## Side-quest issues
 
-### Tutorial reading reconciliation
-
-- DOFBOT-SE tutorials (already at `docs/third_party/dofbot-tutorials/`) are **ROS 1**. Useful for fundamentals (PID, OpenCV, Linux), less useful for ROS 2 specifics.
-- DOFBOT-Pro tutorials (after submoduling) include `23.For_JetsonORIN_SUPER_JetPack6.2/` with **ROS 2 native** content: MoveIt2 configuration, MoveIt2 inverse kinematics, MoveIt2 trajectory planning, ROS 2 URDF model.
-- **Reading-C (Pre-Manipulation) should prefer the Pro/Orin-Super tutorials** for MoveIt2 + ROS 2 chapters, falling back to SE only for fundamentals.
+Off-roadmap fill-in work lives in GitHub issues with the `side-quest` label, no milestone, not on the project board. Pull from there when looking for a small task between phase commitments. See [open side-quests](https://github.com/atticusrussell/ballbot/issues?q=is%3Aopen+is%3Aissue+label%3Aside-quest).
