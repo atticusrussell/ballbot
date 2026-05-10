@@ -148,28 +148,29 @@ assembly that's been collapsed
   </sensor>
 </gazebo>
 
-<!-- IMU -->
-<gazebo reference="mpu_9250">
-  <gravity>true</gravity>
+<!-- IMU sensor frame.
+     mpu_9250 inherits the part-local CAD axes (Z-down). imu_link
+     cancels the parent joint's (-π, 0, -π) flip so the sensor sees
+     world-aligned Z-up, matching the physical chip and the firmware. -->
+<link name="imu_link"/>
+<joint name="imu_link_joint" type="fixed">
+  <parent link="mpu_9250"/>
+  <child link="imu_link"/>
+  <origin xyz="0 0 0" rpy="3.14159 0 3.14159"/>
+</joint>
+
+<gazebo reference="imu_link">
   <sensor name="imu_sensor" type="imu">
-  <always_on>true</always_on>
-  <update_rate>20</update_rate>
-  <visualize>true</visualize>
-  <topic>__default_topic__</topic>
-  <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+    <always_on>true</always_on>
+    <update_rate>20</update_rate>
+    <visualize>true</visualize>
+    <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
       <ros>
         <remapping>~/out:=imu/data</remapping>
       </ros>
-      <topicName>imu/data</topicName>
-      <bodyName>mpu_9250</bodyName>
-      <updateRateHZ>10.0</updateRateHZ>
-      <gaussianNoise>0.0</gaussianNoise>
-      <xyzOffset>0 0 0</xyzOffset>
-      <rpyOffset>0 0 0</rpyOffset>
-      <frameName>mpu_9250</frameName>
-      <initialOrientationAsReference>false</initialOrientationAsReference>
-  </plugin>
-  <pose>0 0 0 0 0 0</pose>
+      <frame_name>imu_link</frame_name>
+      <initial_orientation_as_reference>false</initial_orientation_as_reference>
+    </plugin>
   </sensor>
 </gazebo>
 
