@@ -46,7 +46,7 @@ Milestone + issue breakdown for the v2 redesign. This is the working planning do
 
 ---
 
-## M01 — URDF foundation migration 🟨
+## M01 — URDF foundation migration 🟩
 **Goal**: Resurrect `archive/catbot_description`'s onshape-to-robot pipeline into `ballbot_description` with simplified collisions. Mass-accurate v1 robot in URDF (no v2 design changes yet).
 **Branch**: `phase/M01-urdf-foundation`
 **Issues**:
