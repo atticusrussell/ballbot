@@ -16,7 +16,7 @@ jobs:
       matrix:
         linter: [lint_cmake, xmllint, flake8]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Run ament_${{ matrix.linter }}
         shell: bash
         run: |
