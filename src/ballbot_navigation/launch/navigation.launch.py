@@ -23,7 +23,7 @@ from launch_ros.actions import Node, SetRemap
 from ament_index_python.packages import get_package_share_directory
 
 
-MAP_NAME='bluebrook' #change to the name of your own map here
+MAP_NAME='my_room_bluebrook' #change to the name of your own map here
 
 def generate_launch_description():
     # Retrieve the absolute path to the Fast DDS XML (fastrtps.xml) from the ballbot_base package
