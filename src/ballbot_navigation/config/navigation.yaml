@@ -150,8 +150,13 @@ controller_server:
       trans_stopped_velocity: 0.25
       short_circuit_trajectory_evaluation: True
       stateful: True
-      critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
-      BaseObstacle.scale: 0.02
+      # ObstacleFootprint, not BaseObstacle: BaseObstacleCritic scores only the
+      # robot CENTER against the costmap, so a trajectory that clips an obstacle
+      # with the robot body scores as legal. ObstacleFootprintCritic checks the
+      # whole footprint. Scale raised from the nav2 default 0.02, which left
+      # obstacle cost ~1600x weaker than the path critics below.
+      critics: ["RotateToGoal", "Oscillation", "ObstacleFootprint", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+      ObstacleFootprint.scale: 10.0
       PathAlign.scale: 32.0
       PathAlign.forward_point_distance: 0.1
       GoalAlign.scale: 24.0
@@ -269,7 +274,10 @@ planner_server:
       plugin: "nav2_navfn_planner/NavfnPlanner"
       tolerance: 0.5
       use_astar: false
-      allow_unknown: true
+      # false: with track_unknown_space, unobserved cells are NO_INFORMATION, and
+      # allow_unknown=true plans straight through them as if traversable. In a
+      # partially mapped room that is exactly where unseen furniture is.
+      allow_unknown: false
 
 planner_server_rclcpp_node:
   ros__parameters:
