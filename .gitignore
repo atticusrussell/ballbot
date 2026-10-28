@@ -29,3 +29,9 @@ devel/
 .ipynb_checkpoints/
 .virtual_documents/
 
+# colcon / ament package-exclusion markers.
+# setup_robot.sh drops these into viz+sim packages so the robot never builds them
+# and rosdep never pulls rviz2 / gazebo onto the Pi. Machine-local, never committed.
+COLCON_IGNORE
+!third_party/COLCON_IGNORE
+.ignored_pkgs/

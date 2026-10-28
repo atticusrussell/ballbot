@@ -4,6 +4,12 @@
    <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
       <!-- Default publisher profile -->
       <data_writer profile_name="default publisher profile" is_default_profile="true">
+         <!-- Fast DDS defaults to SYNCHRONOUS, which stalls publishers (EKF) on slow wifi subscribers -->
+         <qos>
+            <publishMode>
+               <kind>ASYNCHRONOUS</kind>
+            </publishMode>
+         </qos>
          <historyMemoryPolicy>DYNAMIC</historyMemoryPolicy>
       </data_writer>
 

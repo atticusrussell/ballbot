@@ -42,8 +42,16 @@ restore_pkgs() {
     for suffix in "${IGNORED_SUFFIXES[@]}"; do
         for dir in "$IGNORED_DIR"/*"$suffix"; do
             [ -d "$dir" ] || continue
-            echo "Restoring $(basename "$dir")"
+            pkg=$(basename "$dir")
+            echo "Restoring $pkg (marked ignored for future builds)"
             mv "$dir" src/
+            # The move above only protects the build inside THIS script. Without a
+            # persistent marker the next plain `colcon build` builds these again, and
+            # `rosdep install --from-paths src` drags rviz2 / gazebo_ros_pkgs onto the
+            # Pi. COLCON_IGNORE covers both: colcon honours it directly, and rosdep
+            # honours it via catkin_pkg's DEFAULT_IGNORE_MARKERS. Gitignored, so this
+            # is machine-local state.
+            touch "src/$pkg/COLCON_IGNORE"
         done
     done
     # rmdir, not rm -rf: if something unexpected is left behind, say so

@@ -1,6 +1,12 @@
 ekf_filter_node:
     ros__parameters:
-        frequency: 50.0
+        # 30 Hz, not 50: on the Pi 4 a filter cycle measured 24-55 ms against a
+        # 20 ms budget, so the node logged "Failed to meet update rate" continuously
+        # and published late, jittery odom->base_footprint. Late TF during rotation
+        # starves slam_toolbox's message filter. Both inputs are 50 Hz; running the
+        # filter faster than it can finish a cycle buys nothing and costs timing
+        # regularity.
+        frequency: 30.0
         two_d_mode: true
         publish_tf: true
  
@@ -14,11 +20,18 @@ ekf_filter_node:
         #vx    , vy    , vz,
         #vroll , vpitch, vyaw,
         #ax    , ay    , az
+        # vyaw is deliberately false here. The base is a 4-wheel skid-steer, but
+        # kinematics.cpp derives angular_z from the wheel-speed difference over
+        # LR_WHEELS_DISTANCE with a pure-rolling assumption. The wheels scrub
+        # laterally through every turn, so wheel-derived yaw rate is wrong by a
+        # surface-dependent factor. The gyro measures yaw rate directly and does
+        # not care what the robot is driving on, so imu0 owns vyaw.
+        # Wheels still own vx -- that part they measure well.
         odom0: odom/unfiltered
         odom0_config: [false, false, false,
                        false, false, false,
                        true, true, false,
-                       false, false, true,
+                       false, false, false,
                        false, false, false]
 
         imu0: imu/data

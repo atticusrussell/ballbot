@@ -12,18 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
 from launch import LaunchDescription
 from launch import LaunchContext
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, GroupAction, IncludeLaunchDescription, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.conditions import IfCondition
 from launch.substitutions import EnvironmentVariable
 from launch_ros.substitutions import FindPackageShare
-from launch_ros.actions import Node
+from launch_ros.actions import Node, SetRemap
+from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
+    # Retrieve the absolute path to the Fast DDS XML (fastrtps.xml) from the ballbot_base package
+    ballbot_base_share = get_package_share_directory('ballbot_base')
+    fastrtps_xml_file = os.path.join(ballbot_base_share, 'config', 'fastrtps.xml')
+
     slam_launch_path = PathJoinSubstitution(
         [FindPackageShare('slam_toolbox'), 'launch', 'online_async_launch.py']
     )
@@ -51,8 +57,12 @@ def generate_launch_description():
         slam_param_name = 'params_file'
 
     return LaunchDescription([
+        # Set the environment variables so that Fast DDS uses the custom XML profile.
+        SetEnvironmentVariable('FASTRTPS_DEFAULT_PROFILES_FILE', fastrtps_xml_file),
+        SetEnvironmentVariable('RMW_FASTRTPS_USE_QOS_FROM_XML', '1'),
+
         DeclareLaunchArgument(
-            name='sim', 
+            name='sim',
             default_value='false',
             description='Enable use_sime_time to true'
         ),
@@ -63,13 +73,18 @@ def generate_launch_description():
             description='Run rviz'
         ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(navigation_launch_path),
-            launch_arguments={
-                'use_sim_time': LaunchConfiguration("sim"),
-                'params_file': nav2_config_path
-            }.items()
-        ),
+        # nav2's controller publishes to /cmd_vel; twist_mux listens on /cmd_vel_nav.
+        # Without this remap the robot never moves on a goal. Matches navigation.launch.py.
+        GroupAction([
+            SetRemap(src='/cmd_vel', dst='/cmd_vel_nav'),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(navigation_launch_path),
+                launch_arguments={
+                    'use_sim_time': LaunchConfiguration("sim"),
+                    'params_file': nav2_config_path
+                }.items()
+            ),
+        ]),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(slam_launch_path),
