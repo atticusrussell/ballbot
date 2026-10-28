@@ -183,6 +183,7 @@ local_costmap:
       height: 3
       resolution: 0.05
       robot_radius: 0.13 # chassis half-diagonal 0.108 + 2 cm
+      footprint_padding: 0.01 # small margin; 0.04 blocked the bathroom doorway
       plugins: ["voxel2d_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -223,6 +224,7 @@ global_costmap:
       robot_base_frame: base_link
       use_sim_time: False
       robot_radius: 0.13 # chassis half-diagonal 0.108 + 2 cm
+      footprint_padding: 0.01 # small margin; 0.04 blocked the bathroom doorway
       resolution: 0.05
       track_unknown_space: true
       plugins: ["static_layer", "voxel2d_layer", "inflation_layer"]
