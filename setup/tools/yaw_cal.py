@@ -15,7 +15,7 @@ from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Imu
 from nav_msgs.msg import Odometry
 
-LR_CURRENT = 0.156          # firmware/config/lino_base_config.h:61
+LR_CURRENT = 0.291          # firmware/config/lino_base_config.h:61
 SPEEDS     = [0.4, 0.7, 1.0]
 SPIN_UP    = 2.0            # s, discarded
 MEASURE    = 4.0            # s, averaged
