@@ -4,6 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /TF1
         - /TF1/Frames1
         - /TF1/Tree1
         - /Amcl Particle Swarm1
@@ -11,7 +12,7 @@ Panels:
         - /Controller1/Local Costmap1
         - /Controller1/Local Plan1
       Splitter Ratio: 0.5833333134651184
-    Tree Height: 724
+    Tree Height: 666
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -53,26 +54,36 @@ Visualization Manager:
       Frames:
         All Enabled: false
         base_footprint:
-          Value: true
+          Value: false
         base_link:
+          Value: true
+        cam_3_lens_front:
           Value: false
-        camera_link:
+        camera_link_optical:
           Value: false
-        front_left_wheel_link:
-          Value: false
-        front_right_wheel_link:
+        camera_sensor_mount:
           Value: false
         imu_link:
           Value: false
-        laser:
-          Value: false
         map:
+          Value: true
+        mpu_9250:
           Value: false
         odom:
+          Value: true
+        rplidar_a1_head:
           Value: false
-        rear_left_wheel_link:
+        still_chassis_assm:
           Value: false
-        rear_right_wheel_link:
+        webcam_glass:
+          Value: false
+        wheel_assm:
+          Value: false
+        wheel_assm_2:
+          Value: false
+        wheel_assm_3:
+          Value: false
+        wheel_assm_4:
           Value: false
       Marker Scale: 2
       Name: TF
@@ -84,27 +95,33 @@ Visualization Manager:
           odom:
             base_footprint:
               base_link:
-                camera_link:
-                  {}
-                imu_link:
-                  {}
-                laser:
-                  {}
-              front_left_wheel_link:
-                {}
-              front_right_wheel_link:
-                {}
-              rear_left_wheel_link:
-                {}
-              rear_right_wheel_link:
-                {}
+                still_chassis_assm:
+                  cam_3_lens_front:
+                    {}
+                  mpu_9250:
+                    imu_link:
+                      {}
+                  rplidar_a1_head:
+                    {}
+                  webcam_glass:
+                    camera_sensor_mount:
+                      camera_link_optical:
+                        {}
+                  wheel_assm:
+                    {}
+                  wheel_assm_2:
+                    {}
+                  wheel_assm_3:
+                    {}
+                  wheel_assm_4:
+                    {}
       Update Interval: 0
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 3.290379285812378
-        Min Value: -10.208759307861328
+        Max Value: 3.014707565307617
+        Min Value: -0.9696756601333618
         Value: true
       Axis: X
       Channel Name: intensity
@@ -127,6 +144,7 @@ Visualization Manager:
       Topic:
         Depth: 5
         Durability Policy: Volatile
+        Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Best Effort
         Value: /scan
@@ -142,6 +160,7 @@ Visualization Manager:
       Topic:
         Depth: 1
         Durability Policy: Transient Local
+        Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /map
@@ -169,6 +188,7 @@ Visualization Manager:
       Topic:
         Depth: 5
         Durability Policy: Volatile
+        Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Best Effort
         Value: /particlecloud
@@ -184,6 +204,7 @@ Visualization Manager:
           Topic:
             Depth: 1
             Durability Policy: Transient Local
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /global_costmap/costmap
@@ -194,7 +215,7 @@ Visualization Manager:
             Reliability Policy: Reliable
             Value: /global_costmap/costmap_updates
           Use Timestamp: false
-          Value: true
+          Value: false
         - Alpha: 0.5
           Buffer Length: 1
           Class: rviz_default_plugins/Path
@@ -218,6 +239,7 @@ Visualization Manager:
           Topic:
             Depth: 5
             Durability Policy: Volatile
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /plan
@@ -230,6 +252,7 @@ Visualization Manager:
           Topic:
             Depth: 5
             Durability Policy: Volatile
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /global_costmap/published_footprint
@@ -247,6 +270,7 @@ Visualization Manager:
           Topic:
             Depth: 1
             Durability Policy: Transient Local
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /local_costmap/costmap
@@ -281,6 +305,7 @@ Visualization Manager:
           Topic:
             Depth: 5
             Durability Policy: Volatile
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /local_plan
@@ -305,6 +330,7 @@ Visualization Manager:
           Topic:
             Depth: 5
             Durability Policy: Volatile
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /local_costmap/published_footprint
@@ -349,41 +375,66 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        camera_link:
+        cam_3_lens_front:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        front_left_wheel_link:
+        camera_link_optical:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        front_right_wheel_link:
+        camera_sensor_mount:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        laser:
+        mpu_9250:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rear_left_wheel_link:
+        rplidar_a1_head:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rear_right_wheel_link:
+        still_chassis_assm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        webcam_glass:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_assm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_assm_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_assm_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_assm_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
       Name: RobotModel
       TF Prefix: ""
       Update Interval: 0
@@ -402,6 +453,9 @@ Visualization Manager:
     - Class: rviz_default_plugins/Measure
       Line color: 128; 128; 0
     - Class: rviz_default_plugins/SetInitialPose
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -433,7 +487,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 71.72926330566406
+      Scale: 313.8479309082031
       Target Frame: base_link
       Value: TopDownOrtho (rviz_default_plugins)
       X: 0.4037398099899292
