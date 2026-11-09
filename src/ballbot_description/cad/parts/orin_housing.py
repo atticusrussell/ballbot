@@ -46,8 +46,8 @@ COVER_SCREWS = [(sx * 57.5, sy) for sx in (-1, 1) for sy in (-1, 1)]  # x, side;
 COVER_SCREW_Z = 6.5
 # --- lidar (RPLIDAR A1, motor end to -X) ----------------------------------
 SCAN = (-17.0, 0.0)
-KIT_STACK = 23.0   # A1 dev-kit stands: 15 + 8 mm hex, flange -> pad
-LIDAR_PAD = 3.0    # printed pads under the stands; motor clears cover by ~3.4
+KIT_STACK = 24.6   # A1 dev kit: 15 stand + 1.6 devboard + 8 stand, flange -> pad
+LIDAR_PAD = 3.0    # printed pads under the stands; kit clears cover by 5.0
 LIDAR_SCREW_D = 2.8  # M2.5 x 10 from inside the cover into the 8 mm stand
 LIDAR_HOLES = [(SCAN[0] + 28, SCAN[1] + s * 28) for s in (-1, 1)] + \
               [(SCAN[0] - 42, SCAN[1] + s * 20) for s in (-1, 1)]
