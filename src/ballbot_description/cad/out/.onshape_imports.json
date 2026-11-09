@@ -1,0 +1,36 @@
+{
+  "833f9762904995f22ff7dd9f:orin_housing.step": {
+    "blobElementId": "de65e6fb0906ebb44b25af41",
+    "documentId": "833f9762904995f22ff7dd9f",
+    "lastPush": "2026-11-09T01:49:19",
+    "resultElements": [
+      {
+        "id": "70f87f87c3f2a4885f779121",
+        "name": "orin_housing",
+        "type": "ASSEMBLY"
+      },
+      {
+        "id": "20316124d56f673719dfa663",
+        "name": "orin_housing parts",
+        "type": "PARTSTUDIO"
+      },
+      {
+        "id": "ba7f96ab6f12a22bf0f3a52e",
+        "name": "BOM : orin_housing",
+        "type": "BILLOFMATERIALS"
+      }
+    ]
+  },
+  "afd4086e3b420b4188f9bab9:motor_bracket.step": {
+    "blobElementId": "42679cca10dfec3c66e375ba",
+    "documentId": "afd4086e3b420b4188f9bab9",
+    "lastPush": "2026-11-08T14:59:33",
+    "resultElements": [
+      {
+        "id": "4534285183af25da18083502",
+        "name": "motor_bracket",
+        "type": "PARTSTUDIO"
+      }
+    ]
+  }
+}

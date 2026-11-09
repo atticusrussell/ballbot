@@ -35,3 +35,6 @@ devel/
 COLCON_IGNORE
 !third_party/COLCON_IGNORE
 .ignored_pkgs/
+
+# AI CAD: STEP context exported from Onshape
+src/ballbot_description/cad/context/
