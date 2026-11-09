@@ -16,7 +16,7 @@ P0 = occ(json.load(open("housing_asm.json"))); Dp = np.load("D_pcb_snapped.npy")
 pi = rep.get("pcb", "MVWER4al7DjyElyq2")
 e = max(err(H[(pi,) + k[1:]], Dp @ v) for k, v in P0.items() if k[0] == "MVWER4al7DjyElyq2" and len(k) > 1)
 print(f"PCB: max error {e:.4f} mm")
-for name, ids, M in (("housing", rep["housing"], X["housing"]), ("a1", st["a1"], T([0, 0, 0]) @ X["a1"]),
+for name, ids, M in (("housing", rep["housing"], X["housing"]), ("a1 kit (lidar, board, stands)", st["a1"] + rep["stands"], X["a1"]),
                      ("bridge", st["bridge"], X["bridge"])):
     Mm = M.copy(); Mm[:3, 3] /= 1000
     print(f"{name}: {len(ids)} parts, max error {max(err(H[(i,)], Mm) for i in ids):.4f} mm")

@@ -19,8 +19,5 @@ for inst, tgt in ((rep["orin"], X["orin"]), (rep["pcb"], X["pcb"])):
 set_xf(HOUSING, [[i] for i in rep["housing"]], X["housing"])
 set_xf(HOUSING, [[i] for i in state["a1"]], X["a1"])
 set_xf(HOUSING, [[i] for i in state["bridge"]], X["bridge"])
-names = {i["id"]: i["name"] for i in api.get(asm(HOUSING)).json()["rootAssembly"]["instances"]}
-s15 = [[i] for i in rep["stands"] if not names[i].startswith("stand-8")]
-s8 = [[i] for i in rep["stands"] if names[i].startswith("stand-8")]
-set_xf(HOUSING, s15, X["a1"]); set_xf(HOUSING, s8, T([0, 0, 1.6]) @ X["a1"])
+set_xf(HOUSING, [[i] for i in rep["stands"]], X["a1"])  # full kit stack at kit positions
 print("reset done")

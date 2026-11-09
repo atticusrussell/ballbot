@@ -4,12 +4,12 @@ from build123d import *
 from check import xf, bbox_hit, housing_part
 O = "/home/atticus/workspace/ballbot/src/ballbot_description/cad/out/"
 cover = housing_part("orin_housing_cover")
-SCAN, ZTOP, SO = (-17.0, 0.0), 78.0, 3.0 + 23.0  # pad + kit stands (15 + 8)
+SCAN, ZTOP, SO = (-17.0, 0.0), 78.0, 3.0 + 24.6  # pad + kit stack (15 + 1.6 board + 8)
 def Hm(R, t): M = np.eye(4); M[:3, :3] = R; M[:3, 3] = t; return M
 Rz = lambda a: np.array([[math.cos(a), -math.sin(a), 0], [math.sin(a), math.cos(a), 0], [0, 0, 1]])
 # A1: flange face z744.29 & scan centre (-90.55,-132.92) -> (SCAN, ZTOP+SO), rotated 180 deg
 Ta = Hm(Rz(math.pi), [SCAN[0], SCAN[1], ZTOP + SO]) @ Hm(np.eye(3), [90.55, 132.92, -744.29])
-DROP = ("devboard", "connector-7pin")  # kit USB board isn't used
+DROP = ()  # full kit stack
 a1 = import_step("a1.step"); a1L = [(c.label, xf(s, Ta)) for c in a1.children if not c.label.startswith(DROP) for s in c.solids()]
 stands = [s for l, s in a1L if l.startswith("stand")]
 print("kit stand bottoms (should be pad top", ZTOP + 3.0, "):", sorted({round(s.bounding_box().min.Z, 2) for s in stands}))
