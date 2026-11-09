@@ -1,23 +1,13 @@
 {
   "833f9762904995f22ff7dd9f:orin_housing.step": {
-    "blobElementId": "de65e6fb0906ebb44b25af41",
+    "blobElementId": "b0f03717fdb30c6ae0ab78db",
     "documentId": "833f9762904995f22ff7dd9f",
-    "lastPush": "2026-11-09T01:49:19",
+    "lastPush": "2026-11-09T08:31:32",
     "resultElements": [
       {
-        "id": "70f87f87c3f2a4885f779121",
-        "name": "orin_housing",
-        "type": "ASSEMBLY"
-      },
-      {
-        "id": "20316124d56f673719dfa663",
-        "name": "orin_housing parts",
+        "id": "e2f571e82f0544a630201ca9",
+        "name": "orin_housing (1)",
         "type": "PARTSTUDIO"
-      },
-      {
-        "id": "ba7f96ab6f12a22bf0f3a52e",
-        "name": "BOM : orin_housing",
-        "type": "BILLOFMATERIALS"
       }
     ]
   },

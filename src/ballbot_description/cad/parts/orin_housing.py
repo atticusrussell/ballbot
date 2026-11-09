@@ -9,6 +9,8 @@ Outputs out/orin_housing.step: cover, base and standoffs as labelled solids, ori
 from pathlib import Path
 import math, sys
 from build123d import *
+from OCP.BRepBuilderAPI import BRepBuilderAPI_Transform
+from OCP.TopLoc import TopLoc_Location
 
 CAD = Path(__file__).resolve().parents[1]
 OUT = CAD / "out"
@@ -44,7 +46,9 @@ COVER_SCREWS = [(sx * 57.5, sy) for sx in (-1, 1) for sy in (-1, 1)]  # x, side;
 COVER_SCREW_Z = 6.5
 # --- lidar (RPLIDAR A1, motor end to -X) ----------------------------------
 SCAN = (-17.0, 0.0)
-LIDAR_STANDOFF = 30.0  # M2.5 x 30 hex, F-M into cover inserts
+KIT_STACK = 23.0   # A1 dev-kit stands: 15 + 8 mm hex, flange -> pad
+LIDAR_PAD = 3.0    # printed pads under the stands; motor clears cover by ~3.4
+LIDAR_SCREW_D = 2.8  # M2.5 x 10 from inside the cover into the 8 mm stand
 LIDAR_HOLES = [(SCAN[0] + 28, SCAN[1] + s * 28) for s in (-1, 1)] + \
               [(SCAN[0] - 42, SCAN[1] + s * 20) for s in (-1, 1)]
 # --- A1 UART bridge (35.5 x 20, holes 19 x 14.25), under the lidar lid -----
@@ -96,9 +100,13 @@ def cover() -> Part:
     for x, s in COVER_SCREWS:
         body -= Pos(x, s * (W_OUT - T / 2), COVER_SCREW_Z) * Rot(90, 0, 0) * Cylinder(1.7, T + 2)
 
-    # inner bosses under the top for lidar (M2.5) and bridge (M2) inserts
-    for (x, y), d_boss, d_ins, l_ins in [(p, 8.0, M25_INS_D, M25_INS_L) for p in LIDAR_HOLES] + \
-                                         [(p, 6.0, M2_INS_D, M2_INS_L) for p in BRIDGE_HOLES]:
+    # lidar pads; kit stands screw down from inside the cover
+    for x, y in LIDAR_HOLES:
+        body += Pos(x, y, Z_TOP + LIDAR_PAD / 2) * Cylinder(4.5, LIDAR_PAD)
+        body -= Pos(x, y, Z_TOP) * Cylinder(LIDAR_SCREW_D / 2, 2 * (LIDAR_PAD + T) + 1)
+
+    # inner bosses under the top for bridge (M2) inserts
+    for (x, y), d_boss, d_ins, l_ins in [(p, 6.0, M2_INS_D, M2_INS_L) for p in BRIDGE_HOLES]:
         h = l_ins + 1.5 - T
         body += Pos(x, y, Z_TOP - T - h / 2) * Cylinder(d_boss / 2, h)
         body -= Pos(x, y, Z_TOP - l_ins / 2) * Cylinder(d_ins / 2, l_ins + 0.01)
@@ -129,14 +137,18 @@ def base() -> Part:
     return body
 
 
+def bake(s: Solid) -> Solid:  # apply location to geometry; Onshape drops nested STEP placements
+    trsf = s.location.wrapped.Transformation()
+    return Solid(BRepBuilderAPI_Transform(s.wrapped.Located(TopLoc_Location()), trsf, True).Shape())
+
+
 def hex_standoff(af: float, length: float) -> Part:
     return extrude(RegularPolygon(af / math.sqrt(3), 6), amount=length)
 
 
 def hardware() -> list[tuple[str, Part]]:
     z_pcb = PCB_Z + PCB_T
-    sets = [("standoff_m25x30_lidar", LIDAR_HOLES, Z_TOP, 5.0, LIDAR_STANDOFF),
-            ("standoff_m2x5_bridge", BRIDGE_HOLES, Z_TOP, 4.0, BRIDGE_STANDOFF),
+    sets = [("standoff_m2x5_bridge", BRIDGE_HOLES, Z_TOP, 4.0, BRIDGE_STANDOFF),
             ("standoff_m25x20_orin", ORIN_HOLES, z_pcb, 5.0, ORIN_STANDOFF)]
     return [(f"{name}_{i + 1}", Pos(x, y, z) * hex_standoff(af, h))
             for name, holes, z, af, h in sets for i, (x, y) in enumerate(holes)]
@@ -148,7 +160,7 @@ if __name__ == "__main__":
     solids = []
     for name, p in parts:
         assert len(p.solids()) == 1, name
-        s = p.solids()[0]; s.label = name; solids.append(s)
+        s = bake(p.solids()[0]); s.label = name; solids.append(s)  # geometry in place, no STEP transforms
         if not name.startswith("standoff"):
             print(f"{name}: vol={p.volume:.0f} mm3 bbox={p.bounding_box()}")
     asm = Compound(children=solids, label="orin_housing")  # names/structure fixed after 1st push
