@@ -6,7 +6,7 @@ from place import W, HOUSING, CHASSIS, ORIN, X, T, asm
 st = json.load(open("placed.json")); rep = st["repair"]
 occ = lambda r: {tuple(o["path"]): np.array(o["transform"]).reshape(4, 4) for o in r["rootAssembly"]["occurrences"]}
 mm = lambda M: (lambda N: (N.__setitem__((slice(0, 3), 3), N[:3, 3] * 1000), N)[1])(M.copy())
-H = occ(api.get(asm(HOUSING)).json()); O = occ(api.get(asm(ORIN)).json()); C = occ(api.get(asm(CHASSIS)).json())
+H = occ(api.get(asm(HOUSING) + "?includeNonSolids=true").json()); O = occ(api.get(asm(ORIN)).json()); C = occ(api.get(asm(CHASSIS) + "?includeNonSolids=true").json())
 json.dump({"H": {"|".join(k): v.tolist() for k, v in H.items()}}, open("verify_housing.json", "w"))
 def err(a, b): return np.abs(mm(a) - mm(b)).max()
 # Orin: each leaf = D_orin @ its pose inside orin_assm
@@ -17,7 +17,7 @@ pi = rep.get("pcb", "MVWER4al7DjyElyq2")
 e = max(err(H[(pi,) + k[1:]], Dp @ v) for k, v in P0.items() if k[0] == "MVWER4al7DjyElyq2" and len(k) > 1)
 print(f"PCB: max error {e:.4f} mm")
 for name, ids, M in (("housing", rep["housing"], X["housing"]), ("a1 kit (lidar, board, stands)", st["a1"] + rep["stands"], X["a1"]),
-                     ("bridge", st["bridge"], X["bridge"])):
+                     ("bridge composite", [st["bridge_comp"]], X["bridge"])):
     Mm = M.copy(); Mm[:3, 3] /= 1000
     print(f"{name}: {len(ids)} parts, max error {max(err(H[(i,)], Mm) for i in ids):.4f} mm")
 Xc = X["chassis"].copy(); Xc[:3, 3] /= 1000; ci = rep["chassis"]

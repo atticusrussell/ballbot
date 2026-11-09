@@ -22,10 +22,10 @@ def set_xf(e, paths, Hmm, relative=False):
     # absolute on a sub-assembly moves every leaf to Hmm (collapses it); use relative on fresh (identity) inserts
     api.post(asm(e) + "/occurrencetransforms", json={
         "occurrences": [{"path": p} for p in paths], "transform": to_m(Hmm), "isRelative": relative})
-def insert(e, body):  # returns new top-level instances
-    ids0 = {i["id"] for i in api.get(asm(e)).json()["rootAssembly"]["instances"]}
+def insert(e, body):  # returns new top-level instances (composite parts only listed with includeNonSolids)
+    ids0 = {i["id"] for i in api.get(asm(e) + "?includeNonSolids=true").json()["rootAssembly"]["instances"]}
     api.post(asm(e) + "/instances", json={"documentId": D, **body})
-    return [i for i in api.get(asm(e)).json()["rootAssembly"]["instances"] if i["id"] not in ids0]
+    return [i for i in api.get(asm(e) + "?includeNonSolids=true").json()["rootAssembly"]["instances"] if i["id"] not in ids0]
 
 L2H = T(t_shell - [0, 0, 1.0])  # frame L -> housing assembly
 cur = {o["path"][0]: np.array(o["transform"]).reshape(4, 4) for o in
