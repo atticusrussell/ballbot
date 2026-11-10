@@ -300,6 +300,13 @@ the verified layout locked with Fix/Groups; the workspace after it replaces thos
   (`DELETE .../features/featureid/<id>`; `mates.py` does this) so retries don't stack up broken features.
 - Remove old Groups before mating their members, or they conflict. **Don't create Groups over the API**: the
   API-created Group rotated everything ~90°.
+- A Group containing a Fixed instance makes every member, nested leaves included, refuse `occurrencetransforms`
+  ("Attempt to transform a fixed instance(s) failed"). Suppress the Group, move, unsuppress (`fix_d23.py`).
+- `verify.py` compares against the sub-assembly's own stored poses, so a leaf misplaced *inside* a vendor
+  sub-assembly passes. To find strays, compare each leaf with its siblings in the same sub-assembly (D23 <2> sat
+  ~120 mm off in `orin_assm` for days and was waved off as "vendor geometry").
+- "Contains faults" on vendor STEP parts (Orin J15/J16/J6 housings) is a Parasolid check. OCCT reports those
+  bodies as valid, and re-importing with `allowFaultyParts=false` drops them (0 parts). Leave them alone.
 - Cost: about 2 calls per no-offset mate and 3 per offset mate; 43 mates ≈ 90 calls.
 
 **Verify numerically, every time**

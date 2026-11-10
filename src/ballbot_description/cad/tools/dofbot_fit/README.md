@@ -39,6 +39,7 @@ Run with `~/.venvs/ballbot-cad/bin/python <script>.py` (needs matplotlib + scipy
 | `v2b_pin.py` | (superseded by the 'orin rigid' Group) pins for orin_assm's top-level occurrences |
 | `fix_pcb_sot.py` | Moves the misplaced SOT-223 inside the YB-EVV01 PCB assembly (ungroup, move, regroup) |
 | `fix_ctx_leaf.py` | robot_assm: puts housing leaves that keep their own in-context position back on the housing pose |
+| `fix_d23.py` | orin_assm: snaps the stray D23 <2> leaf back onto its sub-assembly (suppresses "orin rigid" around the move) |
 | `check_v2b_leaves.py` | Every Orin / PCB leaf vs its verified pose turned 180° (1 call) |
 | `verify.py` | Every placed leaf (and the chassis copy) vs intended transform; expect 0.0000 mm (3 calls) |
 | `inspect_asm.py`, `plate*.py`, `boardholes.py` | STEP hierarchy, chassis plate and board hole maps |
