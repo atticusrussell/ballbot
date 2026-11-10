@@ -17,9 +17,11 @@ Run with `~/.venvs/ballbot-cad/bin/python <script>.py` (needs matplotlib + scipy
 | `check.py`, `check_top.py`, `base_pcb.py` | Hole alignment + interference checks (boards, cover, A1, bridge, pins) |
 | `place.py` | Onshape: insert Orin, push `out/orin_housing.step`, insert housing/A1/bridge, housing into chassis (~30 calls, resumable via `placed.json`) |
 | `repair.py`, `repair_pcb.py`, `reset_positions.py` | One-off repairs of the first placement (relative re-inserts) |
-| `fix_kit.py` | Full A1 dev-kit stack (devboard, connector, 15/8 mm stands) at kit positions on the cover pads |
+| `fix_kit.py` | (superseded by `lidar_swap.py`) Full A1 dev-kit stack (devboard, connector, 15/8 mm stands) at kit positions on the cover pads |
 | `swap_bridge.py` | Insert the v1 single-part `A1_UART-Bridge` composite at the bridge pose |
 | `mates.py` | Replace Fix/Groups with fastened mates (one fixed ground part per assembly); `--chassis` mates the housing to the plate |
+| `check_lidar.py` | A1 (no kit board/stands) on 20+5 standoffs: hole/pad match, clearance, interference -> `T_a1_L.npy` |
+| `lidar_swap.py` | Lidar as v1's `RPlidar A1 Base`/`Head` sub-assemblies + `out/lidar_standoffs.step` (`parts/lidar_standoffs.py`), mated |
 | `verify.py` | Every placed leaf (and the chassis copy) vs intended transform; expect 0.0000 mm (3 calls) |
 | `inspect_asm.py`, `plate*.py`, `boardholes.py` | STEP hierarchy, chassis plate and board hole maps |
 | `reg.py`, `meshlib.py`, `bb.py`, `_env.py` | Shared helpers |

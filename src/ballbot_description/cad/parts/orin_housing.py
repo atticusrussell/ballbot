@@ -46,9 +46,9 @@ COVER_SCREWS = [(sx * 57.5, sy) for sx in (-1, 1) for sy in (-1, 1)]  # x, side;
 COVER_SCREW_Z = 6.5
 # --- lidar (RPLIDAR A1, motor end to -X) ----------------------------------
 SCAN = (-17.0, 0.0)
-KIT_STACK = 24.6   # A1 dev kit: 15 stand + 1.6 devboard + 8 stand, flange -> pad
-LIDAR_PAD = 3.0    # printed pads under the stands; kit clears cover by 5.0
-LIDAR_SCREW_D = 2.8  # M2.5 x 10 from inside the cover into the 8 mm stand
+KIT_STACK = 24.6   # old A1 dev-kit stack (unused); now 20+5 M2.5 standoffs, see lidar_standoffs.py
+LIDAR_PAD = 3.0    # printed pads under the lidar standoffs
+LIDAR_SCREW_D = 2.8  # M2.5 x 10 from inside the cover into the 20 mm standoff
 LIDAR_HOLES = [(SCAN[0] + 28, SCAN[1] + s * 28) for s in (-1, 1)] + \
               [(SCAN[0] - 42, SCAN[1] + s * 20) for s in (-1, 1)]
 # --- A1 UART bridge (35.5 x 20, holes 19 x 14.25), under the lidar lid -----
@@ -100,7 +100,7 @@ def cover() -> Part:
     for x, s in COVER_SCREWS:
         body -= Pos(x, s * (W_OUT - T / 2), COVER_SCREW_Z) * Rot(90, 0, 0) * Cylinder(1.7, T + 2)
 
-    # lidar pads; kit stands screw down from inside the cover
+    # lidar pads; standoffs screw down from inside the cover
     for x, y in LIDAR_HOLES:
         body += Pos(x, y, Z_TOP + LIDAR_PAD / 2) * Cylinder(4.5, LIDAR_PAD)
         body -= Pos(x, y, Z_TOP) * Cylinder(LIDAR_SCREW_D / 2, 2 * (LIDAR_PAD + T) + 1)
