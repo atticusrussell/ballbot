@@ -54,7 +54,8 @@ LIDAR_HOLES = [(SCAN[0] + 28, SCAN[1] + s * 28) for s in (-1, 1)] + \
 # --- A1 UART bridge (35.5 x 20, holes 19 x 14.25), under the lidar lid -----
 BRIDGE_C = (42.0, 0.0)  # clear of the A1 footprint (x < 19)
 BRIDGE_HOLES = [(BRIDGE_C[0] + dx, BRIDGE_C[1] + dy) for dx in (-7.125, 7.125) for dy in (-9.5, 9.5)]
-BRIDGE_STANDOFF = 5.0
+BRIDGE_SPACER = 0.5  # v1 'm1.5 rubber spacer' (2.5 x 0.5) under each bridge hole, M2 into the cover inserts
+BRIDGE_SLOT = (33.0, 51.0, -20.6, -17.8)  # header THT tails go 1.4 below the cover top; Onshape: 'bridge pin slot'
 # --- fan grille -----------------------------------------------------------
 FAN_C = tuple(float(v) for v in sys.argv[1:3]) if len(sys.argv) > 2 else (-4.3, 9.0)
 FAN_R = 19.0
@@ -105,7 +106,9 @@ def cover() -> Part:
         body += Pos(x, y, Z_TOP + LIDAR_PAD / 2) * Cylinder(4.5, LIDAR_PAD)
         body -= Pos(x, y, Z_TOP) * Cylinder(LIDAR_SCREW_D / 2, 2 * (LIDAR_PAD + T) + 1)
 
-    # inner bosses under the top for bridge (M2) inserts
+    x0, x1, y0, y1 = BRIDGE_SLOT
+    body -= Pos((x0 + x1) / 2, (y0 + y1) / 2, Z_TOP - T / 2) * Box(x1 - x0, y1 - y0, T + 2)
+    # inner bosses under the top for bridge (M2) inserts; bridge on v1 rubber spacers, no standoffs
     for (x, y), d_boss, d_ins, l_ins in [(p, 6.0, M2_INS_D, M2_INS_L) for p in BRIDGE_HOLES]:
         h = l_ins + 1.5 - T
         body += Pos(x, y, Z_TOP - T - h / 2) * Cylinder(d_boss / 2, h)
@@ -142,14 +145,17 @@ def bake(s: Solid) -> Solid:  # apply location to geometry; Onshape drops nested
     return Solid(BRepBuilderAPI_Transform(s.wrapped.Located(TopLoc_Location()), trsf, True).Shape())
 
 
+BRASS = Color(0xFAB601)  # standoff gold; uncoloured STEP solids get random Onshape colours
+
+
 def hex_standoff(af: float, length: float) -> Part:
     return extrude(RegularPolygon(af / math.sqrt(3), 6), amount=length)
 
 
 def hardware() -> list[tuple[str, Part]]:
     z_pcb = PCB_Z + PCB_T
-    sets = [("standoff_m2x5_bridge", BRIDGE_HOLES, Z_TOP, 4.0, BRIDGE_STANDOFF),
-            ("standoff_m25x20_orin", ORIN_HOLES, z_pcb, 5.0, ORIN_STANDOFF)]
+    sets = [("standoff_m2x5_bridge", BRIDGE_HOLES, Z_TOP, 4.0, 5.0),  # retired: kept so the import's structure
+            ("standoff_m25x20_orin", ORIN_HOLES, z_pcb, 5.0, ORIN_STANDOFF)]  # holds; Delete part feature in Onshape
     return [(f"{name}_{i + 1}", Pos(x, y, z) * hex_standoff(af, h))
             for name, holes, z, af, h in sets for i, (x, y) in enumerate(holes)]
 
@@ -161,8 +167,9 @@ if __name__ == "__main__":
     for name, p in parts:
         assert len(p.solids()) == 1, name
         s = bake(p.solids()[0]); s.label = name; solids.append(s)  # geometry in place, no STEP transforms
+        if name.startswith("standoff"): s.color = BRASS
         if not name.startswith("standoff"):
             print(f"{name}: vol={p.volume:.0f} mm3 bbox={p.bounding_box()}")
-    asm = Compound(children=solids, label="orin_housing")  # names/structure fixed after 1st push
+    asm = Compound(children=solids, label="orin_housing")  # don't re-push: updates re-id parts (see docs)
     export_step(asm, str(OUT / "orin_housing.step"))
     print(f"wrote {OUT / 'orin_housing.step'} ({len(solids)} solids)")

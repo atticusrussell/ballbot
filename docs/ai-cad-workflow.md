@@ -243,6 +243,21 @@ the verified layout locked with Fix/Groups; the workspace after it replaces thos
   `orin_housing` import and its mates stay untouched.
 - Add new code-CAD parts as a **new** STEP import rather than adding solids to an existing one. Changing an
   imported STEP's structure re-imports its parts and breaks every mate on them.
+- **Never re-push (update) a STEP import that assemblies use, even for a geometry-only change.** The update
+  re-ids the parts: every instance shows "Failed to resolve instance" and every mate on them breaks, in every
+  assembly that uses them. Change imported parts with Part Studio features after the import instead (UI or
+  1–2 calls): Delete part to retire a body, an extrude-cut with `booleanScope` set to the one part for a pocket
+  or slot. Example: `orin_housing (1)` has `Delete part 1` (bridge standoffs) and `bridge pin slot`.
+- If a push breaks things: `onshape_step_sync.py push` makes a `pre-<name>-<time>` restore-point version first.
+  In Versions and history, right-click it → Restore to `ballbot-v2-ai` → Restore. That reverts every tab the
+  push touched (the import, its Part Studio and the assemblies above it).
+- A Bash call the user rejects or interrupts can still have run partway. A push interrupted twice still uploaded
+  both times. After any interrupted call that talks to Onshape, check Versions and history before going on.
+- STEP solids without a colour get a random Onshape colour per part. Set colours in the build123d export
+  (`s.color = BRASS` for standoffs, `#FAB601`); fix existing parts in the UI (select in the Parts list,
+  right-click → Edit appearance), not by re-pushing.
+- Mounting hardware comes from v1 too: look up what v1 put under a part before inventing standoffs (the UART
+  bridge sits on 4 × `m1.5 rubber spacer`, 2.5 × 0.5 mm, reused by `dofbot_fit/bridge_spacers.py`).
 
 **Locking things in place: mates, not Fix/Group (the user's preference)**
 - Subassemblies must not have floating parts, and a pile of Fixed parts or Groups counts as sloppy. Use exactly

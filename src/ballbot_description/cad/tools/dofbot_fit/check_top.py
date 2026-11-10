@@ -20,7 +20,7 @@ print("A1 L x range:", round(min(s.bounding_box().min.X for _, s in a1L), 1), ro
 for p in [(-118.55, -160.92), (-118.55, -104.92), (-48.55, -152.92), (-48.55, -112.92)]:
     q = Ta @ np.array([p[0], p[1], 744.29, 1]); print("  A1 hole ->", np.round(q[:3], 2))
 # bridge: holes centre (-15.77, 3.215), board bottom z -0.79; rotate +90 so USB end points -Y
-BC, BSO = (42.0, 0.0), 5.0
+BC, BSO = (42.0, 0.0), 0.5  # v1 0.5 mm rubber spacers on the cover (M2 inserts)
 Tb = Hm(Rz(math.pi / 2), [BC[0], BC[1], ZTOP + BSO]) @ Hm(np.eye(3), [15.77, -3.215, 0.79])
 br = import_step("a1_bridge.step"); brL = [(s.label, xf(s, Tb)) for s in br.solids()]
 bbz = [s.bounding_box() for _, s in brL]
@@ -29,7 +29,7 @@ print("bridge L bbox x", round(min(b.min.X for b in bbz), 1), round(max(b.max.X 
       "z", round(min(b.min.Z for b in bbz), 1), round(max(b.max.Z for b in bbz), 1))
 for p in [(-25.27, -3.91), (-25.27, 10.34), (-6.27, -3.91), (-6.27, 10.34)]:
     q = Tb @ np.array([p[0], p[1], -0.79, 1]); print("  bridge hole ->", np.round(q[:3], 2))
-np.save("T_a1_L.npy", Ta); np.save("T_bridge_L.npy", Tb)  # before the slow checks
+np.save("T_bridge_L.npy", Tb)  # before the slow checks; T_a1_L.npy is check_lidar.py's
 def vol(a, b):
     if not bbox_hit(a, b): return 0.0
     r = a.intersect(b); r = [] if r is None else r if isinstance(r, list) else [r]; return sum(x.volume for x in r)

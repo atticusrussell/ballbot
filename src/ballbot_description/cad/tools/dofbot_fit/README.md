@@ -22,6 +22,7 @@ Run with `~/.venvs/ballbot-cad/bin/python <script>.py` (needs matplotlib + scipy
 | `mates.py` | Replace Fix/Groups with fastened mates (one fixed ground part per assembly); `--chassis` mates the housing to the plate |
 | `check_lidar.py` | A1 (no kit board/stands) on 20+5 standoffs: hole/pad match, clearance, interference -> `T_a1_L.npy` |
 | `lidar_swap.py` | Lidar as v1's `RPlidar A1 Base`/`Head` sub-assemblies + `out/lidar_standoffs.step` (`parts/lidar_standoffs.py`), mated |
+| `bridge_spacers.py` | Bridge on v1's 4 × `m1.5 rubber spacer` (0.5 mm) instead of 5 mm standoffs: moves its mate connector, inserts + mates the spacers |
 | `verify.py` | Every placed leaf (and the chassis copy) vs intended transform; expect 0.0000 mm (3 calls) |
 | `inspect_asm.py`, `plate*.py`, `boardholes.py` | STEP hierarchy, chassis plate and board hole maps |
 | `reg.py`, `meshlib.py`, `bb.py`, `_env.py` | Shared helpers |

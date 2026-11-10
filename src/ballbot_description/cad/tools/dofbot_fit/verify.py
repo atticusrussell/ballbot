@@ -1,8 +1,9 @@
 import _env  # noqa: F401  (cwd -> cad/context/dofbot_fit)
 """Verify Onshape positions: every leaf of Orin/PCB/housing/lidar/standoffs/bridge vs intended, and the chassis copy. 3 API calls."""
-import json, numpy as np
+import json, sys, numpy as np
 from bb import api, D
-from place import W, HOUSING, CHASSIS, ORIN, X, T, asm
+from place import W, HOUSING, CHASSIS, ORIN, X, T, CAD, asm
+sys.path.insert(0, CAD + "/parts")
 st = json.load(open("placed.json")); rep = st["repair"]
 occ = lambda r: {tuple(o["path"]): np.array(o["transform"]).reshape(4, 4) for o in r["rootAssembly"]["occurrences"]}
 mm = lambda M: (lambda N: (N.__setitem__((slice(0, 3), 3), N[:3, 3] * 1000), N)[1])(M.copy())
@@ -24,6 +25,10 @@ for name, ids, M in (("housing", rep["housing"], X["housing"]), ("lidar standoff
                      ("bridge composite", [st["bridge_comp"]], X["bridge"])):
     Mm = M.copy(); Mm[:3, 3] /= 1000
     print(f"{name}: {len(ids)} parts, max error {max(err(H[(i,)], Mm) for i in ids):.4f} mm")
+from orin_housing import BRIDGE_HOLES, Z_TOP  # v1 rubber spacers under the bridge holes
+e = max(err(H[(i,)], (lambda M: (M.__setitem__((slice(0, 3), 3), M[:3, 3] / 1000), M)[1])(X["housing"] @ T([x, y, Z_TOP])))
+        for i, (x, y) in zip(st["spacers"]["ids"], BRIDGE_HOLES))
+print(f"bridge spacers: {len(BRIDGE_HOLES)} parts, max error {e:.4f} mm")
 Xc = X["chassis"].copy(); Xc[:3, 3] /= 1000; ci = rep["chassis"]
 e = max(err(C[(ci,) + k], Xc @ v) for k, v in H.items())
 print(f"chassis copy: {sum(1 for k in C if k[0] == ci)} leaves vs {len(H)}, max error {e:.4f} mm")
