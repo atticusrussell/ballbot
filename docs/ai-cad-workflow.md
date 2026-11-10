@@ -169,3 +169,153 @@ FeatureScript MCP:
 - FeatureScript:
   - test_feature "could not find Trojan feature spec: no features found" means a compile error. Bisect it.
   - A local named after a std symbol (e.g. `box`) causes this.
+
+
+## 8. Starting from scratch: what to read and where things are
+
+Learned on the v2 Orin/PCB housing work, 2026-11-09. Onshape version `2.0.2-alpha` on branch `ballbot-v2-ai` is
+the verified layout locked with Fix/Groups; the workspace after it replaces those with fastened mates (§10).
+
+- **Onshape doc:** BallBot `833f9762904995f22ff7dd9f`.
+  - Work branch `ballbot-v2-ai` (workspace `9dc077545bceb395c1a5f5aa`). Never edit `main` or the v1 versions.
+  - `still_chassis_assm` (`69b4604a7be4b0e3dbe3d002`) is the top-level robot.
+  - `dofbot_pcb_housing` (`76281463014c048875567be7`) holds the Orin + YB-EVV01 PCB + printed housing + RPLIDAR A1
+    kit + A1 UART bridge.
+- **Chassis plate hole drawing:** https://cad.onshape.com/documents/d65a817fa3138e6d6ce62340/w/d9ae3e7c456080d5144ab443/e/22d3c4e40567ae2881f8a79b
+  It is only a legend of hole groups (A–M), with no sizes or threads. Hole sizes were inferred from STEP (Ø2.6 = M3 tapped?,
+  Ø3.1 = M3 clearance); test-fit before printing.
+- **Repo layout:**
+  - `cad/tools/` holds every utility script, including one-offs. Never leave scripts in a scratchpad; they get lost.
+  - `cad/tools/dofbot_fit/` holds the housing-placement scripts; see its README for a per-script table.
+  - `cad/context/<task>/` (gitignored) holds STEP exports, point clouds, `.npy` transforms and resumable state
+    (`placed.json`). Scripts `import _env` to `chdir` there.
+  - `cad/parts/orin_housing.py` is the build123d housing source; `cad/out/orin_housing.step` is its export.
+- **Before any Onshape call:** check the remaining budget (§2) and tell the user that MCP/API work spends it.
+
+
+## 9. API-thrifty working style
+
+- Export context once (`onshape_step_sync.py export`), then do everything you can locally on the STEP:
+  registration, hole maps, interference, clearances, renders (matplotlib previews in `dofbot_fit/render*.py`).
+- Batch REST work into small resumable scripts that record ids in `cad/context/<task>/placed.json`. A rerun skips
+  finished steps, so a crash or a fix never re-inserts things twice.
+- Put the call count in each script's docstring (`~9 API calls`) so the cost is known before running it.
+- Do UI work (unfix, delete many instances or features, visual checks) in Chrome when it's connected: zero API
+  cost (§11).
+- **Never "work around" a missing UI by spending hundreds of API calls** (e.g. delete + re-insert parts to clear
+  Fix). If Chrome is logged out or disconnected, stop and ask the user to sign in. Claude won't sign in for them,
+  even with a password manager.
+- When a POST returns something unexpected, check in Chrome (or with one GET) whether it actually happened before
+  retrying, so nothing gets inserted twice.
+- Typical costs on this task: an insert + transform ≈ 3 calls; `verify.py` = 3 calls; mates ≈ 2–3 each; the whole first placement
+  ≈ 30; a botched round with repairs ≈ 75. The two mistakes in §10 cost more than all the planned work.
+
+
+## 10. Onshape assembly lessons (each one learned the hard way)
+
+**Transforms**
+- `POST .../occurrencetransforms` with `isRelative: false` on a **sub-assembly** sets every leaf inside it to that
+  one pose: the sub-assembly collapses into a pile. Absolute is only safe on a top-level **part** instance.
+- For a sub-assembly: insert it fresh (identity pose) and apply the target as a **relative** transform.
+- Never "fix" one leaf of a sub-assembly from the parent; it scrambles the rest. Delete and re-insert instead
+  (`repair_pcb.py`).
+- Transforms are 4×4 row-major, translations in **metres**. Keep mm locally and convert at the API boundary
+  (`place.to_m`).
+
+**Instances and sub-assemblies**
+- `GET /assemblies/...` leaves **composite parts** out of `instances`/`occurrences` unless you pass
+  `?includeNonSolids=true`. Without it an insert looks like it returned nothing.
+- A sub-assembly copy in a parent goes **stale** when the child changes (new instances don't show up in the
+  parent's occurrence paths). Fix: delete the copy, re-insert it, apply the relative transform again.
+- STEP files with nested placements import with the placements dropped in the parent assembly (standoffs floated
+  at the origin). Bake geometry into world position and export one flat assembly, or push as a Part Studio.
+- Prefer the existing single-part / composite version of a vendor model (e.g. `A1_UART-Bridge`, partId `JGD`,
+  which v1 already uses) over inserting a whole Part Studio. Whole-studio inserts bring in every body as a loose
+  instance (111 for the bridge).
+- Check what v1 did first (`still_chassis_assm` in version `ballbot-v1`); it usually already solved the problem.
+
+**Locking things in place: mates, not Fix/Group (the user's preference)**
+- Subassemblies must not have floating parts, and a pile of Fixed parts or Groups counts as sloppy. Use exactly
+  one fixed ground part per assembly (`orin_housing_base`; v1's `plate assm` in the chassis) and fastened mates
+  for everything else. `dofbot_fit/mates.py` does this; follow its pattern.
+- Parts inserted from one Part Studio share a part origin. Mate them origin-to-origin with no offset (one shared
+  connector on the parent part, one per child).
+- Everything else: a mate connector on the parent part's origin, moved by the current relative pose
+  (`transform` + `translationX/Y/Z` + `rotationType`/`rotation`), mated to the child's origin connector. The
+  connector can only rotate about one axis, so the pose must be Z-only rotation; set `flipPrimary` (180° about X,
+  applied before the move) when the child's Z is flipped. Positions survive exactly (verified 0.0000 mm).
+- A sub-assembly is mated through one of its leaf **parts** (path `[subInst, partInst]`). The whole rigid
+  sub-assembly follows. Pick a leaf whose relative rotation the connector can express.
+- **A mate between two Fixed instances errors.** Unfix everything except the ground part first. There's no REST
+  call for Fix/Unfix: do it in the UI (right-click → Unfix on click + shift-click ranges).
+- Inline implicit connectors (`BTMInferenceQueryWithOccurrence` directly in a mate's `mateConnectorsQuery`) don't
+  resolve over the API. Create explicit `BTMMateConnector-66` features and reference them with
+  `BTMFeatureQueryWithOccurrence-157`.
+- Enum parameters need the exact `enumName` from the spec, e.g. `rotationType` is `"Rotation axis"` with values
+  `ABOUT_X/Y/Z`. Read it once from `GET /assemblies/.../featurespecs` (saved locally as
+  `context/dofbot_fit/asm_featurespecs.json`) instead of guessing; each wrong guess is a failed call.
+- A failed mate feature still gets created (status `ERROR`). Delete it at once
+  (`DELETE .../features/featureid/<id>`; `mates.py` does this) so retries don't stack up broken features.
+- Remove old Groups before mating their members, or they conflict. **Don't create Groups over the API**: the
+  API-created Group rotated everything ~90°.
+- Cost: about 2 calls per no-offset mate and 3 per offset mate; 43 mates ≈ 90 calls.
+
+**Verify numerically, every time**
+- `dofbot_fit/verify.py` (3 calls) compares every leaf occurrence of every placed instance, including the copy
+  inside the parent assembly, against the intended transform. Target: 0.0000 mm. Run it after any change,
+  including UI-only changes like grouping.
+- Then one visual check (Chrome, free; API screenshots cost calls and are low-res).
+
+**Registration (placing a vendor model where another model had it)**
+- Full ICP on a big model (Orin, 1,883 bodies) is too slow (>2 h). Register on features instead: hole patterns,
+  big planar faces, shell vertices over the 24 axis-aligned rotations (`step1b.py`, `orin_pose.py`).
+- Snap results to round mm / exact axes once you know they should be (`D_pcb_snapped.npy`).
+
+
+## 11. Claude in Chrome (use it whenever it's connected)
+
+Onshape in the user's own Chrome session spends **no API calls**. It is the right tool for visual checks, reading
+drawings, and UI-only operations (Fix, Group, bulk delete, suppress).
+
+**Setup**
+- Chromium only (Chrome, maybe Edge); no Firefox. The user can keep Firefox for their own work and run Chrome
+  alongside.
+- Install the Claude in Chrome extension, sign in with the same claude.ai account, then `/chrome` in Claude Code
+  (or start with `claude --chrome`). If the tools still don't appear, restart the session.
+- If WebGL is sluggish on Linux, check `chrome://gpu` and enable hardware acceleration.
+
+**Usage**
+- Load all tools in **one** ToolSearch call (`tabs_context_mcp, tabs_create_mcp, navigate, computer, find,
+  read_page, get_page_text, tabs_close_mcp`).
+- Call `tabs_context_mcp` first, open a **new tab** for the Onshape URL, close it when done.
+- Use `find` / `read_page` to locate elements by name (instance list rows, menu items) instead of guessing pixel
+  coordinates; take screenshots for the 3D view.
+- `get_page_text` reads drawings and the instance list cheaply.
+- Never trigger browser dialogs (alerts/confirm). Onshape's own delete confirmations are in-page and fine.
+
+**Onshape UI tricks**
+- Instance list multi-select: **click + shift-click** ranges. Ctrl-click is unreliable through the extension.
+- Clear a selection from the right-click menu ("Clear selection") before starting a new one.
+- Right-click on a selection → Fix / Unfix / Delete / Suppress. Deleting 100+ instances is one UI action vs one
+  API call each. A sub-assembly instance in a selection hides Fix/Unfix.
+- The instance-list filter box also finds mate features (type "Group" to find Groups to delete).
+- Drag the instance panel's right edge to widen it so names are readable in screenshots.
+- After UI changes, re-run `verify.py` (UI edits can move things too).
+
+- The user signs in to Onshape in Chrome themselves. If the tab shows "Sign in" / "Create account", stop and ask.
+
+**Recommendation:** script geometry and placement (exact numbers, resumable, reviewable in git), and do
+selection-heavy housekeeping plus all visual checks in Chrome. If Chrome isn't connected and a UI task would cost
+dozens of API calls, ask the user to connect it (or do it themselves) instead of spending the budget.
+
+
+## 12. Conventions with the user
+
+- Commit only when asked; push to the working branch (`claude-cad-experiments`), never `humble` directly.
+- Onshape versions mark milestones on the branch: `<major>.<minor>.<patch>-alpha` (e.g. `2.0.1-alpha`,
+  `2.0.2-alpha`) with a one-line description of the state. Make one before risky bulk changes too.
+- Never commit API keys. Never edit `docs/` unless asked; report findings in chat.
+- Never edit vendor/source Part Studios (lidar, Orin, PCB); place them as they are.
+- Terse one-line code comments. Chat replies: prose wrapped at ~115 chars, lots of bullets.
+- Ask before deleting things the user made. Leftovers from your own work (old instances, test parts, failed
+  features) get cleaned up.
