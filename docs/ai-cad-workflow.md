@@ -361,3 +361,43 @@ dozens of API calls, ask the user to connect it (or do it themselves) instead of
 - Terse one-line code comments. Chat replies: prose wrapped at ~115 chars, lots of bullets.
 - Ask before deleting things the user made. Leftovers from your own work (old instances, test parts, failed
   features) get cleaned up.
+
+
+## 13. Done checklist (run it after every change, before reporting)
+
+The user found each of these missing at least once. A change isn't done until all are checked.
+
+- **Hardware for every hole.** Walk each joint: what holds part A to part B? Every through hole gets a screw
+  (+ nut or insert), every printed thread gets a heat-set insert, every standoff end is screwed or studded.
+  Include joints in the parent assemblies (housing base → chassis plate lives in `still_chassis_assm`).
+  Compare with v1: the suppressed v1 folders in `still_chassis_assm` show what v1 used where.
+- **Seat heights from geometry, not guesses.** Probe the real seat locally (`dofbot_fit/hw_heights.py`): the A1
+  flange seat is 3.5 mm above its underside, not flat.
+- **Clearance for assembly, not just fit.** Can each screw head and driver reach its seat past nearby features?
+  (The housing base's corner blocks blocked two plate screws until `board boss screw clear` cut through them.)
+- **Cleanup of features that lost their purpose.** After moving or replacing something, list what existed only
+  for the old layout: pockets, inserts, holes, connectors, mates, orphan connectors, unused Part Studio tabs and
+  imports. Delete or fill them (Part Studio features on imports; never re-push).
+- **Mate intent.** Fasten a part to what physically holds it (PCB hole bottom → standoff top), not to the ground
+  part through an offset connector.
+- **Visual inspection in Chrome, every assembly touched** (housing, `still_chassis_assm`, `robot_assm`):
+  - hide mate connectors (right-click any connector → Hide all mate connectors), then iso + front views;
+  - zoom on each joint: screw heads seated, nuts under plates, nothing floating, no stray triads;
+  - look at each modified Part Studio for leftover notches, holes or pockets.
+- **Numbers.** `verify.py` and `check_hw.py` (+ `--chassis`) at 0.0000 mm; a leaf-level check after any mate
+  target moves (detached leaves, §10).
+- **BOM.** Keep the hardware list below in sync with the model.
+
+**Housing hardware (v2)**, all modelled and mated (`dofbot_fit/hw_mates.py`):
+
+| Joint | Hardware |
+|---|---|
+| PCB → floor bosses | 6 × M2.5×10 M-F standoff (doc bn_3318), 6 × M2.5×5 heat-set insert |
+| Orin carrier → PCB | 4 × M2.5×20 M-F standoff (doc), 4 × M2.5×6 pan head ISO 7045 |
+| A1 flange → cover pads | 4 × M2.5×20 + 4 × M2.5×5 M-F standoff (doc), 4 × M2.5×5 insert, 4 × M2.5×6 pan head |
+| UART bridge → cover | 4 × m1.5 rubber spacer (v1), 4 × M2×4 insert, 4 × M2×6 pan head |
+| Cover → base (side walls) | 4 × M3×6 insert, 4 × M3×8 pan head |
+| Base → chassis plate | 6 × M2.5×6 pan head + 6 × M2.5 thin nut ISO 4035 (plate Ø2.6, 2 mm) |
+
+Inserts are the doc's native `heat-set inserts` Part Studio (Standard Content has none for plastic; PEM is
+sheet-metal only, public docs are unversioned one-offs).

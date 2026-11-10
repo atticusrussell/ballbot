@@ -29,6 +29,11 @@ Run with `~/.venvs/ballbot-cad/bin/python <script>.py` (needs matplotlib + scipy
 | `board_standoffs.py` | v2: raise offset mates by `RAISE`, mate the new cover and 18 doc standoffs (~45 calls) |
 | `check_v2.py` | v2 standoffs + cover pose errors (1 call) |
 | `robot_head.py` | Lidar head in `robot_assm` (top level): `dof_lidar` revolute to the housing's lidar base (3 calls) |
+| `hw_survey.py`, `hw_heights.py` | Local: plate holes/thickness under the housing screws, bridge holes; screw seat heights in L |
+| `hw_frames.py` | Part-frame bounding boxes of the hardware parts (1 call each) |
+| `hw_inserts_ps.py` | Native `heat-set inserts` Part Studio, M2/M2.5/M3 (5 calls) |
+| `hw_mates.py` | PCB on its standoff + all housing hardware; `--chassis` base → plate screws/nuts. 1 call per mate, implicit connectors |
+| `check_hw.py` | Hardware pose errors (1 call; `--chassis`) |
 | `verify.py` | Every placed leaf (and the chassis copy) vs intended transform; expect 0.0000 mm (3 calls) |
 | `inspect_asm.py`, `plate*.py`, `boardholes.py` | STEP hierarchy, chassis plate and board hole maps |
 | `reg.py`, `meshlib.py`, `bb.py`, `_env.py` | Shared helpers |

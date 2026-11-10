@@ -32,7 +32,7 @@ Y_TOPFLAT = 37.5     # half width of flat top; 45 deg chamfers to the walls
 GAP = 0.2            # base blocks to cover inner wall
 
 # --- PCB (YB-EVV01, 130 x 100, centred) -----------------------------------
-PCB_HOLES = [(sx * 63.35, sy * 48.35) for sx in (-1, 1) for sy in (-1, 1)]  # Ø3.3 in the STEP; unused (legacy inserts)
+PCB_HOLES = [(sx * 63.35, sy * 48.35) for sx in (-1, 1) for sy in (-1, 1)]  # Ø3.3 in the STEP; unused (v1 inserts filled)
 BLOCK_Z = 10.0       # corner block top (cover screw inserts only; v1 PCB seat)
 BOSS_TOP = 5.0       # floor bosses for the board standoffs' M2.5 inserts (5 mm stud needs 5 mm)
 BOSS_D = 7.0
@@ -43,7 +43,7 @@ BOARD_HOLES = ORIN_HOLES + [(-11.3, y) for y in (-32.97, 25.03)]  # all 6 board 
 ORIN_STANDOFF = 20.0  # doc 'hex_stand_off_m2_5x20' M-F, stud down through the PCB into the board standoff
 PIN_RELIEF = [(56.4, 56.8, -44.6, -44.0), (-54.1, -54.0, 44.0, 47.9), (-57.8, -57.2, 44.4, 47.0),
               (-63.9, -63.5, 44.6, 45.3)]  # PCB bottom-side THT pins over corner blocks (x0, x1, y0, y1)
-PIN_CLEAR, PIN_Z = 0.6, 6.5  # pocket margin, pocket floor (legacy; board is now 5 mm above the blocks)
+PIN_CLEAR, PIN_Z = 0.6, 6.5  # v1 pin pockets (filled by Onshape 'board fill'; board is 5 mm above the blocks)
 # --- inserts (heat-set) ---------------------------------------------------
 M3_INS_D, M3_INS_L = 4.0, 6.0
 M25_INS_D, M25_INS_L = 3.6, 5.0
@@ -65,7 +65,7 @@ BRIDGE_HOLES = [(BRIDGE_C[0] + dx, BRIDGE_C[1] + dy) for dx in (-7.125, 7.125) f
 BRIDGE_SPACER = 0.5  # v1 'm1.5 rubber spacer' (2.5 x 0.5) under each bridge hole, M2 into the cover inserts
 BRIDGE_SLOT = (33.0, 51.0, -20.6, -17.8)  # header THT tails go 1.4 below the cover top
 # --- fan grille -----------------------------------------------------------
-FAN_C = tuple(float(v) for v in sys.argv[1:3]) if len(sys.argv) > 2 else (-4.3, 9.0)
+FAN_C = tuple(float(v) for v in sys.argv[1:3]) if __name__ == "__main__" and len(sys.argv) > 2 else (-4.3, 9.0)
 FAN_R = 19.0
 
 
@@ -132,11 +132,7 @@ def base() -> Part:
             blk = Pos(sx * (bx0 + HALF_L) / 2, sy * (by0 + by1) / 2, (Z_FLOOR + BLOCK_Z) / 2) * \
                   Box(HALF_L - bx0, by1 - by0, BLOCK_Z - Z_FLOOR)
             body += blk
-    for x0, x1, y0, y1 in PIN_RELIEF:
-        w, d = x1 - x0 + 2 * PIN_CLEAR, y1 - y0 + 2 * PIN_CLEAR
-        body -= Pos((x0 + x1) / 2, (y0 + y1) / 2, (PIN_Z + BLOCK_Z) / 2 + 0.5) * Box(w, d, BLOCK_Z - PIN_Z + 1)
-    for x, y in PCB_HOLES:  # legacy M3 inserts (v1 PCB seat), unused
-        body -= Pos(x, y, BLOCK_Z - M3_INS_L / 2) * Cylinder(M3_INS_D / 2, M3_INS_L + 0.01)
+    # v1 pin pockets / corner M3 inserts: filled in Onshape ('board fill'), not cut here
     for x, s in COVER_SCREWS:  # horizontal M3 inserts for the cover
         y0 = s * (W_OUT - T - GAP)
         body -= Pos(x, y0 - s * M3_INS_L / 2, COVER_SCREW_Z) * Rot(90, 0, 0) * Cylinder(M3_INS_D / 2, M3_INS_L + 0.01)
@@ -154,7 +150,7 @@ def board_bosses(body: Part) -> Part:  # = Onshape 'board boss *' features on th
     for x, y in BOARD_HOLES:  # M2.5 insert, through (stud reaches z 0)
         body -= Pos(x, y, BOSS_TOP / 2) * Cylinder(M25_INS_D / 2, BOSS_TOP + 0.01)
     for x, y in PLATE_SCREWS:  # keep the counterbore column clear for the screw head/driver
-        body -= Pos(x, y, (Z_FLOOR + BOSS_TOP) / 2 + 0.5) * Cylinder(3.25, BOSS_TOP - Z_FLOOR + 1)
+        body -= Pos(x, y, (Z_FLOOR + BLOCK_Z) / 2 + 0.5) * Cylinder(3.25, BLOCK_Z - Z_FLOOR + 1)  # past the corner blocks
     return body
 
 
