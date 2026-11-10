@@ -1,10 +1,12 @@
 import _env  # noqa: F401  (cwd -> cad/context/dofbot_fit)
-import numpy as np, math
+import sys, numpy as np, math
 from build123d import *
 from check import xf, bbox_hit, housing_part
+sys.path.insert(0, "/home/atticus/workspace/ballbot/src/ballbot_description/cad/parts")
+from orin_housing import Z_TOP
 O = "/home/atticus/workspace/ballbot/src/ballbot_description/cad/out/"
 cover = housing_part("orin_housing_cover")
-SCAN, ZTOP, SO = (-17.0, 0.0), 78.0, 3.0 + 24.6  # pad + kit stack (15 + 1.6 board + 8)
+SCAN, ZTOP, SO = (-17.0, 0.0), Z_TOP, 3.0 + 24.6  # pad + old kit stack (A1 kit checks below are legacy)
 def Hm(R, t): M = np.eye(4); M[:3, :3] = R; M[:3, 3] = t; return M
 Rz = lambda a: np.array([[math.cos(a), -math.sin(a), 0], [math.sin(a), math.cos(a), 0], [0, 0, 1]])
 # A1: flange face z744.29 & scan centre (-90.55,-132.92) -> (SCAN, ZTOP+SO), rotated 180 deg

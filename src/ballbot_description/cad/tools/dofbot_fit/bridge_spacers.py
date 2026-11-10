@@ -1,7 +1,7 @@
 import _env  # noqa: F401  (cwd -> cad/context/dofbot_fit)
 """Bridge on v1's 'm1.5 rubber spacer' x4 (0.5 mm) instead of the retired 5 mm standoffs. ~20 calls.
 
-Run after pushing out/orin_housing.step (adds the header-pin slot) and setting T_bridge_L.npy (check_top.py).
+Run after setting T_bridge_L.npy (check_top.py). The header-pin slot is in the v2 cover (out/orin_cover.step).
 Moves the bridge's 'mc bridge target' connector to the new pose, inserts the spacers and fastens each to the
 housing base under a bridge hole. The bridge standoff instances are deleted in the UI. Resumable via placed.json.
 """

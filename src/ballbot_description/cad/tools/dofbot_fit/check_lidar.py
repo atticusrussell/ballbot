@@ -4,8 +4,8 @@ import sys, math, numpy as np
 sys.path.insert(0, "/home/atticus/workspace/ballbot/src/ballbot_description/cad/parts")
 from build123d import import_step
 from check import xf, bbox_hit, housing_part, O
-from lidar_standoffs import LIDAR_STACK
-from orin_housing import Z_TOP, LIDAR_PAD, SCAN, LIDAR_HOLES
+from build123d import Pos, RegularPolygon, extrude
+from orin_housing import Z_TOP, LIDAR_PAD, LIDAR_STACK, SCAN, LIDAR_HOLES
 KIT = ("stand", "devboard", "connector-7pin")  # dev-kit parts, not used
 def Hm(R, t): M = np.eye(4); M[:3, :3] = R; M[:3, 3] = t; return M
 Rz = lambda a: np.array([[math.cos(a), -math.sin(a), 0], [math.sin(a), math.cos(a), 0], [0, 0, 1]])
@@ -14,7 +14,9 @@ Ta = Hm(Rz(math.pi), [SCAN[0], SCAN[1], Z_TOP + SO]) @ Hm(np.eye(3), [90.55, 132
 np.save("T_a1_L.npy", Ta)  # before the slow checks
 a1 = [(c.label, xf(s, Ta)) for c in import_step("a1.step").children if not c.label.startswith(KIT) for s in c.solids()]
 Tb = np.load("T_bridge_L.npy"); br = [(s.label, xf(s, Tb)) for s in import_step("a1_bridge.step").solids()]
-so = [(s.label, s) for s in import_step(O + "lidar_standoffs.step").children]
+hexo = lambda h: extrude(RegularPolygon(5.0 / math.sqrt(3), 6), amount=h)  # stand-ins for the doc's 20 + 5 standoffs
+so = [(f"so{h}_{i}", Pos(x, y, z) * hexo(h).solids()[0]) for h, z in ((20, Z_TOP + LIDAR_PAD), (5, Z_TOP + LIDAR_PAD + 20))
+      for i, (x, y) in enumerate(LIDAR_HOLES)]
 cover = housing_part("orin_housing_cover")
 def vol(a, b):
     if not bbox_hit(a, b): return 0.0

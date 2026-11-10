@@ -1,5 +1,6 @@
 import _env  # noqa: F401  (cwd -> cad/context/dofbot_fit)
-"""Lidar as v1's 'RPlidar A1 Base' + 'RPlidar A1 Head' sub-assemblies on 20+5 mm standoffs (no dev-kit board/stands).
+"""(v1 of the lidar mount; v2 swapped the standoffs for doc parts and moved the head to robot_assm.)
+Lidar as v1's 'RPlidar A1 Base' + 'RPlidar A1 Head' sub-assemblies on 20+5 mm standoffs (no dev-kit board/stands).
 
 Run check_lidar.py first (writes T_a1_L.npy). Pushes out/lidar_standoffs.step, inserts Base/Head at the A1 pose,
 the standoffs in frame L, and fastened-mates them (Base -> housing base, Head -> Base, standoffs -> housing base).

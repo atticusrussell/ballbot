@@ -28,10 +28,12 @@ def insert(e, body):  # returns new top-level instances (composite parts only li
     return [i for i in api.get(asm(e) + "?includeNonSolids=true").json()["rootAssembly"]["instances"] if i["id"] not in ids0]
 
 L2H = T(t_shell - [0, 0, 1.0])  # frame L -> housing assembly
+sys.path.insert(0, os.path.join(CAD, "parts")); from orin_housing import RAISE  # v2 stack lift (L z = housing z)
 cur = {o["path"][0]: np.array(o["transform"]).reshape(4, 4) for o in
        json.load(open("housing_asm.json"))["rootAssembly"]["occurrences"] if len(o["path"]) == 1}
 pcb_now = cur[PCB_INST].copy(); pcb_now[:3, 3] *= 1000
-X = {"pcb": np.load("D_pcb_snapped.npy") @ pcb_now, "orin": np.load("D_orin.npy"), "housing": L2H,
+X = {"pcb": T([0, 0, RAISE]) @ np.load("D_pcb_snapped.npy") @ pcb_now, "orin": T([0, 0, RAISE]) @ np.load("D_orin.npy"),
+     "housing": L2H,
      "a1": L2H @ np.load("T_a1_L.npy"), "bridge": L2H @ np.load("T_bridge_L.npy"),
      "chassis": T(CHASSIS_L) @ np.linalg.inv(L2H)}
 def main():

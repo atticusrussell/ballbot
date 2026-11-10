@@ -21,8 +21,14 @@ Run with `~/.venvs/ballbot-cad/bin/python <script>.py` (needs matplotlib + scipy
 | `swap_bridge.py` | Insert the v1 single-part `A1_UART-Bridge` composite at the bridge pose |
 | `mates.py` | Replace Fix/Groups with fastened mates (one fixed ground part per assembly); `--chassis` mates the housing to the plate |
 | `check_lidar.py` | A1 (no kit board/stands) on 20+5 standoffs: hole/pad match, clearance, interference -> `T_a1_L.npy` |
-| `lidar_swap.py` | Lidar as v1's `RPlidar A1 Base`/`Head` sub-assemblies + `out/lidar_standoffs.step` (`parts/lidar_standoffs.py`), mated |
+| `lidar_swap.py` | Lidar as v1's `RPlidar A1 Base`/`Head` sub-assemblies, mated (its home-made standoffs and the head are gone in v2) |
 | `bridge_spacers.py` | Bridge on v1's 4 × `m1.5 rubber spacer` (0.5 mm) instead of 5 mm standoffs: moves its mate connector, inserts + mates the spacers |
+| `standoff_info.py` | Origin, length and stud of v1's Bossard standoff Part Studios (1 call each) |
+| `check_board.py` | v2 board mount: raised PCB vs base bosses and the 6 board standoffs |
+| `board_bosses.py` | v2: Part Studio features on the imported base: floor bosses, M2.5 insert holes, plate screw clearance (7 calls) |
+| `board_standoffs.py` | v2: raise offset mates by `RAISE`, mate the new cover and 18 doc standoffs (~45 calls) |
+| `check_v2.py` | v2 standoffs + cover pose errors (1 call) |
+| `robot_head.py` | Lidar head in `robot_assm` (top level): `dof_lidar` revolute to the housing's lidar base (3 calls) |
 | `verify.py` | Every placed leaf (and the chassis copy) vs intended transform; expect 0.0000 mm (3 calls) |
 | `inspect_asm.py`, `plate*.py`, `boardholes.py` | STEP hierarchy, chassis plate and board hole maps |
 | `reg.py`, `meshlib.py`, `bb.py`, `_env.py` | Shared helpers |

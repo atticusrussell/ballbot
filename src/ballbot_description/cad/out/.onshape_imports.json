@@ -1,12 +1,12 @@
 {
-  "833f9762904995f22ff7dd9f:lidar_standoffs.step": {
-    "blobElementId": "6127f5f820db595a195ef139",
+  "833f9762904995f22ff7dd9f:orin_cover.step": {
+    "blobElementId": "e04bd225a5eb6e93c166229d",
     "documentId": "833f9762904995f22ff7dd9f",
-    "lastPush": "2026-11-09T21:22:06",
+    "lastPush": "2026-11-10T10:31:02",
     "resultElements": [
       {
-        "id": "8f5bfb8432dd51c8071e9757",
-        "name": "lidar_standoffs",
+        "id": "a541e210f36a69cda651b822",
+        "name": "orin_cover",
         "type": "PARTSTUDIO"
       }
     ]

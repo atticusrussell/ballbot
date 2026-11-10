@@ -17,8 +17,9 @@ def xf(shape, Mx):
 
 def solids_of(c): return [s for s in c.solids()]
 
-def housing_part(label):  # solid from out/orin_housing.step by label
-    return next(s for s in import_step(O + "orin_housing.step").children if s.label == label)
+def housing_part(label):  # v2 cover / base (out/orin_cover.step, out/orin_base.step) by label
+    stem = {"orin_housing_cover": "orin_cover", "orin_housing_base": "orin_base"}[label]
+    return next(s for s in import_step(O + stem + ".step").children if s.label == label)
 
 def ivol(a, b):
     if not a.bounding_box().overlaps(b.bounding_box(), 0.0) if hasattr(a.bounding_box(), "overlaps") else False: return 0.0
