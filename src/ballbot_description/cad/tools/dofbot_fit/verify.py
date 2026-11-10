@@ -14,7 +14,8 @@ def err(a, b): return np.abs(mm(a) - mm(b)).max()
 e = max(err(H[(rep["orin"],) + k], (lambda M: (M.__setitem__((slice(0, 3), 3), M[:3, 3] / 1000), M)[1])(X["orin"].copy()) @ v) for k, v in O.items())
 print(f"Orin: {len(O)} leaves, max error {e:.4f} mm")
 from orin_housing import RAISE, BRIDGE_HOLES, Z_TOP
-P0 = occ(json.load(open("housing_asm.json"))); Dp = T([0, 0, RAISE]) @ np.load("D_pcb_snapped.npy"); Dp[:3, 3] /= 1000
+P0 = occ(json.load(open("housing_asm.json"))); from place import ROT_H
+Dp = ROT_H @ T([0, 0, RAISE]) @ np.load("D_pcb_snapped.npy"); Dp[:3, 3] /= 1000
 pi = rep.get("pcb", "MVWER4al7DjyElyq2")
 e = max(err(H[(pi,) + k[1:]], Dp @ v) for k, v in P0.items() if k[0] == "MVWER4al7DjyElyq2" and len(k) > 1)
 print(f"PCB: max error {e:.4f} mm")

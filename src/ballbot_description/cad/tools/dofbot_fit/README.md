@@ -34,6 +34,12 @@ Run with `~/.venvs/ballbot-cad/bin/python <script>.py` (needs matplotlib + scipy
 | `hw_inserts_ps.py` | Native `heat-set inserts` Part Studio, M2/M2.5/M3 (5 calls) |
 | `hw_mates.py` | PCB on its standoff + all housing hardware; `--chassis` base → plate screws/nuts. 1 call per mate, implicit connectors |
 | `check_hw.py` | Hardware pose errors (1 call; `--chassis`) |
+| `rot_pcb_study.py`, `check_v2b.py` | Local: holes / windows / Orin fit for the 180° board turn; PCB + Orin vs new cover and base |
+| `v2b_remate.py` | v2b: standoff targets to the turned holes, re-add floor-insert / Orin-screw mates, mate new cover, PCB, Orin |
+| `v2b_pin.py` | (superseded by the 'orin rigid' Group) pins for orin_assm's top-level occurrences |
+| `fix_pcb_sot.py` | Moves the misplaced SOT-223 inside the YB-EVV01 PCB assembly (ungroup, move, regroup) |
+| `fix_ctx_leaf.py` | robot_assm: puts housing leaves that keep their own in-context position back on the housing pose |
+| `check_v2b_leaves.py` | Every Orin / PCB leaf vs its verified pose turned 180° (1 call) |
 | `verify.py` | Every placed leaf (and the chassis copy) vs intended transform; expect 0.0000 mm (3 calls) |
 | `inspect_asm.py`, `plate*.py`, `boardholes.py` | STEP hierarchy, chassis plate and board hole maps |
 | `reg.py`, `meshlib.py`, `bb.py`, `_env.py` | Shared helpers |

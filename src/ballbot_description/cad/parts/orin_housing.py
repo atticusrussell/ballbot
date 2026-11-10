@@ -38,8 +38,10 @@ BOSS_TOP = 5.0       # floor bosses for the board standoffs' M2.5 inserts (5 mm 
 BOSS_D = 7.0
 PCB_Z = BOSS_TOP + 10.0  # board bottom on 6 x doc 'bn_3318 M2.5x10' M-F standoffs
 PCB_T = 0.4
-ORIN_HOLES = [(x, y) for x in (-48.3, 37.7) for y in (-32.97, 25.03)]  # PCB 86x58 holes (registered), Ø2.6
-BOARD_HOLES = ORIN_HOLES + [(-11.3, y) for y in (-32.97, 25.03)]  # all 6 board mounting holes, Ø2.6 (M2.5)
+BOARD_ROT = 180.0  # v2b: PCB + Orin (+ DOFBOT windows, fan grille) turned about Z at the board centre (L origin);
+ROT = lambda p: (-p[0], -p[1])  # servo headers J7-J12 now at +X, the arm side
+ORIN_HOLES = [ROT((x, y)) for x in (-48.3, 37.7) for y in (-32.97, 25.03)]  # PCB 86x58 holes (registered), Ø2.6
+BOARD_HOLES = ORIN_HOLES + [ROT((-11.3, y)) for y in (-32.97, 25.03)]  # all 6 board mounting holes, Ø2.6 (M2.5)
 ORIN_STANDOFF = 20.0  # doc 'hex_stand_off_m2_5x20' M-F, stud down through the PCB into the board standoff
 PIN_RELIEF = [(56.4, 56.8, -44.6, -44.0), (-54.1, -54.0, 44.0, 47.9), (-57.8, -57.2, 44.4, 47.0),
               (-63.9, -63.5, 44.6, 45.3)]  # PCB bottom-side THT pins over corner blocks (x0, x1, y0, y1)
@@ -65,7 +67,7 @@ BRIDGE_HOLES = [(BRIDGE_C[0] + dx, BRIDGE_C[1] + dy) for dx in (-7.125, 7.125) f
 BRIDGE_SPACER = 0.5  # v1 'm1.5 rubber spacer' (2.5 x 0.5) under each bridge hole, M2 into the cover inserts
 BRIDGE_SLOT = (33.0, 51.0, -20.6, -17.8)  # header THT tails go 1.4 below the cover top
 # --- fan grille -----------------------------------------------------------
-FAN_C = tuple(float(v) for v in sys.argv[1:3]) if __name__ == "__main__" and len(sys.argv) > 2 else (-4.3, 9.0)
+FAN_C = tuple(float(v) for v in sys.argv[1:3]) if __name__ == "__main__" and len(sys.argv) > 2 else ROT((-4.3, 9.0))
 FAN_R = 19.0
 
 
@@ -88,7 +90,7 @@ def cover() -> Part:
             for w in f.inner_wires():
                 hole = Face(w)
                 if hole.area > 30:
-                    body -= Pos(0, 0, DZ + RAISE) * extrude(hole, amount=8, dir=(0, 1, 0), both=True)
+                    body -= Pos(0, 0, DZ + RAISE) * Rot(0, 0, BOARD_ROT) * extrude(hole, amount=8, dir=(0, 1, 0), both=True)
 
     # chamfer vent slots
     zc = (z_ch + Z_TOP) / 2; ym = (W_OUT + Y_TOPFLAT) / 2
@@ -103,6 +105,8 @@ def cover() -> Part:
         half = math.sqrt(max(FAN_R ** 2 - (i * 4.5) ** 2, 0))
         if half > 4:
             grille += Pos(FAN_C[0], yy, Z_TOP - T / 2) * Box(2 * half, 2.5, T + 2)
+    for x, y in LIDAR_HOLES:  # keep solid top under the lidar pads
+        grille -= Pos(x, y, Z_TOP - T / 2) * Cylinder(6.0, T + 4)
     body -= grille
 
     # cover -> base screws through the side walls

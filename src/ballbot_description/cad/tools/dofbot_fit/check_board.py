@@ -7,7 +7,7 @@ from check import xf, H2L, housing_part, clash
 from orin_housing import RAISE, BOARD_HOLES, BOSS_TOP, PCB_Z
 from place import T
 pcb = next(c for c in import_step("housing.step").children if c.label.startswith("YB-EVV01"))
-M = T([0, 0, RAISE]) @ H2L @ np.load("D_pcb_snapped.npy")
+M = T([0, 0, 0], np.diag([-1.0, -1.0, 1.0])) @ T([0, 0, RAISE]) @ H2L @ np.load("D_pcb_snapped.npy")  # v2b rotation in L
 P = [(c.label, xf(s, M)) for c in pcb.children for s in c.solids()]
 board = next(s for l, s in P if l == "Board_step"); print("board z", round(board.bounding_box().min.Z, 3), "expect", PCB_Z)
 so = [Pos(x, y, BOSS_TOP) * extrude(RegularPolygon(5.5 / math.sqrt(3), 6), amount=10).solids()[0] for x, y in BOARD_HOLES]

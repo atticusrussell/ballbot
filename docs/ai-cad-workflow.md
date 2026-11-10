@@ -274,11 +274,16 @@ the verified layout locked with Fix/Groups; the workspace after it replaces thos
   applied before the move) when the child's Z is flipped. Positions survive exactly (verified 0.0000 mm).
 - A sub-assembly is mated through one of its leaf **parts** (path `[subInst, partInst]`). The whole rigid
   sub-assembly follows. Pick a leaf whose relative rotation the connector can express.
-- **Except when its leaves were moved one by one.** `occurrencetransforms` on leaf paths (the early repair
-  scripts did this to `orin_assm` and the PCB) detaches those leaves, in that context and in each parent assembly
-  separately. A mate on one leaf then moves only that leaf: raising `mc orin target` moved 1 of 1883 Orin leaves.
-  Check every leaf after moving a mate target (`verify.py`), and fix stragglers with one relative transform per
-  context on the unmated top-level occurrences. A transform on the sub-assembly instance itself returned HTTP 500.
+- **Only if the sub-assembly is internally rigid.** A mate moves only the leaf it references when that leaf isn't
+  tied to the rest inside its own assembly. `orin_assm` (STEP import) had no features at all, so mating one
+  Orin part moved 1 of 1883 leaves; a Group of its top-level occurrences inside `orin_assm` ('orin rigid') fixed
+  it. The YB-EVV01 PCB assembly has `Group 1`, but its `SOT-223` was stored ~43 mm off the board; the early
+  repair scripts only fixed it in context. Fixed in the element (`dofbot_fit/fix_pcb_sot.py`).
+- **In-context positions stick per assembly.** A leaf that was ever moved with `occurrencetransforms` keeps its
+  own position in that assembly and in each parent (housing, `still_chassis_assm`, `robot_assm`). After any
+  re-insert or move, check every leaf in every context (`verify.py`, `dofbot_fit/fix_ctx_leaf.py`).
+- **Updating a mate whose connectors are implicit fails** (Onshape re-maps the connector ids but not the
+  query). Delete it and add it again instead (`dofbot_fit/v2b_remate.py`).
 - The child-side connector can live inside the mate (`mateConnectors: [{implicit: true, featureId: X, ...}]`,
   query `featureId: X`), saving 1 call per mate; see `dofbot_fit/board_standoffs.py`.
 - Re-pointing a v1 mate: drop its `mateConnectors` and reset `primaryAxisAlignment` (a flip for the old
@@ -392,6 +397,7 @@ The user found each of these missing at least once. A change isn't done until al
 
 | Joint | Hardware |
 |---|---|
+| (v2b) PCB + Orin turned 180° about the board centre: servo headers J7–J12 at +X (arm side), Orin ports on +Y | |
 | PCB → floor bosses | 6 × M2.5×10 M-F standoff (doc bn_3318), 6 × M2.5×5 heat-set insert |
 | Orin carrier → PCB | 4 × M2.5×20 M-F standoff (doc), 4 × M2.5×6 pan head ISO 7045 |
 | A1 flange → cover pads | 4 × M2.5×20 + 4 × M2.5×5 M-F standoff (doc), 4 × M2.5×5 insert, 4 × M2.5×6 pan head |

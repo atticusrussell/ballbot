@@ -60,9 +60,11 @@ if "--chassis" not in sys.argv:
     XL = np.linalg.inv(m.mm(m.H[(m.BASE,)])) @ X["housing"]; base = (m.BASE,)
     # PCB: bottom of hole 1 onto board standoff 1's top (female end), world-aligned frames
     occ = {tuple(o["path"]): np.array(o["transform"]).reshape(4, 4) for o in json.load(open("housing_v2_now.json"))["rootAssembly"]["occurrences"]}
-    leaf = (state["repair"]["pcb"], "MsqHB/2KD9gNBwaQx"); Pb = m.mm(occ[leaf]); s1, h1, _ = state["v2"]["standoffs"]["board standoff 1"]
-    fasten(HOUSING, "fasten pcb on standoff", (leaf, np.linalg.inv(Pb) @ X["housing"] @ T([*h1, PCB_Z])),
-           ((s1,), T([0, 0, 0], RY90.T)))
+    leaf = (state["repair"]["pcb"], "MsqHB/2KD9gNBwaQx"); s1, h1, _ = state["v2"]["standoffs"]["board standoff 1"]
+    Pb = m.mm(occ[leaf]) if leaf in occ else None
+    if "fasten pcb v2b" not in done:  # superseded by v2b_remate.py (PCB re-inserted, turned 180)
+        fasten(HOUSING, "fasten pcb on standoff", (leaf, np.linalg.inv(Pb) @ X["housing"] @ T([*h1, PCB_Z])),
+               ((s1,), T([0, 0, 0], RY90.T)))
     if "--one" in sys.argv and "--plan-only" not in sys.argv: sys.exit()
     jobs = []  # (name, child path, child M, parent M in L)
     for g, holes, d in (("lidar", LIDAR_HOLES, "2.5"), ("orin", ORIN_HOLES, "2.5"), ("bridge", BRIDGE_HOLES, "2")):
